@@ -961,11 +961,40 @@ async function streamAnthropicRun(
   const model = body.model ?? "claude-sonnet-4-5";
   const maxTokens = body.maxTokens ?? 8192;
 
+  // Allowlist for custom base URLs — only allow known Anthropic-compatible
+  // providers to prevent SSRF from arbitrary client-supplied hosts.
+  const ALLOWED_BASE_URL_PATTERNS = [
+    /^https:\/\/api\.anthropic\.com(\/|$)/,
+    /^https:\/\/[a-z0-9-]+\.anthropic\.com(\/|$)/,
+    /^https:\/\/token-plan-cn\.xiaomimimo\.com(\/|$)/,
+    /^https:\/\/openrouter\.ai(\/|$)/,
+    /^https:\/\/[a-z0-9-]+\.openai\.com(\/|$)/,
+    /^https:\/\/api\.openai\.com(\/|$)/,
+    // Allow localhost only in development
+    ...(process.env.NODE_ENV !== "production"
+      ? [/^https?:\/\/localhost(:\d+)?(\/|$)/]
+      : []),
+  ];
+
+  let resolvedBaseUrl: string | undefined;
+  if (body.baseUrl) {
+    const allowed = ALLOWED_BASE_URL_PATTERNS.some((re) =>
+      re.test(body.baseUrl!),
+    );
+    if (!allowed) {
+      run.status = "failed";
+      pushEvent("error", {
+        error: { message: `Disallowed base URL: ${body.baseUrl}. Only known Anthropic-compatible providers are permitted.` },
+      });
+      pushEvent("end", { code: 1, status: "failed" });
+      return;
+    }
+    resolvedBaseUrl = body.baseUrl;
+  }
+
   const client = new Anthropic({
     apiKey: body.apiKey,
-    baseURL: body.baseUrl?.includes("anthropic.com")
-      ? undefined
-      : body.baseUrl,
+    baseURL: resolvedBaseUrl,
   });
 
   try {
