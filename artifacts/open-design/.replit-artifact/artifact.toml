@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Open Design"
+version = "1.0.0"
+id = "artifacts/open-design"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21541
+
+[services.development]
+run = "pnpm --filter @workspace/open-design run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/open-design", "run", "build" ]
+publicDir = "artifacts/open-design/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21541"
+BASE_PATH = "/"
