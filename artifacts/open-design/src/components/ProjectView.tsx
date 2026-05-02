@@ -780,9 +780,14 @@ export function ProjectView({
           return;
         }
         const choice = config.agentModels?.[config.agentId];
+        const systemPromptText = await composedSystemPrompt();
         void streamViaDaemon({
           agentId: config.agentId,
           history: nextHistory,
+          systemPrompt: systemPromptText,
+          apiKey: config.apiKey,
+          baseUrl: config.baseUrl,
+          maxTokens: config.maxTokens,
           signal: controller.signal,
           cancelSignal: cancelController.signal,
           handlers,
@@ -793,7 +798,7 @@ export function ProjectView({
           skillId: project.skillId ?? null,
           designSystemId: project.designSystemId ?? null,
           attachments: attachments.map((a) => a.path),
-          model: choice?.model ?? null,
+          model: choice?.model ?? config.model ?? null,
           reasoning: choice?.reasoning ?? null,
           onRunCreated: (runId) => {
             updateMessageById(assistantId, (prev) => ({ ...prev, runId, runStatus: 'queued' }), true);

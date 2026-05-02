@@ -31,8 +31,14 @@ export interface DaemonStreamHandlers extends StreamHandlers {
 export interface DaemonStreamOptions {
   agentId: string;
   history: ChatMessage[];
-  /** Legacy field accepted by older tests/callers. Daemon-owned prompt composition ignores it. */
+  /** System prompt forwarded to the Replit proxy when agentId === 'replit-api'. */
   systemPrompt?: string;
+  /** Replit proxy: Anthropic API key stored in browser config. */
+  apiKey?: string;
+  /** Replit proxy: base URL for the upstream provider. */
+  baseUrl?: string;
+  /** Replit proxy: max completion tokens. */
+  maxTokens?: number;
   /** Stops the current browser-side SSE subscription. The daemon run continues. */
   signal: AbortSignal;
   /** Explicit user cancellation signal. This maps to POST /api/runs/:id/cancel. */
@@ -75,6 +81,10 @@ export interface DaemonReattachOptions {
 export async function streamViaDaemon({
   agentId,
   history,
+  systemPrompt,
+  apiKey,
+  baseUrl,
+  maxTokens,
   signal,
   cancelSignal,
   handlers,
@@ -98,7 +108,12 @@ export async function streamViaDaemon({
   const transcript = history
     .map((m) => `## ${m.role}\n${m.content.trim()}`)
     .join('\n\n');
-  const request: ChatRequest = {
+  const request: ChatRequest & {
+    systemPrompt?: string;
+    apiKey?: string;
+    baseUrl?: string;
+    maxTokens?: number;
+  } = {
     agentId,
     message: transcript,
     projectId: projectId ?? null,
@@ -110,6 +125,10 @@ export async function streamViaDaemon({
     attachments: attachments ?? [],
     model: model ?? null,
     reasoning: reasoning ?? null,
+    systemPrompt,
+    apiKey,
+    baseUrl,
+    maxTokens,
   };
   const body = JSON.stringify(request);
 

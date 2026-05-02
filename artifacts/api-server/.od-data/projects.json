@@ -23,5 +23,42 @@
       "kind": "prototype",
       "fidelity": "high-fidelity"
     }
+  },
+  {
+    "id": "849cefa4-effa-4e17-81b5-43c91eb047df",
+    "name": "Test",
+    "createdAt": 1777721385898,
+    "updatedAt": 1777721385898,
+    "status": {
+      "value": "not_started"
+    },
+    "metadata": {
+      "kind": "prototype"
+    }
+  },
+  {
+    "id": "test-file-proj",
+    "name": "File Test",
+    "createdAt": 1777721395585,
+    "updatedAt": 1777721395585,
+    "status": {
+      "value": "not_started"
+    },
+    "metadata": {
+      "kind": "prototype"
+    }
+  },
+  {
+    "id": "1575f7c4-8c90-4a23-ba87-498087d0a878",
+    "name": "E2E Test Project",
+    "createdAt": 1777721444592,
+    "updatedAt": 1777721444592,
+    "status": {
+      "value": "not_started"
+    },
+    "metadata": {
+      "kind": "prototype",
+      "fidelity": "high-fidelity"
+    }
   }
 ]
