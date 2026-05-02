@@ -1,0 +1,27 @@
+[
+  {
+    "id": "d832a7df-a291-4b50-8ee6-899bf9ba0260",
+    "name": "Test Project",
+    "createdAt": 1777720865448,
+    "updatedAt": 1777720865448,
+    "status": {
+      "value": "not_started"
+    },
+    "metadata": {
+      "kind": "prototype"
+    }
+  },
+  {
+    "id": "5f860cd2-0de0-4cf0-8818-395eef7d95b9",
+    "name": "My Test Project",
+    "createdAt": 1777720908578,
+    "updatedAt": 1777720908578,
+    "status": {
+      "value": "not_started"
+    },
+    "metadata": {
+      "kind": "prototype",
+      "fidelity": "high-fidelity"
+    }
+  }
+]
