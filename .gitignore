@@ -1,45 +1,49 @@
-node_modules/
-dist/
-out/
-.next/
-.next-*/
-.tmp/
+# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# compiled output
+dist
+tmp
+out-tsc
+*.tsbuildinfo
+.expo
+.expo-shared
+
+# dependencies
+node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
 .DS_Store
-*.log
-.vite
+Thumbs.db
 
-# Local runtime data — auto-created by the daemon on first start.
-# Holds app.sqlite (project metadata), projects/<id>/ (per-project artifacts,
-# the agent's CWD), and artifacts/ (one-off renders). Never commit.
-.od
-.od-e2e
-test-results
-playwright-report
-e2e/.od-data
-e2e/playwright-report
-e2e/reports/html
-e2e/reports/playwright-html-report
-e2e/reports/test-results
-e2e/reports/results.json
-e2e/reports/junit.xml
-e2e/reports/latest.md
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
 
-# Legacy folder name from before the rename; keep ignored so existing
-# clones don't accidentally stage stale runtime data.
-.ocd
-
-tsconfig.tsbuildinfo
-
-.claude-sessions/*
-
-.cursor/
-.agents/
-.opencode/
-.claude/
-.codex/
-
-# Commander task scratchpad; keep local task notes out of git by default.
-.task/
-task.md
-specs/change/active
-.ralph/
+# Replit
+.cache/
+.local/
