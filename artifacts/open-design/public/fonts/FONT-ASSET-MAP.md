@@ -1,7 +1,7 @@
 # Font + Icon Asset Map
 
 Central reference for website-ready fonts and icon fonts.
-Last audited: stage 6 prep.
+Last updated: approved first-batch font copy.
 
 ## Source Repos
 
@@ -11,28 +11,28 @@ Source repos are cloned into:
 
 Current source repos (status from live audit):
 
-- /repos/gabarito                READY      11 MB    7 WOFF2 + OFL.txt
-- /repos/frick                   READY      1.3 MB   2 WOFF2 + 2 WOFF + 2 OTF + OFL.txt
-- /repos/petrona                 NEEDS-CONV 491 MB   0 WOFF2 (TTF/OTF only) + OFL.txt
-- /repos/whois-mono              LICENCE-?  14 MB    0 WOFF2, 1 WOFF + 1 TTF, NO OFL/LICENSE file present
-- /repos/saira                   READY      66 MB    127 WOFF2 + OFL.txt (full static + condensed family)
-- /repos/material-design-icons   PARTIAL    125 MB   sparse-clone interrupted; .git only, no working tree
+- /repos/gabarito                READY      5.8 MB   7 WOFF2 + OFL.txt
+- /repos/frick                   PREVIEW    864 KB   2 WOFF2 + 2 WOFF + 2 OTF + OFL.txt (template unfilled)
+- /repos/petrona                 NEEDS-CONV 283 MB   0 WOFF2 (TTF/OTF only) + OFL.txt
+- /repos/whois-mono              LICENCE-?  7.8 MB   0 WOFF2; only 1 WOFF + 1 TTF; OFL declared in README only
+- /repos/saira                   READY      43 MB    127 WOFF2 + OFL.txt
+- /repos/material-design-icons   ABSENT     0 bytes  directory exists but empty (working tree wiped)
 
 ## Live Website Font Folders
 
-Only approved, licensed, production-ready font files should be copied into:
+Only approved, licensed, production-ready font files are copied into:
 
 /artifacts/open-design/public/fonts/
 
-Current live folders (created, mostly empty awaiting approval):
+Current live folders:
 
-- /public/fonts/plus-jakarta-sans/      LIVE — single variable WOFF2 + OFL.txt
-- /public/fonts/custom/gabarito/        empty — ready to populate
-- /public/fonts/custom/frick/           empty — ready to populate
-- /public/fonts/custom/petrona/         empty — needs WOFF2 conversion before populate
-- /public/fonts/custom/whois-mono/      empty — BLOCKED on licence verification
-- /public/fonts/custom/saira/           empty — ready to populate
-- /public/fonts/icons/material-symbols/ empty — Material Symbols clone needs completing first
+- /public/fonts/plus-jakarta-sans/      LIVE — currently serving the landing
+- /public/fonts/custom/gabarito/        POPULATED (production-ready, not yet wired)
+- /public/fonts/custom/frick/           POPULATED (preview-only, do not wire to live)
+- /public/fonts/custom/petrona/         empty — hold for WOFF2 conversion
+- /public/fonts/custom/whois-mono/      empty — hold for licence file + WOFF2
+- /public/fonts/custom/saira/           POPULATED (production-ready, not yet wired)
+- /public/fonts/icons/material-symbols/ empty — hold; lucide-react remains primary
 
 ## Rules
 
@@ -49,63 +49,70 @@ Current live folders (created, mostly empty awaiting approval):
 
 ## Current Confirmed Live Font
 
-Plus Jakarta Sans:
+Plus Jakarta Sans (UNCHANGED — still the live landing font):
 - /public/fonts/plus-jakarta-sans/PlusJakartaSans-VariableFont_wght.woff2
-- /public/fonts/plus-jakarta-sans/OFL.txt   (licence shipped beside font)
+- /public/fonts/plus-jakarta-sans/OFL.txt
 
-## Candidate Custom Fonts — Audited Status
+## Custom Fonts — Status Table
 
-### Gabarito  ✅ READY
+| Font          | Status                  | Files in /public/fonts/                                    | Licence in /public/fonts/ |
+|---------------|-------------------------|------------------------------------------------------------|---------------------------|
+| Gabarito      | PRODUCTION-READY        | custom/gabarito/Gabarito[wght].woff2                       | custom/gabarito/OFL.txt   |
+| Saira         | PRODUCTION-READY        | custom/saira/Saira-Regular.woff2, Saira-Bold.woff2, Saira-Black.woff2 | custom/saira/OFL.txt      |
+| Frick         | PREVIEW-ONLY            | custom/frick/Frick0.3-Regular.woff2, Frick0.3-Condensed.woff2 | custom/frick/OFL.txt   |
+| Petrona       | HOLD — WOFF2 conversion | (none)                                                     | (none)                    |
+| Whois Mono    | HOLD — licence + WOFF2  | (none)                                                     | (none)                    |
+| Material Symbols | HOLD — lucide remains primary | (none)                                              | (none)                    |
+
+## Per-font Detail
+
+### Gabarito  ✅ PRODUCTION-READY
 - Role: Clean Modern / Friendly Tech
-- Licence: OFL.txt present at repos/gabarito/OFL.txt
-- Web assets: 7 static WOFF2 + 1 variable WOFF2 (`Gabarito[wght].woff2`)
-- Recommend serving: `Gabarito[wght].woff2` (single variable file, all weights)
-- Status: ready to copy into /public/fonts/custom/gabarito/ on approval
+- Picker label: **Clean Modern**
+- Licence: SIL Open Font License v1.1 (Copyright 2023 The Gabarito Project Authors)
+- Commercial web use: yes
+- Served file: `/fonts/custom/gabarito/Gabarito[wght].woff2` (single variable file, all weights 400–900)
+- Licence file: `/fonts/custom/gabarito/OFL.txt`
+- Wiring status: NOT wired into live CSS yet (awaiting approval)
 
-### Frick  ✅ READY
-- Role: Bold Impact / Expressive
-- Licence: OFL.txt present at repos/frick/OFL.txt
-- Web assets: 2 WOFF2 (`Frick0.3-Regular.woff2`, `Frick0.3-Condensed.woff2`)
-- Recommend serving: both for display headlines
-- Status: ready to copy on approval
-
-### Petrona  ⚠️ NEEDS CONVERSION
-- Role: Editorial / Classic Trust
-- Licence: OFL.txt present at repos/petrona/OFL.txt
-- Web assets: 0 WOFF2; only TTF (20 files) + OTF (18 files) + 1 variable TTF (`Petrona[wght].ttf`)
-- Performance impact if used as-is: variable TTF is ~500–800 KB uncompressed vs ~80–120 KB if converted to WOFF2 — **not acceptable for landing**
-- Action required: convert `Petrona[wght].ttf` to WOFF2 before serving (e.g. `fonttools` or browser-based converter)
-- Status: blocked on conversion
-
-### Whois Mono  🔴 LICENCE UNVERIFIED
-- Role: Tech Future / System / Code Feel
-- Licence: **no OFL/LICENSE file in repo** — only README.md
-- Web assets: webfonts/ folder contains `whois-mono.ttf` + `whois-mono.eot` + `whois-mono.svg` + `stylesheet.css`. No WOFF2.
-- Action required: confirm licence (commercial web use) with author before any integration
-- Status: BLOCKED on licence verification
-
-### Saira  ✅ READY
+### Saira  ✅ PRODUCTION-READY
 - Role: Strong Modern / Urban Tech / Versatile
-- Licence: OFL.txt present at repos/saira/OFL.txt
-- Web assets: 127 WOFF2 (full Saira family + Condensed + Expanded + Italic)
-- Variable available: `Saira/fonts/variable/Saira[wdth,wght].ttf` + `Saira-Italic[wdth,wght].ttf` (TTF only, ~500 KB each — needs WOFF2 conversion if variable preferred)
-- Recommend serving: minimal subset of static WOFF2 (e.g. Regular + Bold + Black) to keep footprint small, OR convert the variable TTF to WOFF2
-- Status: ready to copy on approval
+- Picker label: **Street Culture** (alt: Bold Impact)
+- Licence: SIL Open Font License v1.1 (Copyright 2020 The Saira Project Authors)
+- Commercial web use: yes
+- Served files (3-weight subset, kept small):
+  - `/fonts/custom/saira/Saira-Regular.woff2`
+  - `/fonts/custom/saira/Saira-Bold.woff2`
+  - `/fonts/custom/saira/Saira-Black.woff2`
+- Licence file: `/fonts/custom/saira/OFL.txt`
+- Wiring status: NOT wired into live CSS yet (awaiting approval)
 
-## Material Symbols
+### Frick  ⚠️ PREVIEW-ONLY
+- Role: Bold Impact / Expressive
+- Picker label: **Bold Impact**
+- Licence: SIL Open Font License v1.1 — **template fields unfilled** (`<dates>`, `<Copyright Holder>`, `<URL|email>`, `<Reserved Font Name>` blank in `OFL.txt`)
+- Commercial web use: most likely allowed (OFL boilerplate intent) but the lack of an identified copyright holder is a hygiene concern
+- Served files (preview-only — do not deploy live until verified):
+  - `/fonts/custom/frick/Frick0.3-Regular.woff2`
+  - `/fonts/custom/frick/Frick0.3-Condensed.woff2`
+- Licence file: `/fonts/custom/frick/OFL.txt`
+- **Action required before promoting to production-ready:** confirm licence-holder details with the original author and obtain a properly filled OFL.txt
+- Wiring status: NOT wired into live CSS — preview only
 
-- Source: repos/material-design-icons (Apache 2.0)
-- Clone state: **PARTIAL** — sparse-clone of `variablefont/` + `LICENSE` was interrupted by command timeout. .git is intact (~125 MB) but no working tree was checked out.
-- To complete: run a follow-up shallow + sparse clone with longer timeout, or use the per-icon CDN at `https://fonts.gstatic.com/s/materialsymbolsoutlined/...` instead of self-hosting.
-- Per asset-map rules: "Do not integrate Material Symbols until approved" — so this partial state is not blocking the launch.
+### Petrona  🔴 HOLD
+- Role: Editorial / Classic Trust
+- Status: HOLD — needs WOFF2 conversion (only TTF/OTF in repo)
+- Licence: SIL OFL v1.1 — clean
+- Action: convert `repos/petrona/Fonts/ttf-variable/Petrona[wght].ttf` to WOFF2 before any copy
 
-Material Symbols should be treated as icon fonts, not brand typography.
+### Whois Mono  🔴 HOLD
+- Role: Tech Future / System / Code Feel
+- Status: HOLD — no `OFL.txt` file in repo (only README mentions OFL); no WOFF2
+- Action: obtain proper OFL.txt from upstream + convert TTF to WOFF2
 
-Priority:
-1. Keep lucide-react as default icon system.
-2. Use Material Symbols only if specific icon/font effects are needed.
-3. Prefer Material Symbols Outlined if only one style is copied.
-4. Do not integrate Material Symbols until approved.
+### Material Symbols  🔴 HOLD
+- Status: HOLD — local clone is empty; lucide-react remains primary icon system
+- Action when approved: fetch only `MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2` from a CDN rather than re-cloning the multi-GB repo
 
 ## Client Font Picker Direction
 
@@ -113,15 +120,15 @@ The font picker should show font mood/direction, not hand final creative control
 
 Suggested roles:
 
-- Clean Modern
-- Editorial Luxury
-- Bold Impact
+- Clean Modern        ← Gabarito ready
+- Editorial Luxury    ← Petrona pending
+- Bold Impact         ← Frick (preview) ready
 - Soft Premium
-- Street Culture
-- Tech Future
+- Street Culture      ← Saira ready
+- Tech Future         ← Whois Mono pending
 - Youthful Fun
 - Feminine Elegant
-- Classic Trust
+- Classic Trust       ← Petrona pending
 - Cinematic Drama
 - Minimal Calm
 - Heritage Artisan
@@ -133,18 +140,20 @@ The UI should say:
 
 Files inside /public are referenced without "public".
 
-Example:
+Examples:
 
-/fonts/custom/gabarito/Gabarito[wght].woff2
-/fonts/icons/material-symbols/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2
+/fonts/plus-jakarta-sans/PlusJakartaSans-VariableFont_wght.woff2   (LIVE)
+/fonts/custom/gabarito/Gabarito[wght].woff2                         (READY, not wired)
+/fonts/custom/saira/Saira-Regular.woff2                             (READY, not wired)
+/fonts/custom/frick/Frick0.3-Regular.woff2                          (PREVIEW, not wired)
 
-## Recommended Next Step (Stage 6 prep)
+## Wiring Recipe (for future approved swap)
 
-When the client signs off on a candidate font role, the copy step is small and isolated:
+When the client signs off on a candidate font role, wiring is small and isolated:
 
-1. Copy the chosen WOFF2 + OFL.txt from /repos/<font>/ into /public/fonts/custom/<font>/
-2. Add an @font-face in BonanzaLanding.css with `font-display: swap` and the fallback stack
-3. Add a CSS variable (e.g. `--font-display`) so the font role is swappable
-4. Re-run mobile screenshots at 375 / 768 / 1024 / 1440 to confirm no layout shift
+1. Add an @font-face in BonanzaLanding.css with `font-display: swap` and the fallback stack
+2. Map the font behind a CSS variable (e.g. `--font-display`) so the role is swappable
+3. Re-run mobile screenshots at 375 / 768 / 1024 / 1440 to confirm no layout shift
+4. Confirm landing weight: served WOFF2 should add ≤ ~80 KB total to the page
 
 No backend, no API, no /studio change required.
