@@ -11,6 +11,7 @@ import { WhatWeBuild } from './landing/WhatWeBuild';
 import { CreativeOrbit } from './landing/CreativeOrbit';
 import { BeforeAfter } from './landing/BeforeAfter';
 import { Packages } from './landing/Packages';
+import { Ecosystem } from './landing/Ecosystem';
 import { FinalCTA } from './landing/FinalCTA';
 import { Connect } from './landing/Connect';
 import { Footer } from './landing/Footer';
@@ -26,6 +27,7 @@ export function BonanzaLanding() {
         <CreativeOrbit />
         <BeforeAfter />
         <Packages />
+        <Ecosystem />
         <FinalCTA />
         <Connect />
       </main>

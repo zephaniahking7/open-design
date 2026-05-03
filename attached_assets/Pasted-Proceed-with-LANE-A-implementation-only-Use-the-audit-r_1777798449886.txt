@@ -1,0 +1,176 @@
+Proceed with LANE A implementation only.
+
+Use the audit report as source of truth.
+
+Decision set:
+- Payment processor for launch: payment links / pay-by-link placeholders only
+- No Stripe Checkout integration yet
+- No backend payment endpoints
+- No auth
+- No client portal
+- No real calendar integration yet
+- Booking uses TODO(calendar-link)
+- Payment links use TODO(...) placeholders
+- Privacy and Terms use TODO(privacy-link) and TODO(terms-link)
+- Business address uses TODO(address) and TODO(map-link)
+- Public socials: Instagram, YouTube, LinkedIn only
+- Do not include GitHub publicly
+- Legacy TypeScript errors are deferred to Lane C
+
+Do not touch:
+- backend
+- database
+- /studio
+- /api/render
+- /api/leads
+- rate limiting
+- error tracking
+- workflows
+- legacy IDE files
+- package dependencies
+
+Implement public landing essentials:
+
+A1 — Package-first payment flow
+Add payment link placeholder fields to packages.
+
+A2 — Website / Web App / SaaS offer logic
+Update packages to:
+1. Starter Site — £499+
+2. Growth Website — £1,500+
+3. Cr8tive System — £3,500+
+4. Web App / SaaS Build — Custom from £5,000+
+
+Add positioning line:
+“Websites for presence. Systems for growth. Apps and SaaS for serious platforms.”
+
+A3 — Guided project builder
+Convert VisionInput from vague single-input into a guided project builder.
+
+Keep existing render and lead flow.
+
+Compile selected package, selected payment option, maintenance interest, domain needs, guided answers, terms acknowledgements and extra notes into the existing vision string before calling current render flow.
+
+Use steps:
+1. Choose package
+2. Choose payment plan
+3. What are we building?
+4. What stage are you at?
+5. Style direction
+6. Colour direction
+7. Pages needed
+8. Features needed
+9. Content status
+10. Domain / hosting needs
+11. Maintenance interest
+12. Timeline
+13. Extra notes
+14. Terms acknowledgements
+15. Final “Your Build Request” summary
+
+A4 — Booking CTA placeholder
+Add “Book a Build Call” CTA using TODO(calendar-link).
+
+A5 — Payment link placeholders
+Use:
+TODO(starter-full-payment-link)
+TODO(starter-deposit-link)
+TODO(growth-full-payment-link)
+TODO(growth-deposit-link)
+TODO(cr8tive-full-payment-link)
+TODO(cr8tive-deposit-link)
+TODO(saas-discovery-payment-link)
+
+A6 — Built by us / ecosystem proof section
+Add section:
+“Built by Bonanza Cr8tives.”
+
+Projects:
+- Supreme Teens — youth platform and positive social network
+- Bonanza HQ — internal command centre / operating system
+- Real Image Entertainment — music, media and talent infrastructure
+- Blu Giant — artist brand and creative direction
+- Jay Monsoon — clothing store and fashion label
+- GrownFlow UK — culture and lifestyle media concept
+- BaeJo Jobae — food brand ecosystem
+
+A7/A8 — Registered business address and map
+Add:
+Business name: Bonanza Cr8tives
+Label: Registered business address
+Address: TODO(address)
+Map link: TODO(map-link)
+
+Copy:
+“Bonanza Cr8tives operates digitally, with registered business details available for formal contact and verification.”
+
+Do not include email.
+Do not imply walk-in studio visits.
+
+A9 — Social placeholders
+Use:
+Instagram TODO(instagram-link)
+YouTube TODO(youtube-link)
+LinkedIn TODO(linkedin-link)
+
+If a fourth visual card is needed, use:
+“Bring the rough version. We’ll help shape it into something people can trust.”
+
+A10 — Privacy / Terms placeholders
+Footer links:
+Privacy — TODO(privacy-link)
+Terms — TODO(terms-link)
+
+A11 — Rename confusing Render language
+User-facing copy only:
+“Render” → “Mirror My Vision”
+“Rendering…” → “Reading…”
+“Render another vision” → “Try another vision”
+
+Do not rename internal renderStatus variables.
+
+A12 — Overpromise discipline
+Do not imply instant AI website/app generation.
+Use framing:
+“AI-assisted intake. Human-led build.”
+
+Terms / small print acknowledgements before submission:
+1. “I understand every build is reviewed before production begins.”
+2. “I understand extra features or larger scope may require an upgraded package or custom milestone plan.”
+3. “I understand deposits secure build time after scope confirmation and may cover planning, design and setup work already started.”
+4. “I confirm I am authorised to submit this project request.”
+5. “I agree to the Terms and Privacy notice.”
+
+Maintenance programs:
+1. Care Plan — £49/month
+2. Growth Care — £149/month
+3. System Care — from £299/month
+
+Domain options:
+- I already own a domain
+- Help me choose a domain
+- Help me connect my domain
+- I need hosting guidance
+- I need email setup guidance
+
+Important copy:
+“Domains, hosting, business email and third-party subscriptions are separate unless included in your written build scope.”
+
+Expected files:
+- landing/Packages.tsx
+- landing/VisionInput.tsx or new landing/ProjectBuilder.tsx
+- new landing/Ecosystem.tsx if needed
+- landing/Footer.tsx
+- landing/Hero.tsx if booking CTA is added there
+- BonanzaLanding.tsx composer if Ecosystem is inserted
+- BonanzaLanding.css
+
+Before editing, list exact files planned.
+
+After completion, report:
+1. files changed
+2. Lane A items completed
+3. how the final build request compiles into existing render/lead flow
+4. confirmation backend/database/studio/render/lead untouched
+5. remaining Lane B items
+6. remaining Lane C items

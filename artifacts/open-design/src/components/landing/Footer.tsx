@@ -34,6 +34,13 @@ export function Footer() {
     scrollToId(id);
   };
 
+  // Privacy / Terms / Map are TODO(...) placeholders until real URLs or
+  // route pages are published. Click-through is inert — same pattern as
+  // every other placeholder on the landing.
+  const handlePlaceholder = (e: React.MouseEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <footer className="bz-footer">
       <div className="bz-footer-giant" aria-hidden="true">
@@ -55,18 +62,50 @@ export function Footer() {
             <a href="#what-we-build" onClick={handleAnchor('what-we-build')}>
               View Services
             </a>
+            <a href="#packages" onClick={handleAnchor('packages')}>
+              Packages
+            </a>
           </div>
           <div className="bz-footer-col">
             <p className="bz-footer-col-label">Studio</p>
-            <a href="#" onClick={(e) => e.preventDefault()}>
+            <a
+              href="#"
+              onClick={handlePlaceholder}
+              data-todo="TODO(privacy-link)"
+              aria-label="Privacy notice (link coming soon)"
+            >
               Privacy
             </a>
-            <a href="#" onClick={(e) => e.preventDefault()}>
+            <a
+              href="#"
+              onClick={handlePlaceholder}
+              data-todo="TODO(terms-link)"
+              aria-label="Terms of service (link coming soon)"
+            >
               Terms
             </a>
             <a href="#vision" onClick={handleAnchor('vision')}>
               Contact
             </a>
+          </div>
+          <div className="bz-footer-col bz-footer-col--address">
+            <p className="bz-footer-col-label">Bonanza Cr8tives</p>
+            <p className="bz-footer-address-label">Registered business address</p>
+            <p className="bz-footer-address" data-todo="TODO(address)">
+              Address details available on request.
+            </p>
+            <a
+              href="#"
+              onClick={handlePlaceholder}
+              data-todo="TODO(map-link)"
+              aria-label="View on map (link coming soon)"
+            >
+              View on map
+            </a>
+            <p className="bz-footer-address-note">
+              Bonanza Cr8tives operates digitally, with registered business
+              details available for formal contact and verification.
+            </p>
           </div>
         </div>
 
