@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="perthousand" format="2">
+  <advance width="894"/>
+  <unicode hex="2030"/>
+  <outline>
+    <component base="slash" xOffset="12"/>
+    <component base="degree" yScale="1.4" xOffset="64" yOffset="-279"/>
+    <component base="degree" yScale="1.4" xOffset="434" yOffset="-763"/>
+    <component base="degree" yScale="1.4" xOffset="657" yOffset="-763"/>
+  </outline>
+</glyph>

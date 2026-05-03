@@ -1,0 +1,28 @@
+{
+glyphname = rightArrow;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+angle = -90;
+pos = (20,514);
+ref = upArrow;
+}
+);
+width = 750;
+},
+{
+layerId = m002;
+shapes = (
+{
+angle = -90;
+pos = (20,541);
+ref = upArrow;
+}
+);
+width = 750;
+}
+);
+unicode = 8594;
+}

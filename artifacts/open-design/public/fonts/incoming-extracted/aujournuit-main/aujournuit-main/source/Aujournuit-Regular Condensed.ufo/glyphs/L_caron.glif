@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Lcaron" format="2">
+  <advance width="329"/>
+  <unicode hex="013D"/>
+  <outline>
+    <component base="L" identifier="B366B746"/>
+    <component base="uni030C.alt" xOffset="28" identifier="7D341921"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>L</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>L</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>7D341921</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>B366B746</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

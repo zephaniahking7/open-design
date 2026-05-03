@@ -1,0 +1,46 @@
+{
+glyphname = Lslash;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = L;
+},
+{
+alignment = -1;
+angle = 30;
+attr = {
+identifier = B7406921;
+};
+pos = (202,-55);
+ref = macron;
+scale = (1.2,0.8);
+}
+);
+width = 293;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = L;
+},
+{
+alignment = -1;
+angle = 30;
+attr = {
+identifier = BBC05584;
+};
+pos = (278,-186);
+ref = macron;
+scale = (1.2,0.8);
+}
+);
+width = 686;
+}
+);
+metricLeft = L;
+metricRight = L;
+unicode = 321;
+}

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Ycircumflex" format="2">
+  <advance width="1001"/>
+  <unicode hex="0176"/>
+  <outline>
+    <component base="Y" identifier="10F04154"/>
+    <component base="uni0302" xOffset="375" yOffset="200" identifier="B75969FD"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>10F04154</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>B75969FD</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

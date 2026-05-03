@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="dcroat.sc" format="2">
+  <advance width="564"/>
+  <outline>
+    <component base="eth.sc"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.glyph.userData</key>
+      <dict>
+        <key>KernOnSpecialSpacing</key>
+        <dict>
+          <key>L</key>
+          <string>smallcaps</string>
+          <key>R</key>
+          <string>smallcaps</string>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

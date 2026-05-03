@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ugrave.sc" format="2">
+  <advance width="604"/>
+  <outline>
+    <component base="u.sc"/>
+    <component base="gravecomb.sc" xOffset="110" yOffset="154"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.glyph.userData</key>
+      <dict>
+        <key>KernOnSpecialSpacing</key>
+        <dict>
+          <key>L</key>
+          <string>smallcaps</string>
+          <key>R</key>
+          <string>smallcaps</string>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

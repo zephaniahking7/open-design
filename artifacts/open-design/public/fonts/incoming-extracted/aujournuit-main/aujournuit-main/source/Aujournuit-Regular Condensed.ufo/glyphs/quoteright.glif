@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="quoteright" format="2">
+  <advance width="138"/>
+  <unicode hex="2019"/>
+  <outline>
+    <component base="comma" xScale="0.9962" xyScale="0.0872" yScale="0.9962" yxScale="-0.0872" xOffset="5" yOffset="611"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>quotedblright</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>quotedblright</string>
+    </dict>
+  </lib>
+</glyph>

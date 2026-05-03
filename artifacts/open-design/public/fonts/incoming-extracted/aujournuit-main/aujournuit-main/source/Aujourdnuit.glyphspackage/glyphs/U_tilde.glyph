@@ -1,0 +1,32 @@
+{
+glyphname = Utilde;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = U;
+},
+{
+pos = (71,200);
+ref = tildecomb;
+}
+);
+width = 382;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = U;
+},
+{
+pos = (313,200);
+ref = tildecomb;
+}
+);
+width = 863;
+}
+);
+unicode = 360;
+}

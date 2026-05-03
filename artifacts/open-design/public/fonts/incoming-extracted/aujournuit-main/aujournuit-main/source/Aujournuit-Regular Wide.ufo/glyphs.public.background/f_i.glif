@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="f_i" format="2">
+  <advance width="658"/>
+  <anchor x="176" y="0" name="bottom"/>
+  <anchor x="176" y="758" name="top"/>
+  <outline>
+    <component base="i" xOffset="366" identifier="36A1ECE1"/>
+    <component base="f"/>
+    <component base="n"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>36A1ECE1</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

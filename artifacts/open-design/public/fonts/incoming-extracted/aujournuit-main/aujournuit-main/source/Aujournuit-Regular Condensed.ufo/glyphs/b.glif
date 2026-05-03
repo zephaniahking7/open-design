@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="b" format="2">
+  <advance width="373"/>
+  <unicode hex="0062"/>
+  <anchor x="184" y="0" name="bottom"/>
+  <anchor x="184" y="250" name="center"/>
+  <anchor x="184" y="500" name="top"/>
+  <outline>
+    <component base="_stem.long.top.indentright" xOffset="-25" identifier="80D7B8AD"/>
+    <component base="_b.bowl" xOffset="-9"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>=n-20</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>=o</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>80D7B8AD</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

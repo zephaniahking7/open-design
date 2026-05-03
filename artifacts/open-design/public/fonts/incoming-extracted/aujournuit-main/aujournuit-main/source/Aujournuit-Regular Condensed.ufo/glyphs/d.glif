@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="d" format="2">
+  <advance width="388"/>
+  <unicode hex="0064"/>
+  <anchor x="197" y="0" name="bottom"/>
+  <anchor x="197" y="250" name="center"/>
+  <anchor x="197" y="758" name="top"/>
+  <anchor x="368" y="758" name="topright"/>
+  <outline>
+    <component base="_stem.long.top" xOffset="184" identifier="78341F31"/>
+    <component base="_d.bowl" xOffset="23" identifier="FD82B4F8"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.layer.rightMetricsKey</key>
+      <string>=n-10</string>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>o</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>=n-20</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>78341F31</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>FD82B4F8</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,86 @@
+{
+glyphname = Ldot;
+kernLeft = KO_H;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(432,326,l),
+(432,426,l),
+(334,426,l),
+(334,326,l)
+);
+},
+{
+ref = L;
+}
+);
+width = 524;
+},
+{
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+closed = 1;
+nodes = (
+(476,300,l),
+(476,450,l),
+(324,450,l),
+(324,300,l)
+);
+},
+{
+ref = L;
+}
+);
+width = 539;
+},
+{
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+closed = 1;
+nodes = (
+(432,326,l),
+(432,426,l),
+(334,426,l),
+(334,326,l)
+);
+},
+{
+ref = L;
+}
+);
+width = 514;
+},
+{
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+closed = 1;
+nodes = (
+(476,300,l),
+(476,450,l),
+(324,450,l),
+(324,300,l)
+);
+},
+{
+ref = L;
+}
+);
+width = 533;
+}
+);
+metricLeft = H;
+metricRight = L;
+unicode = 319;
+userData = {
+KernOnSpecialSpacing = {
+R = NoKerning;
+};
+};
+}

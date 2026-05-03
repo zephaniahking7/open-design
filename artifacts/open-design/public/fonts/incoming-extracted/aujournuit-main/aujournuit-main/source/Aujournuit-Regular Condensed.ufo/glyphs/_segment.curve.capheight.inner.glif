@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_segment.curve.capheight.inner" format="2">
+  <advance width="600"/>
+  <outline>
+    <contour>
+      <point x="0" y="0" type="move"/>
+      <point x="40" y="6"/>
+      <point x="560" y="6"/>
+      <point x="600" y="0" type="curve"/>
+    </contour>
+  </outline>
+</glyph>

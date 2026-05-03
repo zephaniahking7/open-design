@@ -1,0 +1,86 @@
+{
+glyphname = brevebelowcomb;
+layers = (
+{
+anchors = (
+{
+name = _bottom;
+pos = (203,0);
+},
+{
+name = bottom;
+pos = (203,-212);
+}
+);
+layerId = m01;
+shapes = (
+{
+pos = (0,-800);
+ref = brevecomb;
+}
+);
+width = 406;
+},
+{
+anchors = (
+{
+name = _bottom;
+pos = (225,0);
+},
+{
+name = bottom;
+pos = (225,-201);
+}
+);
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+pos = (0,-800);
+ref = brevecomb;
+}
+);
+width = 450;
+},
+{
+anchors = (
+{
+name = _bottom;
+pos = (191,0);
+},
+{
+name = bottom;
+pos = (161,-212);
+}
+);
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+pos = (-93,-800);
+ref = brevecomb;
+}
+);
+width = 406;
+},
+{
+anchors = (
+{
+name = _bottom;
+pos = (219,0);
+},
+{
+name = bottom;
+pos = (191,-201);
+}
+);
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+pos = (-90,-800);
+ref = brevecomb;
+}
+);
+width = 450;
+}
+);
+unicode = 814;
+}

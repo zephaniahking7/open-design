@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="l" format="2">
+  <advance width="342"/>
+  <unicode hex="006C"/>
+  <anchor x="186" y="0" name="bottom"/>
+  <anchor x="290" y="400" name="center"/>
+  <anchor x="186" y="758" name="top"/>
+  <anchor x="352" y="758" name="topright"/>
+  <outline>
+    <contour>
+      <point x="132" y="455" type="curve" smooth="yes"/>
+      <point x="132" y="339" type="line"/>
+      <point x="190" y="339" type="line"/>
+      <point x="190" y="455" type="line" smooth="yes"/>
+      <point x="190" y="656"/>
+      <point x="200" y="693"/>
+      <point x="200" y="702" type="curve" smooth="yes"/>
+      <point x="200" y="709"/>
+      <point x="194" y="711"/>
+      <point x="189" y="711" type="curve" smooth="yes"/>
+      <point x="174" y="711"/>
+      <point x="174" y="691"/>
+      <point x="117" y="669" type="curve" smooth="yes"/>
+      <point x="65" y="648"/>
+      <point x="36" y="653"/>
+      <point x="36" y="641" type="curve" smooth="yes"/>
+      <point x="36" y="637"/>
+      <point x="41" y="634"/>
+      <point x="48" y="634" type="curve" smooth="yes"/>
+      <point x="125" y="634"/>
+      <point x="132" y="637"/>
+      <point x="132" y="597" type="curve" smooth="yes"/>
+      <point x="132" y="584"/>
+      <point x="132" y="558"/>
+    </contour>
+    <component base="_stem.short" xOffset="56"/>
+    <component base="_stem.foot" xOffset="66"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.layer.rightMetricsKey</key>
+      <string>=n-35</string>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>=n-5</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>=n-5</string>
+    </dict>
+  </lib>
+</glyph>

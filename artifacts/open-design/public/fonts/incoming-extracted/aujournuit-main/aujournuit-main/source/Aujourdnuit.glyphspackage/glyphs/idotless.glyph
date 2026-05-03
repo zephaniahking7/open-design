@@ -1,0 +1,142 @@
+{
+glyphname = idotless;
+layers = (
+{
+anchors = (
+{
+name = bottom;
+pos = (106,0);
+},
+{
+name = ogonek;
+pos = (191,10);
+},
+{
+name = top;
+pos = (93,500);
+}
+);
+hints = (
+{
+name = _corner.LeftSerifL.lowercase;
+options = 2;
+origin = (0,0);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL.lowercase;
+origin = (0,24);
+scale = (1,-1);
+type = Corner;
+}
+);
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(134,0,l),
+(131,132,o),
+(132,262,o),
+(132,287,cs),
+(132,472,o),
+(133,488,o),
+(133,497,cs),
+(133,503,o),
+(130,506,o),
+(125,506,cs),
+(113,506,o),
+(113,494,o),
+(85,474,cs),
+(48,448,o),
+(30,454,o),
+(30,441,cs),
+(30,436,o),
+(33,433,o),
+(38,433,cs),
+(68,433,o),
+(79,422,o),
+(79,392,cs),
+(79,369,o),
+(80,132,o),
+(78,0,c)
+);
+}
+);
+width = 212;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (146,0);
+},
+{
+name = ogonek;
+pos = (263,10);
+},
+{
+name = top;
+pos = (131,500);
+}
+);
+background = {
+shapes = (
+{
+pos = (-20,0);
+ref = n;
+}
+);
+};
+hints = (
+{
+name = _corner.LeftSerifL.lowercase;
+options = 2;
+origin = (0,0);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL.lowercase;
+origin = (0,24);
+scale = (1,-1);
+type = Corner;
+}
+);
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(177,0,l),
+(174,132,o),
+(175,262,o),
+(175,287,cs),
+(175,452,o),
+(185,488,o),
+(185,497,cs),
+(185,504,o),
+(179,506,o),
+(174,506,cs),
+(159,506,o),
+(159,486,o),
+(102,464,cs),
+(50,444,o),
+(21,448,o),
+(21,437,cs),
+(21,431,o),
+(26,429,o),
+(33,429,cs),
+(110,429,o),
+(117,432,o),
+(117,392,cs),
+(117,369,o),
+(118,132,o),
+(116,0,c)
+);
+}
+);
+width = 292;
+}
+);
+unicode = 305;
+}

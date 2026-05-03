@@ -1,0 +1,80 @@
+{
+glyphname = notequal;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(452,470,l),
+(402,508,l),
+(108,100,l),
+(158,64,l)
+);
+},
+{
+ref = equal;
+}
+);
+width = 560;
+},
+{
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+closed = 1;
+nodes = (
+(460,494,l),
+(378,556,l),
+(80,55,l),
+(163,-4,l)
+);
+},
+{
+ref = equal;
+}
+);
+width = 566;
+},
+{
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+closed = 1;
+nodes = (
+(518,470,l),
+(473,508,l),
+(122,100,l),
+(167,64,l)
+);
+},
+{
+ref = equal;
+}
+);
+width = 673;
+},
+{
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+closed = 1;
+nodes = (
+(530,494,l),
+(456,556,l),
+(88,55,l),
+(163,-4,l)
+);
+},
+{
+ref = equal;
+}
+);
+width = 686;
+}
+);
+metricLeft = equal;
+metricRight = equal;
+unicode = 8800;
+}

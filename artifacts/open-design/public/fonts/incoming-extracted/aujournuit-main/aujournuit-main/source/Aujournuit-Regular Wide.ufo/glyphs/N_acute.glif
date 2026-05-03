@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Nacute" format="2">
+  <advance width="986"/>
+  <unicode hex="0143"/>
+  <outline>
+    <component base="N"/>
+    <component base="acutecomb" xOffset="430" yOffset="200" identifier="C66FD246"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>C66FD246</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

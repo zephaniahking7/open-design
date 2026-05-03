@@ -1,0 +1,195 @@
+{
+glyphname = w.sc;
+kernLeft = KO_w.sc;
+layers = (
+{
+anchors = (
+{
+name = bottom;
+pos = (369,0);
+},
+{
+name = top;
+pos = (369,561);
+}
+);
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(265,0,l),
+(376,470,l),
+(369,470,l),
+(480,0,l),
+(581,0,l),
+(727,561,l),
+(642,561,l),
+(532,92,l),
+(538,92,l),
+(424,561,l),
+(326,561,l),
+(218,93,l),
+(225,93,l),
+(105,561,l),
+(12,561,l),
+(166,0,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 3;
+height = 82;
+weight = -4;
+width = 82;
+};
+};
+width = 737;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (402,0);
+},
+{
+name = top;
+pos = (402,598);
+}
+);
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+closed = 1;
+nodes = (
+(312,0,l),
+(408,433,l),
+(401,433,l),
+(499,0,l),
+(644,0,l),
+(794,598,l),
+(674,598,l),
+(576,167,l),
+(583,167,l),
+(481,598,l),
+(339,598,l),
+(247,169,l),
+(254,169,l),
+(150,598,l),
+(11,598,l),
+(166,0,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 8;
+height = 86;
+weight = -8;
+width = 86;
+};
+};
+width = 804;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (324,0);
+},
+{
+name = top;
+pos = (400,561);
+}
+);
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+closed = 1;
+nodes = (
+(224,0,l),
+(394,470,l),
+(389,470,l),
+(431,0,l),
+(532,0,l),
+(751,561,l),
+(665,561,l),
+(495,92,l),
+(503,92,l),
+(456,561,l),
+(355,561,l),
+(188,93,l),
+(196,93,l),
+(144,561,l),
+(53,561,l),
+(125,0,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 3;
+height = 82;
+weight = -4;
+width = 82;
+};
+};
+width = 720;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (360,0);
+},
+{
+name = top;
+pos = (441,598);
+}
+);
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+closed = 1;
+nodes = (
+(272,0,l),
+(423,433,l),
+(417,433,l),
+(453,0,l),
+(599,0,l),
+(828,598,l),
+(708,598,l),
+(555,167,l),
+(561,167,l),
+(521,598,l),
+(381,598,l),
+(233,169,l),
+(239,169,l),
+(197,598,l),
+(57,598,l),
+(126,0,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 8;
+height = 86;
+weight = -8;
+width = 86;
+};
+};
+width = 792;
+}
+);
+userData = {
+KernOnSpecialSpacing = {
+L = smallcaps;
+R = smallcaps;
+};
+RMXScaler = {
+source = W;
+};
+};
+}

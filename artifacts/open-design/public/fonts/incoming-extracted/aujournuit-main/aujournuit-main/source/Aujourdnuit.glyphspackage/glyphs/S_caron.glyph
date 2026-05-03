@@ -1,0 +1,36 @@
+{
+glyphname = Scaron;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = S;
+},
+{
+pos = (33,200);
+ref = caroncomb;
+}
+);
+width = 300;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = S;
+},
+{
+alignment = -1;
+attr = {
+identifier = BEBE105F;
+};
+pos = (185,200);
+ref = caroncomb;
+}
+);
+width = 660;
+}
+);
+unicode = 352;
+}

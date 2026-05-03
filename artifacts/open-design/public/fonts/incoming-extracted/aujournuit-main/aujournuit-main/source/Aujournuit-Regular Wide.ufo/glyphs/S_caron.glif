@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Scaron" format="2">
+  <advance width="660"/>
+  <unicode hex="0160"/>
+  <outline>
+    <component base="S"/>
+    <component base="uni030C" xOffset="185" yOffset="200" identifier="BEBE105F"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>BEBE105F</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

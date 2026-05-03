@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lslash" format="2">
+  <advance width="202"/>
+  <unicode hex="0142"/>
+  <outline>
+    <component base="l" identifier="D7E7DD3C"/>
+    <component base="macron" xScale="0.6928" xyScale="0.4" yScale="0.6928" yxScale="-0.4" xOffset="233" yOffset="-111" identifier="D730075E"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>l</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>l</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>D730075E</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>D7E7DD3C</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

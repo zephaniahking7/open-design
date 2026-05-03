@@ -1,0 +1,44 @@
+{
+glyphname = colon;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+pos = (0,10);
+ref = period;
+},
+{
+alignment = -1;
+attr = {
+identifier = 4EE8F173;
+};
+pos = (0,335);
+ref = period;
+}
+);
+width = 140;
+},
+{
+layerId = m002;
+shapes = (
+{
+pos = (0,10);
+ref = period;
+},
+{
+alignment = -1;
+attr = {
+identifier = 06B371A2;
+};
+pos = (0,335);
+ref = period;
+}
+);
+width = 194;
+}
+);
+metricLeft = "=period";
+metricRight = "=period";
+unicode = 58;
+}

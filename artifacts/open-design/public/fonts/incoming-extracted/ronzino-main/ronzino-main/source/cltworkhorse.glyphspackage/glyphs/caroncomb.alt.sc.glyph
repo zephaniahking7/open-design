@@ -1,0 +1,122 @@
+{
+glyphname = caroncomb.alt.sc;
+layers = (
+{
+anchors = (
+{
+name = _topright;
+pos = (21,431);
+}
+);
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(115,447,l),
+(135,594,l),
+(61,594,l),
+(59,447,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+height = 80;
+width = 80;
+};
+};
+width = 194;
+},
+{
+anchors = (
+{
+name = _topright;
+pos = (19,444);
+}
+);
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+closed = 1;
+nodes = (
+(135,457,l),
+(163,633,l),
+(61,633,l),
+(59,457,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+height = 80;
+width = 80;
+};
+};
+width = 222;
+},
+{
+anchors = (
+{
+name = _topright;
+pos = (44,431);
+}
+);
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+closed = 1;
+nodes = (
+(140,447,l),
+(181,594,l),
+(107,594,l),
+(84,447,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+height = 80;
+width = 80;
+};
+};
+width = 194;
+},
+{
+anchors = (
+{
+name = _topright;
+pos = (43,444);
+}
+);
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+closed = 1;
+nodes = (
+(161,457,l),
+(214,633,l),
+(112,633,l),
+(85,457,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+height = 80;
+width = 80;
+};
+};
+width = 222;
+}
+);
+userData = {
+KernOnSpecialSpacing = {
+L = NoKerning;
+R = NoKerning;
+};
+RMXScaler = {
+source = caroncomb.alt;
+};
+};
+}

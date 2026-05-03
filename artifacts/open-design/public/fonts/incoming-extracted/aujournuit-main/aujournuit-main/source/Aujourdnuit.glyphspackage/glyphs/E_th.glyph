@@ -1,0 +1,24 @@
+{
+glyphname = Eth;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = Dcroat;
+}
+);
+width = 349;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = Dcroat;
+}
+);
+width = 779;
+}
+);
+unicode = 208;
+}

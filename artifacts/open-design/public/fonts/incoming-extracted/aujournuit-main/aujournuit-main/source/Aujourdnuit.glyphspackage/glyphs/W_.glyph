@@ -1,0 +1,469 @@
+{
+glyphname = W;
+kernLeft = V;
+kernRight = V;
+layers = (
+{
+associatedMasterId = m003;
+layerId = "B826CCEB-93D1-4672-AA88-F03DC20D1A32";
+width = 600;
+},
+{
+associatedMasterId = m003;
+layerId = "E785B07C-7638-40DD-A08B-5080B4C14061";
+width = 600;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (252,0);
+},
+{
+name = top;
+pos = (258,700);
+}
+);
+background = {
+hints = (
+{
+name = _corner.LeftSerifL;
+origin = (0,58);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 1;
+origin = (0,26);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (0,25);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (0,13);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (0,12);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (0,59);
+type = Corner;
+}
+);
+shapes = (
+{
+closed = 1;
+nodes = (
+(396,504,o),
+(370,310,o),
+(349,183,cs),
+(348,174,o),
+(347,173,o),
+(345,173,cs),
+(343,173,o),
+(342,174,o),
+(341,183,cs),
+(332,264,o),
+(317,413,o),
+(298,616,c),
+(311,700,l),
+(247,700,l),
+(227,526,o),
+(197,304,o),
+(180,183,cs),
+(179,174,o),
+(178,173,o),
+(176,173,cs),
+(174,173,o),
+(173,174,o),
+(172,183,cs),
+(160,282,o),
+(134,504,o),
+(118,700,c),
+(72,700,l),
+(105,495,o),
+(153,201,o),
+(186,-7,cs),
+(186,-8,o),
+(187,-9,o),
+(188,-9,cs),
+(203,-9,ls),
+(204,-9,o),
+(205,-9,o),
+(205,-7,cs),
+(228,160,o),
+(252,327,o),
+(276,496,cs),
+(277,501,o),
+(278,502,o),
+(280,502,cs),
+(282,502,o),
+(282,500,o),
+(283,496,cs),
+(306,322,o),
+(331,143,o),
+(350,-7,cs),
+(350,-8,o),
+(351,-9,o),
+(352,-9,cs),
+(367,-9,ls),
+(368,-9,o),
+(369,-9,o),
+(369,-7,cs),
+(403,211,o),
+(439,428,o),
+(483,700,c),
+(419,700,l)
+);
+}
+);
+};
+hints = (
+{
+name = _corner.LeftSerifL;
+options = 1;
+origin = (0,53);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (0,52);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+origin = (0,25);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (0,26);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (0,39);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (0,38);
+scale = (-1,1);
+type = Corner;
+}
+);
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(182,-9,ls),
+(183,-9,o),
+(184,-8,o),
+(184,-7,cs),
+(203,143,o),
+(228,338,o),
+(250,510,cs),
+(251,515,o),
+(253,516,o),
+(254,516,cs),
+(255,516,o),
+(257,516,o),
+(258,510,cs),
+(281,341,o),
+(306,160,o),
+(329,-7,cs),
+(329,-9,o),
+(330,-9,o),
+(331,-9,cs),
+(346,-9,ls),
+(347,-9,o),
+(348,-8,o),
+(348,-7,cs),
+(381,201,o),
+(429,495,o),
+(462,700,c),
+(416,700,l),
+(400,504,o),
+(374,282,o),
+(362,183,cs),
+(361,174,o),
+(360,173,o),
+(358,173,cs),
+(356,173,o),
+(355,174,o),
+(354,183,cs),
+(337,304,o),
+(307,526,o),
+(287,700,c),
+(223,700,l),
+(236,616,l),
+(217,413,o),
+(202,264,o),
+(193,183,cs),
+(192,174,o),
+(191,173,o),
+(189,173,cs),
+(187,173,o),
+(186,174,o),
+(185,183,cs),
+(164,310,o),
+(138,504,o),
+(115,700,c),
+(51,700,l),
+(95,428,o),
+(131,211,o),
+(165,-7,cs),
+(165,-9,o),
+(166,-9,o),
+(167,-9,cs)
+);
+}
+);
+width = 513;
+},
+{
+associatedMasterId = m002;
+layerId = "AB0319BF-A49B-4882-AEFE-2FE9F9E96115";
+width = 600;
+},
+{
+associatedMasterId = m002;
+layerId = "D9A1077D-9AFC-43B3-97F4-619D7E75B3E0";
+width = 600;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (737,0);
+},
+{
+name = top;
+pos = (737,700);
+}
+);
+background = {
+hints = (
+{
+name = _corner.LeftSerifL;
+origin = (0,39);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 1;
+origin = (0,18);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (0,17);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (0,9);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (0,8);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (0,40);
+type = Corner;
+}
+);
+shapes = (
+{
+closed = 1;
+nodes = (
+(1007,112,ls),
+(997,92,o),
+(990,73,o),
+(981,73,cs),
+(973,73,o),
+(967,94,o),
+(961,110,cs),
+(762,596,l),
+(805,700,l),
+(741,700,l),
+(480,113,ls),
+(471,92,o),
+(464,72,o),
+(454,72,cs),
+(445,72,o),
+(438,93,o),
+(431,109,cs),
+(166,700,l),
+(111,700,l),
+(471,-7,l),
+(471,-8,o),
+(472,-9,o),
+(473,-9,cs),
+(488,-9,ls),
+(489,-9,o),
+(490,-9,o),
+(490,-7,c),
+(723,505,ls),
+(735,532,o),
+(749,532,o),
+(761,506,cs),
+(994,-7,l),
+(994,-8,o),
+(995,-9,o),
+(996,-9,cs),
+(1011,-9,ls),
+(1012,-9,o),
+(1013,-9,o),
+(1013,-7,c),
+(1372,700,l),
+(1304,700,l)
+);
+}
+);
+};
+hints = (
+{
+name = _corner.LeftSerifL;
+options = 1;
+origin = (0,53);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (0,52);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+origin = (0,25);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (0,26);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (0,39);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (0,38);
+scale = (-1,1);
+type = Corner;
+}
+);
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(487,-9,ls),
+(488,-9,o),
+(492,-9,o),
+(492,-7,c),
+(569,165,o),
+(647,336,o),
+(724,506,cs),
+(735,533,o),
+(738,536,o),
+(740,536,cs),
+(743,536,o),
+(748,530,o),
+(758,505,cs),
+(835,335,o),
+(913,165,o),
+(990,-7,c),
+(990,-9,o),
+(994,-9,o),
+(995,-9,cs),
+(1010,-9,ls),
+(1011,-9,o),
+(1015,-9,o),
+(1015,-7,c),
+(1135,230,o),
+(1255,465,o),
+(1375,700,c),
+(1314,700,l),
+(1226,502,o),
+(1137,305,o),
+(1049,109,cs),
+(1042,92,o),
+(1034,72,o),
+(1029,72,cs),
+(1023,72,o),
+(1015,91,o),
+(1006,113,cs),
+(919,308,o),
+(832,503,o),
+(745,700,c),
+(675,700,l),
+(718,596,l),
+(652,433,o),
+(585,271,o),
+(519,110,cs),
+(513,93,o),
+(506,73,o),
+(502,73,cs),
+(497,73,o),
+(489,91,o),
+(479,112,cs),
+(380,308,o),
+(281,504,o),
+(182,700,c),
+(108,700,l),
+(228,465,o),
+(347,230,o),
+(467,-7,c),
+(467,-9,o),
+(471,-9,o),
+(472,-9,cs)
+);
+}
+);
+width = 1483;
+},
+{
+associatedMasterId = m003;
+layerId = "B2DA110A-38A4-419B-853E-D7226147048C";
+width = 600;
+}
+);
+metricLeft = V;
+metricRight = V;
+unicode = 87;
+}

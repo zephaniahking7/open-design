@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Zacute" format="2">
+  <advance width="841"/>
+  <unicode hex="0179"/>
+  <outline>
+    <component base="Z" identifier="6E1E7F47"/>
+    <component base="acutecomb" xOffset="331" yOffset="200" identifier="44605AC5"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>44605AC5</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>6E1E7F47</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

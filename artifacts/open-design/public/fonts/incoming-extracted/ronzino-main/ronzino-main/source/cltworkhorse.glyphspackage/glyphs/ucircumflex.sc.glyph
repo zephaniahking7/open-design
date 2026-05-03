@@ -1,0 +1,65 @@
+{
+glyphname = ucircumflex.sc;
+kernLeft = KO_u.sc;
+kernRight = KO_u.sc;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+ref = u.sc;
+},
+{
+pos = (91,130);
+ref = circumflexcomb.sc;
+}
+);
+width = 567;
+},
+{
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+ref = u.sc;
+},
+{
+pos = (76,154);
+ref = circumflexcomb.sc;
+}
+);
+width = 604;
+},
+{
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+ref = u.sc;
+},
+{
+pos = (104,130);
+ref = circumflexcomb.sc;
+}
+);
+width = 558;
+},
+{
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+ref = u.sc;
+},
+{
+pos = (93,154);
+ref = circumflexcomb.sc;
+}
+);
+width = 596;
+}
+);
+userData = {
+KernOnSpecialSpacing = {
+L = smallcaps;
+R = smallcaps;
+};
+};
+}

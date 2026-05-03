@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Udieresiscaron" format="2">
+  <advance width="686"/>
+  <unicode hex="01D9"/>
+  <outline>
+    <component base="U"/>
+    <component base="dieresiscomb.case" xOffset="143" yOffset="148"/>
+    <component base="caroncomb.case" xOffset="107" yOffset="277" identifier="A573D63F"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>A573D63F</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

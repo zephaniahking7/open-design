@@ -1,0 +1,32 @@
+{
+glyphname = Gcircumflex;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = G;
+},
+{
+pos = (40,200);
+ref = circumflexcomb;
+}
+);
+width = 339;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = G;
+},
+{
+pos = (250,200);
+ref = circumflexcomb;
+}
+);
+width = 757;
+}
+);
+unicode = 284;
+}

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="dcaron" format="2">
+  <advance width="405"/>
+  <unicode hex="010F"/>
+  <outline>
+    <component base="d" identifier="3E591C3E"/>
+    <component base="uni030C.alt" xOffset="174" identifier="0938913F"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>d</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>0938913F</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>3E591C3E</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

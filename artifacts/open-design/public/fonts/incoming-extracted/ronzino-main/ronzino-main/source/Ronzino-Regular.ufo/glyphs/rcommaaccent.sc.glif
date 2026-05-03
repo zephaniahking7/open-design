@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="rcommaaccent.sc" format="2">
+  <advance width="539"/>
+  <outline>
+    <component base="r.sc"/>
+    <component base="commaaccentcomb.sc" xOffset="188"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.glyph.userData</key>
+      <dict>
+        <key>KernOnSpecialSpacing</key>
+        <dict>
+          <key>L</key>
+          <string>smallcaps</string>
+          <key>R</key>
+          <string>smallcaps</string>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

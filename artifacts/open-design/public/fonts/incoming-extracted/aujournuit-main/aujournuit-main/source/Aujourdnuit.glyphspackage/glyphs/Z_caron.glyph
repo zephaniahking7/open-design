@@ -1,0 +1,40 @@
+{
+glyphname = Zcaron;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = Z;
+},
+{
+pos = (28,200);
+ref = caroncomb;
+}
+);
+width = 301;
+},
+{
+layerId = m002;
+shapes = (
+{
+alignment = -1;
+attr = {
+identifier = 3A0EC5D6;
+};
+ref = Z;
+},
+{
+alignment = -1;
+attr = {
+identifier = 0E4F366A;
+};
+pos = (271,200);
+ref = caroncomb;
+}
+);
+width = 841;
+}
+);
+unicode = 381;
+}

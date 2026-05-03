@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni004A0301" format="2">
+  <advance width="249"/>
+  <outline>
+    <component base="J"/>
+    <component base="acutecomb" xOffset="44" yOffset="200" identifier="4E39BA37"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>4E39BA37</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

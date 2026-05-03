@@ -1,0 +1,30 @@
+{
+glyphname = nine;
+kernLeft = O;
+kernRight = O;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+angle = 180;
+pos = (349,700);
+ref = six;
+}
+);
+width = 349;
+},
+{
+layerId = m002;
+shapes = (
+{
+angle = 180;
+pos = (609,700);
+ref = six;
+}
+);
+width = 609;
+}
+);
+unicode = 57;
+}

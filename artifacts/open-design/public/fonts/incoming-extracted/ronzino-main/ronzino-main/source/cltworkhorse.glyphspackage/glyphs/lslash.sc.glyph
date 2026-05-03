@@ -1,0 +1,84 @@
+{
+glyphname = lslash.sc;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+ref = l.sc;
+},
+{
+closed = 1;
+nodes = (
+(293,307,l),
+(275,362,l),
+(-5,269,l),
+(13,216,l)
+);
+}
+);
+width = 419;
+},
+{
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+ref = l.sc;
+},
+{
+closed = 1;
+nodes = (
+(315,318,l),
+(289,395,l),
+(-13,304,l),
+(13,229,l)
+);
+}
+);
+width = 449;
+},
+{
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+ref = l.sc;
+},
+{
+closed = 1;
+nodes = (
+(293,307,l),
+(275,362,l),
+(-5,269,l),
+(13,216,l)
+);
+}
+);
+width = 420;
+},
+{
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+pos = (4,0);
+ref = l.sc;
+},
+{
+closed = 1;
+nodes = (
+(319,318,l),
+(293,395,l),
+(-9,304,l),
+(17,229,l)
+);
+}
+);
+width = 453;
+}
+);
+userData = {
+KernOnSpecialSpacing = {
+L = smallcaps;
+R = smallcaps;
+};
+};
+}

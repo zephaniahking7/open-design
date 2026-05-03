@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="exclam" format="2">
+  <advance width="143"/>
+  <outline>
+    <component base="B" xOffset="-99"/>
+    <component base="e" xOffset="-199"/>
+  </outline>
+</glyph>

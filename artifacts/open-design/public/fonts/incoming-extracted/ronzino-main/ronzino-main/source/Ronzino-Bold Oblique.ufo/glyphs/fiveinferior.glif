@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="fiveinferior" format="2">
+  <advance width="388"/>
+  <unicode hex="2085"/>
+  <outline>
+    <contour>
+      <point x="152" y="-78" type="curve" smooth="yes"/>
+      <point x="261" y="-78"/>
+      <point x="334" y="-9"/>
+      <point x="334" y="95" type="curve" smooth="yes"/>
+      <point x="334" y="164"/>
+      <point x="292" y="207"/>
+      <point x="217" y="207" type="curve" smooth="yes"/>
+      <point x="149" y="207"/>
+      <point x="112" y="180"/>
+      <point x="96" y="149" type="curve"/>
+      <point x="119" y="149" type="line"/>
+      <point x="154" y="273" type="line"/>
+      <point x="338" y="273" type="line"/>
+      <point x="350" y="355" type="line"/>
+      <point x="79" y="355" type="line"/>
+      <point x="16" y="117" type="line"/>
+      <point x="101" y="101" type="line"/>
+      <point x="117" y="120"/>
+      <point x="140" y="130"/>
+      <point x="161" y="130" type="curve" smooth="yes"/>
+      <point x="189" y="130"/>
+      <point x="216" y="113"/>
+      <point x="216" y="77" type="curve" smooth="yes"/>
+      <point x="216" y="38"/>
+      <point x="189" y="7"/>
+      <point x="154" y="7" type="curve" smooth="yes"/>
+      <point x="130" y="7"/>
+      <point x="109" y="22"/>
+      <point x="113" y="48" type="curve"/>
+      <point x="7" y="37" type="line"/>
+      <point x="6" y="-32"/>
+      <point x="63" y="-78"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>RMXScaler</key>
+      <dict>
+        <key>adjustSpace</key>
+        <integer>6</integer>
+        <key>height</key>
+        <integer>60</integer>
+        <key>verticalShift</key>
+        <integer>-73</integer>
+        <key>weight</key>
+        <integer>-28</integer>
+        <key>width</key>
+        <integer>60</integer>
+      </dict>
+      <key>com.schriftgestaltung.glyph.userData</key>
+      <dict>
+        <key>KernOnSpecialSpacing</key>
+        <dict>
+          <key>L</key>
+          <string>superiors</string>
+          <key>R</key>
+          <string>superiors</string>
+        </dict>
+        <key>RMXScaler</key>
+        <dict>
+          <key>source</key>
+          <string>five</string>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

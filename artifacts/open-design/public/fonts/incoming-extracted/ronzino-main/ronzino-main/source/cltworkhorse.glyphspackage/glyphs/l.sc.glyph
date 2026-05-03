@@ -1,0 +1,201 @@
+{
+glyphname = l.sc;
+kernLeft = KO_e.sc;
+kernRight = KO_l.sc;
+layers = (
+{
+anchors = (
+{
+name = bottom;
+pos = (258,0);
+},
+{
+name = top;
+pos = (130,561);
+},
+{
+name = topright;
+pos = (189,439);
+}
+);
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(158,0,l),
+(158,561,l),
+(68,561,l),
+(68,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(426,0,l),
+(426,74,l),
+(152,74,l),
+(152,0,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 3;
+height = 82;
+weight = -4;
+width = 82;
+};
+};
+width = 437;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (276,0);
+},
+{
+name = top;
+pos = (152,598);
+},
+{
+name = topright;
+pos = (224,471);
+}
+);
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+closed = 1;
+nodes = (
+(203,0,l),
+(203,598,l),
+(67,598,l),
+(67,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(461,0,l),
+(461,106,l),
+(196,106,l),
+(196,0,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 8;
+height = 86;
+weight = -8;
+width = 86;
+};
+};
+width = 473;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (218,0);
+},
+{
+name = top;
+pos = (170,561);
+},
+{
+name = topright;
+pos = (212,439);
+}
+);
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+closed = 1;
+nodes = (
+(122,0,l),
+(199,561,l),
+(109,561,l),
+(32,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(382,0,l),
+(392,74,l),
+(126,74,l),
+(116,0,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 3;
+height = 82;
+weight = -4;
+width = 82;
+};
+};
+width = 430;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (237,0);
+},
+{
+name = top;
+pos = (197,598);
+},
+{
+name = topright;
+pos = (251,471);
+}
+);
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+closed = 1;
+nodes = (
+(167,0,l),
+(249,598,l),
+(113,598,l),
+(31,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(419,0,l),
+(434,106,l),
+(175,106,l),
+(160,0,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 8;
+height = 86;
+weight = -8;
+width = 86;
+};
+};
+width = 469;
+}
+);
+metricLeft = h.sc;
+userData = {
+KernOnSpecialSpacing = {
+L = smallcaps;
+R = smallcaps;
+};
+RMXScaler = {
+source = L;
+};
+};
+}

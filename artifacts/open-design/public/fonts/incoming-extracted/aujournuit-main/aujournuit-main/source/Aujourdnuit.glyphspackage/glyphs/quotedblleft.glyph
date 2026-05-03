@@ -1,0 +1,46 @@
+{
+glyphname = quotedblleft;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+angle = -175;
+pos = (240,600);
+ref = comma;
+},
+{
+alignment = -1;
+angle = -175;
+attr = {
+identifier = F99FE28C;
+};
+pos = (133,598);
+ref = comma;
+}
+);
+width = 245;
+},
+{
+layerId = m002;
+shapes = (
+{
+angle = -175;
+pos = (283,597);
+ref = comma;
+},
+{
+alignment = -1;
+angle = -175;
+attr = {
+identifier = E49CDACE;
+};
+pos = (141,597);
+ref = comma;
+}
+);
+width = 277;
+}
+);
+unicode = 8220;
+}

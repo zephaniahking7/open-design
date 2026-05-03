@@ -1,0 +1,32 @@
+{
+glyphname = Omacron;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = O;
+},
+{
+pos = (25,200);
+ref = macroncomb;
+}
+);
+width = 345;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = O;
+},
+{
+pos = (189,200);
+ref = macroncomb;
+}
+);
+width = 825;
+}
+);
+unicode = 332;
+}

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lacute.sc" format="2">
+  <advance width="469"/>
+  <outline>
+    <component base="l.sc"/>
+    <component base="acutecomb.sc" xOffset="33" yOffset="154"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.glyph.userData</key>
+      <dict>
+        <key>KernOnSpecialSpacing</key>
+        <dict>
+          <key>L</key>
+          <string>smallcaps</string>
+          <key>R</key>
+          <string>smallcaps</string>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

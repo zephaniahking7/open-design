@@ -1,0 +1,40 @@
+{
+glyphname = Ygrave;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = Y;
+},
+{
+pos = (91,200);
+ref = gravecomb;
+}
+);
+width = 379;
+},
+{
+layerId = m002;
+shapes = (
+{
+alignment = -1;
+attr = {
+identifier = 0F5F3142;
+};
+ref = Y;
+},
+{
+alignment = -1;
+attr = {
+identifier = F9CD2937;
+};
+pos = (353,200);
+ref = gravecomb;
+}
+);
+width = 1001;
+}
+);
+unicode = 7922;
+}

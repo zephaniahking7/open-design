@@ -1,0 +1,69 @@
+{
+export = 0;
+glyphname = _Stem;
+layers = (
+{
+associatedMasterId = m003;
+layerId = "B826CCEB-93D1-4672-AA88-F03DC20D1A32";
+width = 600;
+},
+{
+associatedMasterId = m003;
+layerId = "E785B07C-7638-40DD-A08B-5080B4C14061";
+width = 600;
+},
+{
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(20,466,o),
+(20,234,o),
+(10,0,c),
+(100,0,l),
+(90,233,o),
+(90,467,o),
+(100,700,c),
+(10,700,l)
+);
+}
+);
+width = 110;
+},
+{
+associatedMasterId = m002;
+layerId = "AED5511F-2FD2-47E9-A9F9-76E45A263C90";
+width = 600;
+},
+{
+associatedMasterId = m002;
+layerId = "583A3675-41C5-43E6-886B-A1C8143CE16A";
+width = 600;
+},
+{
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(17,466,o),
+(17,234,o),
+(7,0,c),
+(103,0,l),
+(93,233,o),
+(93,467,o),
+(103,700,c),
+(7,700,l)
+);
+}
+);
+width = 110;
+},
+{
+associatedMasterId = m003;
+layerId = "B2DA110A-38A4-419B-853E-D7226147048C";
+width = 600;
+}
+);
+}

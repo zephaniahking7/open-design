@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="imacron.sc" format="2">
+  <advance width="226"/>
+  <outline>
+    <component base="i.sc"/>
+    <component base="macroncomb.sc" xOffset="-56" yOffset="130"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.glyph.userData</key>
+      <dict>
+        <key>KernOnSpecialSpacing</key>
+        <dict>
+          <key>L</key>
+          <string>smallcaps</string>
+          <key>R</key>
+          <string>smallcaps</string>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

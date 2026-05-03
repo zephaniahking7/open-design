@@ -1,0 +1,32 @@
+{
+glyphname = scommaaccent;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = s;
+},
+{
+pos = (77,0);
+ref = commaaccentcomb;
+}
+);
+width = 311;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = s;
+},
+{
+pos = (219,0);
+ref = commaaccentcomb;
+}
+);
+width = 607;
+}
+);
+unicode = 537;
+}

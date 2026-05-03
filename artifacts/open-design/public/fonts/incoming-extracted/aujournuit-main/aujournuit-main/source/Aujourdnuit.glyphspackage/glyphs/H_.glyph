@@ -1,0 +1,491 @@
+{
+glyphname = H;
+kernLeft = H;
+kernRight = H;
+layers = (
+{
+associatedMasterId = m003;
+layerId = "B826CCEB-93D1-4672-AA88-F03DC20D1A32";
+width = 600;
+},
+{
+associatedMasterId = m003;
+layerId = "E785B07C-7638-40DD-A08B-5080B4C14061";
+width = 600;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (193,0);
+},
+{
+name = center;
+pos = (193,350);
+},
+{
+name = top;
+pos = (193,700);
+},
+{
+name = topleft;
+pos = (25,700);
+}
+);
+background = {
+shapes = (
+{
+closed = 1;
+nodes = (
+(98,1,o),
+(104,1,o),
+(105,1,cs),
+(115,1,ls),
+(135,0,o),
+(148,-4,o),
+(158,-4,cs),
+(164,-4,o),
+(168,-1,o),
+(168,3,cs),
+(168,8,o),
+(164,12,o),
+(156,12,cs),
+(141,12,o),
+(135,3,o),
+(133,45,cs),
+(131,117,o),
+(131,230,o),
+(131,343,cs),
+(131,356,o),
+(138,356,o),
+(193,356,cs),
+(248,356,o),
+(255,356,o),
+(255,343,cs),
+(255,230,o),
+(255,117,o),
+(253,45,cs),
+(251,3,o),
+(245,12,o),
+(230,12,cs),
+(222,12,o),
+(218,8,o),
+(218,3,cs),
+(218,-1,o),
+(222,-4,o),
+(228,-4,cs),
+(238,-4,o),
+(251,0,o),
+(271,1,cs),
+(276,1,o),
+(280,1,o),
+(281,1,cs),
+(294,1,ls),
+(328,0,o),
+(332,-4,o),
+(342,-4,cs),
+(347,-4,o),
+(351,-2,o),
+(351,3,cs),
+(351,9,o),
+(347,13,o),
+(338,13,cs),
+(321,13,o),
+(314,-1,o),
+(312,55,cs),
+(309,139,o),
+(307,253,o),
+(307,366,cs),
+(307,479,o),
+(309,579,o),
+(311,645,cs),
+(314,701,o),
+(320,687,o),
+(337,686,cs),
+(346,685,o),
+(350,689,o),
+(351,695,cs),
+(351,700,o),
+(347,702,o),
+(342,703,c),
+(332,703,o),
+(328,701,o),
+(294,699,cs),
+(291,699,o),
+(288,699,o),
+(284,699,cs),
+(272,699,ls),
+(252,700,o),
+(239,704,o),
+(229,704,cs),
+(223,704,o),
+(219,701,o),
+(219,697,cs),
+(219,692,o),
+(223,688,o),
+(231,688,cs),
+(246,688,o),
+(252,697,o),
+(254,655,cs),
+(256,589,o),
+(255,490,o),
+(255,387,cs),
+(255,374,o),
+(248,374,o),
+(193,374,cs),
+(138,374,o),
+(131,374,o),
+(131,387,cs),
+(131,490,o),
+(130,589,o),
+(132,655,cs),
+(134,697,o),
+(140,688,o),
+(155,688,cs),
+(163,688,o),
+(167,692,o),
+(167,697,cs),
+(167,701,o),
+(163,704,o),
+(157,704,cs),
+(147,704,o),
+(134,700,o),
+(114,699,cs),
+(110,699,o),
+(106,699,o),
+(102,699,cs),
+(92,699,ls),
+(58,701,o),
+(54,703,o),
+(44,703,c),
+(39,702,o),
+(35,700,o),
+(35,695,cs),
+(36,689,o),
+(40,685,o),
+(49,686,cs),
+(66,687,o),
+(72,701,o),
+(75,645,cs),
+(77,579,o),
+(79,479,o),
+(79,366,cs),
+(79,253,o),
+(77,139,o),
+(74,55,cs),
+(72,-1,o),
+(65,13,o),
+(48,13,cs),
+(39,13,o),
+(35,9,o),
+(35,3,cs),
+(35,-2,o),
+(39,-4,o),
+(44,-4,cs),
+(54,-4,o),
+(58,0,o),
+(92,1,cs)
+);
+}
+);
+};
+hints = (
+{
+name = _corner.LeftSerifL;
+options = 2;
+origin = (0,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 1;
+origin = (1,2);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 2;
+origin = (1,1);
+type = Corner;
+},
+{
+name = _segment.curve.capheight.outer;
+origin = (1,2);
+scale = (0.85,1);
+type = Segment;
+},
+{
+name = _corner.LeftSerifL;
+options = 2;
+origin = (0,2);
+scale = (1,-1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (0,0);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 2;
+origin = (1,0);
+scale = (1,-1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (1,3);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 2;
+origin = (0,3);
+type = Corner;
+},
+{
+name = _segment.curve.capheight.outer;
+origin = (0,2);
+type = Segment;
+},
+{
+name = _segment.curve.capheight.inner;
+origin = (0,0);
+type = Segment;
+},
+{
+name = _segment.curve.capheight.inner;
+origin = (1,0);
+scale = (0.85,1);
+type = Segment;
+}
+);
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(135,700,l),
+(71,700,l),
+(71,0,l),
+(135,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(251,0,l),
+(315,0,l),
+(315,700,l),
+(251,700,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(121,394,l),
+(121,336,l),
+(131,336,l),
+(131,358,o),
+(132,357,o),
+(183,357,cs),
+(203,357,ls),
+(254,357,o),
+(255,358,o),
+(255,336,c),
+(265,336,l),
+(265,394,l),
+(255,394,l),
+(255,372,o),
+(254,373,o),
+(203,373,cs),
+(183,373,ls),
+(132,373,o),
+(131,372,o),
+(131,394,c)
+);
+}
+);
+width = 386;
+},
+{
+associatedMasterId = m003;
+layerId = "237BDB5C-3B14-44EB-81CC-2A2B4DD9CAD5";
+width = 600;
+},
+{
+associatedMasterId = m002;
+layerId = "E60B7E1C-82F6-4F77-97C6-E8FBABFE7681";
+width = 600;
+},
+{
+associatedMasterId = m002;
+layerId = "E47519FE-8802-40AA-AE93-764CF44FA768";
+width = 600;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (458,0);
+},
+{
+name = center;
+pos = (458,350);
+},
+{
+name = top;
+pos = (458,700);
+},
+{
+name = topleft;
+pos = (70,700);
+}
+);
+background = {
+shapes = (
+{
+pos = (17,0);
+ref = P;
+}
+);
+};
+hints = (
+{
+name = _corner.LeftSerifL;
+options = 2;
+origin = (0,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 1;
+origin = (1,2);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 1;
+origin = (1,1);
+type = Corner;
+},
+{
+name = _segment.curve.capheight.outer;
+origin = (1,2);
+scale = (0.85,1);
+type = Segment;
+},
+{
+name = _corner.LeftSerifL;
+options = 2;
+origin = (0,2);
+scale = (1,-1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (0,0);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (1,0);
+scale = (1,-1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (1,3);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (0,3);
+type = Corner;
+},
+{
+name = _segment.curve.capheight.outer;
+origin = (0,2);
+type = Segment;
+},
+{
+name = _segment.curve.capheight.inner;
+origin = (0,0);
+type = Segment;
+},
+{
+name = _segment.curve.capheight.inner;
+origin = (1,0);
+scale = (0.85,1);
+type = Segment;
+}
+);
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(208,700,l),
+(138,700,l),
+(138,0,l),
+(208,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(708,0,l),
+(778,0,l),
+(778,700,l),
+(708,700,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(188,444,l),
+(188,286,l),
+(204,286,l),
+(204,347,o),
+(213,357,o),
+(263,357,cs),
+(653,357,ls),
+(703,357,o),
+(712,347,o),
+(712,286,c),
+(728,286,l),
+(728,444,l),
+(712,444,l),
+(712,383,o),
+(703,373,o),
+(653,373,cs),
+(263,373,ls),
+(213,373,o),
+(204,383,o),
+(204,444,c)
+);
+}
+);
+width = 916;
+},
+{
+associatedMasterId = m002;
+layerId = "3066A1DD-974C-40E6-8F7D-8B61A2723B7D";
+width = 600;
+},
+{
+associatedMasterId = m003;
+layerId = "B2DA110A-38A4-419B-853E-D7226147048C";
+width = 600;
+}
+);
+unicode = 72;
+}

@@ -1,0 +1,82 @@
+{
+glyphname = oneninth;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+ref = one.numr;
+},
+{
+pos = (251,0);
+ref = fraction;
+},
+{
+pos = (412,0);
+ref = nine.dnom;
+}
+);
+width = 793;
+},
+{
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+ref = one.numr;
+},
+{
+pos = (255,0);
+ref = fraction;
+},
+{
+pos = (433,0);
+ref = nine.dnom;
+}
+);
+width = 814;
+},
+{
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+ref = one.numr;
+},
+{
+pos = (249,0);
+ref = fraction;
+},
+{
+pos = (372,0);
+ref = nine.dnom;
+}
+);
+width = 751;
+},
+{
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+ref = one.numr;
+},
+{
+pos = (255,0);
+ref = fraction;
+},
+{
+pos = (453,0);
+ref = nine.dnom;
+}
+);
+width = 814;
+}
+);
+metricLeft = one.numr;
+metricRight = one.numr;
+unicode = 8529;
+userData = {
+KernOnSpecialSpacing = {
+L = NoKerning;
+R = NoKerning;
+};
+};
+}

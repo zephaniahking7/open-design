@@ -1,0 +1,32 @@
+{
+glyphname = racute;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = r;
+},
+{
+pos = (61,0);
+ref = acutecomb;
+}
+);
+width = 259;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = r;
+},
+{
+pos = (165,0);
+ref = acutecomb;
+}
+);
+width = 512;
+}
+);
+unicode = 341;
+}

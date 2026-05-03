@@ -1,0 +1,96 @@
+{
+export = 0;
+glyphname = _halfcircle;
+layers = (
+{
+hints = (
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (0,13);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (0,19);
+scale = (-1,1);
+type = Corner;
+}
+);
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(-48,700,ls),
+(-65,700,o),
+(-70,693,o),
+(-70,672,cs),
+(-70,570,o),
+(46,498,o),
+(212,498,cs),
+(398,498,o),
+(502,565,o),
+(502,686,cs),
+(502,697,o),
+(495,700,o),
+(475,700,c),
+(440,700,l),
+(440,568,o),
+(374,510,o),
+(223,510,cs),
+(67,510,o),
+(-10,573,o),
+(-10,700,c)
+);
+}
+);
+width = 432;
+},
+{
+hints = (
+{
+name = _corner.LeftSerifS;
+options = 1;
+origin = (0,13);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (0,19);
+scale = (-1,1);
+type = Corner;
+}
+);
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(-48,700,ls),
+(-68,700,o),
+(-73,692,o),
+(-73,672,cs),
+(-73,571,o),
+(44,498,o),
+(212,498,cs),
+(400,498,o),
+(505,566,o),
+(505,686,cs),
+(505,696,o),
+(496,700,o),
+(475,700,cs),
+(437,700,l),
+(437,567,o),
+(372,510,o),
+(223,510,cs),
+(69,510,o),
+(-7,572,o),
+(-7,700,c)
+);
+}
+);
+width = 600;
+}
+);
+}

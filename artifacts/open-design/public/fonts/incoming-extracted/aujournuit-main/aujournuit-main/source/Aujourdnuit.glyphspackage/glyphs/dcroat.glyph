@@ -1,0 +1,42 @@
+{
+glyphname = dcroat;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = d;
+},
+{
+alignment = -1;
+attr = {
+identifier = 66324BD0;
+};
+pos = (166,-22);
+ref = macron;
+scale = (0.8,1);
+}
+);
+width = 600;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = d;
+},
+{
+alignment = -1;
+attr = {
+identifier = 40780C53;
+};
+pos = (447,-48);
+ref = macron;
+scale = (0.6,1);
+}
+);
+width = 747;
+}
+);
+unicode = 273;
+}

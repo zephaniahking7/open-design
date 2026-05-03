@@ -1,0 +1,185 @@
+{
+glyphname = oneinferior;
+layers = (
+{
+background = {
+shapes = (
+{
+closed = 1;
+nodes = (
+(276,0,l),
+(276,681,l),
+(198,681,l),
+(168,608,o),
+(98,556,o),
+(15,545,c),
+(20,460,l),
+(100,471,o),
+(169,513,o),
+(196,565,c),
+(189,565,l),
+(189,0,l)
+);
+}
+);
+};
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(202,-68,l),
+(202,347,l),
+(132,347,l),
+(109,304,o),
+(64,275,o),
+(12,264,c),
+(18,188,l),
+(65,195,o),
+(110,225,o),
+(129,265,c),
+(124,265,l),
+(124,-68,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 6;
+height = 60;
+verticalShift = -73;
+weight = -16;
+width = 62;
+};
+};
+width = 252;
+},
+{
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+closed = 1;
+nodes = (
+(237,-68,l),
+(237,355,l),
+(141,355,l),
+(109,313,o),
+(65,285,o),
+(14,270,c),
+(26,159,l),
+(75,171,o),
+(114,208,o),
+(133,248,c),
+(128,248,l),
+(128,-68,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 6;
+height = 60;
+verticalShift = -73;
+weight = -28;
+width = 60;
+};
+};
+width = 290;
+},
+{
+background = {
+shapes = (
+{
+closed = 1;
+nodes = (
+(276,0,l),
+(276,681,l),
+(198,681,l),
+(168,608,o),
+(98,556,o),
+(15,545,c),
+(20,460,l),
+(100,471,o),
+(169,513,o),
+(196,565,c),
+(189,565,l),
+(189,0,l)
+);
+}
+);
+};
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+closed = 1;
+nodes = (
+(192,-68,l),
+(250,347,l),
+(180,347,l),
+(153,307,o),
+(107,276,o),
+(49,264,c),
+(44,188,l),
+(92,195,o),
+(141,225,o),
+(166,265,c),
+(161,265,l),
+(114,-68,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 6;
+height = 60;
+verticalShift = -73;
+weight = -16;
+width = 62;
+};
+};
+width = 299;
+},
+{
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+closed = 1;
+nodes = (
+(231,-68,l),
+(291,355,l),
+(195,355,l),
+(158,314,o),
+(109,285,o),
+(56,270,c),
+(52,159,l),
+(106,172,o),
+(149,211,o),
+(172,248,c),
+(167,248,l),
+(122,-68,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 6;
+height = 60;
+verticalShift = -73;
+weight = -28;
+width = 60;
+};
+};
+width = 341;
+}
+);
+unicode = 8321;
+userData = {
+KernOnSpecialSpacing = {
+L = superiors;
+R = superiors;
+};
+RMXScaler = {
+source = one;
+};
+};
+}

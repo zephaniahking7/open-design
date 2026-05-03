@@ -1,0 +1,74 @@
+{
+glyphname = horizontalbar;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(878,229,l),
+(878,301,l),
+(52,301,l),
+(52,229,l)
+);
+}
+);
+width = 930;
+},
+{
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+closed = 1;
+nodes = (
+(878,223,l),
+(878,327,l),
+(52,327,l),
+(52,223,l)
+);
+}
+);
+width = 930;
+},
+{
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+closed = 1;
+nodes = (
+(915,229,l),
+(925,301,l),
+(99,301,l),
+(89,229,l)
+);
+}
+);
+width = 1014;
+},
+{
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+closed = 1;
+nodes = (
+(917,223,l),
+(932,327,l),
+(106,327,l),
+(91,223,l)
+);
+}
+);
+width = 1022;
+}
+);
+metricLeft = hyphen;
+metricRight = hyphen;
+unicode = 8213;
+userData = {
+KernOnSpecialSpacing = {
+L = dashes;
+R = dashes;
+};
+};
+}

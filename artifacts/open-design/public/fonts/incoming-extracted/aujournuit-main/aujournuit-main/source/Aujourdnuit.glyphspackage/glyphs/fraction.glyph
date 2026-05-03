@@ -1,0 +1,24 @@
+{
+glyphname = fraction;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = slash;
+}
+);
+width = 341;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = slash;
+}
+);
+width = 753;
+}
+);
+unicode = 8260;
+}

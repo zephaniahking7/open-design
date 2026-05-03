@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="quoteleft" format="2">
+  <advance width="135"/>
+  <outline>
+    <component base="comma" xScale="-0.9397" xyScale="-0.342" yScale="-0.9397" yxScale="0.342" xOffset="286" yOffset="608"/>
+    <component base="comma" xScale="-0.9397" xyScale="-0.342" yScale="-0.9397" yxScale="0.342" xOffset="144" yOffset="608" identifier="4F39BBD4"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>4F39BBD4</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

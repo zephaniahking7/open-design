@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="at" format="2">
+  <advance width="598"/>
+  <anchor x="314" y="-100" name="bottom"/>
+  <anchor x="314" y="250" name="center"/>
+  <anchor x="612" y="-90" name="ogonek"/>
+  <anchor x="308" y="600" name="top"/>
+  <anchor x="-39" y="600" name="topleft"/>
+  <anchor x="666" y="600" name="topright"/>
+  <outline>
+    <component base="d" xOffset="109"/>
+  </outline>
+</glyph>

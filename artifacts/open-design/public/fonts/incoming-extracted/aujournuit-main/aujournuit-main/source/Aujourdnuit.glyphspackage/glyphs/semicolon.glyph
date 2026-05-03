@@ -1,0 +1,62 @@
+{
+glyphname = semicolon;
+kernLeft = comma;
+layers = (
+{
+background = {
+shapes = (
+{
+pos = (-16,0);
+ref = comma;
+}
+);
+};
+guides = (
+{
+angle = 90;
+pos = (39,340);
+},
+{
+angle = 90;
+pos = (108,340);
+}
+);
+layerId = m003;
+shapes = (
+{
+pos = (4,335);
+ref = period;
+},
+{
+ref = comma;
+}
+);
+width = 149;
+},
+{
+guides = (
+{
+angle = 90;
+pos = (38,340);
+},
+{
+angle = 90;
+pos = (132,340);
+}
+);
+layerId = m002;
+shapes = (
+{
+pos = (1,335);
+ref = period;
+},
+{
+ref = comma;
+}
+);
+width = 139;
+}
+);
+metricLeft = comma;
+unicode = 59;
+}

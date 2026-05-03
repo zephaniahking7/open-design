@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_Stem" format="2">
+  <advance width="110"/>
+  <outline>
+    <contour>
+      <point x="103" y="700" type="curve"/>
+      <point x="7" y="700" type="line"/>
+      <point x="17" y="466"/>
+      <point x="17" y="234"/>
+      <point x="7" y="0" type="curve"/>
+      <point x="103" y="0" type="line"/>
+      <point x="93" y="233"/>
+      <point x="93" y="467"/>
+    </contour>
+  </outline>
+</glyph>

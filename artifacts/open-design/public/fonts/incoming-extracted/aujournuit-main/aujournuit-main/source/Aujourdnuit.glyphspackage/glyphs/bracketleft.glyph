@@ -1,0 +1,61 @@
+{
+glyphname = bracketleft;
+layers = (
+{
+background = {
+shapes = (
+{
+pos = (-165,0);
+ref = braceleft;
+}
+);
+};
+layerId = m003;
+shapes = (
+{
+alignment = -1;
+attr = {
+identifier = 0CAEAFCC;
+};
+pos = (-165,0);
+ref = _bracketside;
+},
+{
+alignment = -1;
+pos = (-165,550);
+ref = _bracketside;
+scale = (1,-1);
+}
+);
+width = 169;
+},
+{
+background = {
+shapes = (
+{
+ref = braceleft;
+}
+);
+};
+layerId = m002;
+shapes = (
+{
+alignment = -1;
+attr = {
+identifier = A1FFCC62;
+};
+pos = (-165,65);
+ref = _bracketside;
+},
+{
+alignment = -1;
+pos = (-165,613);
+ref = _bracketside;
+scale = (1,-1);
+}
+);
+width = 169;
+}
+);
+unicode = 91;
+}

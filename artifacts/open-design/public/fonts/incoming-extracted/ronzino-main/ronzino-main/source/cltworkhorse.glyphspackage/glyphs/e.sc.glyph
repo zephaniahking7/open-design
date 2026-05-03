@@ -1,0 +1,209 @@
+{
+glyphname = e.sc;
+kernLeft = KO_e.sc;
+kernRight = KO_e.sc;
+layers = (
+{
+anchors = (
+{
+name = ogonek;
+pos = (444,7);
+},
+{
+name = top;
+pos = (260,561);
+}
+);
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(451,0,l),
+(451,70,l),
+(152,70,l),
+(158,63,l),
+(158,498,l),
+(152,491,l),
+(446,491,l),
+(446,561,l),
+(68,561,l),
+(68,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(419,255,l),
+(419,323,l),
+(152,323,l),
+(152,255,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 3;
+height = 82;
+weight = -4;
+width = 82;
+};
+};
+width = 483;
+},
+{
+anchors = (
+{
+name = ogonek;
+pos = (480,7);
+},
+{
+name = top;
+pos = (275,598);
+}
+);
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+closed = 1;
+nodes = (
+(487,0,l),
+(487,101,l),
+(196,101,l),
+(203,94,l),
+(203,505,l),
+(196,498,l),
+(482,498,l),
+(482,598,l),
+(67,598,l),
+(67,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(457,258,l),
+(457,357,l),
+(196,357,l),
+(196,258,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 8;
+height = 86;
+weight = -8;
+width = 86;
+};
+};
+width = 528;
+},
+{
+anchors = (
+{
+name = ogonek;
+pos = (400,7);
+},
+{
+name = top;
+pos = (296,561);
+}
+);
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+closed = 1;
+nodes = (
+(405,0,l),
+(415,70,l),
+(125,70,l),
+(131,63,l),
+(191,498,l),
+(183,491,l),
+(468,491,l),
+(478,561,l),
+(109,561,l),
+(32,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(409,255,l),
+(419,323,l),
+(160,323,l),
+(151,255,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 3;
+height = 82;
+weight = -4;
+width = 82;
+};
+};
+width = 475;
+},
+{
+anchors = (
+{
+name = ogonek;
+pos = (438,7);
+},
+{
+name = top;
+pos = (318,598);
+}
+);
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+closed = 1;
+nodes = (
+(444,0,l),
+(458,101,l),
+(174,101,l),
+(180,94,l),
+(237,505,l),
+(229,498,l),
+(508,498,l),
+(522,598,l),
+(113,598,l),
+(31,0,l)
+);
+},
+{
+closed = 1;
+nodes = (
+(451,258,l),
+(464,357,l),
+(209,357,l),
+(196,258,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+adjustSpace = 8;
+height = 86;
+weight = -8;
+width = 86;
+};
+};
+width = 524;
+}
+);
+metricLeft = h.sc;
+userData = {
+KernOnSpecialSpacing = {
+L = smallcaps;
+R = smallcaps;
+};
+RMXScaler = {
+source = E;
+};
+};
+}

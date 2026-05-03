@@ -1,0 +1,31 @@
+{
+glyphname = quoteright;
+kernLeft = apostrophe;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+angle = 5;
+pos = (5,611);
+ref = comma;
+}
+);
+width = 138;
+},
+{
+layerId = m002;
+shapes = (
+{
+angle = 5;
+pos = (-6,611);
+ref = comma;
+}
+);
+width = 135;
+}
+);
+metricLeft = quotedblright;
+metricRight = quotedblright;
+unicode = 8217;
+}

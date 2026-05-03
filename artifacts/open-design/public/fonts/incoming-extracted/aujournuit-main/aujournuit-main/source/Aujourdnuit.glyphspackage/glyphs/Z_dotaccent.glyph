@@ -1,0 +1,40 @@
+{
+glyphname = Zdotaccent;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = Z;
+},
+{
+pos = (95,200);
+ref = dotaccentcomb;
+}
+);
+width = 301;
+},
+{
+layerId = m002;
+shapes = (
+{
+alignment = -1;
+attr = {
+identifier = AF6F243B;
+};
+ref = Z;
+},
+{
+alignment = -1;
+attr = {
+identifier = C15BEFC9;
+};
+pos = (322,200);
+ref = dotaccentcomb;
+}
+);
+width = 841;
+}
+);
+unicode = 379;
+}

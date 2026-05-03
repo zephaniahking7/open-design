@@ -1,0 +1,76 @@
+{
+glyphname = perthousand;
+layers = (
+{
+background = {
+shapes = (
+{
+pos = (10,0);
+ref = slash;
+},
+{
+pos = (10,0);
+ref = degree;
+},
+{
+pos = (154,-545);
+ref = degree;
+},
+{
+pos = (346,-545);
+ref = degree;
+}
+);
+};
+layerId = m003;
+shapes = (
+{
+pos = (10,0);
+ref = slash;
+},
+{
+pos = (10,-279);
+ref = degree;
+scale = (1,1.4);
+},
+{
+pos = (154,-764);
+ref = degree;
+scale = (1,1.4);
+},
+{
+pos = (346,-764);
+ref = degree;
+scale = (1,1.4);
+}
+);
+width = 549;
+},
+{
+layerId = m002;
+shapes = (
+{
+pos = (12,0);
+ref = slash;
+},
+{
+pos = (64,-279);
+ref = degree;
+scale = (1,1.4);
+},
+{
+pos = (434,-763);
+ref = degree;
+scale = (1,1.4);
+},
+{
+pos = (657,-763);
+ref = degree;
+scale = (1,1.4);
+}
+);
+width = 894;
+}
+);
+unicode = 8240;
+}

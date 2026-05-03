@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni0308" format="2">
+  <advance width="0"/>
+  <unicode hex="0308"/>
+  <anchor x="119" y="500" name="_top"/>
+  <anchor x="119" y="665" name="top"/>
+  <outline>
+    <component base="uni0307" yOffset="-6"/>
+    <component base="uni0307" xOffset="128" yOffset="-6" identifier="ABC3142D"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>ABC3142D</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,132 @@
+{
+color = 3;
+glyphname = onesuperior;
+layers = (
+{
+hints = (
+{
+name = _corner.LeftSerifS;
+origin = (0,23);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+origin = (0,0);
+scale = (0.9,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (0,23);
+scale = (-1.2,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+origin = (0,0);
+scale = (1.2,1);
+type = Corner;
+}
+);
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(134,370,l),
+(134,545,ls),
+(134,600,o),
+(135,656,o),
+(136,711,cs),
+(136,717,o),
+(134,720,o),
+(129,720,cs),
+(125,720,o),
+(122,717,o),
+(120,709,cs),
+(103,652,o),
+(68,582,o),
+(25,529,cs),
+(17,520,o),
+(20,510,o),
+(28,510,cs),
+(49,510,o),
+(71,575,o),
+(80,575,cs),
+(85,575,o),
+(85,570,o),
+(85,554,cs),
+(84,370,l)
+);
+}
+);
+width = 200;
+},
+{
+hints = (
+{
+name = _corner.LeftSerifS;
+origin = (0,23);
+scale = (-0.9,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 1;
+origin = (0,0);
+scale = (0.95,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifS;
+origin = (0,23);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 1;
+origin = (0,0);
+type = Corner;
+}
+);
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(235,370,l),
+(235,545,ls),
+(235,590,o),
+(237,700,o),
+(237,711,cs),
+(237,718,o),
+(234,720,o),
+(227,720,cs),
+(221,720,o),
+(219,718,o),
+(216,709,cs),
+(190,627,o),
+(134,562,o),
+(50,527,cs),
+(37,522,o),
+(37,510,o),
+(50,510,cs),
+(90,510,o),
+(153,577,o),
+(172,577,cs),
+(184,577,o),
+(182,570,o),
+(182,554,cs),
+(181,370,l)
+);
+}
+);
+width = 368;
+}
+);
+metricLeft = one;
+metricRight = one;
+unicode = 185;
+}

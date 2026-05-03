@@ -1,0 +1,28 @@
+{
+glyphname = quotesinglbase;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+angle = -10;
+pos = (-121,-587);
+ref = quotesingle;
+}
+);
+width = 108;
+},
+{
+layerId = m002;
+shapes = (
+{
+angle = -4.1;
+pos = (-47,-626);
+ref = quotesingle;
+}
+);
+width = 195;
+}
+);
+unicode = 8218;
+}

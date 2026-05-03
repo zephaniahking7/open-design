@@ -1,0 +1,32 @@
+{
+glyphname = emacron;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = e;
+},
+{
+pos = (29,0);
+ref = macroncomb;
+}
+);
+width = 342;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = e;
+},
+{
+pos = (101,0);
+ref = macroncomb;
+}
+);
+width = 636;
+}
+);
+unicode = 275;
+}

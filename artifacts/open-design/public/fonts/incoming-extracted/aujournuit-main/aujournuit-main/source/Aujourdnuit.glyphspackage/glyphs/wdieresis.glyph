@@ -1,0 +1,32 @@
+{
+glyphname = wdieresis;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = w;
+},
+{
+pos = (129,0);
+ref = dieresiscomb;
+}
+);
+width = 496;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = w;
+},
+{
+pos = (396,0);
+ref = dieresiscomb;
+}
+);
+width = 1155;
+}
+);
+unicode = 7813;
+}

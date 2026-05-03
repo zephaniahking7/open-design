@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni1EBC" format="2">
+  <advance width="706"/>
+  <unicode hex="1EBC"/>
+  <outline>
+    <component base="E"/>
+    <component base="tildecomb" xOffset="234" yOffset="200" identifier="53E08AA6"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>53E08AA6</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

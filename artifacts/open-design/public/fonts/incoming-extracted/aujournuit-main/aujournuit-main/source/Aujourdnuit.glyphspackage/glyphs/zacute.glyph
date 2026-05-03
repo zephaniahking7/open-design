@@ -1,0 +1,32 @@
+{
+glyphname = zacute;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = z;
+},
+{
+pos = (83,0);
+ref = acutecomb;
+}
+);
+width = 344;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = z;
+},
+{
+pos = (228,0);
+ref = acutecomb;
+}
+);
+width = 636;
+}
+);
+unicode = 378;
+}

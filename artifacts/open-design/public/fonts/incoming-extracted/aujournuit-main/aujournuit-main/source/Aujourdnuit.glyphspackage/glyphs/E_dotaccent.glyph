@@ -1,0 +1,36 @@
+{
+glyphname = Edotaccent;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = E;
+},
+{
+pos = (111,200);
+ref = dotaccentcomb;
+}
+);
+width = 303;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = E;
+},
+{
+alignment = -1;
+attr = {
+identifier = 8DC87862;
+};
+pos = (264,200);
+ref = dotaccentcomb;
+}
+);
+width = 706;
+}
+);
+unicode = 278;
+}

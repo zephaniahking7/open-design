@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bracketright" format="2">
+  <advance width="169"/>
+  <unicode hex="005D"/>
+  <outline>
+    <contour>
+      <point x="139" y="274" type="line"/>
+      <point x="139" y="510" type="line" smooth="yes"/>
+      <point x="139" y="660"/>
+      <point x="115" y="710"/>
+      <point x="42" y="710" type="curve" smooth="yes"/>
+      <point x="27" y="710" type="line" smooth="yes"/>
+      <point x="16" y="710"/>
+      <point x="10" y="709"/>
+      <point x="10" y="703" type="curve" smooth="yes"/>
+      <point x="10" y="699"/>
+      <point x="13" y="697"/>
+      <point x="22" y="697" type="curve" smooth="yes"/>
+      <point x="71" y="697"/>
+      <point x="88" y="656"/>
+      <point x="88" y="534" type="curve" smooth="yes"/>
+      <point x="88" y="274" type="line"/>
+    </contour>
+    <component base="_bracketside" xScale="-1" yScale="-1" xOffset="334" yOffset="550" identifier="70FD9EDD"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>70FD9EDD</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

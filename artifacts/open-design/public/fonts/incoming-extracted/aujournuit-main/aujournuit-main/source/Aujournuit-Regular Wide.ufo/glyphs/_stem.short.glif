@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_stem.short" format="2">
+  <advance width="129"/>
+  <guideline x="-49" y="0" angle="270"/>
+  <outline>
+    <contour>
+      <point x="76" y="348" type="line"/>
+      <point x="76" y="80" type="line"/>
+      <point x="134" y="80" type="line"/>
+      <point x="134" y="348" type="line"/>
+    </contour>
+  </outline>
+</glyph>

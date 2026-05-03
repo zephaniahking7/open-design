@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni263E" format="2">
+  <advance width="521"/>
+  <unicode hex="263E"/>
+  <outline>
+    <contour>
+      <point x="380" y="-19" type="curve" smooth="yes"/>
+      <point x="459" y="-19"/>
+      <point x="509" y="-9"/>
+      <point x="500" y="10" type="curve" smooth="yes"/>
+      <point x="494" y="24"/>
+      <point x="486" y="1"/>
+      <point x="405" y="1" type="curve" smooth="yes"/>
+      <point x="220" y="1"/>
+      <point x="101" y="141"/>
+      <point x="96" y="363" type="curve" smooth="yes"/>
+      <point x="91" y="563"/>
+      <point x="206" y="703"/>
+      <point x="374" y="703" type="curve" smooth="yes"/>
+      <point x="420" y="703"/>
+      <point x="434" y="689"/>
+      <point x="441" y="707" type="curve" smooth="yes"/>
+      <point x="444" y="715"/>
+      <point x="431" y="719"/>
+      <point x="392" y="719" type="curve" smooth="yes"/>
+      <point x="176" y="719"/>
+      <point x="26" y="562"/>
+      <point x="30" y="339" type="curve" smooth="yes"/>
+      <point x="33" y="139"/>
+      <point x="187" y="-19"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>O</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>H</string>
+    </dict>
+  </lib>
+</glyph>

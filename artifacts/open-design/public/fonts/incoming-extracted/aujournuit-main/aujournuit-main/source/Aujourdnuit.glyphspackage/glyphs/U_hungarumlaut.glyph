@@ -1,0 +1,36 @@
+{
+glyphname = Uhungarumlaut;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = U;
+},
+{
+pos = (101,200);
+ref = hungarumlautcomb;
+}
+);
+width = 382;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = U;
+},
+{
+alignment = -1;
+attr = {
+identifier = "89234052";
+};
+pos = (303,230);
+ref = hungarumlautcomb;
+}
+);
+width = 863;
+}
+);
+unicode = 368;
+}

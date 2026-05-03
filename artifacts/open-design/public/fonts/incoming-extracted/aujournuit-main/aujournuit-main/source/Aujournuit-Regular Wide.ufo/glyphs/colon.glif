@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="colon" format="2">
+  <advance width="194"/>
+  <unicode hex="003A"/>
+  <outline>
+    <component base="period" yOffset="10"/>
+    <component base="period" yOffset="335" identifier="06B371A2"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>=period</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>=period</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>06B371A2</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

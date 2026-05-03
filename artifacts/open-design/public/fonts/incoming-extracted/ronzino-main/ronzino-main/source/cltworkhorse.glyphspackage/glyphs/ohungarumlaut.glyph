@@ -1,0 +1,60 @@
+{
+glyphname = ohungarumlaut;
+kernLeft = KO_eacute;
+kernRight = KO_oacute;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+ref = o;
+},
+{
+pos = (100,0);
+ref = hungarumlautcomb;
+}
+);
+width = 562;
+},
+{
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+ref = o;
+},
+{
+pos = (65,-1);
+ref = hungarumlautcomb;
+}
+);
+width = 576;
+},
+{
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+ref = o;
+},
+{
+pos = (93,0);
+ref = hungarumlautcomb;
+}
+);
+width = 550;
+},
+{
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+ref = o;
+},
+{
+pos = (59,-1);
+ref = hungarumlautcomb;
+}
+);
+width = 568;
+}
+);
+unicode = 337;
+}

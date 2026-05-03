@@ -1,0 +1,28 @@
+{
+glyphname = less;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+angle = 180;
+pos = (374,598);
+ref = greater;
+}
+);
+width = 374;
+},
+{
+layerId = m002;
+shapes = (
+{
+angle = 180;
+pos = (374,598);
+ref = greater;
+}
+);
+width = 374;
+}
+);
+unicode = 60;
+}

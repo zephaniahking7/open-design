@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni2652" format="2">
+  <advance width="658"/>
+  <unicode hex="2652"/>
+  <anchor x="283" y="365" name="top"/>
+  <outline>
+    <component base="_aquariusside" xOffset="23" identifier="24E8F687"/>
+    <component base="_aquariusside" xOffset="23" yOffset="-221" identifier="D88511FD"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>H</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>H</string>
+      <key>public.markColor</key>
+      <string>0.99,0.62,0.11,1</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>24E8F687</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>D88511FD</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,49 @@
+{
+glyphname = dcaron;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+alignment = -1;
+attr = {
+identifier = 3E591C3E;
+};
+ref = d;
+},
+{
+alignment = -1;
+attr = {
+identifier = 0938913F;
+};
+pos = (174,0);
+ref = caroncomb.alt;
+}
+);
+width = 405;
+},
+{
+layerId = m002;
+shapes = (
+{
+alignment = -1;
+attr = {
+identifier = CC424E89;
+};
+ref = d;
+},
+{
+alignment = -1;
+attr = {
+identifier = 0435262C;
+};
+pos = (647,0);
+ref = caroncomb.alt;
+}
+);
+width = 767;
+}
+);
+metricLeft = d;
+unicode = 271;
+}

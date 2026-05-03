@@ -1,0 +1,36 @@
+{
+glyphname = Edieresis;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = E;
+},
+{
+pos = (47,200);
+ref = dieresiscomb;
+}
+);
+width = 303;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = E;
+},
+{
+alignment = -1;
+attr = {
+identifier = 1C4F75EC;
+};
+pos = (187,200);
+ref = dieresiscomb;
+}
+);
+width = 706;
+}
+);
+unicode = 203;
+}

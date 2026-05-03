@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="semicolon" format="2">
+  <advance width="139"/>
+  <unicode hex="003B"/>
+  <guideline x="38" y="340" angle="90"/>
+  <guideline x="132" y="340" angle="90"/>
+  <outline>
+    <component base="period" xOffset="1" yOffset="335"/>
+    <component base="comma"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>comma</string>
+    </dict>
+  </lib>
+</glyph>

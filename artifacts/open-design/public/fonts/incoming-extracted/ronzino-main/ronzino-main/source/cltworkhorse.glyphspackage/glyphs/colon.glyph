@@ -1,0 +1,72 @@
+{
+glyphname = colon;
+kernLeft = KO_colon;
+kernRight = KO_colon;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+pos = (8,0);
+ref = period;
+},
+{
+pos = (8,416);
+ref = period;
+}
+);
+width = 224;
+},
+{
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+pos = (7,0);
+ref = period;
+},
+{
+pos = (7,391);
+ref = period;
+}
+);
+width = 250;
+},
+{
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+pos = (10,0);
+ref = period;
+},
+{
+pos = (67,416);
+ref = period;
+}
+);
+width = 227;
+},
+{
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+pos = (8,0);
+ref = period;
+},
+{
+pos = (61,391);
+ref = period;
+}
+);
+width = 251;
+}
+);
+metricRight = "=|";
+unicode = 58;
+userData = {
+KernOnName = colon;
+KernOnSpecialSpacing = {
+L = "spaced-off";
+R = "spaced-off";
+};
+};
+}

@@ -1,0 +1,50 @@
+{
+glyphname = onequarter;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = onesuperior;
+},
+{
+alignment = -1;
+attr = {
+identifier = 1FBD7302;
+};
+pos = (65,0);
+ref = fraction;
+},
+{
+pos = (195,-370);
+ref = foursuperior;
+}
+);
+width = 530;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = onesuperior;
+},
+{
+alignment = -1;
+attr = {
+identifier = 942F23F5;
+};
+pos = (50,0);
+ref = fraction;
+},
+{
+pos = (385,-370);
+ref = foursuperior;
+}
+);
+width = 826;
+}
+);
+metricLeft = H;
+metricRight = H;
+unicode = 188;
+}

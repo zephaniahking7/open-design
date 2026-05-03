@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_roundedcorner" format="2">
+  <advance width="600"/>
+  <outline>
+    <contour>
+      <point x="0" y="220" type="curve"/>
+      <point x="-20" y="220" type="line"/>
+      <point x="-20" y="-20" type="line"/>
+      <point x="270" y="-20" type="line"/>
+      <point x="270" y="0" type="line"/>
+      <point x="-20" y="0"/>
+      <point x="0" y="-20"/>
+    </contour>
+  </outline>
+</glyph>

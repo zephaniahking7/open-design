@@ -1,0 +1,90 @@
+{
+glyphname = macroncomb.case;
+layers = (
+{
+anchors = (
+{
+name = _top;
+pos = (216,532);
+}
+);
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(358,608,l),
+(358,674,l),
+(74,674,l),
+(74,608,l)
+);
+}
+);
+width = 432;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (220,545);
+}
+);
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+closed = 1;
+nodes = (
+(365,601,l),
+(365,701,l),
+(74,701,l),
+(74,601,l)
+);
+}
+);
+width = 439;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (253,532);
+}
+);
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+closed = 1;
+nodes = (
+(406,608,l),
+(415,674,l),
+(131,674,l),
+(122,608,l)
+);
+}
+);
+width = 432;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (258,545);
+}
+);
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+closed = 1;
+nodes = (
+(411,601,l),
+(425,701,l),
+(134,701,l),
+(120,601,l)
+);
+}
+);
+width = 439;
+}
+);
+metricRight = "=|";
+}

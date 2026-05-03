@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Uhungarumlaut" format="2">
+  <advance width="863"/>
+  <unicode hex="0170"/>
+  <outline>
+    <component base="U"/>
+    <component base="uni030B" xOffset="303" yOffset="230" identifier="89234052"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>89234052</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

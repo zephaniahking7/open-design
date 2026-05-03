@@ -1,0 +1,55 @@
+{
+glyphname = fivesuperior;
+kernLeft = KO_fivesuperior;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+pos = (0,411);
+ref = fiveinferior;
+}
+);
+width = 364;
+},
+{
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+pos = (0,415);
+ref = fiveinferior;
+}
+);
+width = 375;
+},
+{
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+pos = (58,411);
+ref = fiveinferior;
+}
+);
+width = 366;
+},
+{
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+pos = (58,415);
+ref = fiveinferior;
+}
+);
+width = 388;
+}
+);
+metricLeft = fiveinferior;
+metricRight = fiveinferior;
+unicode = 8309;
+userData = {
+KernOnSpecialSpacing = {
+L = superiors;
+R = superiors;
+};
+};
+}

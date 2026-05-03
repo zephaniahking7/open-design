@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="hcircumflex" format="2">
+  <advance width="803"/>
+  <unicode hex="0125"/>
+  <outline>
+    <component base="h"/>
+    <component base="uni0302" xOffset="312" identifier="B1E83AAE"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>B1E83AAE</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

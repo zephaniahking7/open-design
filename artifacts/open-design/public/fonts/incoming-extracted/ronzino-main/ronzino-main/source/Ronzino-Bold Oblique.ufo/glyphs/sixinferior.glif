@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sixinferior" format="2">
+  <advance width="411"/>
+  <unicode hex="2086"/>
+  <outline>
+    <contour>
+      <point x="165" y="-78" type="curve" smooth="yes"/>
+      <point x="270" y="-78"/>
+      <point x="350" y="-6"/>
+      <point x="350" y="88" type="curve" smooth="yes"/>
+      <point x="350" y="158"/>
+      <point x="295" y="203"/>
+      <point x="209" y="203" type="curve" smooth="yes"/>
+      <point x="151" y="203"/>
+      <point x="99" y="174"/>
+      <point x="81" y="135" type="curve"/>
+      <point x="108" y="135" type="line"/>
+      <point x="122" y="224"/>
+      <point x="149" y="280"/>
+      <point x="213" y="280" type="curve" smooth="yes"/>
+      <point x="246" y="280"/>
+      <point x="269" y="264"/>
+      <point x="273" y="231" type="curve"/>
+      <point x="363" y="265" type="line"/>
+      <point x="353" y="323"/>
+      <point x="294" y="361"/>
+      <point x="221" y="361" type="curve" smooth="yes"/>
+      <point x="98" y="361"/>
+      <point x="8" y="246"/>
+      <point x="8" y="89" type="curve" smooth="yes"/>
+      <point x="8" y="-11"/>
+      <point x="61" y="-78"/>
+    </contour>
+    <contour>
+      <point x="168" y="-8" type="curve" smooth="yes"/>
+      <point x="138" y="-8"/>
+      <point x="117" y="15"/>
+      <point x="117" y="48" type="curve" smooth="yes"/>
+      <point x="117" y="95"/>
+      <point x="148" y="132"/>
+      <point x="187" y="132" type="curve" smooth="yes"/>
+      <point x="218" y="132"/>
+      <point x="239" y="110"/>
+      <point x="239" y="76" type="curve" smooth="yes"/>
+      <point x="239" y="30"/>
+      <point x="208" y="-8"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>RMXScaler</key>
+      <dict>
+        <key>adjustSpace</key>
+        <integer>6</integer>
+        <key>height</key>
+        <integer>60</integer>
+        <key>verticalShift</key>
+        <integer>-73</integer>
+        <key>weight</key>
+        <integer>-28</integer>
+        <key>width</key>
+        <integer>60</integer>
+      </dict>
+      <key>com.schriftgestaltung.glyph.userData</key>
+      <dict>
+        <key>KernOnSpecialSpacing</key>
+        <dict>
+          <key>L</key>
+          <string>superiors</string>
+          <key>R</key>
+          <string>superiors</string>
+        </dict>
+        <key>RMXScaler</key>
+        <dict>
+          <key>source</key>
+          <string>six</string>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

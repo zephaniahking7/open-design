@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="f_i" format="2">
+  <advance width="420"/>
+  <anchor x="118" y="0" name="bottom"/>
+  <anchor x="118" y="758" name="top"/>
+  <outline>
+    <component base="_stem.short" xOffset="3" identifier="49D5AD92"/>
+    <component base="dotlessi" xOffset="208" identifier="1BFEEC74"/>
+    <component base="uni0307" xOffset="246" identifier="AD3D0A6E"/>
+    <component base="n"/>
+    <component base="f"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>1BFEEC74</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>49D5AD92</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>AD3D0A6E</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

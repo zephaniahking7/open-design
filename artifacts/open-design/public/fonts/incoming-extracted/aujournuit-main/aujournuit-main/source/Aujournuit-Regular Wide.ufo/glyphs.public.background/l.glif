@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="l" format="2">
+  <advance width="342"/>
+  <outline>
+    <component base="h" xOffset="176"/>
+    <component base="h" xOffset="147"/>
+    <component base="b" xOffset="196"/>
+    <component base="d" xOffset="-242" yOffset="2"/>
+    <component base="i"/>
+    <component base="j.ss01"/>
+    <component base="k" xOffset="210"/>
+  </outline>
+</glyph>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="parenright" format="2">
+  <advance width="204"/>
+  <unicode hex="0029"/>
+  <outline>
+    <contour>
+      <point x="177" y="342" type="curve" smooth="yes"/>
+      <point x="177" y="510"/>
+      <point x="120" y="671"/>
+      <point x="29" y="762" type="curve" smooth="yes"/>
+      <point x="22" y="768"/>
+      <point x="19" y="770"/>
+      <point x="14" y="770" type="curve" smooth="yes"/>
+      <point x="11" y="770"/>
+      <point x="7" y="769"/>
+      <point x="7" y="767" type="curve" smooth="yes"/>
+      <point x="7" y="765"/>
+      <point x="9" y="764"/>
+      <point x="17" y="753" type="curve" smooth="yes"/>
+      <point x="76" y="671"/>
+      <point x="110" y="522"/>
+      <point x="110" y="342" type="curve" smooth="yes"/>
+      <point x="110" y="162"/>
+      <point x="76" y="13"/>
+      <point x="17" y="-69" type="curve" smooth="yes"/>
+      <point x="9" y="-80"/>
+      <point x="7" y="-81"/>
+      <point x="7" y="-83" type="curve" smooth="yes"/>
+      <point x="7" y="-85"/>
+      <point x="11" y="-86"/>
+      <point x="14" y="-86" type="curve" smooth="yes"/>
+      <point x="19" y="-86"/>
+      <point x="22" y="-84"/>
+      <point x="29" y="-78" type="curve" smooth="yes"/>
+      <point x="120" y="13"/>
+      <point x="177" y="174"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>O</string>
+    </dict>
+  </lib>
+</glyph>

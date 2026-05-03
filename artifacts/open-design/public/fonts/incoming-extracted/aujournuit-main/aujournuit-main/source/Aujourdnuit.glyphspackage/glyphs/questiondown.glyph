@@ -1,0 +1,32 @@
+{
+glyphname = questiondown;
+kernLeft = question;
+kernRight = question;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+angle = 180;
+pos = (316,513);
+ref = question;
+}
+);
+width = 316;
+},
+{
+layerId = m002;
+shapes = (
+{
+angle = 180;
+pos = (516,513);
+ref = question;
+}
+);
+width = 516;
+}
+);
+metricLeft = O;
+metricRight = O;
+unicode = 191;
+}

@@ -1,0 +1,122 @@
+{
+glyphname = macroncomb.sc;
+layers = (
+{
+anchors = (
+{
+name = _top;
+pos = (169,431);
+}
+);
+layerId = m01;
+shapes = (
+{
+closed = 1;
+nodes = (
+(279,495,l),
+(279,554,l),
+(59,554,l),
+(59,495,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+height = 80;
+width = 80;
+};
+};
+width = 338;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (173,444);
+}
+);
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+closed = 1;
+nodes = (
+(286,497,l),
+(286,579,l),
+(59,579,l),
+(59,497,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+height = 80;
+width = 80;
+};
+};
+width = 345;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (192,431);
+}
+);
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+closed = 1;
+nodes = (
+(311,495,l),
+(319,554,l),
+(99,554,l),
+(91,495,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+height = 80;
+width = 80;
+};
+};
+width = 338;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (198,444);
+}
+);
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+closed = 1;
+nodes = (
+(318,497,l),
+(330,579,l),
+(103,579,l),
+(91,497,l)
+);
+}
+);
+userData = {
+RMXScaler = {
+height = 80;
+width = 80;
+};
+};
+width = 346;
+}
+);
+userData = {
+KernOnSpecialSpacing = {
+L = NoKerning;
+R = NoKerning;
+};
+RMXScaler = {
+source = macroncomb;
+};
+};
+}

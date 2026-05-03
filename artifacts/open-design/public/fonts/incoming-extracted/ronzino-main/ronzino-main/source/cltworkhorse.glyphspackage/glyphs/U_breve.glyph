@@ -1,0 +1,60 @@
+{
+glyphname = Ubreve;
+kernLeft = KO_U;
+kernRight = KO_U;
+layers = (
+{
+layerId = m01;
+shapes = (
+{
+ref = U;
+},
+{
+pos = (138,148);
+ref = brevecomb.case;
+}
+);
+width = 686;
+},
+{
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+ref = U;
+},
+{
+pos = (120,147);
+ref = brevecomb.case;
+}
+);
+width = 684;
+},
+{
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+ref = U;
+},
+{
+pos = (152,148);
+ref = brevecomb.case;
+}
+);
+width = 673;
+},
+{
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+ref = U;
+},
+{
+pos = (136,147);
+ref = brevecomb.case;
+}
+);
+width = 675;
+}
+);
+unicode = 364;
+}

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_stem.long.top.indentright" format="2">
+  <advance width="208"/>
+  <guideline x="30" y="0" angle="270"/>
+  <outline>
+    <contour>
+      <point x="134" y="361" type="curve" smooth="yes"/>
+      <point x="134" y="450" type="line"/>
+      <point x="82" y="450" type="line"/>
+      <point x="82" y="308" type="line"/>
+      <point x="140" y="308" type="line"/>
+      <point x="140" y="350" type="line"/>
+      <point x="133" y="343"/>
+      <point x="134" y="357"/>
+    </contour>
+    <component base="_stem.long.top" xOffset="3"/>
+  </outline>
+</glyph>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="_stem.long.top.indentright" format="2">
+  <advance width="208"/>
+  <outline>
+    <contour>
+      <point x="85" y="640" type="curve"/>
+      <point x="85" y="630" type="line"/>
+      <point x="137" y="630" type="line"/>
+      <point x="137" y="640" type="line"/>
+      <point x="131" y="640"/>
+      <point x="131" y="647"/>
+      <point x="131" y="653" type="curve" smooth="yes"/>
+      <point x="131" y="723"/>
+      <point x="144" y="752"/>
+      <point x="144" y="760" type="curve" smooth="yes"/>
+      <point x="144" y="765"/>
+      <point x="141" y="768"/>
+      <point x="136" y="768" type="curve" smooth="yes"/>
+      <point x="127" y="768"/>
+      <point x="127" y="755"/>
+      <point x="102" y="737" type="curve" smooth="yes"/>
+      <point x="71" y="714"/>
+      <point x="41" y="715"/>
+      <point x="41" y="704" type="curve" smooth="yes"/>
+      <point x="41" y="699"/>
+      <point x="44" y="697"/>
+      <point x="49" y="697" type="curve" smooth="yes"/>
+      <point x="66" y="697"/>
+      <point x="82" y="706"/>
+      <point x="84" y="681" type="curve" smooth="yes"/>
+      <point x="85" y="668"/>
+      <point x="85" y="657"/>
+    </contour>
+    <component base="n" xOffset="15"/>
+  </outline>
+</glyph>

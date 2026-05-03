@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="at.case" format="2">
+  <advance width="1048"/>
+  <outline>
+    <component base="at" xOffset="13" yOffset="96"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.glyph.userData</key>
+      <dict>
+        <key>KernOnSpecialSpacing</key>
+        <dict>
+          <key>L</key>
+          <string>symbols</string>
+          <key>R</key>
+          <string>symbols</string>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

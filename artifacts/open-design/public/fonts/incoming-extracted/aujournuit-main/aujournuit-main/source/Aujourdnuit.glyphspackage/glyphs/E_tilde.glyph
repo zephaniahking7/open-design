@@ -1,0 +1,36 @@
+{
+glyphname = Etilde;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = E;
+},
+{
+pos = (46,200);
+ref = tildecomb;
+}
+);
+width = 303;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = E;
+},
+{
+alignment = -1;
+attr = {
+identifier = 53E08AA6;
+};
+pos = (234,200);
+ref = tildecomb;
+}
+);
+width = 706;
+}
+);
+unicode = 7868;
+}

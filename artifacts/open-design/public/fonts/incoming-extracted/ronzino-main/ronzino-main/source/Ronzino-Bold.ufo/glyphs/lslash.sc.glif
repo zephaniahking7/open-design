@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lslash.sc" format="2">
+  <advance width="449"/>
+  <outline>
+    <component base="l.sc"/>
+    <contour>
+      <point x="13" y="229" type="line"/>
+      <point x="315" y="318" type="line"/>
+      <point x="289" y="395" type="line"/>
+      <point x="-13" y="304" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.glyph.userData</key>
+      <dict>
+        <key>KernOnSpecialSpacing</key>
+        <dict>
+          <key>L</key>
+          <string>smallcaps</string>
+          <key>R</key>
+          <string>smallcaps</string>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

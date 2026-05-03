@@ -1,0 +1,137 @@
+{
+color = 1;
+glyphname = ordmasculine;
+layers = (
+{
+hints = (
+{
+horizontal = 1;
+origin = (0,11);
+target = (1,8);
+type = Stem;
+},
+{
+horizontal = 1;
+origin = (0,5);
+target = (1,2);
+type = Stem;
+},
+{
+origin = (0,8);
+target = (1,11);
+type = Stem;
+},
+{
+origin = (1,5);
+target = (0,2);
+type = Stem;
+}
+);
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(186,370,o),
+(224,449,o),
+(221,548,cs),
+(218,645,o),
+(176,710,o),
+(125,710,cs),
+(70,710,o),
+(32,634,o),
+(35,535,cs),
+(36,438,o),
+(78,370,o),
+(130,370,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(70,643,o),
+(87,702,o),
+(118,702,cs),
+(152,702,o),
+(178,634,o),
+(182,523,cs),
+(185,432,o),
+(171,380,o),
+(139,380,cs),
+(104,380,o),
+(77,445,o),
+(74,551,cs)
+);
+}
+);
+width = 256;
+},
+{
+hints = (
+{
+horizontal = 1;
+origin = (0,11);
+target = (1,8);
+type = Stem;
+},
+{
+horizontal = 1;
+origin = (0,5);
+target = (1,2);
+type = Stem;
+},
+{
+origin = (0,8);
+target = (1,11);
+type = Stem;
+},
+{
+origin = (1,5);
+target = (0,2);
+type = Stem;
+}
+);
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(364,370,o),
+(453,447,o),
+(450,545,cs),
+(447,643,o),
+(364,710,o),
+(241,710,cs),
+(124,710,o),
+(35,633,o),
+(37,535,cs),
+(39,437,o),
+(122,370,o),
+(246,370,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(77,643,o),
+(139,702,o),
+(234,702,cs),
+(334,702,o),
+(404,634,o),
+(407,528,cs),
+(409,438,o),
+(349,380,o),
+(255,380,cs),
+(154,380,o),
+(84,447,o),
+(81,551,cs)
+);
+}
+);
+width = 487;
+}
+);
+metricLeft = o;
+metricRight = o;
+unicode = 186;
+}

@@ -1,0 +1,44 @@
+{
+glyphname = hbar;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = h;
+},
+{
+alignment = -1;
+attr = {
+identifier = BBCE9BFE;
+};
+pos = (-10,-22);
+ref = macron;
+scale = (0.8,1);
+}
+);
+width = 408;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = h;
+},
+{
+alignment = -1;
+attr = {
+identifier = 108288AE;
+};
+pos = (38,-48);
+ref = macron;
+scale = (0.6,1);
+}
+);
+width = 803;
+}
+);
+metricLeft = h;
+metricRight = h;
+unicode = 295;
+}

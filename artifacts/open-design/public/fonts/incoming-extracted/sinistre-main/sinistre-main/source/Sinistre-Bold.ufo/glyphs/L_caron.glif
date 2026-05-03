@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Lcaron" format="2">
+  <advance width="647.78125"/>
+  <unicode hex="013D"/>
+  <outline>
+    <component base="L" identifier="1A6AC92C"/>
+    <component base="caroncomb.alt" xOffset="311" yOffset="-26" identifier="B2431A75"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.hugojourdan.ColorFlow</key>
+      <dict>
+        <key>0</key>
+        <integer>0</integer>
+        <key>1</key>
+        <integer>0</integer>
+        <key>10</key>
+        <integer>0</integer>
+        <key>11</key>
+        <integer>0</integer>
+        <key>2</key>
+        <integer>0</integer>
+        <key>3</key>
+        <integer>0</integer>
+        <key>4</key>
+        <integer>0</integer>
+        <key>5</key>
+        <integer>0</integer>
+        <key>6</key>
+        <integer>0</integer>
+        <key>7</key>
+        <integer>0</integer>
+        <key>8</key>
+        <integer>0</integer>
+        <key>9</key>
+        <integer>0</integer>
+      </dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>1A6AC92C</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>B2431A75</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

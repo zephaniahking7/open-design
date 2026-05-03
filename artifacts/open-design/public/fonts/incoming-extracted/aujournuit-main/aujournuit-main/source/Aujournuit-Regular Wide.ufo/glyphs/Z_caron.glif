@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Zcaron" format="2">
+  <advance width="841"/>
+  <unicode hex="017D"/>
+  <outline>
+    <component base="Z" identifier="3A0EC5D6"/>
+    <component base="uni030C" xOffset="271" yOffset="200" identifier="0E4F366A"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>0E4F366A</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+        <key>3A0EC5D6</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

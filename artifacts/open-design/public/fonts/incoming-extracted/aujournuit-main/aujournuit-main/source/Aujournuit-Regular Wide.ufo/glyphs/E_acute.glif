@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Eacute" format="2">
+  <advance width="706"/>
+  <unicode hex="00C9"/>
+  <outline>
+    <component base="E"/>
+    <component base="acutecomb" xOffset="274" yOffset="200" identifier="74C6A346"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>74C6A346</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

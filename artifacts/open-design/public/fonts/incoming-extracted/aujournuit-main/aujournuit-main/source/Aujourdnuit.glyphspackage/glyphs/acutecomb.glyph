@@ -1,0 +1,48 @@
+{
+glyphname = acutecomb;
+layers = (
+{
+anchors = (
+{
+name = _top;
+pos = (93,500);
+},
+{
+name = top;
+pos = (93,678);
+}
+);
+layerId = m003;
+shapes = (
+{
+pos = (202,0);
+ref = gravecomb;
+scale = (-1,1);
+}
+);
+width = 187;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (90,500);
+},
+{
+name = top;
+pos = (90,686);
+}
+);
+layerId = m002;
+shapes = (
+{
+pos = (180,0);
+ref = gravecomb;
+scale = (-1,1);
+}
+);
+width = 180;
+}
+);
+unicode = 769;
+}

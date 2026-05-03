@@ -1,0 +1,81 @@
+{
+glyphname = commaturnedabovecomb;
+layers = (
+{
+anchors = (
+{
+name = _top;
+pos = (122,532);
+}
+);
+layerId = m01;
+shapes = (
+{
+angle = 180;
+pos = (248,546);
+ref = commaaccentcomb;
+}
+);
+width = 248;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (130,545);
+}
+);
+layerId = "E9FB66CC-5D7A-47B2-9A25-A0E8EEF5BB81";
+shapes = (
+{
+angle = 180;
+pos = (279,556);
+ref = commaaccentcomb;
+}
+);
+width = 279;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (238,532);
+}
+);
+layerId = "980A8AF2-BF11-492D-9410-496A94B21BD3";
+shapes = (
+{
+angle = 180;
+pos = (287,546);
+ref = commaaccentcomb;
+}
+);
+width = 322;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (257,545);
+}
+);
+layerId = "829AF10C-3E33-4291-B5B6-8F7CF12D6A62";
+shapes = (
+{
+angle = 180;
+pos = (320,556);
+ref = commaaccentcomb;
+}
+);
+width = 358;
+}
+);
+metricRight = "=|";
+unicode = 786;
+userData = {
+KernOnSpecialSpacing = {
+L = NoKerning;
+R = NoKerning;
+};
+};
+}

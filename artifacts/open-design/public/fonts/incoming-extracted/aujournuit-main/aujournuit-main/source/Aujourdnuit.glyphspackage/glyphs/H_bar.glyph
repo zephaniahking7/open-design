@@ -1,0 +1,54 @@
+{
+glyphname = Hbar;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+alignment = -1;
+attr = {
+identifier = 088246B9;
+};
+pos = (7,0);
+ref = H;
+},
+{
+alignment = -1;
+attr = {
+identifier = E6DAF414;
+};
+pos = (-70,-51);
+ref = macroncomb;
+scale = (1.8,1);
+}
+);
+width = 393;
+},
+{
+layerId = m002;
+shapes = (
+{
+alignment = -1;
+attr = {
+identifier = 357F2872;
+};
+pos = (3,0);
+ref = H;
+},
+{
+alignment = -1;
+attr = {
+identifier = D673BB6F;
+};
+pos = (34,-51);
+ref = macroncomb;
+scale = (1.9,1);
+}
+);
+width = 919;
+}
+);
+metricLeft = H;
+metricRight = H;
+unicode = 294;
+}

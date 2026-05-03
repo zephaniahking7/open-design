@@ -1,0 +1,112 @@
+{
+glyphname = h;
+kernLeft = h;
+kernRight = n;
+layers = (
+{
+anchors = (
+{
+name = bottom;
+pos = (204,0);
+},
+{
+name = center;
+pos = (204,379);
+},
+{
+name = top;
+pos = (204,758);
+}
+);
+background = {
+shapes = (
+{
+pos = (0,253);
+ref = n;
+}
+);
+};
+layerId = m003;
+shapes = (
+{
+alignment = -1;
+attr = {
+identifier = 78C8142B;
+};
+pos = (11,0);
+ref = _n.side;
+},
+{
+pos = (-5,0);
+ref = _stem.long.top.indentright;
+},
+{
+pos = (1,0);
+ref = _stem.short;
+},
+{
+pos = (11,0);
+ref = _stem.foot;
+}
+);
+width = 408;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (389,0);
+},
+{
+name = center;
+pos = (389,379);
+},
+{
+name = top;
+pos = (389,758);
+}
+);
+background = {
+shapes = (
+{
+pos = (35,253);
+ref = n;
+}
+);
+};
+layerId = m002;
+metricLeft = "=n-25";
+shapes = (
+{
+alignment = -1;
+attr = {
+identifier = 29B7C297;
+};
+pos = (46,0);
+ref = _n.side;
+},
+{
+pos = (30,0);
+ref = _stem.long.top.indentright;
+},
+{
+pos = (36,0);
+ref = _stem.short;
+},
+{
+pos = (46,0);
+ref = _stem.foot;
+}
+);
+width = 803;
+},
+{
+associatedMasterId = m003;
+layerId = "B2DA110A-38A4-419B-853E-D7226147048C";
+width = 600;
+}
+);
+metricLeft = n;
+metricRight = n;
+unicode = 104;
+}

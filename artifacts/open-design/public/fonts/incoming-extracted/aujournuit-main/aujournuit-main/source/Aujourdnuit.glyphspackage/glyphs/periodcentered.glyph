@@ -1,0 +1,46 @@
+{
+glyphname = periodcentered;
+layers = (
+{
+anchors = (
+{
+name = _center;
+pos = (70,278);
+}
+);
+background = {
+shapes = (
+{
+pos = (-95,0);
+ref = o;
+}
+);
+};
+layerId = m003;
+shapes = (
+{
+pos = (0,236);
+ref = period;
+}
+);
+width = 130;
+},
+{
+anchors = (
+{
+name = _center;
+pos = (99,276);
+}
+);
+layerId = m002;
+shapes = (
+{
+pos = (2,236);
+ref = period;
+}
+);
+width = 186;
+}
+);
+unicode = 183;
+}

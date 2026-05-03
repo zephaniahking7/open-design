@@ -1,0 +1,185 @@
+{
+glyphname = I;
+kernLeft = H;
+kernRight = H;
+layers = (
+{
+associatedMasterId = m003;
+layerId = "B826CCEB-93D1-4672-AA88-F03DC20D1A32";
+width = 600;
+},
+{
+associatedMasterId = m003;
+layerId = "E785B07C-7638-40DD-A08B-5080B4C14061";
+width = 600;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (104,0);
+},
+{
+name = ogonek;
+pos = (180,10);
+},
+{
+name = top;
+pos = (104,700);
+},
+{
+name = topleft;
+pos = (25,700);
+}
+);
+hints = (
+{
+name = _corner.LeftSerifL;
+options = 1;
+origin = (0,0);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 2;
+origin = (0,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 2;
+origin = (0,2);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 2;
+origin = (0,3);
+type = Corner;
+},
+{
+name = _segment.curve.capheight.outer;
+origin = (0,2);
+type = Segment;
+},
+{
+name = _segment.curve.capheight.outer;
+origin = (0,0);
+type = Segment;
+}
+);
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(136,700,l,{
+GSSegment = {
+name = _segment.curve.capheight.inner;
+};
+}),
+(71,700,l),
+(71,0,l,{
+GSSegment = {
+name = _segment.curve.capheight.outer;
+};
+}),
+(136,0,l)
+);
+}
+);
+width = 207;
+},
+{
+associatedMasterId = m002;
+layerId = "8DD7DC52-75DA-4D26-91CF-A132B31B4398";
+width = 600;
+},
+{
+associatedMasterId = m002;
+layerId = "6A29EE81-E7C7-4B67-8101-C69505B236C1";
+width = 600;
+},
+{
+anchors = (
+{
+name = bottom;
+pos = (175,0);
+},
+{
+name = ogonek;
+pos = (291,10);
+},
+{
+name = top;
+pos = (175,700);
+},
+{
+name = topleft;
+pos = (50,700);
+}
+);
+hints = (
+{
+name = _corner.LeftSerifL;
+options = 1;
+origin = (0,0);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 2;
+origin = (0,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 2;
+origin = (0,2);
+scale = (-1,1);
+type = Corner;
+},
+{
+name = _corner.LeftSerifL;
+options = 2;
+origin = (0,3);
+type = Corner;
+},
+{
+name = _segment.curve.capheight.outer;
+origin = (0,2);
+type = Segment;
+},
+{
+name = _segment.curve.capheight.outer;
+origin = (0,0);
+type = Segment;
+}
+);
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(212,700,l),
+(138,700,l),
+(138,0,l),
+(212,0,l)
+);
+}
+);
+width = 350;
+},
+{
+associatedMasterId = m003;
+layerId = "B2DA110A-38A4-419B-853E-D7226147048C";
+width = 600;
+}
+);
+metricLeft = H;
+metricRight = H;
+unicode = 73;
+}

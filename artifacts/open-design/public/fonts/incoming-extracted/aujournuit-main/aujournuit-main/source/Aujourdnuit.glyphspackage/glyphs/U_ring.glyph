@@ -1,0 +1,32 @@
+{
+glyphname = Uring;
+layers = (
+{
+layerId = m003;
+shapes = (
+{
+ref = U;
+},
+{
+pos = (102,200);
+ref = ringcomb;
+}
+);
+width = 382;
+},
+{
+layerId = m002;
+shapes = (
+{
+ref = U;
+},
+{
+pos = (344,200);
+ref = ringcomb;
+}
+);
+width = 863;
+}
+);
+unicode = 366;
+}

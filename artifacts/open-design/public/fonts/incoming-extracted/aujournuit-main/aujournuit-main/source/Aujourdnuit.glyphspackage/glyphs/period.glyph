@@ -1,0 +1,70 @@
+{
+glyphname = period;
+kernLeft = comma;
+layers = (
+{
+anchors = (
+{
+name = top;
+pos = (70,89);
+}
+);
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(93,-10,o),
+(108,11,o),
+(108,40,cs),
+(108,72,o),
+(95,93,o),
+(74,93,cs),
+(48,93,o),
+(32,72,o),
+(32,40,cs),
+(32,10,o),
+(46,-10,o),
+(68,-10,cs)
+);
+}
+);
+width = 140;
+},
+{
+anchors = (
+{
+name = top;
+pos = (95,76);
+}
+);
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(126,-3,o),
+(144,14,o),
+(144,39,cs),
+(144,64,o),
+(126,83,o),
+(97,83,cs),
+(69,83,o),
+(50,65,o),
+(50,39,cs),
+(50,14,o),
+(67,-3,o),
+(97,-3,cs)
+);
+}
+);
+width = 194;
+},
+{
+associatedMasterId = m003;
+layerId = "B2DA110A-38A4-419B-853E-D7226147048C";
+width = 600;
+}
+);
+unicode = 46;
+}

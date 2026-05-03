@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="h" format="2">
+  <advance width="408"/>
+  <unicode hex="0068"/>
+  <anchor x="204" y="0" name="bottom"/>
+  <anchor x="204" y="379" name="center"/>
+  <anchor x="204" y="758" name="top"/>
+  <outline>
+    <component base="_n.side" xOffset="11" identifier="78C8142B"/>
+    <component base="_stem.long.top.indentright" xOffset="-5"/>
+    <component base="_stem.short" xOffset="1"/>
+    <component base="_stem.foot" xOffset="11"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>n</string>
+      <key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+      <string>n</string>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>78C8142B</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

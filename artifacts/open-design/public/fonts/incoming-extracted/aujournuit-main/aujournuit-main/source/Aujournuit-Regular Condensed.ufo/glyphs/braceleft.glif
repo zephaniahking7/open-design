@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="braceleft" format="2">
+  <advance width="283"/>
+  <unicode hex="007B"/>
+  <outline>
+    <component base="_braceside" xOffset="-41" identifier="05BE7196"/>
+    <contour>
+      <point x="113" y="276" type="curve"/>
+      <point x="30" y="276" type="line"/>
+      <point x="30" y="271"/>
+      <point x="35" y="268"/>
+      <point x="47" y="268" type="curve" smooth="yes"/>
+      <point x="56" y="268"/>
+      <point x="67" y="270"/>
+      <point x="82" y="267" type="curve" smooth="yes"/>
+      <point x="130" y="256"/>
+      <point x="154" y="202"/>
+      <point x="154" y="42" type="curve" smooth="yes"/>
+      <point x="154" y="-105"/>
+      <point x="174" y="-158"/>
+      <point x="241" y="-158" type="curve" smooth="yes"/>
+      <point x="256" y="-158" type="line" smooth="yes"/>
+      <point x="267" y="-158"/>
+      <point x="273" y="-157"/>
+      <point x="273" y="-151" type="curve" smooth="yes"/>
+      <point x="273" y="-147"/>
+      <point x="270" y="-145"/>
+      <point x="261" y="-145" type="curve" smooth="yes"/>
+      <point x="218" y="-145"/>
+      <point x="205" y="-98"/>
+      <point x="205" y="18" type="curve" smooth="yes"/>
+      <point x="205" y="195"/>
+      <point x="175" y="259"/>
+      <point x="120" y="272" type="curve" smooth="yes"/>
+      <point x="115" y="273"/>
+      <point x="113" y="274"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>05BE7196</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>

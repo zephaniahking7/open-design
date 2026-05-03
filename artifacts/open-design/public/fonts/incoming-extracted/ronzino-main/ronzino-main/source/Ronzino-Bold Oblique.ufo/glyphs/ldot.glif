@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ldot" format="2">
+  <advance width="385"/>
+  <unicode hex="0140"/>
+  <outline>
+    <contour>
+      <point x="247" y="300" type="line"/>
+      <point x="381" y="300" type="line"/>
+      <point x="399" y="430" type="line"/>
+      <point x="265" y="430" type="line"/>
+    </contour>
+    <component base="l" identifier="FBB2448D"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+      <string>l</string>
+      <key>com.schriftgestaltung.glyph.userData</key>
+      <dict>
+        <key>KernOnSpecialSpacing</key>
+        <dict>
+          <key>R</key>
+          <string>NoKerning</string>
+        </dict>
+      </dict>
+      <key>public.objectLibs</key>
+      <dict>
+        <key>FBB2448D</key>
+        <dict>
+          <key>com.schriftgestaltung.alignment</key>
+          <integer>-1</integer>
+        </dict>
+      </dict>
+    </dict>
+  </lib>
+</glyph>
