@@ -1,0 +1,71 @@
+MASTER FINISH CHECKLIST — Bonanza Cr8tives launch.
+
+We need to finish the public landing properly and track all remaining blockers.
+
+Do not rebuild.
+Do not restart architecture.
+Do not touch backend/database/studio/render/lead logic unless a later dedicated task explicitly asks.
+
+Create a launch completion checklist first.
+
+Include these lanes:
+
+LANE A — Public landing essentials
+1. Package-first payment flow
+2. Website / Web App / SaaS offer logic
+3. Guided project builder questions
+4. Booking CTA placeholder
+5. Payment link placeholders
+6. Built by us / ecosystem proof section
+7. Registered business address block
+8. Map link placeholder
+9. Social link placeholders
+10. Privacy / Terms footer placeholders
+11. Remove confusing “Render” language
+12. Remove overpromise around instant AI website/app generation
+
+LANE B — Visual polish
+1. Two-tone palette consistency
+2. Plus Jakarta Sans typography consistency
+3. 21st.dev-inspired effects, CSS-light only
+4. Card hover glow
+5. Button hover shine
+6. Input focus clarity
+7. CTA pulse/beam
+8. Mobile spacing
+9. Section gaps
+10. Remove anything that feels like a disconnected demo component
+
+LANE C — Technical cleanup
+1. Repo hygiene after cloning Plus Jakarta Sans
+2. Confirm external font repo is not accidentally committed
+3. Confirm font licence/OFL note
+4. SEO/meta/OG/favicon/sitemap check
+5. Lead flow smoke test
+6. /studio receipt check
+7. Mobile audit at 375 / 768 / 1024 / 1440
+8. Performance check
+9. Known TypeScript errors list
+10. Separate controlled plan to fix legacy TypeScript errors without touching launch logic
+
+IMPORTANT:
+There were pre-existing TypeScript errors in legacy IDE files:
+- NewProjectPanel
+- FileViewer
+- AssistantMessage
+- ChatPane
+- types.ts
+- App.tsx around lines 185/189/204
+
+Do not fix these during the public landing task unless they block launch.
+Create a separate error-cleanup plan for them.
+
+FIRST:
+Audit current status and return a table:
+- Item
+- Status: done / missing / partial / blocked
+- Files likely involved
+- Safe next action
+
+Do not edit yet.
+Report only.
