@@ -37,13 +37,34 @@ Total: 12 unique logos.
 
 - jay-monsoon-clothing.png   (listed previously, not yet uploaded by client)
 
-## Theme Previews — TODO(upload)
+## Theme Previews (present in /theme-previews/)
 
-The /theme-previews/ folder is currently empty. No theme preview images have been uploaded yet.
-Expected naming convention: kebab-case descriptive, e.g.
-  - lively-yet-soothing.png
-  - bold-and-graphic.png
-  - editorial-luxury.png
+Locked display order — the numeric prefix is the canonical sort key. Do not reorder without client sign-off.
+
+1.  01-teal-clean-and-modern.png                   (teal · aqua · white)
+2.  02-orange-pink-vibrant-but-calm.png            (orange · pink · yellow · cream)
+3.  03-blue-pink-orange-gradient-pop.png           (blue · pink · orange · black)
+4.  04-black-aqua-striking-and-simple.png          (black · charcoal · aqua · gray)
+5.  05-purple-yellow-youthful-and-fun.png          (purple · yellow · turquoise)
+6.  06-teal-rust-cool-and-collected.png            (deep teal · aqua · rust · pale blue)
+7.  07-ruby-pink-red-and-lively.png                (ruby · pink · blush · cream)
+8.  08-charcoal-rose-texturized-and-dynamic.png    (charcoal · rose · teal)
+9.  09-yellow-plum-effective-accent-colors.png     (yellow · plum · taupe · mauve)
+10. 10-lime-charcoal-gorgeous-contrast.png         (lime · charcoal · gray)
+11. 11-black-white-monochrome-editorial.png        (black · white · gray)
+12. 12-coral-blue-creative-pop.png                 (coral · yellow · blue · lavender)
+13. 13-multi-help-me-choose.png                    (multi-palette · mixed themes)
+14. 14-green-gold-nature-luxe.png                  (forest green · sand · gold · ivory)
+15. 15-sage-gold-fresh-growth.png                  (sage · olive · cream · gold)
+16. 16-black-gold-bold-culture.png                 (black · gold · red · navy)
+17. 17-blush-plum-feminine-modern.png              (blush · pink · plum · cream)
+18. 18-clay-sand-earth-clay-sand.png               (clay · sand · stone · moss)
+19. 19-ruby-ivory-deep-ruby-ivory.png              (deep ruby · ivory · gold · blush)
+20. 20-blush-navy-elegant-yet-approachable.png     (blush · cream · navy · rose)
+
+Total: 20 theme previews.
+
+Naming convention: `NN-<kebab-case-descriptive>.png` where `NN` is a zero-padded two-digit display order.
 
 ## Font Previews — TODO(upload)
 
@@ -56,6 +77,7 @@ The /reference-uploads/ folder is currently empty. Reserved for client mood-boar
 ## Cleanup History
 
 - 2026-05-03: deleted `ChatGPT Image May 3, 2026, 01_07_49 PM.png` from /logos/ — was an exact byte-identical duplicate of `baejo-jobae-white.png` (MD5 d2a049615a4aa1c0200a030e383d1192) with a generative-tool default name.
+- 2026-05-03: renamed all 20 theme previews in /theme-previews/ from `<slug>.png (<palette>).png` to locked-order `NN-<slug>.png`. Mapping was deterministic: each original filename embedded the canonical slug before the " (palette).png" suffix. No images deleted, no duplicates found.
 
 ## Rule
 
