@@ -119,10 +119,6 @@ export function BonanzaStudio() {
   // synchronously because the load effect would clobber it; this
   // "pending" id is applied after the response arrives.
   const [pendingSelectId, setPendingSelectId] = useState<string | null>(null);
-  const [rendersTruncated, setRendersTruncated] = useState<{
-    truncated: boolean;
-    cap: number;
-  } | null>(null);
   // Inline toast for failed background actions (promote, list load).
   // Cleared on the next successful action; the user gets a single
   // line of feedback instead of silent failures.
@@ -144,16 +140,9 @@ export function BonanzaStudio() {
             signal: ctrl.signal,
           });
           if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-          const data = (await resp.json()) as {
-            renders: Render[];
-            truncated?: boolean;
-            cap?: number;
-          };
+          const data = (await resp.json()) as { renders: Render[] };
           if (!ctrl.signal.aborted) {
             setRenders(data.renders);
-            setRendersTruncated(
-              data.truncated ? { truncated: true, cap: data.cap ?? 500 } : null,
-            );
             setSelectedBriefId(null);
             setSelectedRenderId(null);
           }
@@ -319,15 +308,6 @@ export function BonanzaStudio() {
             {!loading && isRenders && renders.length === 0 && (
               <p className="bzs-empty"><em>No renders captured yet.</em></p>
             )}
-            {!loading && isRenders && rendersTruncated?.truncated && (
-              <p className="bzs-cap-note" role="note">
-                <em>
-                  Showing the latest {rendersTruncated.cap}. Older renders are
-                  hidden until pagination lands.
-                </em>
-              </p>
-            )}
-
             {!isRenders &&
               briefs.map((b) => (
                 <BriefRow
