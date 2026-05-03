@@ -220,11 +220,16 @@
 }
 
 .bzs-row-status {
-  font-family: var(--bzs-body);
-  font-weight: 500;
-  font-size: 0.625rem;
+  font-family: var(--bzs-display);
+  font-style: italic;
+  font-size: 0.9375rem;
   color: var(--bzs-tile);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+}
+
+.bzs-row-status::first-letter {
+  text-transform: uppercase;
 }
 
 .bzs-row-time {
@@ -334,14 +339,18 @@
   background: transparent;
   border: 0;
   padding: 2px 0 4px;
-  font-family: var(--bzs-body);
-  font-weight: 500;
-  font-size: 0.6875rem;
-  letter-spacing: 0.16em;
+  font-family: var(--bzs-display);
+  font-style: italic;
+  font-size: 1.0625rem;
   color: var(--bzs-ink-mute);
   cursor: pointer;
   border-bottom: 1px solid transparent;
   transition: color 200ms ease, border-color 200ms ease;
+  text-transform: lowercase;
+}
+
+.bzs-status-option::first-letter {
+  text-transform: uppercase;
 }
 
 .bzs-status-option:hover {
