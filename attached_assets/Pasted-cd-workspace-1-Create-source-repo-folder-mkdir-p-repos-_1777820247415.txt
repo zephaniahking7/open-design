@@ -1,0 +1,145 @@
+cd ~/workspace
+
+# 1. Create source repo folder
+mkdir -p repos
+
+# 2. Clone or update source repos
+git clone https://github.com/google/material-design-icons.git repos/material-design-icons || (cd repos/material-design-icons && git pull)
+git clone https://github.com/zephaniahking7/gabarito.git repos/gabarito || (cd repos/gabarito && git pull)
+git clone https://github.com/zephaniahking7/Frick.git repos/frick || (cd repos/frick && git pull)
+git clone https://github.com/zephaniahking7/Petrona.git repos/petrona || (cd repos/petrona && git pull)
+git clone https://github.com/zephaniahking7/Whois-mono.git repos/whois-mono || (cd repos/whois-mono && git pull)
+git clone https://github.com/zephaniahking7/Saira.git repos/saira || (cd repos/saira && git pull)
+
+# 3. Create live app font/icon folders
+cd ~/workspace/artifacts/open-design
+
+mkdir -p public/fonts/custom/gabarito
+mkdir -p public/fonts/custom/frick
+mkdir -p public/fonts/custom/petrona
+mkdir -p public/fonts/custom/whois-mono
+mkdir -p public/fonts/custom/saira
+mkdir -p public/fonts/icons/material-symbols
+
+# 4. Create font asset map
+cat > public/fonts/FONT-ASSET-MAP.md <<'EOF'
+# Font + Icon Asset Map
+
+Central reference for website-ready fonts and icon fonts.
+
+## Source Repos
+
+Source repos are cloned into:
+
+/repos/
+
+Current source repos:
+
+- /repos/gabarito
+- /repos/frick
+- /repos/petrona
+- /repos/whois-mono
+- /repos/saira
+- /repos/material-design-icons
+- /repos/google-fonts
+
+## Live Website Font Folders
+
+Only approved, licensed, production-ready font files should be copied into:
+
+/artifacts/open-design/public/fonts/
+
+Current live folders:
+
+- /public/fonts/plus-jakarta-sans/
+- /public/fonts/custom/gabarito/
+- /public/fonts/custom/frick/
+- /public/fonts/custom/petrona/
+- /public/fonts/custom/whois-mono/
+- /public/fonts/custom/saira/
+- /public/fonts/icons/material-symbols/
+
+## Rules
+
+- Do not use fonts directly from /repos in the live app.
+- Do not copy a font into /public/fonts unless its licence is present and commercial web use appears allowed.
+- Prefer WOFF2.
+- If only TTF/OTF exists, report performance impact before using.
+- Keep licence files beside the served font files where possible.
+- Use font-display: swap in @font-face.
+- Keep fallback stack:
+  system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif.
+- Do not replace the live Bonanza site font until approved.
+- The client font picker may preview fonts after they are copied and mapped.
+
+## Current Confirmed Live Font
+
+Plus Jakarta Sans:
+- /public/fonts/plus-jakarta-sans/PlusJakartaSans-VariableFont_wght.woff2
+
+## Candidate Custom Fonts
+
+Gabarito:
+- Role: Clean Modern / Friendly Tech
+- Status: TODO inspect
+
+Frick:
+- Role: Bold Impact / Expressive
+- Status: TODO inspect
+
+Petrona:
+- Role: Editorial / Classic Trust
+- Status: TODO inspect
+
+Whois Mono:
+- Role: Tech Future / System / Code Feel
+- Status: TODO inspect
+
+Saira:
+- Role: Strong Modern / Urban Tech / Versatile
+- Status: TODO inspect
+
+## Material Symbols
+
+Material Symbols should be treated as icon fonts, not brand typography.
+
+Priority:
+1. Keep lucide-react as default icon system.
+2. Use Material Symbols only if specific icon/font effects are needed.
+3. Prefer Material Symbols Outlined if only one style is copied.
+4. Do not integrate Material Symbols until approved.
+
+## Client Font Picker Direction
+
+The font picker should show font mood/direction, not hand final creative control to the client.
+
+Suggested roles:
+
+- Clean Modern
+- Editorial Luxury
+- Bold Impact
+- Soft Premium
+- Street Culture
+- Tech Future
+- Youthful Fun
+- Feminine Elegant
+- Classic Trust
+- Cinematic Drama
+- Minimal Calm
+- Heritage Artisan
+
+The UI should say:
+“Choose the direction you naturally connect with. Bonanza Cr8tives will refine the final font pairing for readability, mobile performance and brand fit.”
+
+## Website Path Usage
+
+Files inside /public are referenced without “public”.
+
+Example:
+
+/fonts/custom/gabarito/font-name.woff2
+/fonts/icons/material-symbols/font-name.woff2
+EOF
+
+# 5. Show created folders
+find public/fonts -maxdepth 3 -type d
