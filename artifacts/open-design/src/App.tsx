@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
 import { BonanzaLanding } from './components/BonanzaLanding';
+import { BonanzaStudio } from './components/BonanzaStudio';
 import { EntryView } from './components/EntryView';
 import type { CreateInput } from './components/NewProjectPanel';
 import { ProjectView } from './components/ProjectView';
@@ -401,6 +402,13 @@ export function App() {
   // unlock.
   if (homeBlocked) {
     return <BonanzaNotFound />;
+  }
+
+  // /studio (route.kind === 'home') belongs to Bonanza Studio for
+  // internal users. Open Design's project IDE still lives at
+  // /projects/:id — only the entry view is replaced.
+  if (route.kind === 'home' && !activeProject) {
+    return <BonanzaStudio />;
   }
 
   return (

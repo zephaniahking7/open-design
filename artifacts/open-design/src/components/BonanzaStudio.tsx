@@ -1,0 +1,676 @@
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  type FormEvent,
+} from 'react';
+import { navigate } from '../router';
+import './BonanzaStudio.css';
+
+type Filter = 'new' | 'active' | 'completed' | 'renders';
+type Status = 'new' | 'active' | 'completed';
+
+type Brief = {
+  id: string;
+  title: string;
+  client_name: string;
+  client_email: string;
+  vision: string;
+  budget_note: string;
+  status: Status;
+  notes: string;
+  source_lead_id: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
+type Render = {
+  id: string;
+  vision: string;
+  ai_output: string | null;
+  email: string;
+  source: string | null;
+  user_agent: string | null;
+  referrer: string | null;
+  created_at: string;
+};
+
+// All studio API calls flow through here so the X-Bonanza-Internal
+// header is never accidentally dropped. TODO real auth — until then,
+// this header is the only thing standing between the public and the
+// briefs table.
+async function studioFetch(
+  path: string,
+  init: RequestInit = {},
+): Promise<Response> {
+  const headers = new Headers(init.headers);
+  headers.set('X-Bonanza-Internal', 'true');
+  if (init.body && !headers.has('Content-Type')) {
+    headers.set('Content-Type', 'application/json');
+  }
+  return fetch(path, { ...init, headers });
+}
+
+const FILTERS: { value: Filter; label: string }[] = [
+  { value: 'new', label: 'New' },
+  { value: 'active', label: 'Active' },
+  { value: 'completed', label: 'Completed' },
+  { value: 'renders', label: 'Renders' },
+];
+
+const STATUS_LABEL: Record<Status, string> = {
+  new: 'New',
+  active: 'Active',
+  completed: 'Completed',
+};
+
+function relativeTime(iso: string): string {
+  const t = new Date(iso).getTime();
+  if (Number.isNaN(t)) return '';
+  const diff = Date.now() - t;
+  const s = Math.round(diff / 1000);
+  if (s < 60) return 'just now';
+  const m = Math.round(s / 60);
+  if (m < 60) return `${m}m ago`;
+  const h = Math.round(m / 60);
+  if (h < 24) return `${h}h ago`;
+  const d = Math.round(h / 24);
+  if (d < 30) return `${d}d ago`;
+  const mo = Math.round(d / 30);
+  return `${mo}mo ago`;
+}
+
+function excerpt(text: string, n: number): string {
+  const t = text.trim();
+  return t.length > n ? `${t.slice(0, n).trimEnd()}…` : t;
+}
+
+export function BonanzaStudio() {
+  const [filter, setFilter] = useState<Filter>('new');
+  const [briefs, setBriefs] = useState<Brief[]>([]);
+  const [renders, setRenders] = useState<Render[]>([]);
+  const [selectedBriefId, setSelectedBriefId] = useState<string | null>(null);
+  const [selectedRenderId, setSelectedRenderId] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [showCreate, setShowCreate] = useState(false);
+
+  const isRenders = filter === 'renders';
+
+  // AbortController guards against rapid filter switches: a slow
+  // response from a previous tab must not overwrite the state of the
+  // currently-selected one.
+  useEffect(() => {
+    const ctrl = new AbortController();
+    setLoading(true);
+    setSelectedBriefId(null);
+    setSelectedRenderId(null);
+
+    const run = async () => {
+      try {
+        if (isRenders) {
+          const resp = await studioFetch('/api/studio/renders', {
+            signal: ctrl.signal,
+          });
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          const data = (await resp.json()) as { renders: Render[] };
+          if (!ctrl.signal.aborted) setRenders(data.renders);
+        } else {
+          const resp = await studioFetch(
+            `/api/studio/briefs?status=${encodeURIComponent(filter)}`,
+            { signal: ctrl.signal },
+          );
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          const data = (await resp.json()) as { briefs: Brief[] };
+          if (!ctrl.signal.aborted) setBriefs(data.briefs);
+        }
+      } catch (err) {
+        if ((err as { name?: string })?.name === 'AbortError') return;
+        if (!ctrl.signal.aborted) {
+          if (isRenders) setRenders([]);
+          else setBriefs([]);
+        }
+      } finally {
+        if (!ctrl.signal.aborted) setLoading(false);
+      }
+    };
+
+    void run();
+    return () => ctrl.abort();
+  }, [filter, isRenders]);
+
+  const selectedBrief = useMemo(
+    () => briefs.find((b) => b.id === selectedBriefId) ?? null,
+    [briefs, selectedBriefId],
+  );
+  const selectedRender = useMemo(
+    () => renders.find((r) => r.id === selectedRenderId) ?? null,
+    [renders, selectedRenderId],
+  );
+
+  const handleBriefSaved = useCallback((updated: Brief) => {
+    setBriefs((curr) =>
+      curr
+        .map((b) => (b.id === updated.id ? updated : b))
+        // If the status changed off the current filter, drop it; the
+        // user will find it under the new tab.
+        .filter((b) => b.status === filter || filter === 'renders'),
+    );
+  }, [filter]);
+
+  const handleBriefDeleted = useCallback((id: string) => {
+    setBriefs((curr) => curr.filter((b) => b.id !== id));
+    setSelectedBriefId((curr) => (curr === id ? null : curr));
+  }, []);
+
+  const handleBriefCreated = useCallback(
+    (brief: Brief, opts: { switchToNew?: boolean } = {}) => {
+      if (opts.switchToNew) {
+        setFilter('new');
+      }
+      setBriefs((curr) => [brief, ...curr.filter((b) => b.id !== brief.id)]);
+      setSelectedBriefId(brief.id);
+      setShowCreate(false);
+    },
+    [],
+  );
+
+  const handlePromoteRender = useCallback(
+    async (render: Render) => {
+      try {
+        const resp = await studioFetch('/api/studio/briefs', {
+          method: 'POST',
+          body: JSON.stringify({
+            source: 'promoted',
+            source_lead_id: render.id,
+          }),
+        });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const data = (await resp.json()) as { brief: Brief };
+        handleBriefCreated(data.brief, { switchToNew: true });
+      } catch {
+        // Quiet failure — the row stays in renders, the user can retry.
+      }
+    },
+    [handleBriefCreated],
+  );
+
+  return (
+    <div className="bzs-root">
+      <div className="bzs-shell">
+        <header className="bzs-header">
+          <a
+            className="bzs-wordmark"
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate({ kind: 'landing' });
+            }}
+          >
+            Bonanza Studio
+          </a>
+          <button
+            type="button"
+            className="bzs-new-brief"
+            onClick={() => setShowCreate(true)}
+          >
+            + New brief
+          </button>
+        </header>
+
+        <nav className="bzs-filters" aria-label="Filter briefs">
+          {FILTERS.map((f) => (
+            <button
+              key={f.value}
+              type="button"
+              className={`bzs-filter ${filter === f.value ? 'is-active' : ''}`}
+              onClick={() => setFilter(f.value)}
+            >
+              {f.label}
+            </button>
+          ))}
+        </nav>
+
+        <div className="bzs-grid">
+          <section className="bzs-list" aria-label="Records">
+            {loading && (
+              <p className="bzs-empty"><em>Loading…</em></p>
+            )}
+            {!loading && !isRenders && briefs.length === 0 && (
+              <p className="bzs-empty"><em>No briefs in this state.</em></p>
+            )}
+            {!loading && isRenders && renders.length === 0 && (
+              <p className="bzs-empty"><em>No renders captured yet.</em></p>
+            )}
+
+            {!isRenders &&
+              briefs.map((b) => (
+                <BriefRow
+                  key={b.id}
+                  brief={b}
+                  active={b.id === selectedBriefId}
+                  onSelect={() => setSelectedBriefId(b.id)}
+                  onDeleted={handleBriefDeleted}
+                />
+              ))}
+
+            {isRenders &&
+              renders.map((r) => (
+                <RenderRow
+                  key={r.id}
+                  render={r}
+                  active={r.id === selectedRenderId}
+                  onSelect={() => setSelectedRenderId(r.id)}
+                  onPromote={() => handlePromoteRender(r)}
+                />
+              ))}
+          </section>
+
+          <aside className="bzs-detail" aria-label="Detail panel">
+            {!isRenders && selectedBrief && (
+              <BriefDetail
+                key={selectedBrief.id}
+                brief={selectedBrief}
+                onSaved={handleBriefSaved}
+              />
+            )}
+            {!isRenders && !selectedBrief && (
+              <p className="bzs-empty"><em>Select a brief.</em></p>
+            )}
+            {isRenders && selectedRender && (
+              <RenderDetail render={selectedRender} />
+            )}
+            {isRenders && !selectedRender && (
+              <p className="bzs-empty"><em>Select a render.</em></p>
+            )}
+          </aside>
+        </div>
+      </div>
+
+      {showCreate && (
+        <NewBriefModal
+          onClose={() => setShowCreate(false)}
+          onCreated={(b) => handleBriefCreated(b, { switchToNew: true })}
+        />
+      )}
+    </div>
+  );
+}
+
+// ---- Sub-components -----------------------------------------------
+
+function BriefRow({
+  brief,
+  active,
+  onSelect,
+  onDeleted,
+}: {
+  brief: Brief;
+  active: boolean;
+  onSelect: () => void;
+  onDeleted: (id: string) => void;
+}) {
+  const [deleting, setDeleting] = useState(false);
+
+  const handleDelete = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (deleting) return;
+    setDeleting(true);
+    try {
+      const resp = await studioFetch(`/api/studio/briefs/${brief.id}`, {
+        method: 'DELETE',
+      });
+      if (resp.ok) onDeleted(brief.id);
+    } finally {
+      setDeleting(false);
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      className={`bzs-row ${active ? 'is-active' : ''}`}
+      onClick={onSelect}
+    >
+      <div className="bzs-row-main">
+        <span className="bzs-row-title">{brief.title}</span>
+        {brief.client_name && (
+          <span className="bzs-row-sub">{brief.client_name}</span>
+        )}
+      </div>
+      <div className="bzs-row-meta">
+        <span className="bzs-row-status">{STATUS_LABEL[brief.status]}</span>
+        <span className="bzs-row-time">{relativeTime(brief.updated_at)}</span>
+        <span
+          className="bzs-row-delete"
+          role="button"
+          tabIndex={0}
+          aria-label="Delete brief"
+          onClick={handleDelete}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              void handleDelete(e as unknown as React.MouseEvent);
+            }
+          }}
+        >
+          delete
+        </span>
+      </div>
+    </button>
+  );
+}
+
+function RenderRow({
+  render,
+  active,
+  onSelect,
+  onPromote,
+}: {
+  render: Render;
+  active: boolean;
+  onSelect: () => void;
+  onPromote: () => void;
+}) {
+  const handlePromote = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onPromote();
+  };
+  return (
+    <button
+      type="button"
+      className={`bzs-row ${active ? 'is-active' : ''}`}
+      onClick={onSelect}
+    >
+      <div className="bzs-row-main">
+        <span className="bzs-row-title">{excerpt(render.vision, 64)}</span>
+        <span className="bzs-row-sub">{render.email}</span>
+      </div>
+      <div className="bzs-row-meta">
+        <span className="bzs-row-time">{relativeTime(render.created_at)}</span>
+        <span
+          className="bzs-row-delete"
+          role="button"
+          tabIndex={0}
+          aria-label="Promote to brief"
+          onClick={handlePromote}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              onPromote();
+            }
+          }}
+        >
+          promote
+        </span>
+      </div>
+    </button>
+  );
+}
+
+function BriefDetail({
+  brief,
+  onSaved,
+}: {
+  brief: Brief;
+  onSaved: (b: Brief) => void;
+}) {
+  const [title, setTitle] = useState(brief.title);
+  const [status, setStatus] = useState<Status>(brief.status);
+  const [notes, setNotes] = useState(brief.notes);
+  const [saving, setSaving] = useState(false);
+
+  const dirty =
+    title.trim() !== brief.title ||
+    status !== brief.status ||
+    notes !== brief.notes;
+
+  const canSave = dirty && title.trim().length > 0 && !saving;
+
+  const handleSave = async () => {
+    if (!canSave) return;
+    setSaving(true);
+    try {
+      const resp = await studioFetch(`/api/studio/briefs/${brief.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ title: title.trim(), status, notes }),
+      });
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const data = (await resp.json()) as { brief: Brief };
+      onSaved(data.brief);
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <div className="bzs-detail-pane">
+      <input
+        className="bzs-detail-title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        aria-label="Brief title"
+      />
+
+      <dl className="bzs-detail-grid">
+        {brief.client_name && (
+          <>
+            <dt>Client</dt>
+            <dd>
+              {brief.client_name}
+              {brief.client_email && (
+                <span className="bzs-muted"> · {brief.client_email}</span>
+              )}
+            </dd>
+          </>
+        )}
+        {!brief.client_name && brief.client_email && (
+          <>
+            <dt>Email</dt>
+            <dd>{brief.client_email}</dd>
+          </>
+        )}
+        <dt>Vision</dt>
+        <dd className="bzs-detail-vision">{brief.vision}</dd>
+        <dt>Budget</dt>
+        <dd>{brief.budget_note}</dd>
+        <dt>Status</dt>
+        <dd>
+          <div className="bzs-status-options" role="radiogroup">
+            {(['new', 'active', 'completed'] as Status[]).map((s) => (
+              <button
+                key={s}
+                type="button"
+                role="radio"
+                aria-checked={status === s}
+                className={`bzs-status-option ${status === s ? 'is-active' : ''}`}
+                onClick={() => setStatus(s)}
+              >
+                {STATUS_LABEL[s]}
+              </button>
+            ))}
+          </div>
+        </dd>
+        <dt>Notes</dt>
+        <dd>
+          <textarea
+            className="bzs-notes"
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+            placeholder="private notes..."
+            rows={6}
+          />
+        </dd>
+        <dt>Created</dt>
+        <dd className="bzs-muted">{relativeTime(brief.created_at)}</dd>
+        <dt>Updated</dt>
+        <dd className="bzs-muted">{relativeTime(brief.updated_at)}</dd>
+      </dl>
+
+      {dirty && (
+        <button
+          type="button"
+          className="bzs-save"
+          onClick={handleSave}
+          disabled={!canSave}
+        >
+          {saving ? 'Saving…' : 'Save'}
+        </button>
+      )}
+    </div>
+  );
+}
+
+function RenderDetail({ render }: { render: Render }) {
+  return (
+    <div className="bzs-detail-pane">
+      <h2 className="bzs-detail-title is-static">Render capture</h2>
+      <dl className="bzs-detail-grid">
+        <dt>Vision</dt>
+        <dd className="bzs-detail-vision">{render.vision}</dd>
+        {render.ai_output && (
+          <>
+            <dt>AI output</dt>
+            <dd className="bzs-detail-vision">{render.ai_output}</dd>
+          </>
+        )}
+        <dt>Email</dt>
+        <dd>{render.email}</dd>
+        <dt>Captured</dt>
+        <dd className="bzs-muted">{relativeTime(render.created_at)}</dd>
+        {render.source && (
+          <>
+            <dt>Source</dt>
+            <dd className="bzs-muted">{render.source}</dd>
+          </>
+        )}
+        {render.referrer && (
+          <>
+            <dt>Referrer</dt>
+            <dd className="bzs-muted">{render.referrer}</dd>
+          </>
+        )}
+        {render.user_agent && (
+          <>
+            <dt>Agent</dt>
+            <dd className="bzs-muted">{render.user_agent}</dd>
+          </>
+        )}
+      </dl>
+    </div>
+  );
+}
+
+function NewBriefModal({
+  onClose,
+  onCreated,
+}: {
+  onClose: () => void;
+  onCreated: (b: Brief) => void;
+}) {
+  const [title, setTitle] = useState('');
+  const [clientName, setClientName] = useState('');
+  const [clientEmail, setClientEmail] = useState('');
+  const [vision, setVision] = useState('');
+  const [budgetNote, setBudgetNote] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const canSubmit =
+    title.trim().length > 0 && vision.trim().length > 0 && !submitting;
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!canSubmit) return;
+    setSubmitting(true);
+    setError(null);
+    try {
+      const resp = await studioFetch('/api/studio/briefs', {
+        method: 'POST',
+        body: JSON.stringify({
+          source: 'manual',
+          title: title.trim(),
+          client_name: clientName.trim(),
+          client_email: clientEmail.trim(),
+          vision: vision.trim(),
+          budget_note: budgetNote.trim(),
+        }),
+      });
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const data = (await resp.json()) as { brief: Brief };
+      onCreated(data.brief);
+    } catch {
+      setError('Could not create brief.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="bzs-modal-backdrop" onClick={onClose}>
+      <form
+        className="bzs-modal"
+        onClick={(e) => e.stopPropagation()}
+        onSubmit={handleSubmit}
+      >
+        <h2 className="bzs-modal-title">New brief</h2>
+
+        <label className="bzs-field">
+          <span>Title</span>
+          <input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+        </label>
+        <label className="bzs-field">
+          <span>Client name</span>
+          <input
+            value={clientName}
+            onChange={(e) => setClientName(e.target.value)}
+          />
+        </label>
+        <label className="bzs-field">
+          <span>Client email</span>
+          <input
+            type="email"
+            value={clientEmail}
+            onChange={(e) => setClientEmail(e.target.value)}
+          />
+        </label>
+        <label className="bzs-field">
+          <span>Vision</span>
+          <textarea
+            value={vision}
+            onChange={(e) => setVision(e.target.value)}
+            rows={4}
+            required
+          />
+        </label>
+        <label className="bzs-field">
+          <span>Budget note</span>
+          <input
+            value={budgetNote}
+            onChange={(e) => setBudgetNote(e.target.value)}
+            placeholder="Not specified"
+          />
+        </label>
+
+        {error && <p className="bzs-modal-error"><em>{error}</em></p>}
+
+        <div className="bzs-modal-actions">
+          <button type="button" className="bzs-modal-cancel" onClick={onClose}>
+            Cancel
+          </button>
+          <button
+            type="submit"
+            className="bzs-save"
+            disabled={!canSubmit}
+          >
+            {submitting ? 'Creating…' : 'Create'}
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}
