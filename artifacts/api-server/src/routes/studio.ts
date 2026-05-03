@@ -110,9 +110,20 @@ router.get("/studio/briefs/:id", async (req, res) => {
 });
 
 router.post("/studio/briefs", async (req, res) => {
-  const sourceRaw =
-    typeof req.body?.source === "string" ? req.body.source : "manual";
-  const source = ALLOWED_SOURCE.has(sourceRaw) ? sourceRaw : "manual";
+  // `source` defaults to "manual" when omitted (the common case from
+  // the in-app create form), but if the caller *does* send a value it
+  // must be one of the known discriminators. Silently coercing
+  // unknown sources hides client bugs.
+  const sourceRaw = req.body?.source;
+  let source: string;
+  if (sourceRaw === undefined || sourceRaw === null) {
+    source = "manual";
+  } else if (typeof sourceRaw === "string" && ALLOWED_SOURCE.has(sourceRaw)) {
+    source = sourceRaw;
+  } else {
+    res.status(400).json({ error: "invalid source" });
+    return;
+  }
 
   const sourceLeadId =
     typeof req.body?.source_lead_id === "string"
