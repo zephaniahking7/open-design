@@ -94,6 +94,12 @@ export function BonanzaStudio() {
   const [selectedRenderId, setSelectedRenderId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [showCreate, setShowCreate] = useState(false);
+  // When the user promotes a render the filter switches to NEW and we
+  // want the freshly-created brief to be selected once the new tab's
+  // briefs finish loading. We can't just call setSelectedBriefId
+  // synchronously because the load effect would clobber it; this
+  // "pending" id is applied after the response arrives.
+  const [pendingSelectId, setPendingSelectId] = useState<string | null>(null);
 
   const isRenders = filter === 'renders';
 
@@ -103,8 +109,6 @@ export function BonanzaStudio() {
   useEffect(() => {
     const ctrl = new AbortController();
     setLoading(true);
-    setSelectedBriefId(null);
-    setSelectedRenderId(null);
 
     const run = async () => {
       try {
@@ -114,7 +118,11 @@ export function BonanzaStudio() {
           });
           if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
           const data = (await resp.json()) as { renders: Render[] };
-          if (!ctrl.signal.aborted) setRenders(data.renders);
+          if (!ctrl.signal.aborted) {
+            setRenders(data.renders);
+            setSelectedBriefId(null);
+            setSelectedRenderId(null);
+          }
         } else {
           const resp = await studioFetch(
             `/api/studio/briefs?status=${encodeURIComponent(filter)}`,
@@ -122,7 +130,27 @@ export function BonanzaStudio() {
           );
           if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
           const data = (await resp.json()) as { briefs: Brief[] };
-          if (!ctrl.signal.aborted) setBriefs(data.briefs);
+          if (!ctrl.signal.aborted) {
+            setBriefs(data.briefs);
+            setSelectedRenderId(null);
+            // Apply a pending selection (e.g. the brief just promoted
+            // from a render) if it landed in this list; otherwise
+            // clear so we don't show stale selection from the
+            // previous filter.
+            setSelectedBriefId((curr) => {
+              if (pendingSelectId) {
+                const hit = data.briefs.find((b) => b.id === pendingSelectId);
+                if (hit) {
+                  setPendingSelectId(null);
+                  return hit.id;
+                }
+              }
+              if (curr && data.briefs.some((b) => b.id === curr)) {
+                return curr;
+              }
+              return null;
+            });
+          }
         }
       } catch (err) {
         if ((err as { name?: string })?.name === 'AbortError') return;
@@ -137,7 +165,7 @@ export function BonanzaStudio() {
 
     void run();
     return () => ctrl.abort();
-  }, [filter, isRenders]);
+  }, [filter, isRenders, pendingSelectId]);
 
   const selectedBrief = useMemo(
     () => briefs.find((b) => b.id === selectedBriefId) ?? null,
@@ -165,12 +193,17 @@ export function BonanzaStudio() {
 
   const handleBriefCreated = useCallback(
     (brief: Brief, opts: { switchToNew?: boolean } = {}) => {
-      if (opts.switchToNew) {
-        setFilter('new');
-      }
-      setBriefs((curr) => [brief, ...curr.filter((b) => b.id !== brief.id)]);
-      setSelectedBriefId(brief.id);
       setShowCreate(false);
+      if (opts.switchToNew) {
+        // Stash the id so the load effect can re-apply selection
+        // after the NEW tab's briefs arrive (otherwise the effect
+        // would race past our setSelectedBriefId and null it out).
+        setPendingSelectId(brief.id);
+        setFilter('new');
+      } else {
+        setBriefs((curr) => [brief, ...curr.filter((b) => b.id !== brief.id)]);
+        setSelectedBriefId(brief.id);
+      }
     },
     [],
   );
