@@ -1,0 +1,283 @@
+COMMAND: STAGE 1 — TECHNICAL COMPLETENESS PASS
+
+IMPORTANT:
+Plan mode. Do not edit yet. Return execution plan only.
+
+This is not a feature build. It's a hardening pass.
+
+RISK CONTROL:
+Do not chase targets with risky rewrites.
+If a target cannot be met safely, stop and report the safest 
+partial completion.
+Prioritise preserving live behaviour over optimisation.
+
+Follow Replit response protocol.
+Honour the layered activation model. Do not activate dormant 
+layers without explicit instruction.
+
+Before editing, inspect the relevant files first. Preserve all 
+working PATH B behaviour, all studio behaviour, all rate 
+limiting, the /studio gate, the booking flow, the render 
+signature, the living footer, the cultural voice lines, and 
+all visual identity. Nothing that currently functions may 
+regress.
+
+Before any database or API change, inspect existing schema 
+and migration patterns. Use existing project conventions.
+
+If any database, API, or build issue appears, stop before 
+frontend edits and report clearly.
+
+Do not implement email provider until plan confirms available 
+option and required secrets.
+
+Read /system/brain.md, /system/guardrails.md, /system/huashu.md, 
+/system/philosophy.md, and /system/studio-scope.md.
+
+CONTEXT:
+
+Bonanza Cr8tives is feature-complete. The Ship Review and 
+PART FOUR build delivered the cultural agency front door, 
+render signature, booking funnel, and studio ledger.
+
+This pass closes the technical gaps that separate "shipped 
+build" from "real launch ready." Four items, strict scope.
+
+TASK:
+
+PART ONE — CODE-SPLIT THE PUBLIC LANDING
+
+Current state: dist/public/assets/index-*.js is 1086 KB raw / 
+297 KB gzip. The entire Open Design IDE chrome is bundled 
+into the public landing despite never rendering for non-internal 
+visitors.
+
+Target: public landing initial JS payload under 300 KB raw / 
+under 100 KB gzip where realistically achievable. If not 
+achievable without risky rewrites, report the smallest safe 
+bundle result and explain blockers. Studio chunks lazy-load 
+only when /studio route activates AND localStorage.bonanza_internal 
+=== 'true'.
+
+Approach:
+- Use React.lazy() and Suspense to split BonanzaStudio and 
+  all Open Design components (EntryView, ProjectView, 
+  SettingsDialog, AppChromeHeader, etc.) into separate chunks
+- BonanzaLanding stays in the main bundle (it's the public 
+  surface)
+- BonanzaNotFound stays in the main bundle (it's the public 
+  fallback for /studio without flag)
+- Suspense fallback for studio: minimal italic Cormorant 
+  "Loading..." line in soft ink, matches studio aesthetic
+- Verify chunk size targets met via vite build output
+- Verify public landing still renders identically (no visual 
+  regression, no behavioural regression)
+
+PART TWO — LEAD NOTIFICATION SYSTEM
+
+Current state: when a brief or lead is submitted, data lands 
+in Postgres but no notification fires. Operator must manually 
+check /studio.
+
+Target: real-time email notification on every brief submission 
+AND every lead submission, sent to the operator's email.
+
+Discovery first (do not implement until confirmed):
+- Inspect .local/skills/ for any email skill (Replit's built-in 
+  email integration, Resend, SendGrid, or other)
+- If a skill exists, identify what secrets it requires
+- If no skill exists, recommend the simplest available option 
+  and identify required secrets
+- Report findings in plan output before any implementation
+
+Once email provider is confirmed, the notification logic should:
+- Fire asynchronously after successful insert into bonanza_briefs 
+  OR bonanza_leads (non-blocking — submission must succeed 
+  even if email fails)
+- Use sparse, on-brand templates:
+
+For briefs:
+Subject: New brief — {client_name}
+Body: "A brief just arrived in the studio.
+
+From: {client_name} <{client_email}>
+Vision: {first 200 chars of vision}
+Budget: {budget_note or 'Not specified'}
+
+Triage at: {studio_url}
+
+— Bonanza Cr8tives"
+
+For renders (lead capture):
+Subject: New render captured — {email}
+Body: "A render was captured.
+
+From: {email}
+Vision: {first 200 chars of vision}
+AI output: {first 200 chars of ai_output}
+
+Triage at: {studio_url}
+
+— Bonanza Cr8tives"
+
+- Operator email address: requested via secrets skill 
+  (BONANZA_OPERATOR_EMAIL). Do not hardcode.
+- Failure mode: if email send fails, log to console + insert 
+  a row into bonanza_notifications table with status 'failed'. 
+  Do not surface error to public submitter.
+- Rate limit on notification sends: max 30 per hour to prevent 
+  spam loops if rate limiting is bypassed somewhere upstream.
+
+Schema for notification log:
+CREATE TABLE bonanza_notifications (
+  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  type        text NOT NULL CHECK (type IN ('brief', 'lead')),
+  source_id   uuid NOT NULL,
+  recipient   text NOT NULL,
+  status      text NOT NULL CHECK (status IN ('sent', 'failed', 'deferred')),
+  error       text,
+  created_at  timestamptz DEFAULT now()
+);
+CREATE INDEX bonanza_notifications_created_at_idx ON bonanza_notifications (created_at DESC);
+
+ADAPTER PATTERN FOR EMAIL:
+
+If email provider is unclear or secrets are not yet available, 
+implement everything in PART TWO except the actual email send.
+
+Build a clean notification adapter:
+- /server/notifications/adapter.ts with interface 
+  NotificationAdapter { send(template, recipient, data) }
+- A NoOpAdapter implementation that logs to bonanza_notifications 
+  with status='deferred' but performs no send
+- A real implementation (Resend / SendGrid / Replit email) 
+  swapped in when provider + secrets are confirmed
+
+This keeps Stage 1 moving without blocking on secrets. 
+The notification table fills with deferred entries until 
+real adapter is wired in a follow-up pass.
+
+PART THREE — ROBOTS.TXT + SITEMAP
+
+Current state: no robots.txt, no sitemap.xml. /studio is 
+technically crawlable. Search engines have no map.
+
+Target:
+- /robots.txt that:
+  - Allows crawling of the root /
+  - Disallows /studio (and any other internal routes)
+  - References sitemap location
+- /sitemap.xml that:
+  - Lists / as the only public URL for now
+  - Includes lastmod, changefreq, priority
+
+Both files served as static assets via the existing build 
+output structure (artifacts/open-design/public/ or equivalent).
+
+Use https://bonanzacr8tives.com/ as placeholder domain unless 
+real domain is known. Document replacement procedure in 
+/system/launch-notes.md (create this file).
+
+robots.txt content:
+User-agent: *
+Allow: /
+Disallow: /studio
+Disallow: /api/
+
+Sitemap: https://bonanzacr8tives.com/sitemap.xml
+
+sitemap.xml content:
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://bonanzacr8tives.com/</loc>
+    <lastmod>{today's date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+
+In /system/launch-notes.md, document:
+- That bonanzacr8tives.com is a placeholder
+- Steps to replace it when real domain is connected
+- Any other launch-time replacements needed
+
+PART FOUR — ERROR TRACKING
+
+Current state: errors that occur in production (failed API 
+calls, render failures, brief submission errors) leave no 
+trace beyond browser console.
+
+Target: lightweight server-side error logging to Postgres. 
+No third-party service. Operator can see errors via /studio 
+in a future pass.
+
+Schema:
+CREATE TABLE bonanza_errors (
+  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  source      text NOT NULL,
+  message     text NOT NULL,
+  stack       text,
+  context     jsonb,
+  user_agent  text,
+  url         text,
+  created_at  timestamptz DEFAULT now()
+);
+CREATE INDEX bonanza_errors_created_at_idx ON bonanza_errors (created_at DESC);
+
+Implementation:
+- New endpoint POST /api/error (rate limited at 20 per IP per 
+  hour to prevent flood attacks)
+- Frontend: place window.addEventListener('error', ...) and 
+  window.addEventListener('unhandledrejection', ...) at the 
+  app root if safe, but ensure they do not increase public 
+  landing bundle unnecessarily. Listeners POST to /api/error 
+  on capture.
+- Backend: wrap /api/render, /api/leads, /api/brief, and all 
+  /api/studio/* handlers with a try/catch that inserts to 
+  bonanza_errors on uncaught exceptions
+- Do not expose stack traces in HTTP responses to clients — 
+  return generic error message, log full detail server-side
+- Add a simple GET /api/studio/errors endpoint (X-Bonanza-Internal 
+  header gated) that returns the latest 100 errors for future 
+  studio integration. Do not build the studio UI for it in 
+  this pass — just the endpoint and schema.
+
+CONSTRAINTS:
+
+- Same identity throughout — no new fonts, no new palette 
+  colours, no new design language
+- All existing PATH B functionality must remain fully intact
+- All existing studio functionality must remain fully intact
+- Render signature, maker's mark, voice line, footer rotation 
+  all preserved
+- Mobile breakpoints must hold at 375 / 768 / 1024 / 1440
+- Production build must pass clean
+- Public landing bundle target: under 300 KB raw / 100 KB gzip 
+  where realistically achievable
+- Do not activate threejs or antigravity layers
+- All new endpoints rate-limited
+- All new database operations follow existing migration pattern
+- Email notification failures must not block submissions
+- Error logging failures must not break the application
+
+OUTPUT FORMAT (PLAN MODE):
+
+Return a single execution plan organised by batches:
+(1) Discovery — email skill availability + secrets requirements
+(2) Database — bonanza_notifications + bonanza_errors schema
+(3) Backend — notification adapter + logic + error logging middleware
+(4) API — /api/error endpoint + /api/studio/errors endpoint
+(5) Frontend — code-splitting via React.lazy + Suspense + 
+    error event listeners at app root
+(6) Static assets — robots.txt + sitemap.xml + 
+    /system/launch-notes.md
+(7) Production build verification — bundle size check + 
+    smoke test of all four parts
+(8) Project task entry to .local/tasks/ documenting Stage 1
+
+Identify all files to be modified or created. Confirm any 
+assumptions about existing email infrastructure. Flag any 
+risks before I switch to Build mode.
+
+Do not edit yet.

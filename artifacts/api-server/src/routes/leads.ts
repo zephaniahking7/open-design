@@ -2,6 +2,7 @@ import { Router, type IRouter } from "express";
 import { pool } from "@workspace/db";
 import { logger } from "../lib/logger";
 import { rateLimit } from "../lib/rate-limit";
+import { notifyAsync } from "../lib/notifications";
 
 const router: IRouter = Router();
 
@@ -41,7 +42,23 @@ router.post("/leads", async (req, res) => {
        RETURNING id`,
       [vision, aiOutput, email, userAgent, referrer],
     );
-    res.status(201).json({ ok: true, id: result.rows[0]?.id });
+    const leadId = result.rows[0]?.id;
+    res.status(201).json({ ok: true, id: leadId });
+
+    // Fire-and-forget operator notification. Wrapped in try so a
+    // synchronous schedule failure can never escape this handler;
+    // notifyAsync itself is also fully isolated.
+    if (leadId) {
+      try {
+        notifyAsync({
+          kind: "lead",
+          sourceId: leadId,
+          data: { leadId, email, vision, aiOutput },
+        });
+      } catch (err) {
+        logger.error({ err }, "lead notification schedule failed");
+      }
+    }
   } catch (err) {
     logger.error({ err }, "lead insert failed");
     res.status(500).json({ error: "could not save lead" });

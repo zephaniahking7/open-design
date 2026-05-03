@@ -47,3 +47,24 @@ CONFIRMATION:
 
 NOTES:
 PATH B remains intact. Layered activation honoured. threejs and antigravity remain dormant.
+
+DATE: 2026-05-03
+
+TASK: PART FOUR — Render Signature + Studio Affordances
+
+STATUS: COMPLETE
+
+CONFIRMATION:
+- render signature added
+- bz maker's mark added
+- cultural voice line added
+- booking copy tightened inside render panel
+- footer rotation added beside © meta
+- studio search added
+- NEW today counter added
+- studio-scope.md created
+- production build clean
+- e2e passed
+
+NOTES:
+Validator mismatch was task-scope related, not a product failure.

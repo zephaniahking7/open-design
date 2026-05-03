@@ -2,6 +2,7 @@ import { Router, type IRouter } from "express";
 import { pool } from "@workspace/db";
 import { logger } from "../lib/logger";
 import { requireInternal } from "../lib/internal-auth";
+import { notifyAsync } from "../lib/notifications";
 
 const router: IRouter = Router();
 
@@ -202,7 +203,27 @@ router.post("/studio/briefs", async (req, res) => {
         source === "promoted" ? sourceLeadId : null,
       ],
     );
-    res.status(201).json({ brief: result.rows[0] });
+    const brief = result.rows[0];
+    res.status(201).json({ brief });
+
+    if (brief) {
+      try {
+        notifyAsync({
+          kind: "brief",
+          sourceId: brief.id,
+          data: {
+            briefId: brief.id,
+            title: brief.title,
+            clientName: brief.client_name,
+            clientEmail: brief.client_email,
+            vision: brief.vision,
+            budgetNote: brief.budget_note,
+          },
+        });
+      } catch (err) {
+        logger.error({ err }, "brief notification schedule failed");
+      }
+    }
   } catch (err) {
     logger.error({ err }, "brief insert failed");
     res.status(500).json({ error: "could not create brief" });

@@ -4,6 +4,7 @@ import daemonRouter from "./daemon";
 import renderRouter from "./render";
 import leadsRouter from "./leads";
 import studioRouter from "./studio";
+import errorsRouter from "./errors";
 
 const router: IRouter = Router();
 
@@ -12,5 +13,6 @@ router.use(daemonRouter);
 router.use(renderRouter);
 router.use(leadsRouter);
 router.use(studioRouter);
+router.use(errorsRouter);
 
 export default router;

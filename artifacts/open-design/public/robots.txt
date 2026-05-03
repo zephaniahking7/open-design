@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /studio
+Disallow: /studio/
+Disallow: /projects/
+Disallow: /api/
+
+Sitemap: https://bonanzacr8tives.com/sitemap.xml

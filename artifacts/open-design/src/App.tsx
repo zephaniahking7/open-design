@@ -1,10 +1,6 @@
-import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useLayoutEffect, useState } from 'react';
 import { BonanzaLanding } from './components/BonanzaLanding';
-import { BonanzaStudio } from './components/BonanzaStudio';
-import { EntryView } from './components/EntryView';
 import type { CreateInput } from './components/NewProjectPanel';
-import { ProjectView } from './components/ProjectView';
-import { SettingsDialog } from './components/SettingsDialog';
 import {
   daemonIsLive,
   fetchAppVersionInfo,
@@ -38,6 +34,66 @@ import type {
   PromptTemplateSummary,
   SkillSummary,
 } from './types';
+
+// Lazy-loaded surfaces. The public landing (BonanzaLanding) is the
+// only route that ships eagerly — everything operator-facing
+// (studio, entry view, project IDE, settings dialog) loads on
+// demand so the public bundle stays small. Suspense fallback uses
+// the brand identity (italic Cormorant, soft ink, no spinner).
+const BonanzaStudio = lazy(() =>
+  import('./components/BonanzaStudio').then((m) => ({ default: m.BonanzaStudio })),
+);
+const EntryView = lazy(() =>
+  import('./components/EntryView').then((m) => ({ default: m.EntryView })),
+);
+const ProjectView = lazy(() =>
+  import('./components/ProjectView').then((m) => ({ default: m.ProjectView })),
+);
+const SettingsDialog = lazy(() =>
+  import('./components/SettingsDialog').then((m) => ({ default: m.SettingsDialog })),
+);
+
+function StudioLoading() {
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        inset: 0,
+        background: 'oklch(96% 0.012 90)',
+        color: 'oklch(35% 0 0)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 24,
+        padding: 32,
+        fontFamily:
+          "'Cormorant Garamond', 'Iowan Old Style', Georgia, 'Times New Roman', serif",
+      }}
+    >
+      <span
+        style={{
+          display: 'block',
+          width: 32,
+          height: 1,
+          background: 'oklch(62% 0.13 70)',
+        }}
+        aria-hidden="true"
+      />
+      <p
+        style={{
+          fontStyle: 'italic',
+          fontWeight: 400,
+          fontSize: '1.5rem',
+          margin: 0,
+          color: 'oklch(35% 0 0)',
+        }}
+      >
+        Loading…
+      </p>
+    </div>
+  );
+}
 
 function BonanzaNotFound() {
   return (
@@ -146,6 +202,14 @@ export function App() {
 
   // Bootstrap — detect daemon, load pickers, seed sensible defaults.
   useEffect(() => {
+    // Public landing makes ZERO operator-side fetches. The brand
+    // front door must not poll the daemon, hit the registry, or
+    // surface any IDE chrome. This keeps the public bundle's
+    // network tab empty and the experience instant.
+    if (route.kind === 'landing') {
+      setBootstrapping(false);
+      return;
+    }
     if (homeBlocked) {
       setBootstrapping(false);
       return;
@@ -210,7 +274,7 @@ export function App() {
     return () => {
       cancelled = true;
     };
-  }, [homeBlocked]);
+  }, [homeBlocked, route.kind]);
 
   const refreshProjects = useCallback(async () => {
     const list = await listProjects();
@@ -404,18 +468,28 @@ export function App() {
     return <BonanzaNotFound />;
   }
 
+  // Landing is the eagerly-loaded public surface. Returning before
+  // any Suspense boundary keeps the landing free of fallback flicker
+  // and proves at the type level that the public path never touches
+  // any lazy chunk.
+  if (route.kind === 'landing') {
+    return <BonanzaLanding />;
+  }
+
   // /studio (route.kind === 'home') belongs to Bonanza Studio for
   // internal users. Open Design's project IDE still lives at
   // /projects/:id — only the entry view is replaced.
   if (route.kind === 'home' && !activeProject) {
-    return <BonanzaStudio />;
+    return (
+      <Suspense fallback={<StudioLoading />}>
+        <BonanzaStudio />
+      </Suspense>
+    );
   }
 
   return (
-    <>
-      {route.kind === 'landing' ? (
-        <BonanzaLanding />
-      ) : activeProject ? (
+    <Suspense fallback={<StudioLoading />}>
+      {activeProject ? (
         <ProjectView
           key={activeProject.id}
           project={activeProject}
@@ -478,6 +552,6 @@ export function App() {
           onRefreshAgents={refreshAgents}
         />
       ) : null}
-    </>
+    </Suspense>
   );
 }
