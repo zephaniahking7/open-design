@@ -3,10 +3,10 @@ import type { CSSProperties } from 'react';
 /**
  * Bonanza Cr8tives wordmark — launch-safe, text-set.
  *
- * Replaces the Stage 2 hand-rolled "Brixton Hand" geometry with a
- * clean two-line wordmark set in Satoshi 900 (the same UI typeface
- * used everywhere else on the landing). Single source of truth: the
- * Wordmark component. All consumers (Header, Footer, VisionInput
+ * Two-line wordmark set in Plus Jakarta Sans ExtraBold (800), the
+ * same UI typeface used everywhere else on the landing (loaded as a
+ * variable WOFF2 in BonanzaLanding.css). Single source of truth:
+ * the Wordmark component. All consumers (Header, Footer, VisionInput
  * maker's mark, 404 surface) inherit automatically.
  *
  * Layout:
@@ -23,13 +23,13 @@ import type { CSSProperties } from 'react';
  */
 
 const FONT_STACK =
-  "Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif";
+  "'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 
 const SVG_STYLE = 'height:100%;width:auto;display:block';
 
-const WORDMARK_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 132" role="img" aria-label="Bonanza Cr8tives" preserveAspectRatio="xMinYMid meet" style="${SVG_STYLE}"><title>Bonanza Cr8tives</title><text x="0" y="50" font-family="${FONT_STACK}" font-weight="900" font-size="56" letter-spacing="1.5" fill="currentColor">BONANZA</text><text x="0" y="120" font-family="${FONT_STACK}" font-weight="900" font-size="56" letter-spacing="1.5" fill="currentColor">CR8TIVES</text></svg>`;
+const WORDMARK_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 132" role="img" aria-label="Bonanza Cr8tives" preserveAspectRatio="xMinYMid meet" style="${SVG_STYLE}"><title>Bonanza Cr8tives</title><text x="0" y="50" font-family="${FONT_STACK}" font-weight="800" font-size="56" letter-spacing="1.5" fill="currentColor">BONANZA</text><text x="0" y="120" font-family="${FONT_STACK}" font-weight="800" font-size="56" letter-spacing="1.5" fill="currentColor">CR8TIVES</text></svg>`;
 
-const MONOGRAM_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="B" preserveAspectRatio="xMidYMid meet" style="${SVG_STYLE}"><title>Bonanza monogram</title><text x="32" y="50" text-anchor="middle" font-family="${FONT_STACK}" font-weight="900" font-size="56" fill="currentColor">B</text></svg>`;
+const MONOGRAM_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="B" preserveAspectRatio="xMidYMid meet" style="${SVG_STYLE}"><title>Bonanza monogram</title><text x="32" y="50" text-anchor="middle" font-family="${FONT_STACK}" font-weight="800" font-size="56" fill="currentColor">B</text></svg>`;
 
 export type WordmarkVariant = 'full' | 'mark';
 

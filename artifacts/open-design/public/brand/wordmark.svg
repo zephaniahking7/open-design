@@ -3,11 +3,11 @@
   <!-- Launch-safe wordmark: Satoshi 900, stacked. Mirrors the live
        Wordmark.tsx component so static and runtime stay in lock-step. -->
   <text x="0" y="50"
-        font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-        font-weight="900" font-size="56" letter-spacing="1.5"
+        font-family="'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-weight="800" font-size="56" letter-spacing="1.5"
         fill="currentColor">BONANZA</text>
   <text x="0" y="120"
-        font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-        font-weight="900" font-size="56" letter-spacing="1.5"
+        font-family="'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-weight="800" font-size="56" letter-spacing="1.5"
         fill="currentColor">CR8TIVES</text>
 </svg>

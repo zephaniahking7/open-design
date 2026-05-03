@@ -5,16 +5,16 @@
        Centred horizontally, vertically optical-centred. -->
   <g transform="translate(180, 180)" fill="#FFFFFF">
     <text x="0" y="50"
-          font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-          font-weight="900" font-size="80" letter-spacing="2">BONANZA</text>
+          font-family="'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+          font-weight="800" font-size="80" letter-spacing="2">BONANZA</text>
     <text x="0" y="150"
-          font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-          font-weight="900" font-size="80" letter-spacing="2">CR8TIVES</text>
+          font-family="'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+          font-weight="800" font-size="80" letter-spacing="2">CR8TIVES</text>
   </g>
   <!-- Pink accent dot, identity-defining accent only. -->
   <circle cx="180" cy="430" r="6" fill="#5680E9"/>
   <text x="200" y="436"
-        font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-family="'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
         font-weight="500" font-size="14" letter-spacing="2.5"
         fill="#9A9A9A">WORDMARK · ON BLACK</text>
 </svg>
