@@ -397,7 +397,13 @@ function BriefRow({
 }) {
   const [deleting, setDeleting] = useState(false);
 
-  const handleDelete = async (e: React.MouseEvent) => {
+  // The deletion logic is shared between mouse + keyboard activations
+  // on a `role="button"` span. We accept either event type and treat
+  // them uniformly — both just need to stop the click bubbling up to
+  // the row's own select handler.
+  const performDelete = async (
+    e: React.SyntheticEvent,
+  ): Promise<void> => {
     e.stopPropagation();
     if (deleting) return;
     setDeleting(true);
@@ -431,11 +437,11 @@ function BriefRow({
           role="button"
           tabIndex={0}
           aria-label="Delete brief"
-          onClick={handleDelete}
+          onClick={performDelete}
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
-              void handleDelete(e as unknown as React.MouseEvent);
+              void performDelete(e);
             }
           }}
         >
@@ -457,7 +463,7 @@ function RenderRow({
   onSelect: () => void;
   onPromote: () => void;
 }) {
-  const handlePromote = (e: React.MouseEvent) => {
+  const handlePromote = (e: React.SyntheticEvent) => {
     e.stopPropagation();
     onPromote();
   };
