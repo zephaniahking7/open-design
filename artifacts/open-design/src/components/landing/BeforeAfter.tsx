@@ -15,7 +15,7 @@ const AFTER = [
 export function BeforeAfter() {
   return (
     <section
-      className="bz-split"
+      className="bz-split bz-section--light"
       id="before-after"
       aria-labelledby="bz-split-label"
     >

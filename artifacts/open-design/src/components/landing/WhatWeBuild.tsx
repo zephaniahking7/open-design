@@ -28,7 +28,7 @@ const SERVICES = [
 export function WhatWeBuild() {
   return (
     <section
-      className="bz-services"
+      className="bz-services bz-section--light"
       id="what-we-build"
       aria-labelledby="bz-services-label"
     >

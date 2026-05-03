@@ -25,11 +25,21 @@
   --bz-rule: rgba(255, 255, 255, 0.08);
   --bz-rule-strong: rgba(255, 255, 255, 0.16);
 
-  /* type */
+  /* type — on dark surfaces */
   --bz-text: #FFFFFF;
   --bz-text-soft: rgba(255, 255, 255, 0.78);
   --bz-text-mute: rgba(255, 255, 255, 0.52);
   --bz-text-faint: rgba(255, 255, 255, 0.32);
+
+  /* ink — type + rules on light (Mist / Sky) surfaces.
+     Used by `.bz-section--light` to deliver the 70/20/10
+     rhythm: ink is the "neutral" half of the page. */
+  --bz-ink: #0B0B0B;
+  --bz-ink-soft: rgba(11, 11, 11, 0.72);
+  --bz-ink-mute: rgba(11, 11, 11, 0.52);
+  --bz-ink-faint: rgba(11, 11, 11, 0.32);
+  --bz-rule-ink: rgba(11, 11, 11, 0.10);
+  --bz-rule-ink-strong: rgba(11, 11, 11, 0.18);
 
   /* locked palette (Stage 4 pivot) */
   --bz-accent: #5680E9;          /* primary action */
@@ -1532,6 +1542,156 @@
     grid-template-columns: 1fr 1fr;
     gap: 24px;
   }
+}
+
+/* ============================================================
+   Light-section rhythm — 70 / 20 / 10 palette balance.
+
+   Sections marked `.bz-section--light` invert to a soft palette
+   surface (Soft Mist by default, Sky via the `--sky` variant).
+   Children re-skin to ink type, low-opacity ink rules, white card
+   grounds. Primary Blue and Purple are reserved as the disciplined
+   10% accent — concentrated in CTAs, the package feature ring,
+   eyebrow rules, the after-bullet arrow, and link hover states.
+
+   Resulting page rhythm: dark hero/vision (D), light services (L),
+   dark process (D), light before-after (L), light packages (L),
+   dark final-cta (D), light connect (L, sky), dark footer (D).
+   ============================================================ */
+.bz-section--light {
+  background: var(--bz-mist);
+  color: var(--bz-ink);
+  border-top-color: var(--bz-rule-ink);
+}
+.bz-section--light.bz-section--sky {
+  background: var(--bz-sky);
+}
+
+.bz-section--light .bz-section-eyebrow {
+  color: var(--bz-ink-mute);
+}
+.bz-section--light .bz-section-eyebrow-rule {
+  background: var(--bz-ink);
+}
+.bz-section--light .bz-section-title {
+  color: var(--bz-ink);
+}
+.bz-section--light .bz-section-sub {
+  color: var(--bz-ink-soft);
+}
+
+/* Services grid (What We Build) on light. */
+.bz-section--light .bz-services-grid {
+  background: var(--bz-rule-ink);
+  border-color: var(--bz-rule-ink);
+}
+.bz-section--light .bz-card {
+  background: #FFFFFF;
+}
+.bz-section--light .bz-card:hover {
+  background: rgba(255, 255, 255, 0.78);
+}
+.bz-section--light .bz-card-index {
+  color: var(--bz-ink-faint);
+}
+.bz-section--light .bz-card-title {
+  color: var(--bz-ink);
+}
+.bz-section--light .bz-card-body {
+  color: var(--bz-ink-soft);
+}
+
+/* Before / After on light. */
+.bz-section--light .bz-split-grid {
+  background: #FFFFFF;
+  border-color: var(--bz-rule-ink);
+}
+.bz-section--light .bz-split-tag {
+  color: var(--bz-ink-mute);
+}
+.bz-section--light .bz-split-tag--after {
+  color: var(--bz-accent-strong);
+}
+.bz-section--light .bz-split-list li {
+  color: var(--bz-ink-mute);
+  text-decoration-color: var(--bz-rule-ink-strong);
+}
+.bz-section--light .bz-split-list li::before {
+  color: var(--bz-ink-faint);
+}
+.bz-section--light .bz-split-list--after li {
+  color: var(--bz-ink);
+}
+.bz-section--light .bz-split-list--after li::before {
+  color: var(--bz-accent);
+}
+.bz-section--light .bz-split-divider {
+  background: var(--bz-rule-ink);
+}
+.bz-section--light .bz-split-bolt {
+  background: #FFFFFF;
+}
+
+/* Packages on light. The featured tier keeps its blue ring as
+   the one-per-section punctuation — disciplined 10% accent. */
+.bz-section--light.bz-packages {
+  background: var(--bz-mist);
+}
+.bz-section--light .bz-pkg {
+  background: #FFFFFF;
+  border-color: var(--bz-rule-ink);
+}
+.bz-section--light .bz-pkg--feature {
+  border-color: var(--bz-accent);
+  background:
+    linear-gradient(180deg, rgba(86, 128, 233, 0.08), transparent 40%),
+    #FFFFFF;
+}
+.bz-section--light .bz-pkg-name,
+.bz-section--light .bz-pkg-price {
+  color: var(--bz-ink);
+}
+.bz-section--light .bz-pkg-pitch,
+.bz-section--light .bz-pkg-list li {
+  color: var(--bz-ink-soft);
+}
+.bz-section--light .bz-packages-note {
+  color: var(--bz-ink-mute);
+}
+
+/* Ghost CTA on light surfaces — flips to ink rules. */
+.bz-section--light .bz-cta--ghost {
+  color: var(--bz-ink);
+  border-color: var(--bz-rule-ink-strong);
+}
+.bz-section--light .bz-cta--ghost:hover {
+  border-color: var(--bz-ink);
+  background: rgba(11, 11, 11, 0.04);
+}
+
+/* Connect on light (Sky variant). */
+.bz-section--light.bz-connect {
+  background: var(--bz-sky);
+}
+.bz-section--light .bz-connect-list {
+  background: var(--bz-rule-ink);
+  border-color: var(--bz-rule-ink);
+}
+.bz-section--light .bz-connect-link {
+  background: #FFFFFF;
+  color: var(--bz-ink);
+}
+.bz-section--light .bz-connect-link:hover {
+  background: rgba(255, 255, 255, 0.78);
+}
+.bz-section--light .bz-connect-handle {
+  color: var(--bz-ink-mute);
+}
+.bz-section--light .bz-connect-arrow {
+  color: var(--bz-ink-mute);
+}
+.bz-section--light .bz-connect-link:hover .bz-connect-arrow {
+  color: var(--bz-accent);
 }
 
 @media (prefers-reduced-motion: reduce) {

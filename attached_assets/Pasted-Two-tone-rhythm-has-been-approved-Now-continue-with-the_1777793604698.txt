@@ -1,0 +1,98 @@
+Two-tone rhythm has been approved.
+
+Now continue with the brand typography + palette pivot, but do it safely.
+
+NEW BRAND TYPOGRAPHY DECISION:
+Use Surgena as the Bonanza Cr8tives public landing typeface if the font files are locally available in the project.
+
+Surgena context:
+Surgena is a modern sans-serif font with minimalist elegance, clean geometric shapes, balanced proportions and a professional, innovative, dynamic feel.
+
+This supersedes Satoshi as the main public landing brand font if the Surgena font files are available locally.
+
+TYPOGRAPHY ROLES:
+- Wordmark: Surgena Bold or SemiBold
+- Hero headline: Surgena Bold
+- Section headings: Surgena SemiBold
+- Buttons / CTAs: Surgena Medium or SemiBold
+- Body text: Surgena Regular
+- Small labels: Surgena Medium
+
+FONT RULES:
+- Use only font files already provided/licensed in this project.
+- Do not fetch random external font files.
+- Do not use Google Fonts for Surgena.
+- Do not expose or share font files outside the app assets needed for rendering.
+- Use @font-face declarations only if files are available locally.
+- Prefer WOFF2 if available.
+- If only OTF/TTF files are available, report the performance impact before using them.
+- Use font-display: swap.
+- Keep fallback stack:
+  system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif.
+
+LOCKED PALETTE:
+- Primary Blue: #5680E9
+- Sky Blue: #84CEEB
+- Aqua Blue: #5AB9EA
+- Soft Mist: #C1C8E4
+- Purple Accent: #8860D0
+
+SURFACE DIRECTION:
+Two-tone rhythm.
+
+Use:
+- Dark premium sections for Header, Hero, VisionInput, Final CTA and Footer
+- Light / Soft Mist / Sky sections for What We Build, Creative Orbit, Before / After, Packages and Connect
+- Near-black remains important but should not dominate the entire page
+- Remove old pink-dominant styling from the public landing
+- Remove black-base dominance where it conflicts with the new clean energetic direction
+- Keep dark text / neutral text where needed for readability
+
+70 / 20 / 10 RULE:
+- 70% clean neutrals: near-black, white, off-white and readable dark text
+- 20% Soft Mist + Sky: #C1C8E4 and #84CEEB for surfaces, panels, cards and calm section backgrounds
+- 10% Primary Blue + Purple Accent: #5680E9 and #8860D0 for CTAs, active states, focus rings, links, dividers and controlled glow
+- Aqua Blue #5AB9EA as energetic support accent
+
+DESIRED FEEL:
+Clean, energetic, modern, professional, innovative, premium, trustworthy, creative-tech.
+
+TASK:
+Audit the current public landing typography and colour tokens first.
+
+Do not edit yet.
+
+Check:
+1. Where Satoshi is currently used
+2. Where the wordmark is defined
+3. Where font imports live
+4. Whether Surgena files already exist in the project
+5. What file format Surgena files are in
+6. Which CSS files need @font-face updates
+7. Which components need typography class/token updates
+8. Whether favicon/wordmark SVG should use Surgena or remain system text
+9. Whether any old pink/black direction remains too dominant
+10. How to apply the blue/aqua/purple palette without harming contrast
+11. Which sections should become dark
+12. Which sections should become light
+13. Whether any section still feels like a mismatched 21st.dev demo
+
+DO NOT TOUCH:
+- backend
+- database
+- /studio
+- render flow
+- lead capture
+- API routes
+- rate limiting
+- error tracking
+- workflows
+- packages
+- legacy IDE files
+
+RETURN ONLY:
+1. files inspected
+2. whether Surgena is available locally
+3. exact files proposed for typography/palette updates
+4. safest implementation order
+5. risks

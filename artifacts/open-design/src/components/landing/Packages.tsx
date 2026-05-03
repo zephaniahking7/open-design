@@ -54,7 +54,7 @@ export function Packages() {
 
   return (
     <section
-      className="bz-packages"
+      className="bz-packages bz-section--light"
       id="packages"
       aria-labelledby="bz-packages-label"
     >

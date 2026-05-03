@@ -12,7 +12,7 @@ const SOCIALS = [
 export function Connect() {
   return (
     <section
-      className="bz-connect"
+      className="bz-connect bz-section--light bz-section--sky"
       id="connect"
       aria-labelledby="bz-connect-label"
     >
