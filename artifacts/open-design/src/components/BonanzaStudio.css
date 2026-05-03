@@ -225,11 +225,6 @@
   font-size: 0.9375rem;
   color: var(--bzs-tile);
   letter-spacing: 0.02em;
-  text-transform: lowercase;
-}
-
-.bzs-row-status::first-letter {
-  text-transform: uppercase;
 }
 
 .bzs-row-time {
@@ -346,11 +341,6 @@
   cursor: pointer;
   border-bottom: 1px solid transparent;
   transition: color 200ms ease, border-color 200ms ease;
-  text-transform: lowercase;
-}
-
-.bzs-status-option::first-letter {
-  text-transform: uppercase;
 }
 
 .bzs-status-option:hover {
