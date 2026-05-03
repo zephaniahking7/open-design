@@ -255,8 +255,12 @@ export function VisionInput() {
 
           {showStreaming && output.length === 0 && (
             <div className="bz-stream-loading" aria-live="polite">
-              <span className="bz-stream-rule" aria-hidden="true" />
-              <span className="bz-stream-label">Composing…</span>
+              <span className="bz-stream-dots" aria-hidden="true">
+                <span className="bz-stream-dot" />
+                <span className="bz-stream-dot" />
+                <span className="bz-stream-dot" />
+              </span>
+              <span className="bz-stream-label">Composing direction</span>
             </div>
           )}
 

@@ -241,19 +241,19 @@
 /* --- Hero ----------------------------------------------------- */
 .bz-hero {
   position: relative;
-  padding: 96px 32px 96px;
+  padding: 112px 32px 112px;
   overflow: hidden;
   isolation: isolate;
 }
 
 .bz-hero-glow {
   position: absolute;
-  inset: 0;
+  inset: -10%;
   z-index: -1;
   background:
     radial-gradient(
       ellipse 80% 60% at 20% 20%,
-      rgba(255, 46, 136, 0.18) 0%,
+      rgba(255, 46, 136, 0.20) 0%,
       transparent 60%
     ),
     radial-gradient(
@@ -262,6 +262,41 @@
       transparent 55%
     );
   pointer-events: none;
+  will-change: transform;
+}
+
+/* Hero entrance choreography (Stage 3).
+   Pure CSS, no JS. Each block fades + rises 12px over 700ms with a
+   stagger so the eye reads top→down as a single load-in beat.
+   The glow gets a slow ambient drift (18s, alternate). All gated
+   by `prefers-reduced-motion` via the global guard at the bottom
+   of this file. Static fallback: instant appear at final position. */
+@media (prefers-reduced-motion: no-preference) {
+  .bz-hero-eyebrow,
+  .bz-hero-title,
+  .bz-hero-sub,
+  .bz-hero-ctas {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+    animation: bz-hero-rise 700ms var(--bz-ease) forwards;
+  }
+  .bz-hero-eyebrow { animation-delay: 80ms; }
+  .bz-hero-title   { animation-delay: 200ms; }
+  .bz-hero-sub     { animation-delay: 380ms; }
+  .bz-hero-ctas    { animation-delay: 520ms; }
+
+  .bz-hero-glow {
+    animation: bz-hero-drift 18s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes bz-hero-rise {
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes bz-hero-drift {
+  from { transform: translate3d(-1.5%, -1%, 0) scale(1); }
+  to   { transform: translate3d(1.5%, 1%, 0) scale(1.04); }
 }
 
 .bz-hero-inner {
@@ -334,14 +369,19 @@
 .bz-vision-title {
   font-family: var(--bz-sans);
   font-weight: 700;
-  font-size: clamp(1.625rem, 3.2vw, 2.25rem);
-  line-height: 1.15;
-  letter-spacing: -0.015em;
+  font-size: clamp(1.875rem, 3.6vw, 2.625rem);
+  line-height: 1.12;
+  letter-spacing: -0.018em;
   color: var(--bz-text);
-  margin: 0 0 40px;
+  margin: 0 0 48px;
   max-width: 24ch;
+  text-wrap: balance;
 }
 
+/* Stage 3 — vision form upgrade.
+   Larger pad, larger radius, larger input type, more theatrical
+   focus state (intensified pink ring + soft outer glow). Render
+   button gets a slightly bolder presence. */
 .bz-form,
 .bz-lead-form {
   display: flex;
@@ -349,15 +389,26 @@
   gap: 8px;
   background: var(--bz-bg-elev);
   border: 1px solid var(--bz-rule);
-  border-radius: 16px;
-  padding: 8px;
-  transition: border-color 200ms var(--bz-ease), box-shadow 200ms var(--bz-ease);
+  border-radius: 20px;
+  padding: 10px;
+  transition:
+    border-color 220ms var(--bz-ease),
+    box-shadow 220ms var(--bz-ease),
+    background 220ms var(--bz-ease);
+}
+
+.bz-form:hover,
+.bz-lead-form:hover {
+  border-color: var(--bz-rule-strong);
 }
 
 .bz-form:focus-within,
 .bz-lead-form:focus-within {
   border-color: var(--bz-pink);
-  box-shadow: 0 0 0 4px rgba(255, 46, 136, 0.12);
+  background: #161616;
+  box-shadow:
+    0 0 0 4px rgba(255, 46, 136, 0.16),
+    0 12px 40px rgba(255, 46, 136, 0.10);
 }
 
 .bz-input {
@@ -365,16 +416,23 @@
   min-width: 0;
   border: 0;
   background: transparent;
-  padding: 14px 18px;
+  padding: 18px 22px;
   font-family: var(--bz-sans);
-  font-size: 1rem;
+  font-size: 1.0625rem;
   line-height: 1.4;
   color: var(--bz-text);
   outline: none;
+  letter-spacing: -0.005em;
 }
 
 .bz-input::placeholder {
   color: var(--bz-text-mute);
+  transition: color 220ms var(--bz-ease);
+}
+
+.bz-form:focus-within .bz-input::placeholder,
+.bz-lead-form:focus-within .bz-input::placeholder {
+  color: var(--bz-text-faint);
 }
 
 .bz-input:disabled {
@@ -384,8 +442,9 @@
 
 .bz-form .bz-cta,
 .bz-lead-form .bz-cta {
-  border-radius: 10px;
-  padding: 12px 24px;
+  border-radius: 14px;
+  padding: 14px 28px;
+  font-weight: 700;
 }
 
 .bz-vision-suggestions {
@@ -422,17 +481,46 @@
   cursor: not-allowed;
 }
 
-/* --- Preview canvas ------------------------------------------- */
+/* --- Preview canvas (Stage 3 theatre upgrade) ----------------- */
+/* The canvas now reads as a quietly-lit stage: a soft top-down
+   surface gradient (allowed per DESIGN.md anti-pattern clarification:
+   gradients on surfaces, not on the identity), a touch more height,
+   and a 1px pink top-rule that acts as a proscenium. */
 .bz-preview-canvas {
-  background: var(--bz-bg-elev);
+  position: relative;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 46, 136, 0.04) 0%,
+      transparent 18%
+    ),
+    linear-gradient(180deg, var(--bz-bg-elev) 0%, #0E0E0E 100%);
   border: 1px solid var(--bz-rule);
-  border-radius: 16px;
-  min-height: 220px;
+  border-radius: 20px;
+  min-height: 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 48px 32px;
+  padding: 56px 36px;
+  overflow: hidden;
+}
+
+.bz-preview-canvas::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 16%;
+  right: 16%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--bz-pink) 50%,
+    transparent 100%
+  );
+  opacity: 0.55;
+  pointer-events: none;
 }
 
 .bz-preview-empty {
@@ -447,28 +535,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
-.bz-stream-rule {
-  display: block;
-  height: 1px;
-  width: 0;
+/* Stage 3 — composing dots. Three pink dots, soft pulse with a
+   160ms stagger. Replaces the single growing rule for a more
+   theatrical "studio is composing" beat. CSS-only, GPU-friendly. */
+.bz-stream-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bz-stream-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
   background: var(--bz-pink);
-  animation: bz-stream-rule-grow 1.2s var(--bz-ease) infinite alternate;
+  opacity: 0.35;
+  animation: bz-stream-pulse 1.2s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
-@keyframes bz-stream-rule-grow {
-  from { width: 0; }
-  to   { width: 32px; }
+.bz-stream-dot:nth-child(2) { animation-delay: 160ms; }
+.bz-stream-dot:nth-child(3) { animation-delay: 320ms; }
+
+@keyframes bz-stream-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%      { opacity: 1;    transform: scale(1.35); }
 }
 
 .bz-stream-label {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--bz-text-mute);
+  color: var(--bz-text-soft);
 }
 
 .bz-preview-sentence {
@@ -513,13 +616,41 @@
   max-width: 44ch;
 }
 
-/* --- Signature word (pink underline) -------------------------- */
+/* --- Signature word (pink underline + Stage 3 halo) ----------- */
+/* Halo: a soft pink ellipse fades in *behind* the word on completion,
+   timed to land just after the underline finishes drawing. Pure
+   CSS surface treatment, not on the identity mark. */
 .bz-sig-word {
   position: relative;
   display: inline-block;
   white-space: nowrap;
   padding-bottom: 0.05em;
   color: var(--bz-pink);
+  isolation: isolate;
+}
+
+.bz-sig-word::before {
+  content: '';
+  position: absolute;
+  inset: -0.15em -0.4em;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 46, 136, 0.20) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  animation: bz-sig-halo 700ms var(--bz-ease) 600ms forwards;
+  pointer-events: none;
+}
+
+.bz-sig-word.is-static::before {
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes bz-sig-halo {
+  to { opacity: 1; }
 }
 
 .bz-sig-underline {

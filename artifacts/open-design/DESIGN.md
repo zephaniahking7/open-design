@@ -17,6 +17,31 @@ is detected only to ensure no system preference forces unintended inversion.
 The site stays in its designed surface regardless of OS preference. This is
 intentional brand discipline, not a missing feature.
 
+### Stage 3 motion grammar (Hero + VisionInput)
+
+Hero entrance is **load-in only** — no cursor tracking, no
+WebGL, no shader libraries, no JS-driven animation. The grammar:
+
+- **Stagger:** eyebrow 80ms → title 200ms → sub 380ms → CTAs 520ms.
+- **Per-block:** 700ms duration, `cubic-bezier(0.16, 1, 0.3, 1)`, fade
+  in + 12px rise.
+- **Glow drift:** 18s slow alternate translate (≤1.5%) + scale (≤1.04)
+  — ambient, not interactive.
+- **Reduced motion:** all hero entrance animations are inert; copy
+  appears at final position with no transform, glow does not drift.
+
+VisionInput render theatre is **CSS-only refinement** of existing
+state — render/lead JS logic is untouched:
+
+- **Composing state:** three pink dots pulse on a 160ms stagger
+  (replaces single growing rule). 1.2s ease-in-out, infinite.
+- **Signature word:** pink halo fades in behind the word 600ms after
+  underline begins (700ms ease) — surface treatment, not on mark.
+- **Preview canvas:** soft top-down surface gradient + a 1px pink
+  proscenium rule across the top edge.
+- **Maker's mark + voice-line + lead row:** existing 1000ms / 2400ms
+  / 3500ms timing preserved verbatim.
+
 ### Stage 3 launch amendment (ratified)
 
 **The public landing surface inverts to bz-black dominant for launch.** The
