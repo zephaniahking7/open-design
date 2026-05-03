@@ -108,7 +108,7 @@ router.post(
   noopRateGate,
   parseBody,
   swallowParseErrors,
-  async (req, res) => {
+  async (req: Request, res: Response) => {
     try {
       const body = req.body ?? {};
       const source = typeof body.source === "string" ? body.source : "client";

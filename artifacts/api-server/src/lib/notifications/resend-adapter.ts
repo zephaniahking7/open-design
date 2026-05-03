@@ -13,6 +13,39 @@ import type {
 //
 // The structure deliberately mirrors what the Resend SDK expects so
 // activation is a one-line install, not a rewrite.
+
+// Minimal structural type for the slice of the Resend SDK we touch.
+// We model it ourselves rather than depend on `resend`'s type
+// declarations, since the package is intentionally not yet installed.
+interface ResendSendError {
+  message?: string;
+}
+interface ResendSendResponse {
+  error?: ResendSendError | null;
+  data?: unknown;
+}
+interface ResendEmailsClient {
+  send(payload: {
+    from: string;
+    to: string;
+    subject: string;
+    text: string;
+  }): Promise<ResendSendResponse>;
+}
+interface ResendClient {
+  emails: ResendEmailsClient;
+}
+type ResendCtor = new (apiKey: string) => ResendClient;
+interface ResendModule {
+  Resend: ResendCtor;
+}
+
+function hasResendCtor(mod: unknown): mod is ResendModule {
+  if (typeof mod !== "object" || mod === null) return false;
+  const candidate = (mod as { Resend?: unknown }).Resend;
+  return typeof candidate === "function";
+}
+
 export class ResendEmailAdapter implements NotificationAdapter {
   readonly name = "resend";
 
@@ -28,8 +61,7 @@ export class ResendEmailAdapter implements NotificationAdapter {
       // adapter when RESEND_API_KEY is set, but the package install
       // is a separate (later) step — we keep the build green
       // regardless.
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      let mod: any;
+      let mod: unknown;
       try {
         mod = await import("resend" as string);
       } catch {
@@ -38,12 +70,10 @@ export class ResendEmailAdapter implements NotificationAdapter {
           error: "resend_package_not_installed",
         };
       }
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const Resend = (mod as any).Resend;
-      if (typeof Resend !== "function") {
+      if (!hasResendCtor(mod)) {
         return { status: "failed", error: "resend_module_shape" };
       }
-      const client = new Resend(this.apiKey);
+      const client = new mod.Resend(this.apiKey);
       const result = await client.emails.send({
         from: this.fromAddress,
         to: args.recipient,
@@ -51,9 +81,13 @@ export class ResendEmailAdapter implements NotificationAdapter {
         text: args.body,
       });
       if (result?.error) {
+        const errMsg =
+          typeof result.error === "object" && result.error !== null
+            ? result.error.message ?? JSON.stringify(result.error)
+            : String(result.error);
         return {
           status: "failed",
-          error: String(result.error?.message ?? result.error).slice(0, 500),
+          error: errMsg.slice(0, 500),
         };
       }
       return { status: "sent" };
