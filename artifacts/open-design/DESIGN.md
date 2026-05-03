@@ -213,7 +213,9 @@ the letterform simplifies; the SVG never scales blindly.
 - Auto-tracking the wordmark.
 - Dark-mode toggle.
 - Drop shadows on the wordmark or monogram.
-- Gradients in the identity.
+- Gradients **on the wordmark or monogram themselves**. (Surface
+  ambience like a localised radial glow behind a hero or CTA is
+  permitted as a *surface treatment*, not part of the identity mark.)
 
 ## Files in scope for the visual rebuild step
 

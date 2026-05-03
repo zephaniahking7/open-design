@@ -6,6 +6,7 @@ import {
   type FormEvent,
 } from 'react';
 import { pickSignatureWord } from '../../lib/signatureWord';
+import { Wordmark } from '../Wordmark';
 
 type RenderStatus = 'idle' | 'streaming' | 'complete' | 'error' | 'rate_limited';
 type LeadStatus = 'idle' | 'sending' | 'sent' | 'error' | 'rate_limited';
@@ -298,7 +299,11 @@ export function VisionInput() {
               aria-hidden="true"
             >
               <span className="bz-makers-mark-rule" />
-              <span className="bz-makers-mark-glyph">bz</span>
+              <Wordmark
+                variant="mark"
+                height={20}
+                className="bz-makers-mark-glyph"
+              />
             </div>
           )}
 

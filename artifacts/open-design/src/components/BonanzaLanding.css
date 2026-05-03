@@ -573,13 +573,8 @@
 }
 
 .bz-makers-mark-glyph {
-  font-family: var(--bz-sans);
-  font-weight: 900;
-  font-size: 0.9375rem;
-  line-height: 1;
   color: var(--bz-text-mute);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  line-height: 0;
 }
 
 .bz-makers-mark-rule {
