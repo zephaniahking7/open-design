@@ -89,3 +89,27 @@ The /reference-uploads/ folder is currently empty. Reserved for client mood-boar
 Website logos should use transparent backgrounds wherever possible.
 Theme previews can be full image-board previews.
 File names must be kebab-case, lowercase, no spaces, no punctuation other than hyphens.
+
+## Ecosystem Logo Strip — Wording Rule
+
+The uploaded logos are mostly Bonanza-owned or Bonanza-related brands that will have websites, apps, stores, or platforms built through Bonanza Cr8tives. They are not external clients and must never be labelled as such.
+
+Locked section title:
+  Bonanza-built ecosystem brands
+
+Locked subline:
+  A growing family of brands, apps, platforms and creative systems shaped through Bonanza Cr8tives.
+
+Acceptable supporting wording:
+  - Built through Bonanza Cr8tives
+  - Part of the Bonanza ecosystem
+  - Selected ecosystem work
+  - Brands shaped through Bonanza Cr8tives
+
+Do not use:
+  - Our clients
+  - Trusted by these clients
+  - Client logos
+  - Worked with   (unless surrounding context makes the relationship unambiguous)
+
+This rule applies anywhere in the landing, /studio, decks, social copy, or future surfaces that reference these logos.

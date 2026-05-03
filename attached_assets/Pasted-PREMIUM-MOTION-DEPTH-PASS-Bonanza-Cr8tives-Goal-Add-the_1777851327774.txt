@@ -1,0 +1,178 @@
+PREMIUM MOTION + DEPTH PASS — Bonanza Cr8tives.
+
+Goal:
+Add the edge.
+
+Make the public landing feel more alive, premium, modern and impressive without turning it into a disconnected demo page.
+
+This is not a rebuild.
+This is not a 3D experiment.
+This is a controlled motion + depth pass on the existing Bonanza Cr8tives public landing.
+
+Use current project assets:
+- public/brand-assets/logos/
+- public/brand-assets/theme-previews/
+- public/fonts/
+- existing BonanzaLanding components
+- existing guided builder / render / lead flow
+
+Use cloned repos as reference only if helpful:
+- repos/ui-ux-pro-max-skill for UX polish thinking
+- repos/web-quality-skills for performance / Core Web Vitals discipline
+- repos/impeccable if present for anti-slop review
+- repos/threejs-skills as inspiration only, not production code
+
+Rules:
+- Do not install packages unless absolutely necessary.
+- Do not add Three.js.
+- Do not add GSAP.
+- Do not add WebGL.
+- Do not import code from cloned repos directly.
+- Do not create separate demo pages.
+- Do not replace the working product flow.
+- Do not touch backend.
+- Do not touch database.
+- Do not touch /studio.
+- Do not change render flow.
+- Do not change lead capture.
+- Do not change packages/payment logic.
+- Do not change routes.
+- Keep mobile performance safe.
+- Add prefers-reduced-motion support.
+- Use CSS and existing Framer Motion where appropriate.
+- If an effect risks performance or clarity, simplify it.
+
+IMPORTANT PRODUCT RULE:
+Every motion effect must support the real user journey:
+visitor understands offer → chooses package → builds brief → selects visual direction → selects font direction → submits request / lead.
+
+Do not add pretty effects that do not help that journey.
+
+TASK 1 — Inspect first
+Before editing, inspect the current public landing files and report the exact files you plan to touch.
+
+Likely files:
+- src/components/BonanzaLanding.tsx
+- src/components/BonanzaLanding.css
+- src/components/landing/Hero.tsx
+- src/components/landing/VisionInput.tsx
+- src/components/landing/Packages.tsx
+- src/components/landing/WhatWeBuild.tsx
+- src/components/landing/BeforeAfter.tsx
+- src/components/landing/Connect.tsx
+- src/components/landing/Footer.tsx
+- any current client builder / visual picker / font picker component if already created
+- public/brand-assets/ASSET-MAP.md only if notes need updating
+
+TASK 2 — Add premium motion layer
+Add controlled motion / depth:
+
+Hero:
+- subtle layered background movement
+- soft parallax / depth feeling
+- primary CTA shimmer or pulse
+- no heavy 3D scene
+- no distracting particles
+
+Vision / builder:
+- selected step feels active
+- smooth transitions between builder sections
+- polished selected states
+- clear progress feeling
+- no fake search/demo behaviour
+
+Theme picker:
+Use the 20 uploaded theme previews from:
+public/brand-assets/theme-previews/
+
+Build or enhance the picker so it feels premium:
+- main selected preview large
+- related previews smaller around/beside it
+- heart/favourite button on each theme card
+- allow top 3 shortlist
+- include “Help me choose” option
+- selected theme saved into the final brief
+- colour swatches / palette labels shown clearly
+- mobile-friendly
+- no overwhelming wall of cards unless “view all” is opened
+
+Font picker:
+Create or enhance a Microsoft Word-style font preview picker:
+- use local approved fonts only if already copied into public/fonts/custom/
+- if custom fonts are not copied yet, use Plus Jakarta Sans + system-safe previews
+- same sample sentence on every card
+- heading sample + paragraph sample
+- primary font direction
+- backup font direction
+- “Recommend for me”
+- wording must say:
+  “Choose the direction you naturally connect with. Bonanza Cr8tives will refine the final font pairing for readability, mobile performance and brand fit.”
+
+Ecosystem logo strip:
+Use logos from:
+public/brand-assets/logos/
+
+Add or prepare a subtle logo swim / marquee section:
+Title:
+“Bonanza-built ecosystem brands”
+
+Subline:
+“A growing family of brands, apps, platforms and creative systems shaped through Bonanza Cr8tives.”
+
+Rules for this section:
+- Do not call them clients.
+- Do not say “trusted by.”
+- Movement should be slow, silent and elegant.
+- Add clarity labels if useful: Live / Building / Next / Vision.
+- If a logo is missing, skip it gracefully.
+
+Cards / packages:
+- soft hover glow
+- slight depth / lift
+- subtle shine on important CTA buttons only
+- no excessive animation
+- no motion on every tiny element
+
+General:
+- scroll reveal for key sections
+- consistent easing and duration
+- no jitter
+- no autoplay sound
+- no hover sound
+- no background music
+- no expensive animation loops on mobile
+
+TASK 3 — CSS / performance discipline
+Keep the motion lightweight:
+- CSS transitions
+- CSS keyframes
+- transform / opacity only where possible
+- avoid animating layout-heavy properties
+- add prefers-reduced-motion fallbacks
+- mobile safe
+- no giant dependencies
+
+TASK 4 — Report and verify
+After completion, report:
+1. files changed
+2. motion/depth effects added
+3. theme picker status
+4. heart/favourite / top 3 shortlist status
+5. font picker status
+6. ecosystem logo strip status
+7. whether any cloned repo was used as reference
+8. whether any new dependency was added
+9. confirmation backend untouched
+10. confirmation database untouched
+11. confirmation /studio untouched
+12. confirmation render flow untouched
+13. confirmation lead capture untouched
+14. any performance risks
+15. what remains for final launch
+
+Acceptance:
+- The landing feels more premium and alive.
+- The user journey is clearer, not busier.
+- The builder feels like a real guided studio intake.
+- The theme previews and logos are used from public/brand-assets.
+- The live business machine remains intact.
