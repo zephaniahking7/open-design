@@ -1,15 +1,19 @@
+// Before / After — grounded in the actual founder journey we see most
+// often. Each pair is one specific friction → one specific outcome.
+// Kept intentionally short (4 rows) so the section reads as a scan,
+// not a wall of text.
 const BEFORE = [
-  'Scattered ideas',
-  'Weak online presence',
-  'No clear funnel',
-  'No strong first impression',
+  'A Notes-app pitch nobody can read back to you.',
+  'A free site builder that screams free site builder.',
+  'No clear path from "they liked it" to "they booked it".',
+  'A logo you outgrew six months ago.',
 ] as const;
 
 const AFTER = [
-  'Clear brand direction',
-  'Polished website',
-  'AI-assisted lead flow',
-  'Digital system ready to grow',
+  'A sharp creative direction your whole team can quote.',
+  'A site that looks like the business you\'re actually building.',
+  'A funnel that turns interest into a held diary slot.',
+  'A brand system you can grow into, not out of.',
 ] as const;
 
 export function BeforeAfter() {

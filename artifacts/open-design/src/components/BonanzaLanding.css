@@ -2207,3 +2207,115 @@
   .bz-pkg-pay { gap: 18px; }
   .bz-hero-ctas { flex-wrap: wrap; }
 }
+
+/* ============================================================
+   LANE B — Premium polish (CSS-only, no JS, no new packages)
+   Card hover glow, button shine sweep, hero CTA beam, mobile
+   spacing pass at 480px. Restrained — Bonanza must remain a
+   credible business front door.
+   ============================================================ */
+
+/* ---- Card hover glow (services / packages / orbit / ecosystem) ---- */
+.bz-service,
+.bz-pkg,
+.bz-orbit-step {
+  transition: border-color 220ms ease, box-shadow 280ms ease,
+              transform 220ms ease, background 220ms ease;
+}
+.bz-section--light .bz-service:hover,
+.bz-section--light .bz-pkg:hover,
+.bz-orbit-step:hover {
+  border-color: rgba(86, 128, 233, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(86, 128, 233, 0.18),
+    0 12px 36px -12px rgba(86, 128, 233, 0.28),
+    0 4px 12px -6px rgba(11, 11, 11, 0.06);
+  transform: translateY(-1px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .bz-section--light .bz-service:hover,
+  .bz-section--light .bz-pkg:hover,
+  .bz-orbit-step:hover {
+    transform: none;
+  }
+}
+
+/* ---- Button shine sweep on the primary CTA ---- */
+.bz-cta--primary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.bz-cta--primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.22) 48%,
+    rgba(255, 255, 255, 0.32) 50%,
+    rgba(255, 255, 255, 0.22) 52%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.bz-cta--primary:hover::after {
+  transform: translateX(120%);
+}
+.bz-cta--primary > * {
+  position: relative;
+  z-index: 2;
+}
+@media (prefers-reduced-motion: reduce) {
+  .bz-cta--primary::after { display: none; }
+}
+
+/* ---- Hero CTA beam (primary CTA only — restrained pulse) ---- */
+@keyframes bz-cta-beam {
+  0%   { box-shadow: 0 0 0 0 rgba(86, 128, 233, 0.40); }
+  70%  { box-shadow: 0 0 0 14px rgba(86, 128, 233, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(86, 128, 233, 0); }
+}
+.bz-hero-ctas .bz-cta--primary {
+  animation: bz-cta-beam 3.6s ease-out 1.6s infinite;
+}
+.bz-hero-ctas .bz-cta--primary:hover {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .bz-hero-ctas .bz-cta--primary { animation: none; }
+}
+
+/* ---- Mobile spacing pass at 480px (tightens type + padding) ---- */
+@media (max-width: 480px) {
+  .bz-hero-inner,
+  .bz-vision-inner,
+  .bz-services-inner,
+  .bz-orbit-inner,
+  .bz-split-inner,
+  .bz-packages-inner,
+  .bz-ecosystem-inner,
+  .bz-final-inner,
+  .bz-connect-inner,
+  .bz-footer-inner {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .bz-hero-title { font-size: clamp(34px, 9vw, 44px); }
+  .bz-section-title { font-size: clamp(26px, 7.5vw, 34px); }
+  .bz-vision-title { font-size: clamp(24px, 7vw, 30px); }
+  .bz-builder { padding: 16px; }
+  .bz-builder-title { font-size: 20px; }
+  .bz-builder-card { padding: 16px; }
+  .bz-pkg { padding: 22px 18px; }
+  .bz-ecosystem-card { padding: 22px 18px; }
+  .bz-hero-ctas {
+    gap: 10px;
+  }
+  .bz-hero-tertiary { font-size: 13px; }
+  .bz-builder-nav .bz-cta { padding: 12px 18px; font-size: 14px; }
+}
