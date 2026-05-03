@@ -413,6 +413,39 @@
   to { opacity: 1; }
 }
 
+.bzs-save-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bzs-save-error {
+  font-family: var(--bzs-display);
+  font-size: 0.9375rem;
+  color: var(--bzs-ink-soft);
+}
+
+.bzs-toast {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border: 1px solid var(--bzs-rule);
+  background: var(--bzs-bg-paper);
+  font-family: var(--bzs-display);
+  font-size: 0.9375rem;
+  color: var(--bzs-ink-soft);
+  cursor: pointer;
+  animation: bzs-fade-in 220ms ease both;
+}
+
+.bzs-cap-note {
+  margin: 16px 20px;
+  padding: 8px 0;
+  border-top: 1px dashed var(--bzs-rule);
+  font-family: var(--bzs-display);
+  font-size: 0.8125rem;
+  color: var(--bzs-ink-mute);
+}
+
 /* --- Modal -------------------------------------------------- */
 .bzs-modal-backdrop {
   position: fixed;

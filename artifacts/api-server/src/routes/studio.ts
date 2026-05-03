@@ -286,15 +286,27 @@ type RenderRow = {
   created_at: string;
 };
 
+// Soft cap: pagination is explicitly out of scope for v1, but
+// returning every row would be unbounded as the lead table grows. We
+// cap at 500 (the most recent) and tell the client whether the cap
+// was hit so the UI can warn the operator that older rows are
+// hidden. When pagination lands this can lift cleanly.
+const RENDERS_CAP = 500;
+
 router.get("/studio/renders", async (_req, res) => {
   try {
     const result = await pool.query<RenderRow>(
       `SELECT id, vision, ai_output, email, source, user_agent, referrer, created_at
          FROM bonanza_leads
         ORDER BY created_at DESC
-        LIMIT 500`,
+        LIMIT $1`,
+      [RENDERS_CAP],
     );
-    res.json({ renders: result.rows });
+    res.json({
+      renders: result.rows,
+      truncated: result.rows.length >= RENDERS_CAP,
+      cap: RENDERS_CAP,
+    });
   } catch (err) {
     logger.error({ err }, "renders list failed");
     res.status(500).json({ error: "could not load renders" });

@@ -119,6 +119,14 @@ export function BonanzaStudio() {
   // synchronously because the load effect would clobber it; this
   // "pending" id is applied after the response arrives.
   const [pendingSelectId, setPendingSelectId] = useState<string | null>(null);
+  const [rendersTruncated, setRendersTruncated] = useState<{
+    truncated: boolean;
+    cap: number;
+  } | null>(null);
+  // Inline toast for failed background actions (promote, list load).
+  // Cleared on the next successful action; the user gets a single
+  // line of feedback instead of silent failures.
+  const [actionError, setActionError] = useState<string | null>(null);
 
   const isRenders = filter === 'renders';
 
@@ -136,9 +144,16 @@ export function BonanzaStudio() {
             signal: ctrl.signal,
           });
           if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-          const data = (await resp.json()) as { renders: Render[] };
+          const data = (await resp.json()) as {
+            renders: Render[];
+            truncated?: boolean;
+            cap?: number;
+          };
           if (!ctrl.signal.aborted) {
             setRenders(data.renders);
+            setRendersTruncated(
+              data.truncated ? { truncated: true, cap: data.cap ?? 500 } : null,
+            );
             setSelectedBriefId(null);
             setSelectedRenderId(null);
           }
@@ -176,6 +191,7 @@ export function BonanzaStudio() {
         if (!ctrl.signal.aborted) {
           if (isRenders) setRenders([]);
           else setBriefs([]);
+          setActionError('Could not load. Try switching tabs again.');
         }
       } finally {
         if (!ctrl.signal.aborted) setLoading(false);
@@ -239,9 +255,10 @@ export function BonanzaStudio() {
         });
         if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
         const data = (await resp.json()) as { brief: Brief };
+        setActionError(null);
         handleBriefCreated(data.brief, { switchToNew: true });
       } catch {
-        // Quiet failure — the row stays in renders, the user can retry.
+        setActionError('Could not promote that render. Try again.');
       }
     },
     [handleBriefCreated],
@@ -270,6 +287,12 @@ export function BonanzaStudio() {
           </button>
         </header>
 
+        {actionError && (
+          <p className="bzs-toast" role="status" onClick={() => setActionError(null)}>
+            <em>{actionError}</em>
+          </p>
+        )}
+
         <nav className="bzs-filters" aria-label="Filter briefs">
           {FILTERS.map((f, i) => (
             <span key={f.value} className="bzs-filter-cell">
@@ -295,6 +318,14 @@ export function BonanzaStudio() {
             )}
             {!loading && isRenders && renders.length === 0 && (
               <p className="bzs-empty"><em>No renders captured yet.</em></p>
+            )}
+            {!loading && isRenders && rendersTruncated?.truncated && (
+              <p className="bzs-cap-note" role="note">
+                <em>
+                  Showing the latest {rendersTruncated.cap}. Older renders are
+                  hidden until pagination lands.
+                </em>
+              </p>
             )}
 
             {!isRenders &&
@@ -473,6 +504,7 @@ function BriefDetail({
   const [status, setStatus] = useState<Status>(brief.status);
   const [notes, setNotes] = useState(brief.notes);
   const [saving, setSaving] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
 
   const dirty =
     title.trim() !== brief.title ||
@@ -484,6 +516,7 @@ function BriefDetail({
   const handleSave = async () => {
     if (!canSave) return;
     setSaving(true);
+    setSaveError(null);
     try {
       const resp = await studioFetch(`/api/studio/briefs/${brief.id}`, {
         method: 'PATCH',
@@ -492,6 +525,8 @@ function BriefDetail({
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       const data = (await resp.json()) as { brief: Brief };
       onSaved(data.brief);
+    } catch {
+      setSaveError('Could not save changes.');
     } finally {
       setSaving(false);
     }
@@ -562,14 +597,19 @@ function BriefDetail({
       </dl>
 
       {dirty && (
-        <button
-          type="button"
-          className="bzs-save"
-          onClick={handleSave}
-          disabled={!canSave}
-        >
-          {saving ? 'Saving…' : 'Save'}
-        </button>
+        <div className="bzs-save-row">
+          <button
+            type="button"
+            className="bzs-save"
+            onClick={handleSave}
+            disabled={!canSave}
+          >
+            {saving ? 'Saving…' : 'Save'}
+          </button>
+          {saveError && (
+            <span className="bzs-save-error"><em>{saveError}</em></span>
+          )}
+        </div>
       )}
     </div>
   );
