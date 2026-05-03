@@ -1,0 +1,122 @@
+APPROVED — Concept C with four refinements + production validation layer.
+
+LETTERFORM REFINEMENTS:
+
+1. THE "8" — held, not constructed
+   The 4-unit horizontal bar must not feel neutral.
+   Introduce slight upward curvature (1 unit rise at center) 
+   so it reads as tension, not structure.
+   The 8 must feel like it is "held", not just constructed.
+
+2. B MONOGRAM — silhouette authority
+   The standalone B monogram must be optically heavier than 
+   the B in the wordmark.
+   Increase lower bowl width by +2 units beyond current spec 
+   for standalone use only (not in full wordmark).
+   This creates a recognisable silhouette at distance — 
+   hat-ready, chain-ready.
+
+3. WEDGE SERIF DISCIPLINE — reduce, not standardise
+   Wedge serifs appear ONLY on letters that benefit 
+   silhouette clarity.
+   If a serif does not improve recognisability at small 
+   scale, remove it.
+   Reduction is preferred over consistency.
+
+4. TRACKING LOCK — non-negotiable
+   Tracking must never be auto-adjusted in implementation.
+   The lockup proportions are part of the identity and must 
+   remain exact at all scales and contexts.
+
+OPTICAL CORRECTIONS (NON-GEOMETRIC LOCK):
+
+- All curves must be optically corrected, not mathematically 
+  perfect.
+- Round forms (O, B bowls, 8 bowls) must appear balanced by 
+  eye, not equal by measurement.
+- The lower half of the wordmark may carry +1–2% more visual 
+  weight to feel grounded.
+- Final SVG must be adjusted at 3 sizes: 16px, 64px, and 512px 
+  before approval.
+
+HUMAN SIGNAL:
+
+- The wordmark must contain one subtle imperfection that 
+  signals hand-origin.
+- This must be controlled (≤1 unit variance), not random.
+- Example zones: serif angle inconsistency, curve tension 
+  shift, or junction asymmetry.
+- If the mark feels too perfect, introduce controlled 
+  imperfection.
+
+REPRODUCTION TEST:
+
+Before approval, simulate the wordmark + monogram at:
+- 16px favicon
+- 64px app icon
+- 200px website header
+- 500mm embroidery (hat scale)
+
+If recognisability or clarity drops in any context, adjust 
+before approval.
+
+NEGATIVE SPACE RULE:
+
+- Counters and spacing must remain readable when scaled down.
+- No internal space should collapse below 1.5px at 16px 
+  rendering.
+- If it does, simplify the letterform rather than scaling 
+  blindly.
+
+COLOUR BEHAVIOUR:
+
+- bz-pink (#FF2E88) must be tested on white, black, and real 
+  device screens.
+- If it blooms (oversaturates) on OLED, reduce luminance 
+  slightly without losing identity.
+- The wordmark must work in:
+  - pink on white
+  - black on white
+  - white on pink
+
+CONFIRMATIONS:
+
+- bz-pink locked at #FF2E88. Pink is dominant + accent ONLY. 
+  Body copy stays in bz-ink for WCAG AA at all sizes. 
+  Document in DESIGN.md.
+
+- SVG approach: filled paths only. Scales cleanly to favicon, 
+  identical rendering across browsers, recolour via SVG fill 
+  attribute.
+
+- Lockup: BONANZA / CR8TIVES two-row stacked, flush left, 
+  tracking +20 / +60 to match optical width within ±2%, 
+  leading 92% of cap height.
+
+- Single-line variant: BONANZA CR8TIVES with 32-unit em 
+  space between words. Same letterforms, no shrinking.
+
+PROCEED WITH:
+
+1. Author DESIGN.md (single source of truth, full spec embedded 
+   including the four letterform refinements + the five 
+   production validation layers above)
+2. Reduce system/huashu.md to one-line pointer to DESIGN.md
+3. Hand-draw SVG wordmark + B monogram per refined spec
+
+HOLD GATE:
+After SVG is drawn but BEFORE visual rebuild begins, show me 
+the rendered wordmark + monogram in chat for visual approval.
+
+FINAL VALIDATION BEFORE APPROVAL:
+- Apply optical corrections at 16px, 64px, and 512px
+- Introduce one controlled human imperfection if the mark 
+  feels too perfect
+- Run reproduction test across favicon, app icon, header, 
+  and embroidery scale
+- Validate negative space integrity at small sizes
+- Test bz-pink behaviour across white, black, and OLED-like 
+  conditions
+
+Do not proceed to visual rebuild until I confirm wordmark 
+passes all five validation layers.

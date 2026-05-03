@@ -1,5 +1,8 @@
 SYSTEM: Bonanza Build Engine
 
+PRIMARY IDENTITY SOURCE:
+- artifacts/open-design/DESIGN.md → canonical Bonanza Cr8tives identity (palette, type, wordmark, surface rules, anti-patterns). All visual decisions defer here.
+
 CORE REPOS:
 - open-design → concept, structure, critique
 - ui-ux-pro-max-skill → layout, typography, spacing

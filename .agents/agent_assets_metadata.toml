@@ -1,0 +1,32 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "ocGIGM6QXefiF3wT1MycW"
+uri = "file://artifacts/open-design/public/brand/preview-wordmark-on-pink.svg"
+type = "image"
+title = "Wordmark — white on bz-pink (hero context)"
+
+[[outputs]]
+id = "GN8d5c_bP7Qi52oeH_Ps9"
+uri = "file://artifacts/open-design/public/brand/preview-wordmark-on-white.svg"
+type = "image"
+title = "Wordmark — bz-pink on white (header context)"
+
+[[outputs]]
+id = "rG_8tcBzLownpPIz6AP4F"
+uri = "file://artifacts/open-design/public/brand/preview-wordmark-on-black.svg"
+type = "image"
+title = "Wordmark — bz-pink on bz-black (booking context)"
+
+[[outputs]]
+id = "Jtzui2u79nT3x0wonEzIG"
+uri = "file://artifacts/open-design/public/brand/preview-monogram-icon-64.svg"
+type = "image"
+title = "B monogram — 64px app icon (rendered 256×256)"
+
+[[outputs]]
+id = "G2H9uSPxhZFiV738O2nwV"
+uri = "file://artifacts/open-design/public/brand/preview-monogram-favicon-16.svg"
+type = "image"
+title = "B monogram — 16px favicon (native size)"
