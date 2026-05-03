@@ -159,30 +159,45 @@
 
 /* --- Row ---------------------------------------------------- */
 .bzs-row {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  border-bottom: 1px solid var(--bzs-rule);
+  background: transparent;
+  transition: background-color 160ms ease;
+}
+
+.bzs-row:hover,
+.bzs-row.is-active {
+  background: var(--bzs-bg-paper);
+}
+
+.bzs-row.is-active {
+  box-shadow: inset 2px 0 0 var(--bzs-gold);
+}
+
+.bzs-row-select {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   text-align: left;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid var(--bzs-rule);
   border-radius: 0;
   padding: 18px 20px;
   cursor: pointer;
   font-family: var(--bzs-body);
   color: var(--bzs-ink);
-  transition: background-color 160ms ease;
+  font-size: inherit;
 }
 
-.bzs-row:hover {
-  background: var(--bzs-bg-paper);
-}
-
-.bzs-row.is-active {
-  background: var(--bzs-bg-paper);
-  box-shadow: inset 2px 0 0 var(--bzs-gold);
+.bzs-row-select:focus-visible {
+  outline: 1px solid var(--bzs-tile);
+  outline-offset: -3px;
 }
 
 .bzs-row-main {
@@ -234,24 +249,36 @@
 }
 
 .bzs-row-delete {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  align-self: center;
+  margin-right: 20px;
+  padding: 4px 0;
   font-family: var(--bzs-display);
   font-style: italic;
   font-size: 0.8125rem;
   color: var(--bzs-ink-mute);
   cursor: pointer;
   opacity: 0;
-  transition: opacity 160ms ease, color 160ms ease;
+  transition: opacity 160ms ease, color 160ms ease, border-color 160ms ease;
   border-bottom: 1px solid transparent;
 }
 
 .bzs-row:hover .bzs-row-delete,
-.bzs-row.is-active .bzs-row-delete {
+.bzs-row.is-active .bzs-row-delete,
+.bzs-row-delete:focus-visible {
   opacity: 1;
 }
 
 .bzs-row-delete:hover {
   color: var(--bzs-ink);
   border-bottom-color: var(--bzs-ink);
+}
+
+.bzs-row-delete:disabled {
+  cursor: not-allowed;
+  color: var(--bzs-ink-mute);
 }
 
 /* --- Detail pane -------------------------------------------- */

@@ -397,12 +397,8 @@ function BriefRow({
 }) {
   const [deleting, setDeleting] = useState(false);
 
-  // The deletion logic is shared between mouse + keyboard activations
-  // on a `role="button"` span. We accept either event type and treat
-  // them uniformly — both just need to stop the click bubbling up to
-  // the row's own select handler.
   const performDelete = async (
-    e: React.SyntheticEvent,
+    e: React.MouseEvent<HTMLButtonElement>,
   ): Promise<void> => {
     e.stopPropagation();
     if (deleting) return;
@@ -417,38 +413,39 @@ function BriefRow({
     }
   };
 
+  // The row is a button-styled container made of two real buttons
+  // (select + delete) instead of a button-with-nested-button, which
+  // would be invalid HTML. The select button stretches to fill the
+  // row so the click target stays large.
   return (
-    <button
-      type="button"
-      className={`bzs-row ${active ? 'is-active' : ''}`}
-      onClick={onSelect}
-    >
-      <div className="bzs-row-main">
-        <span className="bzs-row-title">{brief.title}</span>
-        {brief.client_name && (
-          <span className="bzs-row-sub">{brief.client_name}</span>
-        )}
-      </div>
-      <div className="bzs-row-meta">
-        <span className="bzs-row-status">{STATUS_LABEL[brief.status]}</span>
-        <span className="bzs-row-time">{relativeTime(brief.updated_at)}</span>
-        <span
-          className="bzs-row-delete"
-          role="button"
-          tabIndex={0}
-          aria-label="Delete brief"
-          onClick={performDelete}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              void performDelete(e);
-            }
-          }}
-        >
-          delete
+    <div className={`bzs-row ${active ? 'is-active' : ''}`}>
+      <button
+        type="button"
+        className="bzs-row-select"
+        onClick={onSelect}
+        aria-label={`Open brief: ${brief.title}`}
+      >
+        <span className="bzs-row-main">
+          <span className="bzs-row-title">{brief.title}</span>
+          {brief.client_name && (
+            <span className="bzs-row-sub">{brief.client_name}</span>
+          )}
         </span>
-      </div>
-    </button>
+        <span className="bzs-row-meta">
+          <span className="bzs-row-status">{STATUS_LABEL[brief.status]}</span>
+          <span className="bzs-row-time">{relativeTime(brief.updated_at)}</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        className="bzs-row-delete"
+        onClick={performDelete}
+        aria-label={`Delete brief: ${brief.title}`}
+        disabled={deleting}
+      >
+        delete
+      </button>
+    </div>
   );
 }
 
@@ -463,39 +460,35 @@ function RenderRow({
   onSelect: () => void;
   onPromote: () => void;
 }) {
-  const handlePromote = (e: React.SyntheticEvent) => {
+  const handlePromote = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     onPromote();
   };
   return (
-    <button
-      type="button"
-      className={`bzs-row ${active ? 'is-active' : ''}`}
-      onClick={onSelect}
-    >
-      <div className="bzs-row-main">
-        <span className="bzs-row-title">{excerpt(render.vision, 64)}</span>
-        <span className="bzs-row-sub">{render.email}</span>
-      </div>
-      <div className="bzs-row-meta">
-        <span className="bzs-row-time">{relativeTime(render.created_at)}</span>
-        <span
-          className="bzs-row-delete"
-          role="button"
-          tabIndex={0}
-          aria-label="Promote to brief"
-          onClick={handlePromote}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              onPromote();
-            }
-          }}
-        >
-          promote
+    <div className={`bzs-row ${active ? 'is-active' : ''}`}>
+      <button
+        type="button"
+        className="bzs-row-select"
+        onClick={onSelect}
+        aria-label="Open render capture"
+      >
+        <span className="bzs-row-main">
+          <span className="bzs-row-title">{excerpt(render.vision, 64)}</span>
+          <span className="bzs-row-sub">{render.email}</span>
         </span>
-      </div>
-    </button>
+        <span className="bzs-row-meta">
+          <span className="bzs-row-time">{relativeTime(render.created_at)}</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        className="bzs-row-delete"
+        onClick={handlePromote}
+        aria-label="Promote to brief"
+      >
+        promote
+      </button>
+    </div>
   );
 }
 
