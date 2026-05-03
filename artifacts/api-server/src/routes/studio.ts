@@ -14,13 +14,22 @@ const ALLOWED_SOURCE = new Set(["manual", "promoted", "public"]);
 const cap = (v: unknown, n: number): string =>
   typeof v === "string" ? v.trim().slice(0, n) : "";
 
-// Title-generation rules live server-side so every caller (manual form,
-// future public-form hook, promote-from-lead button) gets identical
-// behaviour without duplicating string logic in the frontend.
-function titleFromVision(vision: string, max: number, prefix = ""): string {
+// Title-generation rules live server-side so every caller (manual
+// form, future public-form hook, promote-from-lead button) gets
+// identical behaviour without duplicating string logic in the
+// frontend. `withEllipsis` is opt-in: the public auto-title appends
+// "…" on truncation, but the promoted title is exactly
+// "Promoted from <first 40 chars>" with no ellipsis suffix.
+function titleFromVision(
+  vision: string,
+  max: number,
+  opts: { prefix?: string; withEllipsis?: boolean } = {},
+): string {
+  const { prefix = "", withEllipsis = false } = opts;
   const slice = vision.slice(0, max);
   const truncated = vision.length > max;
-  const body = truncated ? `${slice.trimEnd()}…` : slice;
+  const body =
+    withEllipsis && truncated ? `${slice.trimEnd()}…` : slice.trimEnd();
   return prefix ? `${prefix}${body}` : body;
 }
 
@@ -141,7 +150,7 @@ router.post("/studio/briefs", async (req, res) => {
       }
       vision = lead.vision;
       clientEmail = lead.email;
-      title = titleFromVision(vision, 40, "Promoted from ");
+      title = titleFromVision(vision, 40, { prefix: "Promoted from " });
     } catch (err) {
       logger.error({ err }, "promote lookup failed");
       res.status(500).json({ error: "could not promote lead" });
@@ -152,7 +161,7 @@ router.post("/studio/briefs", async (req, res) => {
       res.status(400).json({ error: "vision is required" });
       return;
     }
-    title = titleFromVision(vision, 60);
+    title = titleFromVision(vision, 60, { withEllipsis: true });
   } else {
     // manual
     if (!vision) {
