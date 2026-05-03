@@ -1,5 +1,6 @@
 import { lazy, Suspense, useCallback, useEffect, useLayoutEffect, useState } from 'react';
 import { BonanzaLanding } from './components/BonanzaLanding';
+import { BonanzaNotFound } from './components/BonanzaNotFound';
 import type { CreateInput } from './components/NewProjectPanel';
 import {
   daemonIsLive,
@@ -54,6 +55,10 @@ const SettingsDialog = lazy(() =>
 );
 
 function StudioLoading() {
+  // Studio surface is intentionally deferred from Stage 2 restyle.
+  // Original cream/Cormorant treatment preserved verbatim so the
+  // operator-facing surface remains internally consistent until a
+  // dedicated studio restyle pass.
   return (
     <div
       style={{
@@ -91,70 +96,6 @@ function StudioLoading() {
       >
         Loading…
       </p>
-    </div>
-  );
-}
-
-function BonanzaNotFound() {
-  return (
-    <div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        background: 'oklch(96% 0.012 90)',
-        color: 'oklch(15% 0 0)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: 24,
-        padding: 32,
-        fontFamily:
-          "'Cormorant Garamond', 'Iowan Old Style', Georgia, 'Times New Roman', serif",
-      }}
-    >
-      <span
-        style={{
-          display: 'block',
-          width: 32,
-          height: 1,
-          background: 'oklch(62% 0.13 70)',
-        }}
-        aria-hidden="true"
-      />
-      <p
-        style={{
-          fontStyle: 'italic',
-          fontWeight: 400,
-          fontSize: '1.75rem',
-          margin: 0,
-          color: 'oklch(35% 0 0)',
-          textWrap: 'pretty',
-        }}
-      >
-        Nothing here yet.
-      </p>
-      <a
-        href="/"
-        onClick={(e) => {
-          e.preventDefault();
-          navigate({ kind: 'landing' });
-        }}
-        style={{
-          fontFamily:
-            "'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif",
-          fontSize: '0.75rem',
-          fontWeight: 500,
-          letterSpacing: '0.14em',
-          textTransform: 'uppercase',
-          color: 'oklch(15% 0 0)',
-          textDecoration: 'none',
-          borderBottom: '1px solid oklch(15% 0 0)',
-          paddingBottom: 2,
-        }}
-      >
-        Return
-      </a>
     </div>
   );
 }

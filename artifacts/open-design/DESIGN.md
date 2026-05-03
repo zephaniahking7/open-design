@@ -17,6 +17,44 @@ is detected only to ensure no system preference forces unintended inversion.
 The site stays in its designed surface regardless of OS preference. This is
 intentional brand discipline, not a missing feature.
 
+### Stage 3 launch amendment (ratified)
+
+**The public landing surface inverts to bz-black dominant for launch.** The
+MISSION brief calls for a premium creative-tech register: black/near-black
+base, white and soft-grey type, electric accents only where useful. This
+supersedes the original bz-pink-dominant hero in the Section dominance table
+below.
+
+What remains unchanged:
+- Wordmark and monogram (Concept C — Brixton Hand) — exact paths.
+- Satoshi via Fontshare as the single body face.
+- 8-unit grid, motion timing (600 ms underline, +1000 ms mark, +2400 ms
+  voice line), `prefers-reduced-motion` discipline.
+- All anti-patterns below.
+
+What changes:
+- Dominant surface = bz-black (was bz-pink hero, bz-white render).
+- bz-pink demoted from dominant to **identity-defining accent**: signature
+  word underline, primary CTA fill, hero glow, focus rings, micro-rules.
+- Body type renders white on bz-black (was bz-ink on bz-white).
+- Studio surface is **deferred** — kept on its existing palette until a
+  follow-up restyle pass.
+
+Section dominance for launch (see updated table below the original).
+
+| Section          | Dominant  | Accent                                | Type colour |
+|------------------|-----------|---------------------------------------|-------------|
+| Header           | bz-black  | bz-pink on hover for Studio CTA       | white       |
+| Hero             | bz-black  | bz-pink radial glow + primary CTA     | white       |
+| Vision Intake    | bz-black  | bz-pink focus ring on input           | white       |
+| What We Build    | bz-black  | bz-pink hover top-rule on cards       | white       |
+| Cr8tive Orbit    | bz-elev   | bz-pink step numerals                 | white       |
+| Before / After   | bz-black  | bz-pink "after" markers + bolt        | white       |
+| Packages         | bz-elev   | bz-pink border on featured tier       | white       |
+| Final CTA        | bz-black  | bz-pink radial glow under CTA         | white       |
+| Connect          | bz-elev   | bz-pink hover arrow on social links   | white       |
+| Footer           | bz-black  | bz-pink "Currently —" dot             | white       |
+
 ## Palette
 
 | Token      | Hex      | Role                                                                                                |
