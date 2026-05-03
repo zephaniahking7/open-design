@@ -1,21 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" role="img" aria-label="Wordmark preview — pink on black">
-  <rect width="1000" height="320" fill="#0B0B0B"/>
-  <g transform="translate(56,48)" fill="#FF2E88" fill-rule="evenodd">
-    <g transform="translate(0,0)"><path d="M 0 0 L 24 0 A 25 25 0 0 1 24 50 L 28 50 A 28 28 0 0 1 28 100 L 0 100 Z M 14 14 L 22 14 A 11 12 0 0 1 22 36 L 14 36 Z M 14 64 L 26 64 A 14 14 0 0 1 26 86 L 14 86 Z"/><path d="M 0 0 L -7 0 L 0 8 Z"/><path d="M 0 100 L -7 100 L 0 92 Z"/></g>
-    <g transform="translate(120,0)"><path d="M 28 -2 A 28 52 0 1 0 28 102 A 28 52 0 1 0 28 -2 Z M 28 12 A 14 38 0 1 1 28 88 A 14 38 0 1 1 28 12 Z"/></g>
-    <g transform="translate(254,0)"><path d="M 0 0 L 14 0 L 42 86 L 42 0 L 56 0 L 56 100 L 42 100 L 14 14 L 14 100 L 0 100 Z"/></g>
-    <g transform="translate(388,0)"><path d="M 21 0 L 35 0 L 56 100 L 42 100 L 38 80 L 18 80 L 14 100 L 0 100 Z M 22 66 L 34 66 L 28 38 Z"/><path d="M 0 100 L -7 100 L 0 92 Z"/><path d="M 56 100 L 63 100 L 56 92 Z"/></g>
-    <g transform="translate(522,0)"><path d="M 0 0 L 14 0 L 42 86 L 42 0 L 56 0 L 56 100 L 42 100 L 14 14 L 14 100 L 0 100 Z"/></g>
-    <g transform="translate(656,0)"><path d="M 0 0 L 46 0 L 46 14 L 18 86 L 46 86 L 46 100 L 0 100 L 0 86 L 28 14 L 0 14 Z"/><path d="M 46 0 L 53 0 L 46 8 Z"/><path d="M 0 100 L -7 100 L 0 92 Z"/></g>
-    <g transform="translate(780,0)"><path d="M 21 0 L 35 0 L 56 100 L 42 100 L 38 80 L 18 80 L 14 100 L 0 100 Z M 22 66 L 34 66 L 28 38 Z"/><path d="M 0 100 L -7 100 L 0 92 Z"/><path d="M 56 100 L 63 100 L 56 92 Z"/></g>
-
-    <g transform="translate(0,110)"><path d="M 52 14 A 26 50 0 1 1 52 86 L 38 86 A 12 36 0 1 0 38 14 Z"/><path d="M 52 14 L 52 7 L 44 14 Z"/><path d="M 52 86 L 52 93 L 44 86 Z"/></g>
-    <g transform="translate(122,110)"><path d="M 0 0 L 24 0 A 25 25 0 0 1 24 50 L 18 50 L 46 100 L 30 100 L 14 70 L 14 100 L 0 100 Z M 14 14 L 22 14 A 11 12 0 0 1 22 36 L 14 36 Z"/><path d="M 0 0 L -7 0 L 0 8 Z"/><path d="M 46 100 L 53 100 L 46 92 Z"/></g>
-    <g transform="translate(238,110)"><path d="M 5 22 A 18 22 0 1 1 41 22 A 18 22 0 1 1 5 22 Z M 17 22 A 6 11 0 1 0 29 22 A 6 11 0 1 0 17 22 Z"/><path d="M 0 72 A 23 28 0 1 1 46 72 A 23 28 0 1 1 0 72 Z M 15 72 A 8 13 0 1 0 31 72 A 8 13 0 1 0 15 72 Z"/><path d="M 11 46 Q 23 43 35 46 L 35 50 Q 23 47 11 50 Z"/></g>
-    <g transform="translate(354,110)"><path d="M 0 0 L 50 0 L 50 14 L 32 14 L 32 100 L 18 100 L 18 14 L 0 14 Z"/><path d="M 0 0 L 0 -7 L 8 0 Z"/><path d="M 50 0 L 50 -7 L 42 0 Z"/><path d="M 18 100 L 11 100 L 18 92 Z"/></g>
-    <g transform="translate(474,110)"><path d="M -7 0 L 21 0 L 14 8 L 14 92 L 21 100 L -7 100 L 0 92 L 0 8 Z"/></g>
-    <g transform="translate(558,110)"><path d="M 0 0 L 14 0 L 28 76 L 42 0 L 56 0 L 32 100 L 24 100 Z"/></g>
-    <g transform="translate(684,110)"><path d="M 0 0 L 42 0 L 42 14 L 14 14 L 14 43 L 36 43 L 36 57 L 14 57 L 14 86 L 42 86 L 42 100 L 0 100 Z"/></g>
-    <g transform="translate(796,110)"><path d="M 0 0 L 42 0 L 42 14 L 14 14 L 14 43 L 42 43 L 42 100 L 0 100 L 0 86 L 28 86 L 28 57 L 0 57 Z"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Bonanza Cr8tives wordmark on black">
+  <title>Bonanza Cr8tives — wordmark on black</title>
+  <rect width="800" height="500" fill="#0B0B0B"/>
+  <!-- Mark: stacked BONANZA / CR8TIVES, white on bz-black ground.
+       Centred horizontally, vertically optical-centred. -->
+  <g transform="translate(180, 180)" fill="#FFFFFF">
+    <text x="0" y="50"
+          font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+          font-weight="900" font-size="80" letter-spacing="2">BONANZA</text>
+    <text x="0" y="150"
+          font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+          font-weight="900" font-size="80" letter-spacing="2">CR8TIVES</text>
   </g>
+  <!-- Pink accent dot, identity-defining accent only. -->
+  <circle cx="180" cy="430" r="6" fill="#FF2E88"/>
+  <text x="200" y="436"
+        font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-weight="500" font-size="14" letter-spacing="2.5"
+        fill="#9A9A9A">WORDMARK · ON BLACK</text>
 </svg>

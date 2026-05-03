@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="geometricPrecision" role="img" aria-label="Favicon preview — 16px">
-  <rect width="16" height="16" fill="#FFFFFF"/>
-  <!-- Simplified favicon B: serifs reduced to 4u (per spec, sub-pixel survival).
-       Drawn at native 16px to confirm negative-space integrity. -->
-  <g fill="#FF2E88" fill-rule="evenodd">
-    <path d="M 3 2 L 8.5 2 A 3 3 0 0 1 8.5 8 L 9.2 8 A 3.4 3.4 0 0 1 9.2 14 L 3 14 Z M 4.6 3.6 L 7.6 3.6 A 1.6 1.6 0 0 1 7.6 6.4 L 4.6 6.4 Z M 4.6 9.5 L 8 9.5 A 1.7 1.7 0 0 1 8 12.5 L 4.6 12.5 Z"/>
-    <path d="M 3 2 L 2 2 L 3 3 Z"/>
-    <path d="M 3 14 L 2 14 L 3 13 Z"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Bonanza monogram 16">
+  <title>Bonanza monogram — 16px favicon</title>
+  <!-- Launch-safe favicon at 16px: chunky B, no fine detail.
+       Pink ground, white glyph, no rounded corners (legibility at 16). -->
+  <rect width="16" height="16" fill="#FF2E88"/>
+  <text x="8" y="13" text-anchor="middle"
+        font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-weight="900" font-size="14"
+        fill="#FFFFFF">B</text>
 </svg>

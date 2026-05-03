@@ -1,9 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="App icon preview — 64px reference, rendered at 256px">
-  <rect width="256" height="256" rx="56" fill="#FFFFFF"/>
-  <!-- B monogram, optical-centred 1px above geometric -->
-  <g transform="translate(82,52) scale(1.84)" fill="#FF2E88" fill-rule="evenodd">
-    <path d="M 0 0 L 24 0 A 25 25 0 0 1 24 50 L 30 50 A 30 30 0 0 1 30 100 L 0 100 Z M 14 14 L 22 14 A 11 12 0 0 1 22 36 L 14 36 Z M 14 64 L 28 64 A 14 14 0 0 1 28 86 L 14 86 Z"/>
-    <path d="M 0 0 L -7 0 L 0 8 Z"/>
-    <path d="M 0 100 L -7 100 L 0 92 Z"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Bonanza monogram 64">
+  <title>Bonanza monogram — 64px icon</title>
+  <!-- Launch-safe app icon: white B on bz-pink rounded square.
+       Matches public/favicon.svg exactly. -->
+  <rect width="64" height="64" rx="12" fill="#FF2E88"/>
+  <text x="32" y="49" text-anchor="middle"
+        font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-weight="900" font-size="48"
+        fill="#FFFFFF">B</text>
 </svg>
