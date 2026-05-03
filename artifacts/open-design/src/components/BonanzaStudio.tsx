@@ -53,16 +53,16 @@ async function studioFetch(
 }
 
 const FILTERS: { value: Filter; label: string }[] = [
-  { value: 'new', label: 'New' },
-  { value: 'active', label: 'Active' },
-  { value: 'completed', label: 'Completed' },
-  { value: 'renders', label: 'Renders' },
+  { value: 'new', label: 'NEW' },
+  { value: 'active', label: 'ACTIVE' },
+  { value: 'completed', label: 'COMPLETED' },
+  { value: 'renders', label: 'RENDERS' },
 ];
 
 const STATUS_LABEL: Record<Status, string> = {
-  new: 'New',
-  active: 'Active',
-  completed: 'Completed',
+  new: 'NEW',
+  active: 'ACTIVE',
+  completed: 'COMPLETED',
 };
 
 function relativeTime(iso: string): string {
@@ -219,15 +219,17 @@ export function BonanzaStudio() {
         </header>
 
         <nav className="bzs-filters" aria-label="Filter briefs">
-          {FILTERS.map((f) => (
-            <button
-              key={f.value}
-              type="button"
-              className={`bzs-filter ${filter === f.value ? 'is-active' : ''}`}
-              onClick={() => setFilter(f.value)}
-            >
-              {f.label}
-            </button>
+          {FILTERS.map((f, i) => (
+            <span key={f.value} className="bzs-filter-cell">
+              {i > 0 && <span aria-hidden className="bzs-filter-sep">·</span>}
+              <button
+                type="button"
+                className={`bzs-filter ${filter === f.value ? 'is-active' : ''}`}
+                onClick={() => setFilter(f.value)}
+              >
+                {f.label}
+              </button>
+            </span>
           ))}
         </nav>
 

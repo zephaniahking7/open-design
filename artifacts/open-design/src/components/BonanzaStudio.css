@@ -85,11 +85,26 @@
 /* --- Filter row --------------------------------------------- */
 .bzs-filters {
   display: flex;
-  gap: 32px;
+  align-items: center;
+  gap: 0;
   border-top: 1px solid var(--bzs-rule);
   border-bottom: 1px solid var(--bzs-rule);
   padding: 16px 0;
   margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.bzs-filter-cell {
+  display: inline-flex;
+  align-items: center;
+}
+
+.bzs-filter-sep {
+  display: inline-block;
+  color: var(--bzs-ink-mute);
+  margin: 0 20px;
+  font-size: 0.875rem;
+  user-select: none;
 }
 
 .bzs-filter {
@@ -97,10 +112,10 @@
   background: transparent;
   border: 0;
   padding: 4px 0 6px;
-  font-family: var(--bzs-display);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.0625rem;
+  font-family: var(--bzs-body);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
   color: var(--bzs-ink-mute);
   cursor: pointer;
   border-bottom: 1px solid transparent;
@@ -205,11 +220,11 @@
 }
 
 .bzs-row-status {
-  font-family: var(--bzs-display);
-  font-style: italic;
-  font-size: 0.875rem;
+  font-family: var(--bzs-body);
+  font-weight: 500;
+  font-size: 0.625rem;
   color: var(--bzs-tile);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.16em;
 }
 
 .bzs-row-time {
@@ -319,9 +334,10 @@
   background: transparent;
   border: 0;
   padding: 2px 0 4px;
-  font-family: var(--bzs-display);
-  font-style: italic;
-  font-size: 1rem;
+  font-family: var(--bzs-body);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
   color: var(--bzs-ink-mute);
   cursor: pointer;
   border-bottom: 1px solid transparent;
