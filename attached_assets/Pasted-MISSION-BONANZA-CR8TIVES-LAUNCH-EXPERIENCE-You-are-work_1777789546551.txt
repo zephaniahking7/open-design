@@ -1,0 +1,339 @@
+MISSION — BONANZA CR8TIVES LAUNCH EXPERIENCE
+
+You are working inside an existing React + Vite + TypeScript project.
+
+Your job is to create the most polished, special, impactful, reliable launch version of Bonanza Cr8tives.
+
+Do NOT rebuild from scratch.
+Do NOT destroy existing functionality.
+Do NOT replace working backend, database, studio, routing, lead capture, render flow, error logging, rate limits, or API routes.
+
+FIRST TASK:
+Before editing files, inspect the current codebase and summarise:
+1. Current frontend entry files
+2. Current Bonanza landing files
+3. Current studio files
+4. Current API/backend routes used by the landing
+5. Existing CSS/style files
+6. Any existing dependencies already installed
+7. Exact files you propose to change
+
+After that, propose staged file changes only.
+
+CORE PRODUCT POSITIONING:
+Bonanza Cr8tives is a website design + creative-tech company.
+
+We build:
+- websites
+- landing pages
+- AI-assisted funnels
+- booking flows
+- brand systems
+- digital front doors
+
+Target customer:
+Founders, creatives and small businesses who need to look serious fast.
+
+IMPORTANT POSITIONING RULE:
+The public site must NOT promise instant full website/app generation.
+
+The AI flow is an intake and vision-rendering experience:
+visitor types vision
+→ AI mirrors direction
+→ visitor leaves email
+→ operator reviews in studio
+→ render becomes a brief
+→ build is managed manually.
+
+SELECTED COMPONENT INSPIRATION:
+Use these 21st.dev component ideas as design inspiration and integration candidates:
+
+1. Shader Hero
+Role: premium visual hero layer
+
+2. Animated Search Bar
+Role: upgrade the “Start Your Vision” input
+
+3. Spotlight Glow Cards
+Role: services/features section
+
+4. Radial Orbital Timeline
+Role: process section
+
+5. Lightning Split
+Role: before/after comparison section
+
+6. Animated Glassy Pricing
+Role: offer tiers
+
+7. Pulse Beams
+Role: final conversion CTA
+
+8. Connect With Us
+Role: social/contact section
+
+9. Motion Footer
+Role: final footer
+
+10. Futuristic Nav
+Role: mobile/floating quick nav only
+
+11. Gradient Menu
+Role: optional service selector only if it improves clarity
+
+INTEGRATION RULE:
+Do not blindly paste every component.
+Use the design language and useful interaction patterns, but adapt them safely into the existing codebase.
+
+Reliability beats visual excess.
+If a component causes performance risk, import issues, framework mismatch, or bundle bloat, recreate the visual effect more lightly using existing React, CSS and Tailwind.
+
+TECHNICAL RULES:
+- This is React + Vite, not Next.js.
+- Do NOT install Next.js.
+- Convert any next/image usage into standard React/Vite-safe code.
+- Do not add unnecessary libraries.
+- lucide-react and framer-motion are acceptable if already installed or truly needed.
+- Avoid GSAP/WebGL/shader overload unless lazy-loaded or clearly isolated.
+- Preserve /api/render SSE.
+- Preserve /api/leads.
+- Preserve /studio and its existing gate.
+- Preserve backend routes.
+- Preserve database schema.
+- Preserve rate limits.
+- Preserve error reporting.
+- Preserve current lead flow.
+- Do not modify middleware ordering.
+- Do not broaden the studio into CRM, invoicing, file storage, portal, or project management.
+
+FINAL HOMEPAGE STRUCTURE:
+1. Simple desktop header
+2. Hero
+3. Vision input
+4. What We Build
+5. How We Build
+6. Before / After Bonanza
+7. Packages
+8. Final CTA
+9. Connect
+10. Footer
+
+VISUAL DIRECTION:
+Premium creative-tech.
+Black / near-black base.
+White and soft gray text.
+Electric accents only where useful.
+Strong spacing.
+Clear hierarchy.
+Intentional motion.
+No clutter.
+No childish effects.
+No random gradients.
+No template-demo feel.
+
+COPY TO USE:
+
+Hero headline:
+Websites, AI funnels & digital front doors built for serious founders.
+
+Hero subheadline:
+Bonanza Cr8tives turns your idea into a sharp creative direction, then builds the system around it.
+
+Primary CTA:
+Start Your Vision
+
+Secondary CTA:
+View What We Build
+
+Vision input placeholder:
+Tell us what you want built…
+
+Vision suggestions:
+Website
+Landing page
+AI funnel
+Booking flow
+Brand system
+Client portal
+
+WHAT WE BUILD SECTION:
+
+Title:
+What We Build
+
+Cards:
+1. Websites That Convert
+High-trust websites for founders, creatives and small businesses who need to look serious fast.
+
+2. Landing Pages
+Focused one-page builds for campaigns, launches, services and offers.
+
+3. AI Funnels
+Smart intake flows that capture ideas, qualify leads and turn interest into action.
+
+4. Booking Systems
+Clean client journeys from first click to confirmed enquiry.
+
+5. Brand Systems
+Visual direction, messaging structure and digital presence that feels consistent.
+
+6. Creative Direction
+Strategy, design taste and execution support for founders building something bigger.
+
+PROCESS SECTION:
+
+Title:
+The Cr8tive Orbit
+
+Steps:
+1. Vision — You tell us what you want built.
+2. Direction — We shape the idea into a clear digital brief.
+3. Design — We create the visual system and page structure.
+4. Build — We develop the site, funnel or digital experience.
+5. Launch — We publish, test and prepare it for real users.
+6. Improve — We refine based on feedback, speed and conversion.
+
+COMPARISON SECTION:
+
+Title:
+From rough idea to real digital presence.
+
+Before Bonanza:
+- Scattered ideas
+- Weak online presence
+- No clear funnel
+- No strong first impression
+
+After Bonanza:
+- Clear brand direction
+- Polished website
+- AI-assisted lead flow
+- Digital system ready to grow
+
+PACKAGES SECTION:
+
+Use offer tiers, not subscriptions.
+
+Package 1:
+Starter Site
+£499+
+One-page landing site for founders who need a clean online presence fast.
+
+Includes:
+- One-page responsive website
+- Basic copy structure
+- Contact/lead form
+- Mobile optimisation
+- Launch support
+
+Package 2:
+Growth Build
+£1,500+
+Full website and conversion flow for serious small businesses.
+
+Includes:
+- Multi-section or multi-page website
+- Service/offer structure
+- Lead capture journey
+- Booking/contact flow
+- Basic SEO setup
+- Launch testing
+
+Package 3:
+Cr8tive System
+£3,500+
+Premium web presence with AI-assisted intake and deeper digital infrastructure.
+
+Includes:
+- Website or web app front door
+- AI-assisted intake/brief flow
+- Backend lead capture
+- Studio/management workflow
+- Brand system direction
+- Priority launch support
+
+Pricing note:
+Final quote depends on scope, content, integrations and timeline.
+
+CTA SECTION:
+
+Title:
+Ready to turn the idea into a real build?
+
+Text:
+Start with the vision. We’ll shape the direction, then build the system properly.
+
+Button:
+Start Your Vision
+
+SOCIAL SECTION:
+
+Title:
+Connect With Bonanza
+
+Subtitle:
+Follow the build, watch the systems grow, and reach out when you’re ready to create.
+
+Social labels:
+Instagram
+YouTube
+GitHub
+LinkedIn
+
+FOOTER:
+
+Giant text:
+BONANZA
+
+Footer heading:
+Ready to build?
+
+Primary links:
+Start a Project
+View Services
+
+Secondary links:
+Privacy
+Terms
+Contact
+
+Copyright:
+© 2026 Bonanza Cr8tives. All rights reserved.
+
+BUILD METHOD:
+Stage 1:
+Inspect project and propose exact file-change plan only.
+
+Stage 2:
+Implement lightweight launch structure with existing functionality preserved.
+
+Stage 3:
+Upgrade hero and vision input.
+
+Stage 4:
+Add services, process and comparison sections.
+
+Stage 5:
+Add pricing, CTA, social and footer.
+
+Stage 6:
+Audit for TypeScript errors, broken imports, performance risks and broken flows.
+
+QUALITY GATES AFTER EACH STAGE:
+Confirm:
+1. Page renders
+2. Vision input still works
+3. AI render flow still works
+4. Lead capture still works
+5. Studio still loads behind existing gate
+6. No TypeScript errors
+7. No broken imports
+8. No Next.js-only code added
+9. Heavy visual effects are lazy-loaded or simplified
+10. Site still feels clear within 5 seconds
+
+OUTPUT REQUIREMENT:
+Use Replit’s proposed file change format.
+Be precise.
+Do not over-edit.
+Do not creatively expand beyond this scope.
