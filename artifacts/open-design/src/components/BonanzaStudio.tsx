@@ -46,7 +46,10 @@ async function studioFetch(
 ): Promise<Response> {
   const headers = new Headers(init.headers);
   headers.set('X-Bonanza-Internal', 'true');
-  if (init.body && !headers.has('Content-Type')) {
+  // Set Content-Type unconditionally — every studio call we make is
+  // JSON, and being explicit avoids surprises when callers later add
+  // a body without remembering the header.
+  if (!headers.has('Content-Type')) {
     headers.set('Content-Type', 'application/json');
   }
   return fetch(path, { ...init, headers });
@@ -79,6 +82,22 @@ function relativeTime(iso: string): string {
   if (d < 30) return `${d}d ago`;
   const mo = Math.round(d / 30);
   return `${mo}mo ago`;
+}
+
+// Absolute timestamp for detail panes — relative time is fine for the
+// list (where the user is scanning recency), but the detail view is
+// where someone audits "when exactly did this happen", so we render
+// the full localised date+time there.
+function absoluteTime(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '';
+  return d.toLocaleString(undefined, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
 }
 
 function excerpt(text: string, n: number): string {
@@ -537,9 +556,9 @@ function BriefDetail({
           />
         </dd>
         <dt>Created</dt>
-        <dd className="bzs-muted">{relativeTime(brief.created_at)}</dd>
+        <dd className="bzs-muted">{absoluteTime(brief.created_at)}</dd>
         <dt>Updated</dt>
-        <dd className="bzs-muted">{relativeTime(brief.updated_at)}</dd>
+        <dd className="bzs-muted">{absoluteTime(brief.updated_at)}</dd>
       </dl>
 
       {dirty && (
@@ -572,7 +591,7 @@ function RenderDetail({ render }: { render: Render }) {
         <dt>Email</dt>
         <dd>{render.email}</dd>
         <dt>Captured</dt>
-        <dd className="bzs-muted">{relativeTime(render.created_at)}</dd>
+        <dd className="bzs-muted">{absoluteTime(render.created_at)}</dd>
         {render.source && (
           <>
             <dt>Source</dt>
