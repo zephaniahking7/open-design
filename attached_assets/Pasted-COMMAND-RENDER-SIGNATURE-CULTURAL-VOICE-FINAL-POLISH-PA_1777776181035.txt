@@ -1,0 +1,274 @@
+COMMAND: RENDER SIGNATURE + CULTURAL VOICE — FINAL POLISH PASS
+
+IMPORTANT:
+Plan mode. Do not edit yet. Return execution plan only.
+
+Follow Replit response protocol.
+Honour the layered activation model. Do not activate dormant 
+layers without explicit instruction.
+
+Before editing, inspect the relevant files first. Preserve all 
+working PATH B behaviour, all studio behaviour, all rate 
+limiting, the /studio gate, the booking flow, and all visual 
+identity. Nothing that currently functions may regress.
+
+Before any database or API change, inspect existing schema 
+and migration patterns. Use existing project conventions.
+
+If any database or API issue appears, stop before frontend 
+edits and report clearly.
+
+Read /system/brain.md, /system/guardrails.md, /system/huashu.md, 
+and /system/philosophy.md.
+
+CONTEXT:
+
+Bonanza Cr8tives is now live as a Cultural AI Agency:
+- Public landing with PATH B render flow
+- Booking form wired to bonanza_briefs
+- Private /studio ledger for managing briefs + renders
+- All identity disciplines honoured (cream / tile-green / 
+  warm gold / Cormorant Garamond italic / Instrument Sans body 
+  / hairline rules / flat surfaces / no gradients)
+
+The Ship Review confirmed two truths:
+1. The studio is operationally complete. Daily-use affordances 
+   only — no scope expansion.
+2. The render moment IS the product. Every prospect forms 
+   their entire impression of Bonanza in 8 seconds at this 
+   moment. The current render output is text in a card. It 
+   reads as "another GPT wrapper in nice fonts." Treatment 
+   needed to make it unmistakably Bonanza.
+
+This pass closes that gap. Four ship layers active.
+
+POSITIONING LOCK:
+The product is the service. The render is the demo. The 
+studio is the engine. The render moment carries the cultural 
+signature.
+
+TASK:
+
+PART ONE — RENDER SIGNATURE (PUBLIC LANDING)
+
+When the AI sentence streams complete in the Preview canvas, 
+deepen the moment with four sequenced micro-events:
+
+LAYER 2 — SIGNATURE WORD TREATMENT
+The streaming completes. ONE word in the sentence receives a 
+hand-drawn-feeling 1px gold underline. The underline draws 
+itself across the word in 0.6s using SVG path animation. The 
+line has one intentional thickness variance at roughly 60% of 
+its length (slight pressure point — like ink on paper).
+
+The word selection happens locally in the frontend after the 
+sentence completes. Do not make a secondary Anthropic call.
+
+Choose one signature word using a lightweight heuristic:
+- Prefer the strongest final noun or adjective in the sentence
+- Ignore filler words: the, a, an, and, to, for, with, into, 
+  of, from, on, in, by, at, as, is, was, will, be, that, this, 
+  it, they, we, you, your, our
+- Fallback to the final non-filler word in the sentence
+- If sentence ends with punctuation, strip before matching
+
+Wrap the matched word in a span with the gold underline 
+animation triggered immediately on render completion.
+
+LAYER 3 — THE BONANZA MAKER'S MARK
+0.4 seconds after the signature word underline completes, a 
+small maker's mark fades in below the sentence — 24px wide, 
+italic Cormorant lowercase "bz" with a single 1px hairline 
+gold rule (16px wide) beneath it, centred. Fade-in: opacity 
+0 → 1 over 0.6s.
+
+The mark sits as a contained element — not stretched across 
+the canvas, not decorative. Like a signature on a print.
+
+LAYER 4 — THE PAUSE BEAT
+0.8 seconds of stillness after the maker's mark settles. 
+Nothing animates. Nothing fades. The visitor sits with the 
+moment.
+
+Then the existing "This is a direction. We build it proper." 
+line fades in (italic Cormorant, ink, 1.0625rem) — this is 
+the cultural voice line, used precisely once.
+
+After 0.5s more, the existing email capture row fades in as 
+it currently does.
+
+The "Render another vision." reset link and the existing 
+booking anchor remain unchanged in behaviour, but the anchor 
+text is updated in PART TWO below.
+
+LAYER 7 — LIVING FOOTER ROTATION
+Replace the static "Currently — building..." line with a 
+6-state crossfade rotation. Each state visible for 8 seconds, 
+crossfade duration 1.2s. Order:
+
+1. "Building a record label identity for Real Image Entertainment."
+2. "Shaping the launch of Supreme Teens — youth creative platform."
+3. "Developing the BaeJo Jobae food marketplace identity."
+4. "Designing Family Bonanza — community at the centre."
+5. "Crafting My Afraka — diaspora connection platform."
+6. "Launching Supreme Cleans — waterless mobile car cleaning, youth-led."
+
+After state 6, return to state 1. Infinite loop. Pause 
+animation if document.hidden = true (visitor on another tab). 
+Respect prefers-reduced-motion (display state 1 only, no 
+rotation, no fade).
+
+Style: italic Cormorant 0.9rem soft ink. 3px tile-green dot 
+preceding the text (static, no pulse).
+
+PART TWO — BOOKING FUNNEL TIGHTENING (PUBLIC LANDING)
+
+The Ship Review identified that render → booking is not yet 
+a single gesture. Address with three precise additions:
+
+A. EMBED BOOKING CTA INSIDE RENDER RESULT PANEL
+The existing "Or — if this captured your vision, begin a 
+brief below" anchor link works but is generic. Tighten the 
+language to contextualise the moment:
+
+Replace with:
+"Take this further with Bonanza."
+
+Style: italic Cormorant ink, hairline underline on hover, 
+anchors to #booking. Same fade-in timing as currently.
+
+B. CULTURAL VOICE LINE ON BOOKING FORM
+Above the booking form fields (between the section heading 
+"Begin a project" and the Name field), add one italic 
+Cormorant line in ink, 1.0625rem:
+
+"No rush. Right first time."
+
+This is the working principle. Used precisely once. Never 
+repeated.
+
+C. SPECIFIC NEXT-STEP PROMISE ON BRIEF SUCCESS
+The current success state reads:
+"Your brief is held. We'll be in touch within 48 hours."
+
+Replace with:
+"Your brief is held. You'll hear from us within 24 hours 
+with a 15-minute call slot to talk it through."
+
+This addresses the Ship Review concern about premium client 
+hesitation when feedback after submission is vague.
+
+PART THREE — STUDIO DAILY-USE AFFORDANCES
+
+Two small additions only. Strict scope.
+
+A. NEW-SINCE-YESTERDAY INDICATOR
+On the NEW filter tab, append a count of items created in 
+the last 24 hours. Format:
+NEW (3 today)
+
+If 0 today, show:
+NEW
+
+The count is computed from the briefs already loaded in the 
+NEW filter — no additional API calls. Count only briefs 
+where created_at > now() - interval '24 hours'.
+
+B. TEXT SEARCH
+Single text input above the filter row. Placeholder: 
+"Search briefs..."
+
+Hairline border matching existing studio inputs. Italic 
+Cormorant. Live filtering as user types. Searches across 
+title, client_name, client_email, and vision fields. Works 
+within the currently selected filter (NEW / ACTIVE / 
+COMPLETED / RENDERS).
+
+No backend change required. Filter the loaded array 
+client-side.
+
+PART FOUR — SCOPE CEILING DOCUMENTATION
+
+Write a single markdown file at /system/studio-scope.md 
+containing:
+
+# Studio Scope Ceiling
+
+The studio exists for one purpose: triage briefs and renders 
+captured from the public landing.
+
+The studio is NOT:
+- A CRM
+- A project management tool
+- A client portal
+- An invoicing system
+- A file storage system
+- A team collaboration space
+
+Permanent scope:
+- View briefs by status (NEW / ACTIVE / COMPLETED)
+- View renders captured from landing
+- Promote a render to a brief
+- Add notes to a brief
+- Toggle status
+- Soft-delete briefs
+- Search and triage indicators
+
+Anything beyond this list belongs in the operator's existing 
+tools (email, Notion, calendar, accounting software) or in 
+a separate product.
+
+Auth upgrade trigger: replace localStorage + header check 
+with proper authentication when ANY of the following occurs:
+1. First paid client lead is captured
+2. Any client PII beyond what client themselves submitted 
+   appears in the system
+3. Studio URL is accessed from a device that is not the 
+   operator's
+
+Until trigger event: current auth is sufficient.
+
+CONSTRAINTS:
+
+- Same identity throughout — no new fonts, no new palette 
+  colours
+- Same spacing system (8/16/24/32/48/80/120 scale)
+- All existing PATH B functionality must remain fully intact
+- All existing studio functionality must remain fully intact
+- Mobile breakpoints must hold at 375 / 768 / 1024 / 1440
+- Production build must pass clean
+- Performance: signature animation must add zero perceptible 
+  delay to FCP. Lazy-load animation logic after the AI text 
+  completes.
+- Accessibility: respect prefers-reduced-motion on all four 
+  signature layers. With reduced motion, signature word shows 
+  static underline (no draw animation), maker's mark appears 
+  without fade, pause beat is replaced with immediate 
+  appearance, footer rotation is disabled.
+- Anti-slop: the maker's mark must be hairline gold rule + 
+  italic lowercase "bz" only. No flourishes. No alternative 
+  glyphs. No emoji-style mark.
+- The render signature is the page's most precious moment. 
+  Protect its uniqueness — do not duplicate the underline 
+  treatment, the maker's mark, or the pause beat anywhere 
+  else.
+
+OUTPUT FORMAT (PLAN MODE):
+
+Return a single execution plan organised by batches:
+(1) Frontend — local signature-word selection heuristic (no 
+    backend or API change unless existing code requires it)
+(2) Frontend signature animations — SVG path drawing for 
+    underline, maker's mark fade-in, pause beat sequencing
+(3) Footer rotation — 6-state crossfade with visibility + 
+    reduced-motion handling
+(4) Booking funnel tightening — three text + behaviour changes
+(5) Studio affordances — search input + new-today count
+(6) Scope ceiling documentation — /system/studio-scope.md
+(7) Production build verification
+
+Identify all files to be modified or created. Confirm any 
+assumptions about existing architecture. Flag any risks 
+before I switch to Build mode.
+
+Do not edit yet.

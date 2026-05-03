@@ -379,11 +379,138 @@
   color: var(--bz-bg-paper);
 }
 
+/* --- Signature word (gold underline) ------------------------- */
+.bz-sig-word {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  padding-bottom: 0.05em;
+}
+
+.bz-sig-underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.08em;
+  width: 100%;
+  height: 0.32em;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.bz-sig-underline path {
+  fill: none;
+  stroke: var(--bz-gold);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation:
+    bz-sig-draw 600ms var(--bz-ease) forwards,
+    bz-sig-pressure 600ms var(--bz-ease) forwards;
+}
+
+@keyframes bz-sig-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Pressure variance — single ink-pressure beat between 55% and 65%
+   of the draw, returning to baseline after. Reads like a pen catching
+   on paper, not a CSS effect. */
+@keyframes bz-sig-pressure {
+  0%   { stroke-width: 1; }
+  55%  { stroke-width: 1; }
+  60%  { stroke-width: 1.4; }
+  65%  { stroke-width: 1; }
+  100% { stroke-width: 1; }
+}
+
+.bz-sig-word.is-static .bz-sig-underline path {
+  stroke-dashoffset: 0;
+  animation: none;
+}
+
+/* --- Maker's mark -------------------------------------------- */
+.bz-makers-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 24px;
+  margin: 32px auto 0;
+  opacity: 0;
+  animation: bz-mark-in 600ms var(--bz-ease) 1000ms forwards;
+}
+
+.bz-makers-mark-glyph {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: var(--bz-ink);
+  letter-spacing: -0.02em;
+}
+
+.bz-makers-mark-rule {
+  display: block;
+  width: 16px;
+  height: 1px;
+  background: var(--bz-gold);
+}
+
+@keyframes bz-mark-in {
+  to { opacity: 1; }
+}
+
+.bz-makers-mark.is-static {
+  opacity: 1;
+  animation: none;
+}
+
+/* --- Voice line (one direction, build it proper) ------------- */
+.bz-voice-line {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  color: var(--bz-ink);
+  text-align: center;
+  margin: 24px auto 0;
+  max-width: 44ch;
+  opacity: 0;
+  /* 0.6s underline + 0.4s gap + 0.6s mark fade + 0.8s pause = 2.4s */
+  animation: bz-fade-in 600ms var(--bz-ease) 2400ms forwards;
+}
+
+.bz-voice-line.is-static {
+  opacity: 1;
+  animation: none;
+}
+
 /* --- Lead capture row --------------------------------------- */
 .bz-lead-row {
   margin-top: 32px;
   max-width: 560px;
-  animation: bz-fade-in 600ms var(--bz-ease) both;
+  opacity: 0;
+  /* Voice line lands at 2.4s (delay) + 0.6s (fade). Email row arrives
+     0.5s after the voice line settles → 3.5s total delay. */
+  animation: bz-fade-in 600ms var(--bz-ease) 3500ms forwards;
+}
+
+.bz-lead-row.is-static {
+  opacity: 1;
+  animation: none;
+}
+
+.bz-lead-principle {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  color: var(--bz-ink);
+  margin: 0 0 16px;
+  text-wrap: pretty;
 }
 
 @keyframes bz-fade-in {
@@ -488,6 +615,65 @@
   color: var(--bz-ink-mute);
 }
 
+/* --- Footer "Currently —" rotation --------------------------- */
+.bz-footer-now {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 24px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.bz-footer-now-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 0;
+  background: var(--bz-tile);
+  flex: none;
+}
+
+.bz-footer-now-stack {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  display: block;
+}
+
+.bz-footer-now-text {
+  display: block;
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--bz-ink-soft);
+  opacity: 1;
+  transition: opacity 1200ms var(--bz-ease);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+/* Outgoing phrase fades from 1 → 0 over 1.2s. */
+.bz-footer-now-text.is-leaving {
+  opacity: 0;
+}
+
+/* Incoming phrase mounts on top of the outgoing one (so the row's
+   intrinsic width is set by whichever phrase is currently in flow)
+   and fades from 0 → 1 over 1.2s via a one-shot keyframe. */
+.bz-footer-now-text--incoming {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: bz-footer-now-in 1200ms var(--bz-ease) forwards;
+}
+
+@keyframes bz-footer-now-in {
+  to { opacity: 1; }
+}
+
 .bz-reset {
   appearance: none;
   background: transparent;
@@ -516,6 +702,17 @@
 @keyframes bz-fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  .bz-footer-now {
+    margin: 8px 0 0;
+    flex-basis: 100%;
+    order: 3;
+  }
+  .bz-footer-now-text {
+    white-space: normal;
+  }
 }
 
 @media (max-width: 640px) {

@@ -107,6 +107,7 @@ function excerpt(text: string, n: number): string {
 
 export function BonanzaStudio() {
   const [filter, setFilter] = useState<Filter>('new');
+  const [searchQuery, setSearchQuery] = useState('');
   const [briefs, setBriefs] = useState<Brief[]>([]);
   const [renders, setRenders] = useState<Render[]>([]);
   const [selectedBriefId, setSelectedBriefId] = useState<string | null>(null);
@@ -200,6 +201,44 @@ export function BonanzaStudio() {
     [renders, selectedRenderId],
   );
 
+  // Client-side search across the currently-loaded array. No backend
+  // call — the operator works against what's already in memory for the
+  // active filter. Empty query short-circuits to the full list.
+  const normalisedQuery = searchQuery.trim().toLowerCase();
+  const visibleBriefs = useMemo(() => {
+    if (!normalisedQuery) return briefs;
+    return briefs.filter((b) => {
+      const haystack = [b.title, b.client_name, b.client_email, b.vision]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+      return haystack.includes(normalisedQuery);
+    });
+  }, [briefs, normalisedQuery]);
+
+  const visibleRenders = useMemo(() => {
+    if (!normalisedQuery) return renders;
+    return renders.filter((r) => {
+      const haystack = [r.vision, r.email]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+      return haystack.includes(normalisedQuery);
+    });
+  }, [renders, normalisedQuery]);
+
+  // Count of NEW briefs created in the last 24h, computed from the
+  // already-loaded NEW filter list. Only meaningful when that filter
+  // is active (otherwise `briefs` holds a different status's rows).
+  const newTodayCount = useMemo(() => {
+    if (filter !== 'new') return 0;
+    const cutoff = Date.now() - 24 * 60 * 60 * 1000;
+    return briefs.reduce((acc, b) => {
+      const t = new Date(b.created_at).getTime();
+      return Number.isFinite(t) && t > cutoff ? acc + 1 : acc;
+    }, 0);
+  }, [briefs, filter]);
+
   const handleBriefSaved = useCallback((updated: Brief) => {
     setBriefs((curr) =>
       curr
@@ -282,19 +321,37 @@ export function BonanzaStudio() {
           </p>
         )}
 
+        <div className="bzs-search-row">
+          <input
+            className="bzs-search"
+            type="search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search briefs..."
+            aria-label="Search briefs"
+            autoComplete="off"
+          />
+        </div>
+
         <nav className="bzs-filters" aria-label="Filter briefs">
-          {FILTERS.map((f, i) => (
-            <span key={f.value} className="bzs-filter-cell">
-              {i > 0 && <span aria-hidden className="bzs-filter-sep">·</span>}
-              <button
-                type="button"
-                className={`bzs-filter ${filter === f.value ? 'is-active' : ''}`}
-                onClick={() => setFilter(f.value)}
-              >
-                {f.label}
-              </button>
-            </span>
-          ))}
+          {FILTERS.map((f, i) => {
+            const label =
+              f.value === 'new' && newTodayCount > 0
+                ? `${f.label} (${newTodayCount} today)`
+                : f.label;
+            return (
+              <span key={f.value} className="bzs-filter-cell">
+                {i > 0 && <span aria-hidden className="bzs-filter-sep">·</span>}
+                <button
+                  type="button"
+                  className={`bzs-filter ${filter === f.value ? 'is-active' : ''}`}
+                  onClick={() => setFilter(f.value)}
+                >
+                  {label}
+                </button>
+              </span>
+            );
+          })}
         </nav>
 
         <div className="bzs-grid">
@@ -308,8 +365,16 @@ export function BonanzaStudio() {
             {!loading && isRenders && renders.length === 0 && (
               <p className="bzs-empty"><em>No renders captured yet.</em></p>
             )}
+            {!loading &&
+              normalisedQuery &&
+              ((!isRenders && visibleBriefs.length === 0 && briefs.length > 0) ||
+                (isRenders && visibleRenders.length === 0 && renders.length > 0)) && (
+                <p className="bzs-empty">
+                  <em>Nothing matches "{searchQuery}".</em>
+                </p>
+              )}
             {!isRenders &&
-              briefs.map((b) => (
+              visibleBriefs.map((b) => (
                 <BriefRow
                   key={b.id}
                   brief={b}
@@ -320,7 +385,7 @@ export function BonanzaStudio() {
               ))}
 
             {isRenders &&
-              renders.map((r) => (
+              visibleRenders.map((r) => (
                 <RenderRow
                   key={r.id}
                   render={r}

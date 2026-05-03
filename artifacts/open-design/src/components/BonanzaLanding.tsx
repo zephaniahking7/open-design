@@ -1,8 +1,37 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
+import { pickSignatureWord } from '../lib/signatureWord';
 import './BonanzaLanding.css';
 
 type RenderStatus = 'idle' | 'streaming' | 'complete' | 'error' | 'rate_limited';
 type LeadStatus = 'idle' | 'sending' | 'sent' | 'error' | 'rate_limited';
+
+// Six rotating "Currently —" phrases. Order is deliberate — do not
+// shuffle. Each line is one current piece of work; the rotation gives
+// the footer a quiet living quality without ever shouting.
+const NOW_LINES = [
+  'Building a record label identity for Real Image Entertainment.',
+  'Shaping Supreme Teens — the launch event takes form.',
+  'Building BaeJo Jobae — best catering, every cuisine, real chefs.',
+  'Drafting Family Bonanza — community at the centre.',
+  'Architecting My Afraka — diaspora connection platform.',
+  'Designing Supreme Cleans — youth-led, waterless, mobile.',
+] as const;
+
+// One read of the user's motion preference. We don't hot-swap on
+// preference change mid-render — anyone who toggles this in DevTools
+// can refresh the page.
+function usePrefersReducedMotion(): boolean {
+  const [reduced, setReduced] = useState(false);
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return;
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReduced(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setReduced(e.matches);
+    mq.addEventListener?.('change', onChange);
+    return () => mq.removeEventListener?.('change', onChange);
+  }, []);
+  return reduced;
+}
 
 export function BonanzaLanding() {
   const [vision, setVision] = useState('');
@@ -156,6 +185,18 @@ export function BonanzaLanding() {
     (renderStatus === 'streaming' && output.length > 0) ||
     renderStatus === 'complete';
   const showEmailRow = renderStatus === 'complete';
+  const reducedMotion = usePrefersReducedMotion();
+
+  // Signature-word split is only computed once the stream finishes.
+  // While streaming we render raw text (no underline treatment) so
+  // the eye doesn't see the signature flicker as tokens arrive.
+  const signature = useMemo(
+    () =>
+      renderStatus === 'complete'
+        ? pickSignatureWord(finalSentenceRef.current || output)
+        : null,
+    [renderStatus, output],
+  );
 
   return (
     <div className="bz-root">
@@ -223,7 +264,49 @@ export function BonanzaLanding() {
                 }`}
                 aria-live="polite"
               >
-                {output}
+                {signature ? (
+                  <>
+                    {signature.before}
+                    <span
+                      className={`bz-sig-word ${
+                        reducedMotion ? 'is-static' : ''
+                      }`}
+                    >
+                      {signature.word}
+                      <svg
+                        className="bz-sig-underline"
+                        viewBox="0 0 100 6"
+                        preserveAspectRatio="none"
+                        aria-hidden="true"
+                      >
+                        {/* Single hand-drawn-feeling stroke. The path's
+                            slight vertical wobble + the stroke-width
+                            keyframe at 55–65% give the impression of
+                            ink pressure rather than a CSS underline. */}
+                        <path d="M 1 4 Q 25 2.5 50 3.2 T 99 4" />
+                      </svg>
+                    </span>
+                    {signature.after}
+                  </>
+                ) : (
+                  output
+                )}
+              </p>
+            )}
+
+            {renderStatus === 'complete' && (
+              <div
+                className={`bz-makers-mark ${reducedMotion ? 'is-static' : ''}`}
+                aria-hidden="true"
+              >
+                <span className="bz-makers-mark-glyph">bz</span>
+                <span className="bz-makers-mark-rule" />
+              </div>
+            )}
+
+            {renderStatus === 'complete' && (
+              <p className={`bz-voice-line ${reducedMotion ? 'is-static' : ''}`}>
+                This is a direction. We build it proper.
               </p>
             )}
 
@@ -250,11 +333,15 @@ export function BonanzaLanding() {
           </div>
 
           {showEmailRow && (
-            <div className="bz-lead-row">
+            <div
+              id="booking"
+              className={`bz-lead-row ${reducedMotion ? 'is-static' : ''}`}
+            >
               {leadStatus === 'sent' ? (
                 <>
                   <p className="bz-lead-success">
-                    Held with care. We'll be in touch.
+                    Your brief is held. You'll hear from us within 24 hours
+                    with a 15-minute call slot to talk it through.
                   </p>
                   {showResetLink && (
                     <button
@@ -268,9 +355,8 @@ export function BonanzaLanding() {
                 </>
               ) : (
                 <>
-                  <p className="bz-lead-label">
-                    Continue this thread — leave your email.
-                  </p>
+                  <p className="bz-lead-label">Take this further with Bonanza.</p>
+                  <p className="bz-lead-principle">No rush. Right first time.</p>
                   <form className="bz-lead-form" onSubmit={handleLeadSubmit}>
                     <input
                       className="bz-input"
@@ -318,11 +404,110 @@ export function BonanzaLanding() {
 
         <footer className="bz-footer">
           <span className="bz-footer-brand">Bonanza Cr8tives</span>
+          <FooterNow reducedMotion={reducedMotion} />
           <span className="bz-footer-meta">
             © 2026 Bonanza Cr8tives. All work made with intention.
           </span>
         </footer>
       </div>
     </div>
+  );
+}
+
+// --- Footer "Currently —" rotation -------------------------------
+// Dual-buffer crossfade: at any given moment the current phrase is
+// visible. To swap, the incoming phrase mounts on top, opacity 0 → 1
+// while the outgoing phrase opacity 1 → 0, both over 1.2s. After the
+// crossfade completes we promote the incoming phrase to current and
+// the buffer collapses.
+//
+// Timing per cycle (chained timeouts, not setInterval, so visibility
+// pauses cleanly):
+//   ┌── 8.0s visible ──┐ ┌─ 1.2s crossfade ─┐ ┌── 8.0s visible ──┐
+//
+// On document.hidden we cancel BOTH the visible-wait timer and any
+// in-flight crossfade timer, so the phrase index never advances while
+// the tab is hidden.
+function FooterNow({ reducedMotion }: { reducedMotion: boolean }) {
+  const [current, setCurrent] = useState(0);
+  const [incoming, setIncoming] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (reducedMotion) return;
+
+    let visibleTimer: number | null = null;
+    let fadeTimer: number | null = null;
+    let nextIndex = 1 % NOW_LINES.length;
+
+    const clearAll = () => {
+      if (visibleTimer !== null) {
+        window.clearTimeout(visibleTimer);
+        visibleTimer = null;
+      }
+      if (fadeTimer !== null) {
+        window.clearTimeout(fadeTimer);
+        fadeTimer = null;
+      }
+    };
+
+    const scheduleTick = () => {
+      visibleTimer = window.setTimeout(beginCrossfade, 8000);
+    };
+
+    const beginCrossfade = () => {
+      visibleTimer = null;
+      setIncoming(nextIndex);
+      fadeTimer = window.setTimeout(() => {
+        fadeTimer = null;
+        setCurrent(nextIndex);
+        setIncoming(null);
+        nextIndex = (nextIndex + 1) % NOW_LINES.length;
+        scheduleTick();
+      }, 1200);
+    };
+
+    const start = () => {
+      if (visibleTimer !== null || fadeTimer !== null) return;
+      scheduleTick();
+    };
+    const stop = () => {
+      clearAll();
+      // Snap the buffer back to a stable state — never leave a
+      // half-faded incoming phrase mounted while the tab is hidden.
+      setIncoming(null);
+    };
+
+    if (!document.hidden) start();
+
+    const onVisibility = () => {
+      if (document.hidden) stop();
+      else start();
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+
+    return () => {
+      clearAll();
+      document.removeEventListener('visibilitychange', onVisibility);
+    };
+  }, [reducedMotion]);
+
+  return (
+    <span className="bz-footer-now" aria-live="off">
+      <span className="bz-footer-now-dot" aria-hidden="true" />
+      <span className="bz-footer-now-stack">
+        <span
+          className={`bz-footer-now-text ${
+            incoming !== null ? 'is-leaving' : ''
+          }`}
+        >
+          Currently — {NOW_LINES[current]}
+        </span>
+        {incoming !== null && (
+          <span className="bz-footer-now-text bz-footer-now-text--incoming">
+            Currently — {NOW_LINES[incoming]}
+          </span>
+        )}
+      </span>
+    </span>
   );
 }
