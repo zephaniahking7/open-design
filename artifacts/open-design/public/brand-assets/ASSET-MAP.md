@@ -23,7 +23,9 @@ Do not include "public" in website paths.
 - bonanza-b-splash-purple.png
 - bonanza-cr8tives-chrome.png
 - bonanza-cr8tives-white.png
+- family-bonanza-fb-logo.png — Family Bonanza FB monogram logo
 - grow-flow-logo.png
+- jay-monsoon-clothing.png
 - real-image-entertainment-black.png
 - stomp-ai-colour.png
 - stomp-ai-white.png
@@ -31,11 +33,11 @@ Do not include "public" in website paths.
 - supreme-teens.png
 - value-crown.png
 
-Total: 12 unique logos.
+Total: 14 unique logos.
 
 ## Logo Assets — Missing / TODO(upload)
 
-- jay-monsoon-clothing.png   (listed previously, not yet uploaded by client)
+- (none) — all previously-listed logos have now been uploaded.
 
 ## Theme Previews (present in /theme-previews/)
 
@@ -66,6 +68,8 @@ Total: 20 theme previews.
 
 Naming convention: `NN-<kebab-case-descriptive>.png` where `NN` is a zero-padded two-digit display order.
 
+Usage note: these images are for the Bonanza Cr8tives client visual-direction / theme picker.
+
 ## Font Previews — TODO(upload)
 
 The /font-previews/ folder is currently empty. Will hold per-family preview images once generated.
@@ -78,6 +82,7 @@ The /reference-uploads/ folder is currently empty. Reserved for client mood-boar
 
 - 2026-05-03: deleted `ChatGPT Image May 3, 2026, 01_07_49 PM.png` from /logos/ — was an exact byte-identical duplicate of `baejo-jobae-white.png` (MD5 d2a049615a4aa1c0200a030e383d1192) with a generative-tool default name.
 - 2026-05-03: renamed all 20 theme previews in /theme-previews/ from `<slug>.png (<palette>).png` to locked-order `NN-<slug>.png`. Mapping was deterministic: each original filename embedded the canonical slug before the " (palette).png" suffix. No images deleted, no duplicates found.
+- 2026-05-03: renamed `family-bonanza-fb-logo.png.png` → `family-bonanza-fb-logo.png` in /logos/ (uploaded with a duplicated `.png` extension). Also confirmed `jay-monsoon-clothing.png` is now uploaded — removed from missing list.
 
 ## Rule
 
