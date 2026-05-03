@@ -1,0 +1,400 @@
+COMMAND: STAGE 3 — IDENTITY REBUILD (CONTROLLED PIVOT)
+
+IMPORTANT:
+Plan mode. Do not edit yet. Return execution plan only.
+
+This is not a refinement. This is a brand identity replacement 
+within the existing functional architecture.
+
+RISK CONTROL:
+This is a controlled pivot, not full expression. The bar 
+referenced (Apple/Google/Drake/Tupac level) is achieved 
+through discipline + constraints, not energy + volume.
+If at any point the build risks collapsing into generic 
+"vibrant AI site" territory, stop and report.
+Prioritise iconic restraint over expressive overload.
+
+KILL SWITCH:
+If the output begins to resemble a generic "vibrant AI product", 
+stop and report instead of continuing refinement.
+Do not attempt to fix by adding more elements.
+Reduction is the only allowed correction.
+
+AUTHORITY ORDER:
+- The Wordmark defines brand expression.
+- DESIGN.md adapts around the selected wordmark.
+- If any conflict occurs between DESIGN.md and the wordmark, 
+  the wordmark takes priority and DESIGN.md must be updated.
+
+Follow Replit response protocol.
+Honour the layered activation model. Do not activate dormant 
+layers without explicit instruction.
+
+Before editing, inspect the relevant files first. Preserve all 
+working FUNCTIONAL behaviour:
+- PATH B render flow (vision input → AI sentence → email row)
+- Render signature word treatment
+- Maker's mark
+- Cultural voice lines ("This is a direction. We build it 
+  proper.", "No rush. Right first time.", "Take this further 
+  with Bonanza.")
+- Booking funnel
+- Studio ledger + scope ceiling
+- Living footer rotation (6 phrases)
+- /studio gate + auth header
+- Rate limiting
+- Notification adapter (NoOp + Resend skeleton)
+- Error tracking
+- Robots.txt + sitemap.xml
+- All API endpoints
+- All database tables
+
+These functional layers stay. The VISUAL identity around them 
+is being replaced.
+
+Read /system/brain.md, /system/guardrails.md, /system/huashu.md, 
+/system/philosophy.md, /system/studio-scope.md, and 
+/system/launch-notes.md.
+
+CONTEXT:
+
+Bonanza Cr8tives' previous visual identity (cream / tile-green 
+/ warm gold / italic Cormorant editorial restraint) was built 
+on a misread of the founder's voice. The pivot is correcting 
+that.
+
+NEW IDENTITY FRAME:
+Founder: Blu (Zephaniah King) — Fresh King flow.
+Energy: 2026 evolution of Fresh Prince — bright, joyful, 
+confident, charismatic, adventurous, top-tier.
+Cultural tier reference: Drake (OVO), Tupac (Death Row era), 
+Pharrell (BBC), Tyler the Creator (Golf Le Fleur), Travis 
+Scott (Cactus Jack).
+Goal: beat Apple/Google level via cultural authority + 
+disciplined identity — not via expressive overload.
+
+POSITIONING LOCK (UNCHANGED):
+The product is the service. The render is the demo. The 
+studio is the engine. The wordmark IS the iconic moment.
+
+NON-NEGOTIABLE CONSTRAINTS:
+
+COLOUR DISCIPLINE:
+- One dominant colour per screen/section
+- Other palette colours used as accents only (≤10% area each)
+- Maintain WCAG AA contrast accessibility throughout
+- No gradient backgrounds unless extremely controlled (single 
+  direction, subtle, justified)
+
+COLOUR ENERGY CONTROL:
+- At no point should more than one high-saturation colour 
+  dominate simultaneously.
+- If multiple colours compete for attention, reduce until 
+  hierarchy is clear.
+- The interface must feel controlled, not expressive.
+
+WORDMARK RULE:
+- The Bonanza Cr8tives wordmark is the iconic moment
+- No other element on any screen may compete with the wordmark 
+  using comparable scale, weight, or motion
+- Wordmark gets the loudest treatment; everything else is quiet
+
+TYPE SYSTEM:
+- ONE modern sans-serif for UI/body
+- ONE custom display (the wordmark itself)
+- No mixing multiple display styles
+- No retro 90s fonts disguised as homage
+
+TYPE SELECTION RULE:
+- The selected sans-serif must not resemble default SaaS 
+  typography.
+- Reject any option that feels similar to:
+  - generic Inter usage
+  - Notion / Linear / Stripe UI tone
+- If all candidates feel generic, propose a more distinctive 
+  but still modern alternative.
+
+MOTION:
+- Purposeful, short, tied to interaction
+- No background "vibe" animations
+- No parallax
+- No scroll-driven decoration
+- Render signature animations stay as they are
+
+SURFACES:
+- Flat surfaces only
+- Hairline rules where structure is needed
+- No card shadows
+- No glassmorphism
+- No textured backgrounds
+
+RENDER MOMENT PROTECTION:
+- The render moment remains the emotional peak of the page.
+- The new identity must not reduce its impact or compete with it.
+- If the new visual system distracts from the render moment, 
+  scale it back.
+
+LAYER CONTROL:
+- DESIGN.md defines the design system. No alternative styles 
+  may be introduced beyond it.
+- impeccable enforces quality against DESIGN.md. It does not 
+  create new design direction.
+- huashu-design runs only after implementation as a critique 
+  pass. Not during.
+- addyosmani/web-quality-skills operates silently to ensure 
+  no performance regression.
+- Do not allow multiple design philosophies to merge.
+
+ICONIC MOMENT RULE:
+- Only ONE new iconic moment may be introduced in this pass: 
+  the Bonanza Cr8tives wordmark.
+- The wordmark must:
+  - Live as the primary brand expression
+  - Carry Fresh King energy without becoming retro
+  - Reference cultural roots (Brixton/diaspora) without literal 
+    iconography
+  - Work across contexts: favicon, social share, hat, chain, 
+    business card, billboard
+  - Not rely on animation for impact alone
+- If multiple wordmark candidates appear during exploration, 
+  select one and discard the rest. No "we'll keep both."
+
+HUASHU GATE:
+- The build is not considered complete until huashu critique 
+  returns minimum 4/5 across all five dimensions.
+- If any dimension scores below 4, fix before completion.
+
+TASK:
+
+PART ONE — DESIGN.MD CREATION (NEW BRAND DNA)
+
+Create artifacts/open-design/DESIGN.md as the locked source 
+of truth for the new identity. Pull reference patterns from 
+the awesome-design-md repo if useful (study Vercel, ElevenLabs, 
+Framer DESIGN.md files for structure — do not copy their 
+visual systems).
+
+DESIGN.md must contain:
+
+PALETTE (all in oklch):
+- bz-pink: bright pink, primary brand colour
+- bz-teal: electric teal
+- bz-yellow: sunshine yellow
+- bz-black: bold black
+- bz-white: pure white
+- bz-ink: deep readable ink for body text
+- bz-soft: soft ink for muted text
+- Specify exact oklch values that pass WCAG AA on white and 
+  on each accent colour
+
+USAGE RULES:
+- Hero/landing: pink as dominant (60%+ area), white surface, 
+  black/ink type, teal + yellow as accent only
+- Render moment screen: white dominant, pink/teal/yellow only 
+  as signature accents
+- Studio: white dominant, black type, single accent colour 
+  per filter state
+- Booking section: dominant colour TBD via plan — propose 
+  options
+- Footer: white dominant, single accent line
+
+TYPE SYSTEM:
+- Custom wordmark: Bonanza Cr8tives logotype (designed in 
+  PART TWO)
+- UI/Body sans: ONE modern sans-serif. Recommendation in 
+  plan output. Test candidates: PP Neue Montreal, General 
+  Sans, Söhne, Inter Variable. Pick one based on which 
+  carries Fresh King flow without feeling generic per the 
+  TYPE SELECTION RULE above.
+- No serif faces anywhere
+- No retro fonts
+- Type scale: 8 sizes max, generous spacing
+
+SPACING SYSTEM:
+- 4 / 8 / 16 / 24 / 32 / 48 / 64 / 96 / 128 px scale
+- Generous breathing room
+- No cramped layouts
+
+MOTION:
+- 200-400ms transitions for state changes
+- No scroll-driven decoration
+- Render signature animations preserved
+
+ACCESSIBILITY:
+- WCAG AA contrast on all text
+- prefers-reduced-motion respected
+- prefers-color-scheme — propose dark mode strategy in plan
+
+ANTI-PATTERNS (VERBOTEN):
+- Inter for display
+- Purple gradients
+- Emoji icons
+- Rounded card stacks
+- Glassmorphism
+- Generic SaaS aesthetic
+- Retro 90s pastiche
+- Multiple display fonts
+- Decorative motion
+- Stock photography
+- AI-default visual language
+
+PART TWO — WORDMARK DESIGN
+
+Design the Bonanza Cr8tives wordmark system. This is THE 
+iconic moment of the project.
+
+Approach:
+- Generate 3 wordmark concepts in plan mode (describe in 
+  detail — typographic structure, letterform treatments, 
+  cultural references in the marks themselves)
+- Each concept must include:
+  - Primary lockup ("Bonanza Cr8tives" full wordmark)
+  - Small mark (B or BC monogram standalone)
+  - Lockup proportions and clearspace rules
+  - How the "8" in "Cr8tives" is treated (this letter is the 
+    cultural signature point)
+- Concepts should reference:
+  - Hand-lettered warmth (not cold geometric)
+  - Drake/Travis/Tyler-tier brand mark discipline
+  - Brixton/diaspora cultural roots without literal iconography
+  - 2026 modernity (not retro)
+- Implementation approach: SVG-based logotype, no font 
+  dependency. The wordmark is rendered as paths so it stays 
+  identical across browsers and contexts.
+
+User selects one concept. The other two are discarded. Then 
+the selected concept is implemented across the site.
+
+Per AUTHORITY ORDER: once wordmark is selected, DESIGN.md is 
+adjusted to support the wordmark, not the reverse.
+
+PART THREE — APPLY NEW IDENTITY TO EXISTING ARCHITECTURE
+
+The structural architecture stays intact. Only the visual 
+language is replaced.
+
+Pages to retreat:
+- / (public landing, including hero, render flow, booking, 
+  philosophy strip, work, voice, services, process, footer)
+- /studio (private ledger)
+- BonanzaNotFound (refined "Nothing here yet." page)
+
+Replace throughout:
+- All cream backgrounds → white surfaces with pink/teal/yellow 
+  dominance per section per DESIGN.md rules
+- All Cormorant Garamond italic display → custom wordmark 
+  (where appropriate) or modern sans (everywhere else)
+- All warm gold accents → reassigned via DESIGN.md (likely 
+  yellow as accent, pink as dominant moment)
+- All hairline soft ink rules → black hairline rules at 
+  appropriate weights
+- Section headings, body copy, CTAs — all rebuilt against 
+  new DESIGN.md
+- Buttons: still squared, but now with bold colour + black 
+  type or white type per accessibility rules
+- Render maker's mark "bz" — redesigned in new wordmark 
+  language
+- Cultural voice lines preserved as copy but typeset in new 
+  modern sans
+
+Preserve unchanged:
+- All functional flows
+- All animations on render signature (signature word underline, 
+  maker's mark fade, pause beat, voice line appearance)
+- Footer rotation logic (visual treatment changes per DESIGN.md)
+- Studio interactions
+- Booking submission flow
+
+PART FOUR — IMPECCABLE AS RUNTIME SKILL
+
+Install impeccable as a runtime skill in the project (not 
+just rules in head):
+
+- Add the impeccable skill files to .local/skills/ following 
+  existing skill installation pattern
+- Reference impeccable in the build process — DESIGN.md 
+  declares the system, impeccable enforces it during 
+  development
+- Document how impeccable is invoked in /system/brain.md
+
+PART FIVE — HUASHU CRITIQUE PASS
+
+After implementation, run huashu-design's 5-dimensional 
+critique on the new identity:
+
+- Visual coherence
+- Cultural authenticity
+- Typographic discipline
+- Motion appropriateness
+- Anti-slop adherence
+
+Per HUASHU GATE: build is not complete until all five 
+dimensions score 4/5 minimum. Address any below-threshold 
+score with surgical adjustments before declaring complete.
+
+PART SIX — PERFORMANCE GUARDRAIL (ADDYOSMANI)
+
+Apply addyosmani/web-quality-skills as a silent layer:
+- Verify Lighthouse Performance score does not regress below 
+  90 on the public landing
+- Verify Largest Contentful Paint stays under 2.0s
+- Verify Cumulative Layout Shift stays under 0.1
+- Verify First Input Delay stays under 100ms
+- Verify Total Blocking Time stays under 200ms
+
+If any metric regresses, identify cause and propose surgical 
+fix in plan output.
+
+CONSTRAINTS:
+
+- No new functionality
+- No new sections
+- No new endpoints
+- No new database tables
+- All existing functionality preserved exactly
+- Mobile breakpoints must hold at 375 / 768 / 1024 / 1440
+- Production build must pass clean
+- Bundle size must not exceed Stage 1 baseline (158 KB gzip 
+  current public landing)
+- All accessibility standards maintained
+- Do not activate threejs or antigravity layers
+
+OUTPUT FORMAT (PLAN MODE):
+
+Return a single execution plan organised by batches:
+
+(1) Discovery — inspect awesome-design-md DESIGN.md examples 
+    for structure patterns. Inspect impeccable skill structure 
+    for installation approach. Inspect huashu-design critique 
+    methodology.
+
+(2) Design system — DESIGN.md draft with full palette, type, 
+    spacing, motion, accessibility, anti-patterns. Propose 
+    sans-serif body font with reasoning per TYPE SELECTION 
+    RULE.
+
+(3) Wordmark — three concepts described in detail with 
+    typographic structure, letterform treatments, cultural 
+    references. Recommend one but await user selection.
+
+(4) Skill installation — impeccable as runtime skill in 
+    .local/skills/.
+
+(5) Visual rebuild — surgical CSS replacement against 
+    DESIGN.md. List every file to be modified.
+
+(6) Critique loop — huashu 5-dimensional pass methodology.
+
+(7) Performance verification — addyosmani-style audit checklist.
+
+(8) Production build verification.
+
+(9) Project task entry to .local/tasks/ documenting Stage 3.
+
+Identify all files to be modified or created. Confirm any 
+assumptions. Flag any risks before I switch to Build mode.
+
+DO NOT GENERATE THE WORDMARK YET. WAIT FOR CONCEPT REVIEW 
+AND USER SELECTION.
+
+Do not edit.
