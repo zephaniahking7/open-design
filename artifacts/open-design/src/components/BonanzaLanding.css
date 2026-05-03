@@ -488,6 +488,36 @@
   color: var(--bz-ink-mute);
 }
 
+.bz-reset {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0 0 1px 0;
+  align-self: flex-start;
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--bz-ink-mute);
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: color 200ms ease, border-color 200ms ease;
+  animation: bz-fade-in 600ms ease both;
+}
+
+.bz-reset:hover,
+.bz-reset:focus-visible {
+  color: var(--bz-ink);
+  border-bottom-color: var(--bz-ink);
+  outline: none;
+}
+
+@keyframes bz-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 @media (max-width: 640px) {
   .bz-shell {
     padding: 24px 20px 32px;

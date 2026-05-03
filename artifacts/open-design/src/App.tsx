@@ -133,8 +133,22 @@ export function App() {
     }
   }, [config.theme]);
 
+  // /studio (route.kind === 'home') is gated behind an internal flag so
+  // the brand front door stays the only public surface. Computed up here
+  // so the bootstrap effect can short-circuit and the studio chrome
+  // (EntryView, SettingsDialog, daemon polling) never initialises for
+  // public visitors.
+  const studioUnlocked =
+    typeof window !== 'undefined' &&
+    window.localStorage.getItem('bonanza_internal') === 'true';
+  const homeBlocked = route.kind === 'home' && !studioUnlocked;
+
   // Bootstrap — detect daemon, load pickers, seed sensible defaults.
   useEffect(() => {
+    if (homeBlocked) {
+      setBootstrapping(false);
+      return;
+    }
     let cancelled = false;
     (async () => {
       const alive = await daemonIsLive();
@@ -195,7 +209,7 @@ export function App() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [homeBlocked]);
 
   const refreshProjects = useCallback(async () => {
     const list = await listProjects();
@@ -380,20 +394,19 @@ export function App() {
     void refreshTemplates();
   }, [route.kind, refreshTemplates]);
 
-  // /studio (route.kind === 'home') is gated behind an internal flag so
-  // the brand front door stays the only public surface. Set
-  // localStorage.bonanza_internal = 'true' from devtools to unlock it.
-  const studioUnlocked =
-    typeof window !== 'undefined' &&
-    window.localStorage.getItem('bonanza_internal') === 'true';
-  const homeBlocked = route.kind === 'home' && !studioUnlocked;
+  // Short-circuit BEFORE any Open Design tree mounts. Returning here
+  // means SettingsDialog, EntryView, and AppChromeHeader are never
+  // even instantiated for public /studio visitors — the brief is
+  // explicit on this. Set localStorage.bonanza_internal = 'true' to
+  // unlock.
+  if (homeBlocked) {
+    return <BonanzaNotFound />;
+  }
 
   return (
     <>
       {route.kind === 'landing' ? (
         <BonanzaLanding />
-      ) : homeBlocked ? (
-        <BonanzaNotFound />
       ) : activeProject ? (
         <ProjectView
           key={activeProject.id}

@@ -1,8 +1,16 @@
 import { Router, type IRouter } from "express";
 import Anthropic from "@anthropic-ai/sdk";
 import { logger } from "../lib/logger";
+import { rateLimit } from "../lib/rate-limit";
 
 const router: IRouter = Router();
+
+// 5 renders per IP per hour. Anthropic Sonnet calls are paid; this is a
+// hard ceiling, not a polite suggestion.
+router.use(
+  "/render",
+  rateLimit({ windowMs: 60 * 60 * 1000, max: 5, key: "render" }),
+);
 
 const SYSTEM_PROMPT =
   "You are the voice of Bonanza Cr8tives — a creative intelligence engine that transforms vision into presence. " +

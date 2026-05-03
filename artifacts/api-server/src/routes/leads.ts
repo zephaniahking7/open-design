@@ -1,8 +1,17 @@
 import { Router, type IRouter } from "express";
 import { pool } from "@workspace/db";
 import { logger } from "../lib/logger";
+import { rateLimit } from "../lib/rate-limit";
 
 const router: IRouter = Router();
+
+// 10 lead submissions per IP per hour. Higher than render because typing
+// the wrong email and resubmitting is a normal user pattern; still
+// blocks junk-floods.
+router.use(
+  "/leads",
+  rateLimit({ windowMs: 60 * 60 * 1000, max: 10, key: "leads" }),
+);
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const cap = (v: unknown, n: number): string | null =>

@@ -1,0 +1,111 @@
+COMMAND: SHIP HARDENING — BLOCKERS + CRINGE FIXES
+
+IMPORTANT:
+Follow Replit response protocol.
+Propose file changes using proper tags.
+Honour the layered activation model. Do not activate dormant 
+layers without explicit instruction.
+
+Before editing, inspect the relevant files first. Preserve all 
+working behaviour from the PATH B ship — the AI render flow, 
+the lead capture flow, the streaming UI, the email row fade-in, 
+and the success state must all continue to function exactly as 
+they do now. Only modify what each fix below explicitly requires.
+
+Read /system/brain.md, /system/guardrails.md, /system/huashu.md, 
+and /system/philosophy.md.
+
+TASK:
+Fix the two real blockers and the four cringe items flagged in 
+the SHIP REVIEW. Single execution pass.
+
+BLOCKER 1 — /STUDIO GATE NOT WORKING:
+
+The SettingsDialog renders as a portal on top of BonanzaNotFound 
+when /studio is hit without the bonanza_internal flag.
+
+Fix: when route is 'home' AND localStorage.getItem('bonanza_internal') 
+!== 'true', return ONLY <BonanzaNotFound /> and short-circuit before 
+any Open Design components mount. EntryView, SettingsDialog, 
+AppChromeHeader — none of them should render or even initialise. 
+Move the gate above the route-render switch in App.tsx so the 
+Open Design tree is never instantiated for non-internal visitors.
+
+Verify by hitting /studio in a fresh incognito window — confirm 
+ONLY the italic "Nothing here yet." line appears. No modal. 
+No header. No console traces of EntryView mounting.
+
+BLOCKER 2 — RATE LIMITING:
+
+Add rate limiting to both POST /api/render and POST /api/leads.
+
+Approach: in-memory IP-based limiter on the api-server.
+- /api/render: 5 requests per IP per hour
+- /api/leads: 10 requests per IP per hour
+- On limit hit: return 429 with body { error: 'rate_limited', 
+  retry_after: <seconds> }
+- Frontend: catch 429 and display italic muted ink line: 
+  "Take a breath. We'll be ready when you are."
+
+If express-rate-limit is already in deps, use it. If not, 
+hand-roll a simple Map-based limiter with TTL cleanup. Do not 
+pull in heavy dependencies.
+
+CRINGE FIX 3 — OG IMAGE:
+
+The meta tag references /og-image.png which does not exist.
+
+Two-part fix:
+(a) Generate a simple og-image.png at 1200x630 and place it in 
+    artifacts/open-design/public/. 
+    Design: cream background (oklch(96% 0.012 90)), centred 
+    italic Cormorant Garamond display reading "Bonanza Cr8tives" 
+    on top line, smaller italic line below reading "Vision becomes 
+    presence", a single 1px gold horizontal rule (32px wide) 
+    centred between them. Same palette as the live site.
+(b) Confirm the meta tag in index.html points to the correct 
+    deployed path.
+
+CRINGE FIX 4 — FAVICON:
+
+Replace the Open Design favicon.svg with a Bonanza Cr8tives mark.
+
+Design: solid cream square background, italic Cormorant Garamond 
+"B" in tile green, centred. Save as favicon.svg in 
+artifacts/open-design/public/. Update <link rel="icon"> in 
+index.html if needed.
+
+CRINGE FIX 5 — ERROR COPY:
+
+Current error copy: "We could not render this vision. Try again 
+with more specifics."
+
+This blames the user when 3 of 4 failure modes are system-side.
+
+Replace with: "Something held the line. Try again in a moment."
+
+CRINGE FIX 6 — SUCCESS STATE TRAP:
+
+After "Held with care. We'll be in touch." appears, the user 
+cannot render another vision without a hard refresh.
+
+Fix: 8 seconds after the success line appears, fade in a single 
+italic muted line beneath it: "Render another vision."
+
+Make it a button styled as inline italic text with a hairline 
+underline on hover. Click resets the entire flow — vision input 
+clears, preview canvas returns to placeholder, email row hides. 
+Component state fully resets without page reload.
+
+CONSTRAINTS:
+- No layout changes
+- No new sections
+- No activating threejs or antigravity
+- Maintain quiet authority tone
+- Production build must still pass clean
+- All existing PATH B functionality must remain intact
+
+OUTPUT:
+Group changes by section. Run pnpm build at the end. Confirm 
+both /studio gate and rate limiting work via direct test before 
+declaring complete.

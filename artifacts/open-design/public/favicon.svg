@@ -1,3 +1,7 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="180" height="180" rx="36" fill="#FF3C00"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" fill="#F4EFE6"/>
+  <text x="32" y="46" text-anchor="middle"
+        font-family="'Cormorant Garamond', 'Iowan Old Style', Georgia, serif"
+        font-size="48" font-style="italic" font-weight="400"
+        fill="#3F5C46">B</text>
 </svg>

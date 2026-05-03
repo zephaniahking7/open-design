@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#F4EFE6"/>
+  <text x="600" y="290" text-anchor="middle"
+        font-family="'Cormorant Garamond', 'Iowan Old Style', Georgia, serif"
+        font-size="96" font-style="italic" font-weight="400"
+        fill="#262524">Bonanza Cr8tives</text>
+  <rect x="584" y="320" width="32" height="1" fill="#B68B3F"/>
+  <text x="600" y="380" text-anchor="middle"
+        font-family="'Cormorant Garamond', 'Iowan Old Style', Georgia, serif"
+        font-size="36" font-style="italic" font-weight="400"
+        fill="#5A584F">Vision becomes presence</text>
+</svg>

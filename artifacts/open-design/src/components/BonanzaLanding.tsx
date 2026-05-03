@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import './BonanzaLanding.css';
 
-type RenderStatus = 'idle' | 'streaming' | 'complete' | 'error';
-type LeadStatus = 'idle' | 'sending' | 'sent' | 'error';
+type RenderStatus = 'idle' | 'streaming' | 'complete' | 'error' | 'rate_limited';
+type LeadStatus = 'idle' | 'sending' | 'sent' | 'error' | 'rate_limited';
 
 export function BonanzaLanding() {
   const [vision, setVision] = useState('');
@@ -10,6 +10,7 @@ export function BonanzaLanding() {
   const [renderStatus, setRenderStatus] = useState<RenderStatus>('idle');
   const [email, setEmail] = useState('');
   const [leadStatus, setLeadStatus] = useState<LeadStatus>('idle');
+  const [showResetLink, setShowResetLink] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
   const finalSentenceRef = useRef('');
 
@@ -31,6 +32,10 @@ export function BonanzaLanding() {
         body: JSON.stringify({ vision: visionText }),
         signal: ctl.signal,
       });
+      if (resp.status === 429) {
+        setRenderStatus('rate_limited');
+        return;
+      }
       if (!resp.ok || !resp.body) throw new Error(`HTTP ${resp.status}`);
 
       const reader = resp.body.getReader();
@@ -112,11 +117,38 @@ export function BonanzaLanding() {
             typeof document !== 'undefined' ? document.referrer : '',
         }),
       });
+      if (resp.status === 429) {
+        setLeadStatus('rate_limited');
+        return;
+      }
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       setLeadStatus('sent');
     } catch {
       setLeadStatus('error');
     }
+  };
+
+  // Once the success line has been visible long enough to read, surface a
+  // quiet way back into the flow. Without this the UI is a dead-end until
+  // a hard refresh.
+  useEffect(() => {
+    if (leadStatus !== 'sent') {
+      setShowResetLink(false);
+      return;
+    }
+    const t = window.setTimeout(() => setShowResetLink(true), 8000);
+    return () => window.clearTimeout(t);
+  }, [leadStatus]);
+
+  const handleReset = () => {
+    abortRef.current?.abort();
+    finalSentenceRef.current = '';
+    setVision('');
+    setOutput('');
+    setRenderStatus('idle');
+    setEmail('');
+    setLeadStatus('idle');
+    setShowResetLink(false);
   };
 
   const showStreaming = renderStatus === 'streaming';
@@ -198,8 +230,7 @@ export function BonanzaLanding() {
             {renderStatus === 'error' && (
               <div className="bz-stream-error">
                 <p className="bz-error-line">
-                  We could not render this vision. Try again with more
-                  specifics.
+                  Something held the line. Try again in a moment.
                 </p>
                 <button
                   type="button"
@@ -210,14 +241,31 @@ export function BonanzaLanding() {
                 </button>
               </div>
             )}
+
+            {renderStatus === 'rate_limited' && (
+              <p className="bz-error-line">
+                Take a breath. We'll be ready when you are.
+              </p>
+            )}
           </div>
 
           {showEmailRow && (
             <div className="bz-lead-row">
               {leadStatus === 'sent' ? (
-                <p className="bz-lead-success">
-                  Held with care. We'll be in touch.
-                </p>
+                <>
+                  <p className="bz-lead-success">
+                    Held with care. We'll be in touch.
+                  </p>
+                  {showResetLink && (
+                    <button
+                      type="button"
+                      className="bz-reset"
+                      onClick={handleReset}
+                    >
+                      Render another vision.
+                    </button>
+                  )}
+                </>
               ) : (
                 <>
                   <p className="bz-lead-label">
@@ -246,6 +294,11 @@ export function BonanzaLanding() {
                   {leadStatus === 'error' && (
                     <p className="bz-lead-error">
                       Something held us back. Try again.
+                    </p>
+                  )}
+                  {leadStatus === 'rate_limited' && (
+                    <p className="bz-lead-error">
+                      Take a breath. We'll be ready when you are.
                     </p>
                   )}
                 </>
