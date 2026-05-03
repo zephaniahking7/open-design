@@ -38,6 +38,70 @@ import type {
   SkillSummary,
 } from './types';
 
+function BonanzaNotFound() {
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        inset: 0,
+        background: 'oklch(96% 0.012 90)',
+        color: 'oklch(15% 0 0)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 24,
+        padding: 32,
+        fontFamily:
+          "'Cormorant Garamond', 'Iowan Old Style', Georgia, 'Times New Roman', serif",
+      }}
+    >
+      <span
+        style={{
+          display: 'block',
+          width: 32,
+          height: 1,
+          background: 'oklch(62% 0.13 70)',
+        }}
+        aria-hidden="true"
+      />
+      <p
+        style={{
+          fontStyle: 'italic',
+          fontWeight: 400,
+          fontSize: '1.75rem',
+          margin: 0,
+          color: 'oklch(35% 0 0)',
+          textWrap: 'pretty',
+        }}
+      >
+        Nothing here yet.
+      </p>
+      <a
+        href="/"
+        onClick={(e) => {
+          e.preventDefault();
+          navigate({ kind: 'landing' });
+        }}
+        style={{
+          fontFamily:
+            "'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif",
+          fontSize: '0.75rem',
+          fontWeight: 500,
+          letterSpacing: '0.14em',
+          textTransform: 'uppercase',
+          color: 'oklch(15% 0 0)',
+          textDecoration: 'none',
+          borderBottom: '1px solid oklch(15% 0 0)',
+          paddingBottom: 2,
+        }}
+      >
+        Return
+      </a>
+    </div>
+  );
+}
+
 export function App() {
   const [config, setConfig] = useState<AppConfig>(() => loadConfig());
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -316,10 +380,20 @@ export function App() {
     void refreshTemplates();
   }, [route.kind, refreshTemplates]);
 
+  // /studio (route.kind === 'home') is gated behind an internal flag so
+  // the brand front door stays the only public surface. Set
+  // localStorage.bonanza_internal = 'true' from devtools to unlock it.
+  const studioUnlocked =
+    typeof window !== 'undefined' &&
+    window.localStorage.getItem('bonanza_internal') === 'true';
+  const homeBlocked = route.kind === 'home' && !studioUnlocked;
+
   return (
     <>
       {route.kind === 'landing' ? (
         <BonanzaLanding />
+      ) : homeBlocked ? (
+        <BonanzaNotFound />
       ) : activeProject ? (
         <ProjectView
           key={activeProject.id}

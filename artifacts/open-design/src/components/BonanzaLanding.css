@@ -5,6 +5,11 @@
    flat surfaces, oklch, no gradients, no rounded card stacks)
    Scope: every selector below is prefixed `.bz-` to keep this
    landing isolated from Open Design's global stylesheet.
+
+   Surface policy: the cream surface is enforced regardless of
+   prefers-color-scheme. This is intentional per impeccable rule —
+   a single, calm, cream daylight is the signature surface. Do not
+   add a dark-mode variant.
    ============================================================ */
 
 .bz-root {
@@ -51,7 +56,7 @@
 .bz-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding-bottom: 80px;
 }
 
@@ -64,32 +69,11 @@
   color: var(--bz-ink);
 }
 
-.bz-nav-link {
-  font-family: var(--bz-body);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--bz-ink-soft);
-  text-decoration: none;
-  transition: color 200ms var(--bz-ease);
-}
-
-.bz-nav-link:hover {
-  color: var(--bz-tile);
-}
-
 /* --- Hero ---------------------------------------------------- */
 .bz-hero {
   padding: 40px 0 120px;
 }
 
-/* Masthead row: a single composed line that holds the top of the
-   hero. Left cluster carries the gold cultural anchor (32x1px rule)
-   beside the section eyebrow; right cluster carries a quiet roman
-   date marker that balances the otherwise-empty top-right of the
-   hero band. No layout shift — the hero title still left-aligns to
-   the same column. */
 .bz-hero-mast {
   display: flex;
   align-items: center;
@@ -132,10 +116,6 @@
   color: var(--bz-ink-mute);
 }
 
-/* Hero title sits beneath the masthead row. The 760px ceiling that
-   used to live on .bz-hero now lives on the title + sub + form so
-   the masthead can stretch the same width without affecting the
-   title block. */
 .bz-hero-title,
 .bz-hero-sub,
 .bz-form {
@@ -160,10 +140,10 @@
 }
 
 .bz-hero-sub {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   font-weight: 400;
-  line-height: 1.65;
-  color: var(--bz-ink-soft);
+  line-height: 1.6;
+  color: var(--bz-ink);
   max-width: 56ch;
   margin: 0 0 48px;
   text-wrap: pretty;
@@ -200,6 +180,11 @@
   font-style: italic;
 }
 
+.bz-input:disabled {
+  color: var(--bz-ink-mute);
+  cursor: not-allowed;
+}
+
 .bz-cta {
   flex: 0 0 auto;
   display: inline-flex;
@@ -231,6 +216,12 @@
   background: var(--bz-tile-deep);
 }
 
+.bz-cta:disabled {
+  background: var(--bz-ink-mute);
+  cursor: not-allowed;
+  transform: none;
+}
+
 /* --- Preview ------------------------------------------------- */
 .bz-preview {
   padding: 80px 0;
@@ -246,11 +237,17 @@
   margin: 0 0 32px;
 }
 
+/* Preview canvas: top + bottom hairline rules only — no left/right
+   borders. Reads as a spread, not a card. */
 .bz-preview-canvas {
   background: var(--bz-bg-paper);
-  border: 1px solid var(--bz-rule);
+  border-top: 1px solid var(--bz-rule);
+  border-bottom: 1px solid var(--bz-rule);
+  border-left: 0;
+  border-right: 0;
   min-height: 320px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 48px;
@@ -276,6 +273,164 @@
   height: 1px;
   background: var(--bz-gold);
   margin: 0 auto 20px;
+}
+
+/* Streaming loader: one italic word + a 1px gold rule that grows
+   from 0 to 32px on a 1.2s loop. Reduced-motion users get a static
+   32px rule (handled via the global reduce-motion block at the
+   bottom of this file). */
+.bz-stream-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.bz-stream-rule {
+  display: block;
+  height: 1px;
+  width: 0;
+  background: var(--bz-gold);
+  animation: bz-stream-rule-grow 1.2s var(--bz-ease) infinite alternate;
+}
+
+@keyframes bz-stream-rule-grow {
+  from { width: 0; }
+  to   { width: 32px; }
+}
+
+.bz-stream-label {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: var(--bz-ink-mute);
+  letter-spacing: 0.01em;
+}
+
+.bz-preview-sentence {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.45;
+  color: var(--bz-ink);
+  text-align: center;
+  max-width: 48ch;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.bz-preview-sentence.is-streaming::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 1.1em;
+  background: var(--bz-gold);
+  margin-left: 4px;
+  vertical-align: -0.15em;
+  animation: bz-caret-blink 900ms steps(2, end) infinite;
+}
+
+@keyframes bz-caret-blink {
+  to { opacity: 0; }
+}
+
+.bz-stream-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.bz-error-line {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: var(--bz-ink-mute);
+  margin: 0;
+  max-width: 44ch;
+  text-wrap: pretty;
+}
+
+.bz-retry {
+  appearance: none;
+  border: 1px solid var(--bz-ink);
+  border-radius: 0;
+  background: transparent;
+  color: var(--bz-ink);
+  font-family: var(--bz-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition:
+    background-color 200ms var(--bz-ease),
+    color 200ms var(--bz-ease);
+}
+
+.bz-retry:hover {
+  background: var(--bz-ink);
+  color: var(--bz-bg-paper);
+}
+
+/* --- Lead capture row --------------------------------------- */
+.bz-lead-row {
+  margin-top: 32px;
+  max-width: 560px;
+  animation: bz-fade-in 600ms var(--bz-ease) both;
+}
+
+@keyframes bz-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bz-lead-label {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  color: var(--bz-ink-soft);
+  margin: 0 0 16px;
+  text-wrap: pretty;
+}
+
+.bz-lead-form {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  border: 1px solid var(--bz-rule);
+  background: var(--bz-bg-paper);
+  transition: border-color 200ms var(--bz-ease);
+}
+
+.bz-lead-form:focus-within {
+  border-color: var(--bz-tile);
+}
+
+.bz-lead-success {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: var(--bz-tile);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.bz-lead-error {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: var(--bz-ink-mute);
+  margin: 12px 0 0;
 }
 
 /* --- Philosophy ---------------------------------------------- */
@@ -326,9 +481,10 @@
 }
 
 .bz-footer-meta {
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
   color: var(--bz-ink-mute);
 }
 
@@ -342,7 +498,8 @@
   .bz-hero {
     padding: 16px 0 80px;
   }
-  .bz-form {
+  .bz-form,
+  .bz-lead-form {
     flex-direction: column;
   }
   .bz-cta {
@@ -352,6 +509,9 @@
   .bz-philosophy {
     padding: 56px 0;
   }
+  .bz-preview-sentence {
+    font-size: 1.25rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -360,5 +520,8 @@
   .bz-root *::after {
     transition-duration: 0ms !important;
     animation-duration: 0ms !important;
+  }
+  .bz-stream-rule {
+    width: 32px;
   }
 }

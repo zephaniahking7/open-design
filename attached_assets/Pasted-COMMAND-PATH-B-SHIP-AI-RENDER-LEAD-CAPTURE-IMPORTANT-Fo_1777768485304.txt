@@ -1,0 +1,115 @@
+COMMAND: PATH B SHIP — AI RENDER + LEAD CAPTURE
+
+IMPORTANT:
+Follow Replit response protocol.
+You MUST propose file changes using proper tags.
+Do not give only explanation.
+Only propose precise, minimal edits.
+Honour the layered activation model. Do not activate dormant layers without explicit instruction.
+
+Read /system/brain.md, /system/guardrails.md, /system/huashu.md, and ./philosophy.md.
+
+TASK:
+Wire Path B (real AI generation) as the primary RENDER behaviour, with Path A (lead capture) layered underneath. Address all 10 fixes flagged in the diagnostic. Single execution pass.
+
+PRODUCT FLOW:
+
+1. User types their vision in the input field
+2. User clicks RENDER
+3. AI (via Replit's built-in Anthropic integration — no API key required) generates a refined sentence that mirrors their vision back to them
+4. The output streams into the existing Preview section — no new section, no layout change
+5. After the output renders, an email field appears below the output with a single line: "Continue this thread — leave your email."
+6. Email + vision + AI output saved to PostgreSQL on submit
+
+PATH B WIRING (PRIMARY):
+
+1. Confirm Replit's built-in Anthropic integration is available. Use that. Do not request an API key from the user.
+
+2. Add POST /api/render endpoint to artifacts/api-server:
+   - Accepts: { vision: string }
+   - Calls Anthropic via Replit integration with this prompt:
+     
+     "You are the voice of Bonanza Cr8tives — a creative intelligence engine that transforms vision into presence. The user has shared their vision below. Reflect it back as a single refined sentence (max 22 words) written in italic-ready prose. Do not list. Do not advise. Mirror their vision in language that feels intentional, premium, culturally aware, and future-facing. Output the sentence only, no preamble.
+     
+     User vision: {vision}"
+   
+   - Streams the response back via SSE
+   - Returns the final sentence in the close event
+
+3. Wire the existing Preview section to:
+   - Show "Composing…" in italic Cormorant during streaming, with a 1px gold rule expanding 0 → 32px on a 1.2s loop
+   - Stream the AI output character-by-character into the Preview canvas
+   - Display the final sentence in italic Cormorant Garamond, 1.5rem, ink colour, with text-wrap: pretty
+   - Replace the existing placeholder copy entirely
+
+4. Error state:
+   - If the API fails, show italic muted ink: "We could not render this vision. Try again with more specifics."
+   - Sharp squared "Try again" link directly below
+
+PATH A WIRING (LAYERED UNDERNEATH):
+
+5. Provision Replit's built-in PostgreSQL via the database skill.
+
+6. Create the bonanza_leads table:
+   CREATE TABLE bonanza_leads (
+     id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+     vision      text NOT NULL,
+     ai_output   text,
+     email       text NOT NULL,
+     source      text DEFAULT 'landing',
+     user_agent  text,
+     referrer    text,
+     created_at  timestamptz DEFAULT now()
+   );
+   CREATE INDEX bonanza_leads_created_at_idx ON bonanza_leads (created_at DESC);
+
+7. After the AI output finishes streaming, fade in an email capture row directly beneath the Preview canvas:
+   - Single italic line above the field: "Continue this thread — leave your email."
+   - Hairline-bordered email input matching the vision input style
+   - Sharp squared CTA button reading "SEND"
+   - On submit: POST to /api/leads with { vision, ai_output, email, user_agent, referrer }
+   - On success: replace the email row with italic tile green text: "Held with care. We'll be in touch."
+   - On error: italic muted ink line "Something held us back. Try again."
+
+8. Add POST /api/leads endpoint to artifacts/api-server matching the schema above.
+
+10 FIXES (same pass):
+
+HIGH:
+9. Verify production build works. Run pnpm build. If errors surface, propose fixes.
+10. Update <title> in artifacts/open-design/index.html from "Open Design" to "Bonanza Cr8tives — Vision Becomes Presence".
+
+MEDIUM:
+11. Add meta description: "A creative intelligence engine that transforms vision into presence." Add og:image placeholder reference. Add twitter:card summary_large_image.
+
+12. Lock /studio behind an internal flag. In App.tsx: if route is 'home' AND localStorage.getItem('bonanza_internal') !== 'true', render a refined "Not found" page — italic Cormorant single line "Nothing here yet.", thin gold rule, link back to /. Internal flag set manually via dev tools.
+
+13. Footer: replace "© 2026 — Quiet Authority" with "© 2026 Bonanza Cr8tives. All work made with intention."
+
+LOW:
+14. Hero subtext weight bump: 1.0625rem → 1.125rem. Slightly stronger ink.
+
+15. Remove the lone STUDIO header link entirely. Wordmark holds the header alone, left-anchored with intent.
+
+16. Preview canvas: remove left and right borders. Keep top and bottom hairline rules only.
+
+17. prefers-color-scheme: leave cream surface enforced. Add a single CSS comment noting this is intentional per impeccable rule.
+
+CONSTRAINTS:
+- No layout changes beyond what is specified
+- No new sections
+- No activating threejs or antigravity
+- Maintain layered activation model
+- Maintain quiet authority tone
+
+OUTPUT FORMAT:
+Propose all file changes in proper tags. Group by phase:
+(1) Database setup
+(2) API endpoints (/api/render and /api/leads)
+(3) Landing form + Preview wiring
+(4) Email capture row
+(5) Refinement fixes (10 items)
+
+Do not run shell commands except those required by the database skill for provisioning.
+
+Confirm production build passes before declaring complete.
