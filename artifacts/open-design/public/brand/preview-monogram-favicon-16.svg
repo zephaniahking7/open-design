@@ -1,8 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Bonanza monogram 16">
   <title>Bonanza monogram — 16px favicon</title>
-  <!-- Launch-safe favicon at 16px: chunky B, no fine detail.
-       Pink ground, white glyph, no rounded corners (legibility at 16). -->
-  <rect width="16" height="16" fill="#FF2E88"/>
+  <!-- 16px favicon: chunky B on flat Primary Blue ground. -->
+  <rect width="16" height="16" fill="#5680E9"/>
   <text x="8" y="13" text-anchor="middle"
         font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
         font-weight="900" font-size="14"

@@ -14,7 +14,7 @@ import type { CSSProperties } from 'react';
  *   CR8TIVES         (line 2, 56px, letter-spacing 1.5)
  *
  * The SVG uses currentColor so the mark inherits its colour from the
- * parent (white on the dark landing, pink on the focused-state, etc).
+ * parent (white on the dark landing, accent on focused states, etc).
  * preserveAspectRatio is xMinYMid so the mark left-aligns inside its
  * box regardless of the consumer's height.
  *

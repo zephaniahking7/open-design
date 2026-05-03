@@ -12,7 +12,7 @@
           font-weight="900" font-size="80" letter-spacing="2">CR8TIVES</text>
   </g>
   <!-- Pink accent dot, identity-defining accent only. -->
-  <circle cx="180" cy="430" r="6" fill="#FF2E88"/>
+  <circle cx="180" cy="430" r="6" fill="#5680E9"/>
   <text x="200" y="436"
         font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
         font-weight="500" font-size="14" letter-spacing="2.5"

@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Bonanza Cr8tives wordmark on pink">
-  <title>Bonanza Cr8tives — wordmark on pink</title>
-  <rect width="800" height="500" fill="#FF2E88"/>
-  <!-- Mark: stacked BONANZA / CR8TIVES, black on bz-pink ground.
-       Pink is identity-defining; black type holds the contrast. -->
-  <g transform="translate(180, 180)" fill="#0B0B0B">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Bonanza Cr8tives wordmark on primary">
+  <title>Bonanza Cr8tives — wordmark on primary blue</title>
+  <!-- Renamed in spirit: "on-pink" file path retained for git
+       stability, but ground is now Primary Blue per Stage 4 palette. -->
+  <rect width="800" height="500" fill="#5680E9"/>
+  <g transform="translate(180, 180)" fill="#FFFFFF">
     <text x="0" y="50"
           font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
           font-weight="900" font-size="80" letter-spacing="2">BONANZA</text>
@@ -11,9 +11,9 @@
           font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
           font-weight="900" font-size="80" letter-spacing="2">CR8TIVES</text>
   </g>
-  <circle cx="180" cy="430" r="6" fill="#0B0B0B"/>
+  <circle cx="180" cy="430" r="6" fill="#FFFFFF"/>
   <text x="200" y="436"
         font-family="Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
         font-weight="500" font-size="14" letter-spacing="2.5"
-        fill="#0B0B0B">WORDMARK · ON PINK</text>
+        fill="#FFFFFF">WORDMARK · ON PRIMARY BLUE</text>
 </svg>

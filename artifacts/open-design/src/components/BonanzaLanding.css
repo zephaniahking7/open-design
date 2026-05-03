@@ -1,7 +1,12 @@
 /* ============================================================
    Bonanza Cr8tives — Launch Landing
-   Direction: premium creative-tech (DESIGN.md, Stage 3 launch).
-   Surface: bz-black dominant. bz-pink as identity-defining accent.
+   Direction: premium creative-tech (DESIGN.md).
+   Surface: bz-black dominant. Locked palette accents (Stage 4):
+     --bz-accent       Primary Blue   #5680E9   primary actions
+     --bz-accent-strong Purple        #8860D0   premium hover/active
+     --bz-aqua         Aqua Blue      #5AB9EA   energetic support
+     --bz-sky          Sky Blue       #84CEEB   light support surface
+     --bz-mist         Soft Mist      #C1C8E4   muted soft surface
    Type: Satoshi via Fontshare (loaded in index.html).
    Scope: every selector below is prefixed `.bz-` to keep this
    landing isolated from Open Design's global stylesheet.
@@ -26,11 +31,12 @@
   --bz-text-mute: rgba(255, 255, 255, 0.52);
   --bz-text-faint: rgba(255, 255, 255, 0.32);
 
-  /* accents */
-  --bz-pink: #FF2E88;
-  --bz-pink-deep: #E61E76;
-  --bz-teal: #00B5A1;
-  --bz-yellow: #FFD400;
+  /* locked palette (Stage 4 pivot) */
+  --bz-accent: #5680E9;          /* primary action */
+  --bz-accent-strong: #8860D0;   /* premium hover / active */
+  --bz-aqua: #5AB9EA;            /* energetic support accent */
+  --bz-sky: #84CEEB;             /* light support surface */
+  --bz-mist: #C1C8E4;            /* muted soft surface */
 
   /* fonts */
   --bz-sans: 'Satoshi', system-ui, -apple-system, 'Segoe UI', Roboto,
@@ -78,7 +84,7 @@
   display: inline-block;
   width: 28px;
   height: 1px;
-  background: var(--bz-pink);
+  background: var(--bz-accent);
   flex: 0 0 28px;
 }
 
@@ -125,12 +131,12 @@
 }
 
 .bz-cta--primary {
-  background: var(--bz-pink);
+  background: var(--bz-accent);
   color: #0B0B0B;
 }
 
 .bz-cta--primary:hover {
-  background: var(--bz-pink-deep);
+  background: var(--bz-accent-strong);
   transform: translateY(-1px);
 }
 
@@ -163,7 +169,7 @@
 }
 
 .bz-cta:focus-visible {
-  outline: 2px solid var(--bz-pink);
+  outline: 2px solid var(--bz-accent);
   outline-offset: 3px;
 }
 
@@ -202,7 +208,7 @@
 }
 
 .bz-header-mark:focus-visible {
-  outline: 2px solid var(--bz-pink);
+  outline: 2px solid var(--bz-accent);
   outline-offset: 4px;
   border-radius: 4px;
 }
@@ -234,8 +240,8 @@
 }
 
 .bz-header-studio:hover {
-  border-color: var(--bz-pink);
-  color: var(--bz-pink) !important;
+  border-color: var(--bz-accent);
+  color: var(--bz-accent) !important;
 }
 
 /* --- Hero ----------------------------------------------------- */
@@ -253,12 +259,12 @@
   background:
     radial-gradient(
       ellipse 80% 60% at 20% 20%,
-      rgba(255, 46, 136, 0.20) 0%,
+      rgba(86, 128, 233, 0.20) 0%,
       transparent 60%
     ),
     radial-gradient(
       ellipse 60% 60% at 90% 80%,
-      rgba(0, 181, 161, 0.10) 0%,
+      rgba(136, 96, 208, 0.14) 0%,
       transparent 55%
     );
   pointer-events: none;
@@ -320,8 +326,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--bz-pink);
-  box-shadow: 0 0 12px rgba(255, 46, 136, 0.55);
+  background: var(--bz-accent);
+  box-shadow: 0 0 12px rgba(86, 128, 233, 0.55);
 }
 
 .bz-hero-title {
@@ -380,8 +386,8 @@
 
 /* Stage 3 — vision form upgrade.
    Larger pad, larger radius, larger input type, more theatrical
-   focus state (intensified pink ring + soft outer glow). Render
-   button gets a slightly bolder presence. */
+   focus state (intensified Primary Blue ring + soft outer glow).
+   Render button gets a slightly bolder presence. */
 .bz-form,
 .bz-lead-form {
   display: flex;
@@ -404,11 +410,11 @@
 
 .bz-form:focus-within,
 .bz-lead-form:focus-within {
-  border-color: var(--bz-pink);
+  border-color: var(--bz-accent);
   background: #161616;
   box-shadow:
-    0 0 0 4px rgba(255, 46, 136, 0.16),
-    0 12px 40px rgba(255, 46, 136, 0.10);
+    0 0 0 4px rgba(86, 128, 233, 0.16),
+    0 12px 40px rgba(86, 128, 233, 0.10);
 }
 
 .bz-input {
@@ -485,13 +491,13 @@
 /* The canvas now reads as a quietly-lit stage: a soft top-down
    surface gradient (allowed per DESIGN.md anti-pattern clarification:
    gradients on surfaces, not on the identity), a touch more height,
-   and a 1px pink top-rule that acts as a proscenium. */
+   and a 1px Primary Blue top-rule that acts as a proscenium. */
 .bz-preview-canvas {
   position: relative;
   background:
     linear-gradient(
       180deg,
-      rgba(255, 46, 136, 0.04) 0%,
+      rgba(86, 128, 233, 0.04) 0%,
       transparent 18%
     ),
     linear-gradient(180deg, var(--bz-bg-elev) 0%, #0E0E0E 100%);
@@ -516,7 +522,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    var(--bz-pink) 50%,
+    var(--bz-accent) 50%,
     transparent 100%
   );
   opacity: 0.55;
@@ -538,8 +544,8 @@
   gap: 18px;
 }
 
-/* Stage 3 — composing dots. Three pink dots, soft pulse with a
-   160ms stagger. Replaces the single growing rule for a more
+/* Stage 3 — composing dots. Three Primary Blue dots, soft pulse
+   with a 160ms stagger. Replaces the single growing rule for a more
    theatrical "studio is composing" beat. CSS-only, GPU-friendly. */
 .bz-stream-dots {
   display: inline-flex;
@@ -552,7 +558,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--bz-pink);
+  background: var(--bz-accent);
   opacity: 0.35;
   animation: bz-stream-pulse 1.2s ease-in-out infinite;
   will-change: transform, opacity;
@@ -591,7 +597,7 @@
   display: inline-block;
   width: 2px;
   height: 1em;
-  background: var(--bz-pink);
+  background: var(--bz-accent);
   margin-left: 4px;
   vertical-align: -0.12em;
   animation: bz-caret-blink 900ms steps(2, end) infinite;
@@ -616,16 +622,16 @@
   max-width: 44ch;
 }
 
-/* --- Signature word (pink underline + Stage 3 halo) ----------- */
-/* Halo: a soft pink ellipse fades in *behind* the word on completion,
-   timed to land just after the underline finishes drawing. Pure
-   CSS surface treatment, not on the identity mark. */
+/* --- Signature word (accent underline + Stage 3 halo) --------- */
+/* Halo: a soft Primary Blue ellipse fades in *behind* the word on
+   completion, timed to land just after the underline finishes drawing.
+   Pure CSS surface treatment, not on the identity mark. */
 .bz-sig-word {
   position: relative;
   display: inline-block;
   white-space: nowrap;
   padding-bottom: 0.05em;
-  color: var(--bz-pink);
+  color: var(--bz-accent);
   isolation: isolate;
 }
 
@@ -636,7 +642,7 @@
   z-index: -1;
   background: radial-gradient(
     ellipse at center,
-    rgba(255, 46, 136, 0.20) 0%,
+    rgba(86, 128, 233, 0.20) 0%,
     transparent 70%
   );
   opacity: 0;
@@ -666,7 +672,7 @@
 
 .bz-sig-underline path {
   fill: none;
-  stroke: var(--bz-pink);
+  stroke: var(--bz-accent);
   stroke-width: 1.5;
   stroke-linecap: round;
   stroke-dasharray: 220;
@@ -712,7 +718,7 @@
   display: block;
   width: 24px;
   height: 1px;
-  background: var(--bz-pink);
+  background: var(--bz-accent);
 }
 
 @keyframes bz-mark-in {
@@ -781,7 +787,7 @@
   display: block;
   width: 24px;
   height: 1px;
-  background: var(--bz-yellow);
+  background: var(--bz-aqua);
   margin: 0 0 16px;
 }
 
@@ -810,7 +816,7 @@
 .bz-reset:hover,
 .bz-reset:focus-visible {
   color: var(--bz-text);
-  border-bottom-color: var(--bz-pink);
+  border-bottom-color: var(--bz-accent);
   outline: none;
 }
 
@@ -865,7 +871,7 @@
 }
 
 .bz-card:hover::before {
-  border-top-color: var(--bz-pink);
+  border-top-color: var(--bz-accent);
 }
 
 .bz-card-index {
@@ -933,7 +939,7 @@
   font-weight: 700;
   font-size: 1.5rem;
   letter-spacing: 0.04em;
-  color: var(--bz-pink);
+  color: var(--bz-accent);
 }
 
 .bz-orbit-name {
@@ -996,7 +1002,7 @@
 }
 
 .bz-split-tag--after {
-  color: var(--bz-pink);
+  color: var(--bz-accent);
 }
 
 .bz-split-list {
@@ -1034,7 +1040,7 @@
 
 .bz-split-list--after li::before {
   content: '→';
-  color: var(--bz-pink);
+  color: var(--bz-accent);
 }
 
 .bz-split-divider {
@@ -1052,16 +1058,16 @@
   width: 24px;
   height: 24px;
   background: var(--bz-bg-elev);
-  border: 1px solid var(--bz-pink);
+  border: 1px solid var(--bz-accent);
   border-radius: 50%;
-  box-shadow: 0 0 24px rgba(255, 46, 136, 0.45);
+  box-shadow: 0 0 24px rgba(86, 128, 233, 0.45);
 }
 
 .bz-split-bolt::after {
   content: '';
   position: absolute;
   inset: 6px;
-  background: var(--bz-pink);
+  background: var(--bz-accent);
   border-radius: 50%;
 }
 
@@ -1096,8 +1102,8 @@
 }
 
 .bz-pkg--feature {
-  border-color: var(--bz-pink);
-  background: linear-gradient(180deg, rgba(255, 46, 136, 0.06), transparent 40%),
+  border-color: var(--bz-accent);
+  background: linear-gradient(180deg, rgba(86, 128, 233, 0.06), transparent 40%),
     var(--bz-bg-card);
 }
 
@@ -1105,7 +1111,7 @@
   position: absolute;
   top: -10px;
   left: 24px;
-  background: var(--bz-pink);
+  background: var(--bz-accent);
   color: #0B0B0B;
   font-size: 0.6875rem;
   font-weight: 700;
@@ -1165,7 +1171,7 @@
   top: 0.55em;
   width: 12px;
   height: 1px;
-  background: var(--bz-pink);
+  background: var(--bz-accent);
 }
 
 .bz-pkg-cta {
@@ -1197,7 +1203,7 @@
   z-index: -1;
   background: radial-gradient(
     ellipse 60% 80% at 50% 100%,
-    rgba(255, 46, 136, 0.18) 0%,
+    rgba(86, 128, 233, 0.18) 0%,
     transparent 60%
   );
   pointer-events: none;
@@ -1294,7 +1300,7 @@
 }
 
 .bz-connect-link:hover .bz-connect-arrow {
-  color: var(--bz-pink);
+  color: var(--bz-accent);
   transform: translate(2px, -2px);
 }
 
@@ -1376,7 +1382,7 @@
 }
 
 .bz-footer-col a:hover {
-  color: var(--bz-pink);
+  color: var(--bz-accent);
 }
 
 .bz-footer-meta {
@@ -1401,8 +1407,8 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--bz-pink);
-  box-shadow: 0 0 8px rgba(255, 46, 136, 0.55);
+  background: var(--bz-accent);
+  box-shadow: 0 0 8px rgba(86, 128, 233, 0.55);
   flex: none;
 }
 
@@ -1458,7 +1464,7 @@
 }
 
 .bz-notfound-mark {
-  color: var(--bz-pink);
+  color: var(--bz-accent);
   margin-bottom: 8px;
 }
 
