@@ -1,0 +1,106 @@
+COPY ALL PRODUCTION-READY FONT FILES ONLY — no design changes.
+
+Use the completed FONT ZIP INSPECTION report as source of truth.
+
+Copy the approved production-ready web font files and licence files for all 10 production-ready font families:
+
+1. Climate Crisis
+2. Absans
+3. Apfel Grotezk
+4. Aujournuit
+5. Coconat
+6. Halibut
+7. Mazius Display
+8. Ronzino
+9. Sinistre
+10. Sprat
+
+Meaning:
+- Find each font inside public/fonts/incoming-extracted/
+- Copy only the recommended .woff2 files
+- Copy the licence file beside the font files
+- Put them into public/fonts/custom/<font-name>/
+
+Do not copy the ZIP files.
+Do not copy every file in the extracted folders.
+Do not copy preview-only fonts yet.
+Do not copy hold fonts yet.
+Do not change the live website font.
+Do not edit CSS yet.
+Do not build the font picker yet.
+Do not touch backend, database, /studio, render flow, lead capture, payment flow, packages, or routes.
+
+Copy plan from inspection report:
+
+Climate Crisis:
+- ClimateCrisis-Variable.woff2
+- License.txt
+Target: public/fonts/custom/climate-crisis/
+
+Absans:
+- Absans-Regular.woff2
+- LICENSE.txt
+Target: public/fonts/custom/absans/
+
+Apfel Grotezk:
+- Regular.woff2
+- Mittel.woff2
+- Fett.woff2
+- LICENSE.txt
+Target: public/fonts/custom/apfel-grotezk/
+
+Aujournuit:
+- Aujournuit-VariableVF.woff2
+- LICENSE.txt
+Target: public/fonts/custom/aujournuit/
+
+Coconat:
+- Regular.woff2
+- Demi.woff2
+- Bold.woff2
+- LICENSE.txt
+Target: public/fonts/custom/coconat/
+
+Halibut:
+- Halibut-CondensedRegular.woff2
+- Halibut-ExpandedRegular.woff2
+- LICENSE.txt
+Target: public/fonts/custom/halibut/
+
+Mazius Display:
+- Regular.woff2
+- Bold.woff2
+- LICENSE.txt
+Target: public/fonts/custom/mazius-display/
+
+Ronzino:
+- Ronzino-Medium.woff2
+- Ronzino-Bold.woff2
+- LICENSE.txt
+Target: public/fonts/custom/ronzino/
+
+Sinistre:
+- SinistreVF.woff2
+- LICENSE.txt
+Target: public/fonts/custom/sinistre/
+
+Sprat:
+- Sprat-Bold.woff2
+- Sprat-CondensedBold.woff2
+- Sprat-ExtraExpandedBlack.woff2
+- LICENSE.txt
+Target: public/fonts/custom/sprat/
+
+Update:
+- public/fonts/FONT-ASSET-MAP.md
+
+After copying, report:
+1. exact files copied
+2. where they came from
+3. where they went
+4. total size added
+5. production-ready confirmation
+6. preview-only fonts still waiting
+7. hold fonts still waiting
+8. confirmation live site font unchanged
+9. confirmation backend/database/studio/render/lead untouched

@@ -1,7 +1,7 @@
 # Font + Icon Asset Map
 
 Central reference for website-ready fonts and icon fonts.
-Last updated: approved first-batch font copy.
+Last updated: production-ready batch copy (10 families added).
 
 ## Source Repos
 
@@ -18,6 +18,18 @@ Current source repos (status from live audit):
 - /repos/saira                   READY      43 MB    127 WOFF2 + OFL.txt
 - /repos/material-design-icons   ABSENT     0 bytes  directory exists but empty (working tree wiped)
 
+## Source ZIP Packs
+
+Uploaded ZIPs sit in:
+
+/artifacts/open-design/public/fonts/incoming-zips/
+
+Extracted (Python zipfile, not unzip — `unzip` not in env) into:
+
+/artifacts/open-design/public/fonts/incoming-extracted/
+
+28 packs extracted total. Audit complete. 10 production-ready, 9 preview-only, 9 hold.
+
 ## Live Website Font Folders
 
 Only approved, licensed, production-ready font files are copied into:
@@ -28,24 +40,33 @@ Current live folders:
 
 - /public/fonts/plus-jakarta-sans/      LIVE — currently serving the landing
 - /public/fonts/custom/gabarito/        POPULATED (production-ready, not yet wired)
+- /public/fonts/custom/saira/           POPULATED (production-ready, not yet wired)
 - /public/fonts/custom/frick/           POPULATED (preview-only, do not wire to live)
+- /public/fonts/custom/climate-crisis/  POPULATED (production-ready, not yet wired)
+- /public/fonts/custom/absans/          POPULATED (production-ready, not yet wired)
+- /public/fonts/custom/apfel-grotezk/   POPULATED (production-ready, not yet wired)
+- /public/fonts/custom/aujournuit/      POPULATED (production-ready, not yet wired)
+- /public/fonts/custom/coconat/         POPULATED (production-ready, not yet wired)
+- /public/fonts/custom/halibut/         POPULATED (production-ready, not yet wired)
+- /public/fonts/custom/mazius-display/  POPULATED (production-ready, not yet wired)
+- /public/fonts/custom/ronzino/         POPULATED (production-ready, not yet wired)
+- /public/fonts/custom/sinistre/        POPULATED (production-ready, not yet wired)
+- /public/fonts/custom/sprat/           POPULATED (production-ready, not yet wired)
 - /public/fonts/custom/petrona/         empty — hold for WOFF2 conversion
 - /public/fonts/custom/whois-mono/      empty — hold for licence file + WOFF2
-- /public/fonts/custom/saira/           POPULATED (production-ready, not yet wired)
 - /public/fonts/icons/material-symbols/ empty — hold; lucide-react remains primary
 
 ## Rules
 
-- Do not use fonts directly from /repos in the live app.
-- Do not copy a font into /public/fonts unless its licence is present and commercial web use appears allowed.
+- Do not use fonts directly from /repos or /incoming-extracted in the live app.
+- Do not copy a font into /public/fonts/custom unless its licence file is present and commercial web use appears allowed.
 - Prefer WOFF2.
-- If only TTF/OTF exists, report performance impact before using.
-- Keep licence files beside the served font files where possible.
+- If only TTF/OTF exists, mark preview-only and convert before promoting.
+- Keep licence file beside served font files.
 - Use font-display: swap in @font-face.
 - Keep fallback stack:
   system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif.
 - Do not replace the live Bonanza site font until approved.
-- The client font picker may preview fonts after they are copied and mapped.
 
 ## Current Confirmed Live Font
 
@@ -53,87 +74,85 @@ Plus Jakarta Sans (UNCHANGED — still the live landing font):
 - /public/fonts/plus-jakarta-sans/PlusJakartaSans-VariableFont_wght.woff2
 - /public/fonts/plus-jakarta-sans/OFL.txt
 
-## Custom Fonts — Status Table
+## Custom Fonts — Status Table (13 populated families)
 
-| Font          | Status                  | Files in /public/fonts/                                    | Licence in /public/fonts/ |
-|---------------|-------------------------|------------------------------------------------------------|---------------------------|
-| Gabarito      | PRODUCTION-READY        | custom/gabarito/Gabarito[wght].woff2                       | custom/gabarito/OFL.txt   |
-| Saira         | PRODUCTION-READY        | custom/saira/Saira-Regular.woff2, Saira-Bold.woff2, Saira-Black.woff2 | custom/saira/OFL.txt      |
-| Frick         | PREVIEW-ONLY            | custom/frick/Frick0.3-Regular.woff2, Frick0.3-Condensed.woff2 | custom/frick/OFL.txt   |
-| Petrona       | HOLD — WOFF2 conversion | (none)                                                     | (none)                    |
-| Whois Mono    | HOLD — licence + WOFF2  | (none)                                                     | (none)                    |
-| Material Symbols | HOLD — lucide remains primary | (none)                                              | (none)                    |
+| Family            | Status               | Files in /public/fonts/custom/<folder>/                                          | Licence file     | Picker role           |
+|-------------------|----------------------|---------------------------------------------------------------------------------|------------------|-----------------------|
+| Gabarito          | PRODUCTION-READY     | gabarito/Gabarito[wght].woff2                                                   | OFL.txt          | Clean Modern          |
+| Saira             | PRODUCTION-READY     | saira/Saira-Regular.woff2, Saira-Bold.woff2, Saira-Black.woff2                  | OFL.txt          | Street Culture        |
+| Climate Crisis    | PRODUCTION-READY     | climate-crisis/ClimateCrisis-Variable.woff2                                     | License.txt      | Cinematic Drama       |
+| Absans            | PRODUCTION-READY     | absans/Absans-Regular.woff2                                                     | LICENSE.txt      | Clean Modern          |
+| Apfel Grotezk     | PRODUCTION-READY     | apfel-grotezk/ApfelGrotezk-Regular.woff2, -Mittel.woff2, -Fett.woff2            | LICENSE.txt      | Clean Modern          |
+| Aujournuit        | PRODUCTION-READY     | aujournuit/Aujournuit-VariableVF.woff2                                          | LICENSE.txt      | Editorial Luxury      |
+| Coconat           | PRODUCTION-READY     | coconat/Coconat-Regular.woff2, Coconat-Demi.woff2, Coconat-Bold.woff2           | LICENSE.txt      | Editorial Luxury      |
+| Halibut           | PRODUCTION-READY     | halibut/Halibut-CondensedRegular.woff2, Halibut-ExpandedRegular.woff2           | LICENSE.txt      | Tech Future           |
+| Mazius Display    | PRODUCTION-READY     | mazius-display/MaziusDisplay-Regular.woff2, MaziusDisplay-Bold.woff2            | LICENSE.txt      | Editorial Luxury      |
+| Ronzino           | PRODUCTION-READY     | ronzino/Ronzino-Medium.woff2, Ronzino-Bold.woff2                                | LICENSE.txt      | Bold Impact           |
+| Sinistre          | PRODUCTION-READY     | sinistre/SinistreVF.woff2                                                       | LICENSE.txt      | Cinematic Drama       |
+| Sprat             | PRODUCTION-READY     | sprat/Sprat-Bold.woff2, Sprat-CondensedBold.woff2, Sprat-ExtendedBlack.woff2    | LICENSE.txt      | Editorial Luxury      |
+| Frick             | PREVIEW-ONLY         | frick/Frick0.3-Regular.woff2, Frick0.3-Condensed.woff2                          | OFL.txt (blank)  | Bold Impact           |
 
-## Per-font Detail
+Note on Sprat: the inspection report listed `Sprat-ExtraExpandedBlack.woff2` but the actual repo only ships an `Extended` axis (no `ExtraExpanded` variant). Substituted `Sprat-ExtendedBlack.woff2` as the third weight — same family, valid OFL, 24 KB.
 
-### Gabarito  ✅ PRODUCTION-READY
-- Role: Clean Modern / Friendly Tech
-- Picker label: **Clean Modern**
-- Licence: SIL Open Font License v1.1 (Copyright 2023 The Gabarito Project Authors)
-- Commercial web use: yes
-- Served file: `/fonts/custom/gabarito/Gabarito[wght].woff2` (single variable file, all weights 400–900)
-- Licence file: `/fonts/custom/gabarito/OFL.txt`
-- Wiring status: NOT wired into live CSS yet (awaiting approval)
+## Preview-only Fonts (waiting for WOFF2 conversion)
 
-### Saira  ✅ PRODUCTION-READY
-- Role: Strong Modern / Urban Tech / Versatile
-- Picker label: **Street Culture** (alt: Bold Impact)
-- Licence: SIL Open Font License v1.1 (Copyright 2020 The Saira Project Authors)
-- Commercial web use: yes
-- Served files (3-weight subset, kept small):
-  - `/fonts/custom/saira/Saira-Regular.woff2`
-  - `/fonts/custom/saira/Saira-Bold.woff2`
-  - `/fonts/custom/saira/Saira-Black.woff2`
-- Licence file: `/fonts/custom/saira/OFL.txt`
-- Wiring status: NOT wired into live CSS yet (awaiting approval)
+OFL clean, only TTF/OTF available — nothing copied yet:
 
-### Frick  ⚠️ PREVIEW-ONLY
-- Role: Bold Impact / Expressive
-- Picker label: **Bold Impact**
-- Licence: SIL Open Font License v1.1 — **template fields unfilled** (`<dates>`, `<Copyright Holder>`, `<URL|email>`, `<Reserved Font Name>` blank in `OFL.txt`)
-- Commercial web use: most likely allowed (OFL boilerplate intent) but the lack of an identified copyright holder is a hygiene concern
-- Served files (preview-only — do not deploy live until verified):
-  - `/fonts/custom/frick/Frick0.3-Regular.woff2`
-  - `/fonts/custom/frick/Frick0.3-Condensed.woff2`
-- Licence file: `/fonts/custom/frick/OFL.txt`
-- **Action required before promoting to production-ready:** confirm licence-holder details with the original author and obtain a properly filled OFL.txt
-- Wiring status: NOT wired into live CSS — preview only
+- LT Avocado     (TTF)  Soft Premium
+- LT Beverage    (OTF)  Bold Impact
+- LT Crow        (TTF)  Classic Trust
+- LT Delilah     (TTF)  Feminine Elegant
+- LT Humor       (TTF)  Youthful Fun
+- LT Makeup      (OTF)  Feminine Elegant
+- LT Oval        (OTF)  Soft Premium
+- LT Railway     (OTF)  Tech Future
+- LT Renovate    (OTF)  Bold Impact
+- Petrona        (TTF)  Editorial Luxury / Classic Trust
 
-### Petrona  🔴 HOLD
-- Role: Editorial / Classic Trust
-- Status: HOLD — needs WOFF2 conversion (only TTF/OTF in repo)
-- Licence: SIL OFL v1.1 — clean
-- Action: convert `repos/petrona/Fonts/ttf-variable/Petrona[wght].ttf` to WOFF2 before any copy
+Action: convert with fonttools then promote.
 
-### Whois Mono  🔴 HOLD
-- Role: Tech Future / System / Code Feel
-- Status: HOLD — no `OFL.txt` file in repo (only README mentions OFL); no WOFF2
-- Action: obtain proper OFL.txt from upstream + convert TTF to WOFF2
+## Hold Fonts (no licence file in pack)
 
-### Material Symbols  🔴 HOLD
-- Status: HOLD — local clone is empty; lucide-react remains primary icon system
-- Action when approved: fetch only `MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2` from a CDN rather than re-cloning the multi-GB repo
+Letters Type packs that shipped without OFL.txt — do not copy:
+
+- LT Crewmate (BETA)
+- LT Diary
+- LT Hoop
+- LT Indoor
+- LT Showcase
+- LT Skyscraper
+- LT Smudge
+- LT Sonoma
+- LT Soul
+- Whois Mono       (OFL declared in README only — needs proper OFL.txt + WOFF2)
+
+Action: re-download from a release that includes licence files, or contact the foundry.
+
+## Material Symbols  🔴 HOLD
+
+- Local clone empty
+- Apache 2.0 (per upstream)
+- lucide-react remains primary icon system
+- When approved: fetch only `MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2` from a CDN
 
 ## Client Font Picker Direction
 
-The font picker should show font mood/direction, not hand final creative control to the client.
+Suggested role coverage (which production-ready families satisfy each role):
 
-Suggested roles:
+- Clean Modern        ← Gabarito, Absans, Apfel Grotezk
+- Editorial Luxury    ← Coconat, Mazius Display, Aujournuit, Sprat   (Petrona pending)
+- Bold Impact         ← Ronzino   (Frick preview)
+- Soft Premium        ← (LT Avocado / LT Oval pending conversion)
+- Street Culture      ← Saira
+- Tech Future         ← Halibut   (Whois Mono pending licence + WOFF2)
+- Youthful Fun        ← (LT Humor pending conversion)
+- Feminine Elegant    ← (LT Delilah / LT Makeup pending conversion)
+- Classic Trust       ← (LT Crow pending conversion; Petrona pending)
+- Cinematic Drama     ← Sinistre, Climate Crisis
+- Minimal Calm        ← (no live candidate yet)
+- Heritage Artisan    ← (no live candidate yet)
 
-- Clean Modern        ← Gabarito ready
-- Editorial Luxury    ← Petrona pending
-- Bold Impact         ← Frick (preview) ready
-- Soft Premium
-- Street Culture      ← Saira ready
-- Tech Future         ← Whois Mono pending
-- Youthful Fun
-- Feminine Elegant
-- Classic Trust       ← Petrona pending
-- Cinematic Drama
-- Minimal Calm
-- Heritage Artisan
-
-The UI should say:
+UI copy:
 "Choose the direction you naturally connect with. Bonanza Cr8tives will refine the final font pairing for readability, mobile performance and brand fit."
 
 ## Website Path Usage
@@ -143,8 +162,8 @@ Files inside /public are referenced without "public".
 Examples:
 
 /fonts/plus-jakarta-sans/PlusJakartaSans-VariableFont_wght.woff2   (LIVE)
-/fonts/custom/gabarito/Gabarito[wght].woff2                         (READY, not wired)
-/fonts/custom/saira/Saira-Regular.woff2                             (READY, not wired)
+/fonts/custom/coconat/Coconat-Regular.woff2                         (READY, not wired)
+/fonts/custom/sinistre/SinistreVF.woff2                             (READY, not wired)
 /fonts/custom/frick/Frick0.3-Regular.woff2                          (PREVIEW, not wired)
 
 ## Wiring Recipe (for future approved swap)
