@@ -32,7 +32,7 @@ export function Header() {
           onClick={handleAnchor('top')}
           aria-label="Bonanza Cr8tives — home"
         >
-          <Wordmark variant="full" height={28} />
+          <Wordmark variant="full" height={40} />
         </a>
         <nav className="bz-header-nav" aria-label="Primary">
           <a href="#what-we-build" onClick={handleAnchor('what-we-build')}>

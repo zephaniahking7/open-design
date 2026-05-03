@@ -1,8 +1,35 @@
 import type { CSSProperties } from 'react';
 
-const WORDMARK_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -4 896 224" fill="currentColor" fill-rule="evenodd" role="img" aria-label="Bonanza Cr8tives" preserveAspectRatio="xMinYMid meet"><title>Bonanza Cr8tives</title><g transform="translate(0,0)"><path d="M 0 0 L 24 0 A 25 25 0 0 1 24 50 L 28 50 A 28 28 0 0 1 28 100 L 0 100 Z M 14 14 L 22 14 A 11 12 0 0 1 22 36 L 14 36 Z M 14 64 L 26 64 A 14 14 0 0 1 26 86 L 14 86 Z"/><path d="M 0 0 L -7 0 L 0 8 Z"/><path d="M 0 100 L -7 100 L 0 92 Z"/></g><g transform="translate(120,0)"><path d="M 28 -2 A 28 52 0 1 0 28 102 A 28 52 0 1 0 28 -2 Z M 28 12 A 14 38 0 1 1 28 88 A 14 38 0 1 1 28 12 Z"/></g><g transform="translate(254,0)"><path d="M 0 0 L 14 0 L 42 86 L 42 0 L 56 0 L 56 100 L 42 100 L 14 14 L 14 100 L 0 100 Z"/></g><g transform="translate(388,0)"><path d="M 21 0 L 35 0 L 56 100 L 42 100 L 38 80 L 18 80 L 14 100 L 0 100 Z M 22 66 L 34 66 L 28 38 Z"/><path d="M 0 100 L -7 100 L 0 92 Z"/><path d="M 56 100 L 63 100 L 56 92 Z"/></g><g transform="translate(522,0)"><path d="M 0 0 L 14 0 L 42 86 L 42 0 L 56 0 L 56 100 L 42 100 L 14 14 L 14 100 L 0 100 Z"/></g><g transform="translate(656,0)"><path d="M 0 0 L 46 0 L 46 14 L 18 86 L 46 86 L 46 100 L 0 100 L 0 86 L 28 14 L 0 14 Z"/><path d="M 46 0 L 53 0 L 46 8 Z"/><path d="M 0 100 L -7 100 L 0 92 Z"/></g><g transform="translate(780,0)"><path d="M 21 0 L 35 0 L 56 100 L 42 100 L 38 80 L 18 80 L 14 100 L 0 100 Z M 22 66 L 34 66 L 28 38 Z"/><path d="M 0 100 L -7 100 L 0 92 Z"/><path d="M 56 100 L 63 100 L 56 92 Z"/></g><g transform="translate(0,110)"><path d="M 52 14 A 26 50 0 1 1 52 86 L 38 86 A 12 36 0 1 0 38 14 Z"/><path d="M 52 14 L 52 7 L 44 14 Z"/><path d="M 52 86 L 52 93 L 44 86 Z"/></g><g transform="translate(122,110)"><path d="M 0 0 L 24 0 A 25 25 0 0 1 24 50 L 18 50 L 46 100 L 30 100 L 14 70 L 14 100 L 0 100 Z M 14 14 L 22 14 A 11 12 0 0 1 22 36 L 14 36 Z"/><path d="M 0 0 L -7 0 L 0 8 Z"/><path d="M 46 100 L 53 100 L 46 92 Z"/></g><g transform="translate(238,110)"><path d="M 5 22 A 18 22 0 1 1 41 22 A 18 22 0 1 1 5 22 Z M 17 22 A 6 11 0 1 0 29 22 A 6 11 0 1 0 17 22 Z"/><path d="M 0 72 A 23 28 0 1 1 46 72 A 23 28 0 1 1 0 72 Z M 15 72 A 8 13 0 1 0 31 72 A 8 13 0 1 0 15 72 Z"/><path d="M 11 46 Q 23 43 35 46 L 35 50 Q 23 47 11 50 Z"/></g><g transform="translate(354,110)"><path d="M 0 0 L 50 0 L 50 14 L 32 14 L 32 100 L 18 100 L 18 14 L 0 14 Z"/><path d="M 0 0 L 0 -7 L 8 0 Z"/><path d="M 50 0 L 50 -7 L 42 0 Z"/><path d="M 18 100 L 11 100 L 18 92 Z"/></g><g transform="translate(474,110)"><path d="M -7 0 L 21 0 L 14 8 L 14 92 L 21 100 L -7 100 L 0 92 L 0 8 Z"/></g><g transform="translate(558,110)"><path d="M 0 0 L 14 0 L 28 76 L 42 0 L 56 0 L 32 100 L 24 100 Z"/></g><g transform="translate(684,110)"><path d="M 0 0 L 42 0 L 42 14 L 14 14 L 14 43 L 36 43 L 36 57 L 14 57 L 14 86 L 42 86 L 42 100 L 0 100 Z"/></g><g transform="translate(796,110)"><path d="M 0 0 L 42 0 L 42 14 L 14 14 L 14 43 L 42 43 L 42 100 L 0 100 L 0 86 L 28 86 L 28 57 L 0 57 Z"/></g></svg>`;
+/**
+ * Bonanza Cr8tives wordmark — launch-safe, text-set.
+ *
+ * Replaces the Stage 2 hand-rolled "Brixton Hand" geometry with a
+ * clean two-line wordmark set in Satoshi 900 (the same UI typeface
+ * used everywhere else on the landing). Single source of truth: the
+ * Wordmark component. All consumers (Header, Footer, VisionInput
+ * maker's mark, 404 surface) inherit automatically.
+ *
+ * Layout:
+ *   BONANZA          (line 1, 56px, letter-spacing 1.5)
+ *   CR8TIVES         (line 2, 56px, letter-spacing 1.5)
+ *
+ * The SVG uses currentColor so the mark inherits its colour from the
+ * parent (white on the dark landing, pink on the focused-state, etc).
+ * preserveAspectRatio is xMinYMid so the mark left-aligns inside its
+ * box regardless of the consumer's height.
+ *
+ * Monogram: a single uppercase B in the same typeface inside a
+ * 64×64 viewBox, optically centred.
+ */
 
-const MONOGRAM_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -4 60 108" fill="currentColor" fill-rule="evenodd" role="img" aria-label="B" preserveAspectRatio="xMidYMid meet"><title>Bonanza monogram</title><path d="M 0 0 L 24 0 A 25 25 0 0 1 24 50 L 30 50 A 30 30 0 0 1 30 100 L 0 100 Z M 14 14 L 22 14 A 11 12 0 0 1 22 36 L 14 36 Z M 14 64 L 28 64 A 14 14 0 0 1 28 86 L 14 86 Z"/><path d="M 0 0 L -7 0 L 0 8 Z"/><path d="M 0 100 L -7 100 L 0 92 Z"/></svg>`;
+const FONT_STACK =
+  "Satoshi, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif";
+
+const SVG_STYLE = 'height:100%;width:auto;display:block';
+
+const WORDMARK_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 132" role="img" aria-label="Bonanza Cr8tives" preserveAspectRatio="xMinYMid meet" style="${SVG_STYLE}"><title>Bonanza Cr8tives</title><text x="0" y="50" font-family="${FONT_STACK}" font-weight="900" font-size="56" letter-spacing="1.5" fill="currentColor">BONANZA</text><text x="0" y="120" font-family="${FONT_STACK}" font-weight="900" font-size="56" letter-spacing="1.5" fill="currentColor">CR8TIVES</text></svg>`;
+
+const MONOGRAM_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="B" preserveAspectRatio="xMidYMid meet" style="${SVG_STYLE}"><title>Bonanza monogram</title><text x="32" y="50" text-anchor="middle" font-family="${FONT_STACK}" font-weight="900" font-size="56" fill="currentColor">B</text></svg>`;
 
 export type WordmarkVariant = 'full' | 'mark';
 

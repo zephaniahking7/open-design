@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" fill="#F4EFE6"/>
-  <text x="32" y="46" text-anchor="middle"
-        font-family="'Cormorant Garamond', 'Iowan Old Style', Georgia, serif"
-        font-size="48" font-style="italic" font-weight="400"
-        fill="#3F5C46">B</text>
+  <rect width="64" height="64" rx="12" fill="#FF2E88"/>
+  <text x="32" y="49" text-anchor="middle"
+        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-size="48" font-weight="900"
+        fill="#FFFFFF">B</text>
 </svg>
