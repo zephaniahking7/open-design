@@ -64,10 +64,6 @@
   color: var(--bz-ink);
 }
 
-.bz-wordmark-mark {
-  color: var(--bz-tile);
-}
-
 .bz-nav-link {
   font-family: var(--bz-body);
   font-size: 0.875rem;
@@ -86,7 +82,36 @@
 /* --- Hero ---------------------------------------------------- */
 .bz-hero {
   padding: 40px 0 120px;
+}
+
+/* Masthead row: a single composed line that holds the top of the
+   hero. Left cluster carries the gold cultural anchor (32x1px rule)
+   beside the section eyebrow; right cluster carries a quiet roman
+   date marker that balances the otherwise-empty top-right of the
+   hero band. No layout shift — the hero title still left-aligns to
+   the same column. */
+.bz-hero-mast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
   max-width: 760px;
+  margin: 0 0 24px;
+}
+
+.bz-hero-mast > :first-child,
+.bz-hero-mast > .bz-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+}
+
+.bz-hero-rule {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--bz-gold);
+  margin-right: 16px;
+  flex: 0 0 32px;
 }
 
 .bz-hero-eyebrow {
@@ -95,7 +120,26 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--bz-ink-mute);
-  margin: 0 0 32px;
+  margin: 0;
+}
+
+.bz-hero-date {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  letter-spacing: 0.14em;
+  color: var(--bz-ink-mute);
+}
+
+/* Hero title sits beneath the masthead row. The 760px ceiling that
+   used to live on .bz-hero now lives on the title + sub + form so
+   the masthead can stretch the same width without affecting the
+   title block. */
+.bz-hero-title,
+.bz-hero-sub,
+.bz-form {
+  max-width: 760px;
 }
 
 .bz-hero-title {

@@ -25,9 +25,7 @@ export function BonanzaLanding() {
     <div className="bz-root">
       <div className="bz-shell">
         <header className="bz-header">
-          <div className="bz-wordmark">
-            Bonanza <span className="bz-wordmark-mark">Cr8tives</span>
-          </div>
+          <div className="bz-wordmark">Bonanza Cr8tives</div>
           <a
             className="bz-nav-link"
             href="/studio"
@@ -41,7 +39,11 @@ export function BonanzaLanding() {
         </header>
 
         <section className="bz-hero">
-          <p className="bz-hero-eyebrow">A Creative Intelligence Engine</p>
+          <div className="bz-hero-mast" aria-hidden="true">
+            <span className="bz-hero-rule" />
+            <span className="bz-hero-eyebrow">Studio Notes</span>
+            <span className="bz-hero-date">MMXXVI</span>
+          </div>
           <h1 className="bz-hero-title">
             Turn Vision Into <em>Presence</em>
           </h1>
@@ -60,7 +62,7 @@ export function BonanzaLanding() {
               autoComplete="off"
             />
             <button className="bz-cta" type="submit">
-              Begin
+              Render
             </button>
           </form>
         </section>
