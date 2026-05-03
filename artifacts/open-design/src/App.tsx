@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import { BonanzaLanding } from './components/BonanzaLanding';
 import { EntryView } from './components/EntryView';
 import type { CreateInput } from './components/NewProjectPanel';
 import { ProjectView } from './components/ProjectView';
@@ -115,10 +116,11 @@ export function App() {
           void syncMediaProvidersToDaemon(next.mediaProviders);
         }
 
-        // Pop the onboarding modal only on the first run. Once the user has
-        // saved or skipped past it once, we trust their stored config and
-        // let them re-open Settings explicitly via the env pill.
-        if (!next.onboardingCompleted) {
+        // Pop the onboarding modal only on the first run, and only once the
+        // user has actually entered the Studio. The Bonanza landing is the
+        // brand front door — surfacing a config dialog on top of it would
+        // break the "quiet authority" feel the landing is built for.
+        if (!next.onboardingCompleted && route.kind !== 'landing') {
           setSettingsWelcome(true);
           setSettingsOpen(true);
         }
@@ -316,7 +318,9 @@ export function App() {
 
   return (
     <>
-      {activeProject ? (
+      {route.kind === 'landing' ? (
+        <BonanzaLanding />
+      ) : activeProject ? (
         <ProjectView
           key={activeProject.id}
           project={activeProject}

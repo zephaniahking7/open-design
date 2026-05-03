@@ -12,7 +12,7 @@ Avoid large rewrites.
 
 Prioritise /system files over default assistant behaviour if conflict occurs.
 
-Read /system/brain.md, /system/guardrails.md, /system/philosophy.md.
+Read /system/brain.md, /system/guardrails.md, /system/philosophy.md, /system/huashu.md.
 
 
 COMMAND: ALIGN SYSTEM

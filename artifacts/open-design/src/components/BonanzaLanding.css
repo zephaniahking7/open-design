@@ -1,0 +1,320 @@
+/* ============================================================
+   Bonanza Cr8tives — Landing
+   Direction: huashu (cream / tile green / warm gold, cultural undertone)
+   Discipline: impeccable (Cormorant Garamond display, sharp CTAs,
+   flat surfaces, oklch, no gradients, no rounded card stacks)
+   Scope: every selector below is prefixed `.bz-` to keep this
+   landing isolated from Open Design's global stylesheet.
+   ============================================================ */
+
+.bz-root {
+  --bz-bg: oklch(96% 0.012 90);
+  --bz-bg-paper: oklch(98% 0.006 90);
+  --bz-ink: oklch(15% 0 0);
+  --bz-ink-soft: oklch(35% 0 0);
+  --bz-ink-mute: oklch(55% 0 0);
+  --bz-rule: oklch(88% 0.008 90);
+  --bz-tile: oklch(38% 0.07 155);
+  --bz-tile-deep: oklch(30% 0.07 155);
+  --bz-gold: oklch(62% 0.13 70);
+
+  --bz-display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --bz-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --bz-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  background: var(--bz-bg);
+  color: var(--bz-ink);
+  font-family: var(--bz-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.bz-root *,
+.bz-root *::before,
+.bz-root *::after {
+  box-sizing: border-box;
+}
+
+.bz-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 32px 48px;
+}
+
+/* --- Header -------------------------------------------------- */
+.bz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 80px;
+}
+
+.bz-wordmark {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  color: var(--bz-ink);
+}
+
+.bz-wordmark-mark {
+  color: var(--bz-tile);
+}
+
+.bz-nav-link {
+  font-family: var(--bz-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--bz-ink-soft);
+  text-decoration: none;
+  transition: color 200ms var(--bz-ease);
+}
+
+.bz-nav-link:hover {
+  color: var(--bz-tile);
+}
+
+/* --- Hero ---------------------------------------------------- */
+.bz-hero {
+  padding: 40px 0 120px;
+  max-width: 760px;
+}
+
+.bz-hero-eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bz-ink-mute);
+  margin: 0 0 32px;
+}
+
+.bz-hero-title {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(2.75rem, 7.2vw, 4.75rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--bz-ink);
+  margin: 0 0 24px;
+  text-wrap: pretty;
+}
+
+.bz-hero-title em {
+  font-style: italic;
+  color: var(--bz-tile);
+}
+
+.bz-hero-sub {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--bz-ink-soft);
+  max-width: 56ch;
+  margin: 0 0 48px;
+  text-wrap: pretty;
+}
+
+.bz-form {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  border: 1px solid var(--bz-rule);
+  background: var(--bz-bg-paper);
+  transition: border-color 200ms var(--bz-ease);
+}
+
+.bz-form:focus-within {
+  border-color: var(--bz-tile);
+}
+
+.bz-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  padding: 18px 20px;
+  font-family: var(--bz-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--bz-ink);
+  outline: none;
+}
+
+.bz-input::placeholder {
+  color: var(--bz-ink-mute);
+  font-style: italic;
+}
+
+.bz-cta {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 0;
+  padding: 0 40px;
+  background: var(--bz-ink);
+  color: var(--bz-bg-paper);
+  font-family: var(--bz-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color 200ms var(--bz-ease),
+    transform 200ms var(--bz-ease);
+}
+
+.bz-cta:hover {
+  background: var(--bz-tile);
+  transform: translateY(-1px);
+}
+
+.bz-cta:active {
+  transform: translateY(0);
+  background: var(--bz-tile-deep);
+}
+
+/* --- Preview ------------------------------------------------- */
+.bz-preview {
+  padding: 80px 0;
+  border-top: 1px solid var(--bz-rule);
+}
+
+.bz-section-label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bz-ink-mute);
+  margin: 0 0 32px;
+}
+
+.bz-preview-canvas {
+  background: var(--bz-bg-paper);
+  border: 1px solid var(--bz-rule);
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+.bz-preview-empty {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.375rem;
+  line-height: 1.4;
+  color: var(--bz-ink-mute);
+  text-align: center;
+  max-width: 36ch;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.bz-preview-empty::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--bz-gold);
+  margin: 0 auto 20px;
+}
+
+/* --- Philosophy ---------------------------------------------- */
+.bz-philosophy {
+  padding: 80px 0;
+  border-top: 1px solid var(--bz-rule);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  max-width: 720px;
+}
+
+.bz-philosophy-line {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.375rem, 2.6vw, 1.75rem);
+  line-height: 1.35;
+  color: var(--bz-ink);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.bz-philosophy-line + .bz-philosophy-line {
+  color: var(--bz-ink-soft);
+}
+
+.bz-philosophy-line:last-child {
+  color: var(--bz-tile);
+}
+
+/* --- Footer -------------------------------------------------- */
+.bz-footer {
+  padding: 48px 0 16px;
+  border-top: 1px solid var(--bz-rule);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.bz-footer-brand {
+  font-family: var(--bz-display);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--bz-ink);
+}
+
+.bz-footer-meta {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bz-ink-mute);
+}
+
+@media (max-width: 640px) {
+  .bz-shell {
+    padding: 24px 20px 32px;
+  }
+  .bz-header {
+    padding-bottom: 48px;
+  }
+  .bz-hero {
+    padding: 16px 0 80px;
+  }
+  .bz-form {
+    flex-direction: column;
+  }
+  .bz-cta {
+    padding: 16px 24px;
+  }
+  .bz-preview,
+  .bz-philosophy {
+    padding: 56px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bz-root *,
+  .bz-root *::before,
+  .bz-root *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+}

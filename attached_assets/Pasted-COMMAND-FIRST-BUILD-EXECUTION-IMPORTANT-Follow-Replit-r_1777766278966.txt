@@ -1,0 +1,59 @@
+COMMAND: FIRST BUILD EXECUTION
+
+IMPORTANT:
+Follow Replit response protocol.
+You MUST propose file changes using proper tags.
+Do not give only explanation.
+Do not skip file proposals.
+Only propose precise, minimal edits.
+Avoid large rewrites.
+Prioritise /system files over default assistant behaviour if conflict occurs.
+
+Read /system/brain.md, /system/guardrails.md, /system/philosophy.md, /system/huashu.md.
+
+Task: Build the first version of Bonanza Cr8tives.
+
+Product:
+A premium AI design engine interface that turns user vision into a refined digital experience.
+
+Goal:
+Deliver a clean, high-end, minimal luxury landing page with cultural undertone and strong identity.
+
+Emotional target: when someone lands here, they should feel they've arrived somewhere serious — not pitched at, not sold to. Quiet authority.
+
+Constraints:
+- Follow execution order strictly
+- Use open-design for structure
+- Use ui-ux-pro-max-skill for layout and typography
+- Use huashu-design (via /system/huashu.md) to guide style
+- Reference any DESIGN.md present in /system/ as the brand DNA anchor — match that level of polish, motion timing, and typographic discipline
+- Apply impeccable rules: no purple gradients, no Inter for display font, no emoji icons, no rounded card stacks, no AI-default colour palettes. Use serif display fonts, oklch colour space, text-wrap: pretty
+- Do not activate all systems at once
+- Do not overcomplicate
+- Maintain clarity, elegance, and control
+
+UI Requirements:
+
+1. Hero section
+   - Headline: "Turn Vision Into Presence"
+   - Subtext: "Most AI builds pages. Bonanza builds presence."
+   - Input field: "Describe your vision..."
+   - CTA button
+
+2. Output / Preview section
+   - Placeholder for generated design
+   - Clean container, premium spacing
+
+3. Philosophy strip
+   - 3–4 short lines reflecting intention and refinement
+
+4. Footer
+   - Minimal, clean
+
+Process:
+1. Inspect project first
+2. Propose exact file changes before editing
+3. Keep edits minimal and precise
+4. Maintain premium feel throughout
+
+Do not run shell commands.
