@@ -1,39 +1,73 @@
-// "Built by Bonanza Cr8tives." Live ecosystem proof. These are the
-// projects currently in motion under the studio. Order is intentional —
-// Supreme Teens leads (flagship social platform), then HQ (the operating
-// system that powers everything), then the brand and media surfaces.
-const PROJECTS = [
-  {
-    name: 'Supreme Teens',
-    pitch: 'Youth platform and positive social network.',
-  },
-  {
-    name: 'Bonanza HQ',
-    pitch: 'Internal command centre and studio operating system.',
-  },
-  {
-    name: 'Real Image Entertainment',
-    pitch: 'Music, media and talent infrastructure.',
-  },
-  {
-    name: 'Blu Giant',
-    pitch: 'Artist brand and creative direction.',
-  },
-  {
-    name: 'Jay Monsoon',
-    pitch: 'Clothing store and fashion label.',
-  },
-  {
-    name: 'GrownFlow UK',
-    pitch: 'Culture and lifestyle media concept.',
-  },
-  {
-    name: 'BaeJo Jobae',
-    pitch: 'Food brand ecosystem.',
-  },
+import { useState } from 'react';
+
+// "Bonanza-built ecosystem brands." Logo-led proof of the live work
+// already in motion under the studio. These are NOT external clients —
+// they are Bonanza-owned or Bonanza-related brands that have or will
+// have websites, apps, stores or platforms built through Bonanza
+// Cr8tives. Wording rule lives in public/brand-assets/ASSET-MAP.md.
+//
+// Stage 4 motion pass: presented as a slow silent left-drifting
+// marquee ("logo swim") with Live / Building / Next / Vision status
+// chips. Pause-on-hover and prefers-reduced-motion fallback (becomes
+// a static centred wrap) handled in BonanzaLanding.css.
+
+type Status = 'Live' | 'Building' | 'Next' | 'Vision';
+
+type Project = {
+  name: string;
+  logo: string;
+  status: Status;
+};
+
+// Status mapping (operator-confirmable in next pass):
+//   Live     — already trading / shipping under the brand
+//   Building — actively in build under Bonanza Cr8tives now
+//   Next     — queued for build, brief locked
+//   Vision   — on the long-range roadmap, not yet in active build
+const PROJECTS: readonly Project[] = [
+  { name: 'Supreme Teens',           logo: 'supreme-teens.png',                  status: 'Live' },
+  { name: 'Bonanza HQ',              logo: 'bonanza-cr8tives-chrome.png',        status: 'Building' },
+  { name: 'Real Image Entertainment',logo: 'real-image-entertainment-black.png', status: 'Live' },
+  { name: 'Stomp AI',                logo: 'stomp-ai-colour.png',                status: 'Building' },
+  { name: 'Jay Monsoon',             logo: 'jay-monsoon-clothing.png',           status: 'Live' },
+  { name: 'GrownFlow UK',            logo: 'grow-flow-logo.png',                 status: 'Next' },
+  { name: 'BaeJo Jobae',             logo: 'baejo-jobae-white.png',              status: 'Vision' },
+  { name: 'Family Bonanza',          logo: 'family-bonanza-fb-logo.png',         status: 'Vision' },
 ] as const;
 
+function StatusChip({ status }: { status: Status }) {
+  const cls = `bz-eco-chip bz-eco-chip--${status.toLowerCase()}`;
+  return <span className={cls}>{status}</span>;
+}
+
+function MarqueeItem({ project }: { project: Project }) {
+  const [imgFailed, setImgFailed] = useState(false);
+  const src = `/brand-assets/logos/${project.logo}`;
+  return (
+    <li className="bz-eco-item" aria-label={`${project.name} — ${project.status}`}>
+      <div className="bz-eco-logo">
+        {!imgFailed ? (
+          <img
+            src={src}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            onError={() => setImgFailed(true)}
+          />
+        ) : (
+          <span className="bz-eco-logo-fallback">{project.name}</span>
+        )}
+      </div>
+      <p className="bz-eco-name">{project.name}</p>
+      <StatusChip status={project.status} />
+    </li>
+  );
+}
+
 export function Ecosystem() {
+  // Render the list twice in a single track so the loop seams
+  // perfectly at translateX(-50%). The duplicated half is hidden
+  // from assistive tech; the original list carries the labels.
   return (
     <section
       className="bz-ecosystem bz-section--light"
@@ -46,24 +80,25 @@ export function Ecosystem() {
           Ecosystem
         </p>
         <h2 id="bz-ecosystem-label" className="bz-section-title">
-          Built by Bonanza Cr8tives.
+          Bonanza-built ecosystem brands
         </h2>
         <p className="bz-section-sub">
-          We don't just talk about building. These are the live projects
-          currently in motion under the studio.
+          A growing family of brands, apps, platforms and creative systems
+          shaped through Bonanza Cr8tives.
         </p>
 
-        <ul className="bz-ecosystem-grid">
-          {PROJECTS.map((p, i) => (
-            <li key={p.name} className="bz-ecosystem-card">
-              <span className="bz-ecosystem-index" aria-hidden="true">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <h3 className="bz-ecosystem-name">{p.name}</h3>
-              <p className="bz-ecosystem-pitch">{p.pitch}</p>
-            </li>
-          ))}
-        </ul>
+        <div className="bz-eco-marquee" aria-roledescription="ecosystem brand strip">
+          <ul className="bz-eco-track" aria-label="Bonanza-built ecosystem brands">
+            {PROJECTS.map((p) => (
+              <MarqueeItem key={p.name} project={p} />
+            ))}
+          </ul>
+          <ul className="bz-eco-track" aria-hidden="true">
+            {PROJECTS.map((p) => (
+              <MarqueeItem key={`dup-${p.name}`} project={p} />
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

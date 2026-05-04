@@ -15,7 +15,7 @@ export function Connect() {
 
   return (
     <section
-      className="bz-connect bz-section--light bz-section--sky"
+      className="bz-connect bz-section--light"
       id="connect"
       aria-labelledby="bz-connect-label"
     >

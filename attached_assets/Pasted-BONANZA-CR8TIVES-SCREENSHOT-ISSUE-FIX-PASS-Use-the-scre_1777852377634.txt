@@ -1,0 +1,99 @@
+BONANZA CR8TIVES — SCREENSHOT ISSUE FIX PASS.
+
+Use the screenshots as visual reference.
+
+Do not rebuild the page.
+Do not change backend.
+Do not change database.
+Do not touch /studio.
+Do not touch render flow.
+Do not touch lead capture.
+Do not touch packages/payment logic.
+Do not install packages.
+
+Fix only visible polish issues from the current landing.
+
+Issues to fix:
+
+1. Dotted focus border
+The black dashed focus rectangle around the “Bring the rough version” card looks broken/dev-like.
+Replace default dashed focus styles with a premium accessible focus state:
+- 2px brand-blue or soft-blue outline
+- rounded corners
+- subtle glow
+- no dashed black border
+Keep keyboard accessibility intact.
+
+2. Social/contact section visual mismatch
+The bright blue background behind the social/contact cards feels less premium than the dark hero.
+Refine this section so it fits the Bonanza Cr8tives premium system:
+- either soften the blue
+- or use off-white/mist
+- or darken it into the hero palette
+Do not reduce readability.
+
+3. Ecosystem section needs logo-led proof
+The ecosystem section is currently too text-only.
+Update the concept so it supports uploaded logos from:
+public/brand-assets/logos/
+
+Use the wording:
+“Bonanza-built ecosystem brands”
+
+Subline:
+“A growing family of brands, apps, platforms and creative systems shaped through Bonanza Cr8tives.”
+
+Do not call them clients.
+Do not say “trusted by.”
+Use logos where available.
+Skip missing logos gracefully.
+
+4. Empty ecosystem grid cell
+There is an empty bottom-right grid cell.
+Do not leave blank cells.
+Either:
+- add Family Bonanza using family-bonanza-fb-logo.png if present
+- or add a “More building” / “Next brands loading” card
+- or rebalance the grid so no empty cell appears.
+
+Preferred:
+Add Family Bonanza if the logo exists.
+
+Copy:
+Family Bonanza
+Family infrastructure and legacy foundation.
+
+5. Hero headline treatment
+Review the hero headline:
+“Websites, AI funnels & digital front doors built for serious founders.”
+
+The grey treatment around “built for serious founders” should feel intentional, not faded or disabled.
+If it looks weak, adjust the hierarchy:
+- keep main line strong
+- use subtle accent only where it improves clarity
+- avoid making key promise words look inactive.
+
+6. Header wordmark
+Review the top-left “BONANZA CR8TIVES” mark.
+Keep it clean, but make sure it feels like a premium studio brand.
+If using an uploaded logo improves it without clutter, use the cleanest white/transparent version.
+If not, refine spacing/weight only.
+
+7. Motion discipline
+Keep motion subtle:
+- soft hover depth
+- clean section reveal
+- no aggressive animation
+- no sound
+- no WebGL
+- no Three.js
+- no GSAP
+
+After completion, report:
+1. files changed
+2. exact issues fixed
+3. what was left unchanged
+4. whether Family Bonanza was added
+5. whether logos are used
+6. confirmation backend/database/studio/render/lead/packages untouched
+7. any remaining visual concerns

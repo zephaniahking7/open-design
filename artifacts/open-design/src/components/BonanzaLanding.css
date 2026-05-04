@@ -378,7 +378,12 @@
 }
 
 .bz-hero-title-accent {
-  color: var(--bz-text-soft);
+  /* Stage 4 polish — the closing promise ("built for serious founders.")
+     used to render in --bz-text-soft, which read as faded/disabled rather
+     than intentional accent. Switching to brand Primary Blue makes the
+     hierarchy read as deliberate emphasis without losing the main line's
+     dominance. */
+  color: var(--bz-accent);
 }
 
 .bz-hero-sub {
@@ -2110,61 +2115,195 @@
   margin: 0 auto;
   padding: 0 clamp(20px, 4vw, 48px);
 }
-.bz-ecosystem-grid {
-  list-style: none;
+/* Stage 4 — Ecosystem "logo swim" marquee.
+   Slow silent left-drift, pauses on hover, edge-faded with a CSS mask
+   so the loop seams are never visible. Track is rendered twice in
+   the component and translated -50% for a perfectly seamless loop.
+   prefers-reduced-motion: marquee freezes and the track wraps
+   centred so all brands remain visible without any motion. */
+.bz-eco-marquee {
+  position: relative;
   margin: 48px 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1px;
-  background: rgba(11, 11, 11, 0.08);
-  border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(11, 11, 11, 0.08);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+          mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
 }
-.bz-ecosystem-card {
-  padding: 28px 24px;
-  background: #ffffff;
+.bz-eco-track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: stretch;
+  gap: 56px;
+  width: max-content;
+  vertical-align: top;
+  animation: bz-eco-swim 64s linear infinite;
+  will-change: transform;
+}
+.bz-eco-marquee:hover .bz-eco-track,
+.bz-eco-marquee:focus-within .bz-eco-track {
+  animation-play-state: paused;
+}
+@keyframes bz-eco-swim {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.bz-eco-item {
+  flex: 0 0 auto;
+  width: 200px;
+  padding: 18px 14px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  border-radius: 14px;
   transition: background 180ms ease;
 }
-.bz-ecosystem-card:hover {
-  background: rgba(86, 128, 233, 0.04);
+.bz-eco-item:hover {
+  background: rgba(86, 128, 233, 0.05);
 }
-.bz-ecosystem-index {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  color: rgba(11, 11, 11, 0.4);
-  font-weight: 600;
+.bz-eco-logo {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.bz-ecosystem-name {
-  margin: 0;
-  font-size: 17px;
+.bz-eco-logo img {
+  max-height: 100%;
+  max-width: 160px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  opacity: 0.92;
+  transition: opacity 180ms ease;
+}
+.bz-eco-item:hover .bz-eco-logo img {
+  opacity: 1;
+}
+.bz-eco-logo-fallback {
+  font-family: var(--bz-sans);
   font-weight: 700;
-  color: #0B0B0B;
+  font-size: 16px;
   letter-spacing: -0.005em;
+  color: #0B0B0B;
 }
-.bz-ecosystem-pitch {
+.bz-eco-name {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.55;
-  color: rgba(11, 11, 11, 0.65);
+  font-size: 13px;
+  font-weight: 600;
+  color: #0B0B0B;
+  letter-spacing: -0.002em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
-/* ---- Connect: note card ---- */
+/* Status chips — Live / Building / Next / Vision.
+   Two-tone blue palette: stronger fills for live work, lighter for
+   forward-looking. Never green/red/yellow — keeps the brand system
+   coherent. */
+.bz-eco-chip {
+  display: inline-block;
+  padding: 3px 10px;
+  font-family: var(--bz-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  line-height: 1.4;
+}
+.bz-eco-chip--live {
+  background: var(--bz-accent);
+  color: #FFFFFF;
+}
+.bz-eco-chip--building {
+  background: rgba(86, 128, 233, 0.14);
+  color: var(--bz-accent);
+  border-color: rgba(86, 128, 233, 0.32);
+}
+.bz-eco-chip--next {
+  background: rgba(11, 11, 11, 0.06);
+  color: rgba(11, 11, 11, 0.62);
+  border-color: rgba(11, 11, 11, 0.14);
+}
+.bz-eco-chip--vision {
+  background: transparent;
+  color: var(--bz-accent-strong);
+  border-color: rgba(136, 96, 208, 0.32);
+}
+
+@media (max-width: 480px) {
+  .bz-eco-track { gap: 32px; animation-duration: 48s; }
+  .bz-eco-item  { width: 168px; padding: 14px 10px; }
+}
+
+/* Reduced motion: freeze the swim, allow the track to wrap so every
+   brand is visible without a scroll bar; the duplicated half stays
+   aria-hidden so screen readers see the list once. */
+@media (prefers-reduced-motion: reduce) {
+  .bz-eco-marquee {
+    -webkit-mask-image: none;
+            mask-image: none;
+    overflow: visible;
+  }
+  .bz-eco-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 24px;
+  }
+  .bz-eco-item:hover { background: transparent; }
+}
+
+/* ---- Connect: note card ----
+   Previously used `border-style: dashed` which read as a broken/dev
+   focus rectangle. Replaced with a soft brand-blue tinted border on a
+   subtle off-white surface — clearly a note, never mistaken for a
+   focus state. Real keyboard focus is handled by the
+   `.bz-connect-link:focus-visible` rule below. */
 .bz-connect-link--note {
   cursor: default;
-  background: rgba(11, 11, 11, 0.04);
-  border-style: dashed;
+  background: rgba(86, 128, 233, 0.05);
+  border-style: solid;
+  border-color: rgba(86, 128, 233, 0.22);
+  box-shadow: inset 0 0 0 1px rgba(86, 128, 233, 0.04);
 }
 .bz-connect-link--note:hover {
   transform: none;
-  background: rgba(11, 11, 11, 0.04);
+  background: rgba(86, 128, 233, 0.05);
 }
 .bz-connect-link--note .bz-connect-handle {
   font-style: italic;
+}
+
+/* Premium accessible focus state for the actual contact links —
+   2px brand-blue outline + soft outer glow, rounded to match the card.
+   Keyboard accessibility is preserved; mouse clicks do not show it. */
+.bz-connect-link:focus-visible {
+  outline: 2px solid var(--bz-accent);
+  outline-offset: 3px;
+  border-radius: 14px;
+  box-shadow: 0 0 0 6px rgba(86, 128, 233, 0.18);
 }
 
 /* ---- Footer: address column ---- */
