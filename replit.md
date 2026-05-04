@@ -53,7 +53,7 @@ The public landing (`/`) is a custom-built marketing page for Bonanza Cr8tives. 
 
 **FontPicker** (`FontPicker.tsx`): Font Personality Picker — 12 production-ready font direction cards (Plus Jakarta Sans, Gabarito, Saira, Apfel Grotezk, Coconat, Mazius Display, Ronzino, Halibut, Sinistre, Aujournuit, Sprat, Climate Crisis). Each card shows headline + paragraph sample rendered in that font, "Best for" tag, production-ready badge, choose primary/backup buttons. "Recommend for me" clears selections and delegates to Bonanza. @font-face rules loaded via component-scoped `<style>` tag only when section enters viewport (IntersectionObserver with 200px rootMargin). Selection stored via module-level `getFontSelection()` returning `{ primary, backup, recommendForMe }`, integrated into VisionInput's `compileVision()` build brief. All fonts from `/public/fonts/custom/` WOFF2 files with `font-display: swap`. No global font loading. No hold/preview-only fonts used (Frick excluded).
 
-**Brand assets**: 20 logos in `/public/brand-assets/logos/`, 20 theme previews in `/public/brand-assets/theme-previews/`. Asset inventory tracked in `ASSET-MAP.md`.
+**Brand assets**: 20 logos in `/public/brand-assets/logos/` (all ecosystem logos now RGBA with transparent backgrounds), 20 theme previews in `/public/brand-assets/theme-previews/`. Asset inventory tracked in `ASSET-MAP.md`.
 
 **Design tokens**: Two-tone blue palette (`--bz-accent` #5680E9, `--bz-accent-strong` #8860D0, `--bz-aqua`, `--bz-sky`, `--bz-mist`). Plus Jakarta Sans variable WOFF2. All motion gated by `prefers-reduced-motion`.
 

@@ -1,0 +1,108 @@
+FULL LANDING CLEANUP PASS — hero eyebrow + ecosystem logos + wrapping + duplication.
+
+Do a read-first, then fix.
+
+Problems visible in the current landing:
+1. Some ecosystem logos are supposed to have transparent backgrounds, but they are rendering with visible checkerboard / non-clean backgrounds or wrong asset treatment.
+2. The ecosystem area is showing repeated / duplicated entries.
+3. Some text is wrapping onto two lines when it should stay on one line at desktop widths.
+4. The hero eyebrow text still needs to be replaced with the clearer public-facing version.
+5. This should be fixed in the same pass as the picker flow polish, not treated as a separate optional extra.
+
+Tasks:
+
+A. HERO EYEBROW
+Replace the current eyebrow copy with this exact text:
+“BONANZA CR8TIVES — WEBSITES, AI FUNNELS & BRAND SYSTEMS”
+
+Requirements:
+- single line on desktop
+- no awkward wrap at normal desktop widths
+- still responsive on smaller screens
+- no internal / placeholder feel
+
+B. ECOSYSTEM SECTION — DATA + LAYOUT
+Fix the “Bonanza-built ecosystem brands” section.
+
+Requirements:
+- show each ecosystem brand once only
+- no duplicated cards
+- no repeated rows of the same brands
+- use the intended locked set of brands only
+- ensure layout is balanced:
+  - desktop: clean fixed grid
+  - tablet: balanced reduced grid
+  - mobile: stacked cleanly
+- keep card sizing consistent
+- keep logo area consistent
+- keep status pills consistent
+
+C. ECOSYSTEM SECTION — LOGO TREATMENT
+Use proper transparent-background logo assets only.
+
+Important rules:
+- if a logo file shows visible checkerboard inside the actual rendered image, do not use that file
+- if a logo file is opaque / badly exported / contains a baked-in checkerboard background, do not use it
+- prefer the clean transparent variants already uploaded
+- if a dark variant exists and reads best on the light mist background, use that version
+- if a light version requires a dark tile, use the dark tile only when truly needed
+- do not allow hard ugly black slabs unless intentionally framed and visually balanced
+
+Goal:
+- every ecosystem logo should look intentionally placed
+- all logos should feel clean, premium, and readable
+- transparent logos should visually float correctly
+- no checkerboard visibility
+- no broken background artefacts
+
+D. BRAND CARD CONSISTENCY
+Make all ecosystem logo cards feel unified:
+- consistent logo container height
+- consistent image max height
+- consistent padding
+- consistent card spacing
+- consistent title spacing
+- balanced visual weight across all brand cards
+
+E. WRAPPING / TYPOGRAPHY FIX
+Audit any key text that is wrapping badly.
+
+Specifically:
+- the hero eyebrow should not split awkwardly on desktop
+- ecosystem section heading should behave cleanly
+- card titles should not break badly
+- only allow wrapping where it is intentional and clean
+
+F. PICKER FLOW ALIGNMENT
+Keep the new client flow aligned with this exact journey:
+Start Your Vision
+→ rough idea
+→ choose visual direction
+→ choose font direction
+→ shortlist favourites
+→ Bonanza recommends final fit
+→ submit build brief
+
+Verify the picker work is still connected and not regressed by this pass.
+
+G. DO NOT TOUCH
+- do not touch backend
+- do not touch database
+- do not touch /studio
+- do not touch render flow
+- do not touch lead capture
+- do not touch packages
+- do not install anything
+- do not rebuild unrelated sections
+
+Return:
+1. read-only findings first
+2. exact cause of the bad transparent-logo rendering
+3. exact cause of the duplication
+4. files changed
+5. which logo variants are now being used
+6. whether hero eyebrow is now fixed
+7. whether wrapping is now fixed
+8. whether the picker flow is still connected
+9. confirmation backend/database/studio/render/lead/packages untouched
+10. whether commit/checkpoint is needed

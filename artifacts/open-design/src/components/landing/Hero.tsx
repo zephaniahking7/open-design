@@ -20,7 +20,7 @@ export function Hero() {
       <div className="bz-hero-inner">
         <p className="bz-hero-eyebrow">
           <span className="bz-hero-eyebrow-dot" aria-hidden="true" />
-          Bonanza Cr8tives — Studio Notes MMXXVI
+          Bonanza Cr8tives — Websites, AI Funnels &amp; Brand Systems
         </p>
         <h1 className="bz-hero-title" id="bz-hero-title">
           Websites, AI funnels &amp; digital front doors{' '}

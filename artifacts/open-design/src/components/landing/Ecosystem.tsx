@@ -27,7 +27,7 @@ type Project = {
 //   Vision   — on the long-range roadmap, not yet in active build
 const PROJECTS: readonly Project[] = [
   { name: 'Supreme Teens',           logo: 'supreme-teens.png',                  status: 'Live' },
-  { name: 'Bonanza HQ',              logo: 'bonanza-cr8tives-chrome.png',        status: 'Building', darkTile: true },
+  { name: 'Bonanza HQ',              logo: 'bonanza-cr8tives-chrome.png',        status: 'Building' },
   { name: 'Real Image Entertainment',logo: 'real-image-entertainment-black.png', status: 'Live' },
   { name: 'Stomp AI',                logo: 'stomp-ai-colour.png',                status: 'Building' },
   { name: 'Jay Monsoon',             logo: 'jay-monsoon-clothing-dark.png',      status: 'Live' },
@@ -66,9 +66,6 @@ function MarqueeItem({ project }: { project: Project }) {
 }
 
 export function Ecosystem() {
-  // Render the list twice in a single track so the loop seams
-  // perfectly at translateX(-50%). The duplicated half is hidden
-  // from assistive tech; the original list carries the labels.
   return (
     <section
       className="bz-ecosystem bz-section--light"
@@ -93,10 +90,23 @@ export function Ecosystem() {
             {PROJECTS.map((p) => (
               <MarqueeItem key={p.name} project={p} />
             ))}
-          </ul>
-          <ul className="bz-eco-track" aria-hidden="true">
             {PROJECTS.map((p) => (
-              <MarqueeItem key={`dup-${p.name}`} project={p} />
+              <li
+                key={`dup-${p.name}`}
+                className="bz-eco-item bz-eco-item--clone"
+                aria-hidden="true"
+              >
+                <div className={`bz-eco-logo${p.darkTile ? ' bz-eco-logo--dark' : ''}`}>
+                  <img
+                    src={`/brand-assets/logos/${p.logo}`}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <p className="bz-eco-name">{p.name}</p>
+                <StatusChip status={p.status} />
+              </li>
             ))}
           </ul>
         </div>

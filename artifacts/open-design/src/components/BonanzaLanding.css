@@ -355,6 +355,7 @@
   text-transform: uppercase;
   color: var(--bz-text-mute);
   margin: 0 0 32px;
+  white-space: nowrap;
 }
 
 .bz-hero-eyebrow-dot {
@@ -2283,6 +2284,9 @@
     justify-content: center;
     width: 100%;
     gap: 24px;
+  }
+  .bz-eco-item--clone {
+    display: none;
   }
   .bz-eco-item:hover { background: transparent; }
 }
