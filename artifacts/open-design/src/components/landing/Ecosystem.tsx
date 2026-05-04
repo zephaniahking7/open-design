@@ -30,9 +30,9 @@ const PROJECTS: readonly Project[] = [
   { name: 'Bonanza HQ',              logo: 'bonanza-cr8tives-chrome.png',        status: 'Building', darkTile: true },
   { name: 'Real Image Entertainment',logo: 'real-image-entertainment-black.png', status: 'Live' },
   { name: 'Stomp AI',                logo: 'stomp-ai-colour.png',                status: 'Building' },
-  { name: 'Jay Monsoon',             logo: 'jay-monsoon-clothing.png',           status: 'Live', darkTile: true },
+  { name: 'Jay Monsoon',             logo: 'jay-monsoon-clothing-dark.png',      status: 'Live' },
   { name: 'GrownFlow UK',            logo: 'grow-flow-logo.png',                 status: 'Next' },
-  { name: 'BaeJo Jobae',             logo: 'baejo-jobae-white.png',              status: 'Vision', darkTile: true },
+  { name: 'BaeJo Jobae',             logo: 'baejo-jobae-dark.png',               status: 'Vision' },
   { name: 'Family Bonanza',          logo: 'family-bonanza-fb-logo.png',         status: 'Vision' },
 ] as const;
 

@@ -18,14 +18,20 @@ Do not include "public" in website paths.
 
 ## Logo Assets (present in /logos/)
 
-- baejo-jobae-white.png
+- baejo-jobae-colour.png — BaeJo Jobae colour variant
+- baejo-jobae-dark.png — BaeJo Jobae dark/black script (used in ecosystem strip)
+- baejo-jobae-light.png — BaeJo Jobae light variant
+- baejo-jobae-white.png — BaeJo Jobae white script (original upload)
 - bonanza-b-splash-blue.png
 - bonanza-b-splash-purple.png
 - bonanza-cr8tives-chrome.png
 - bonanza-cr8tives-white.png
 - family-bonanza-fb-logo.png — Family Bonanza FB monogram logo
 - grow-flow-logo.png
-- jay-monsoon-clothing.png
+- jay-monsoon-clothing.png — Jay Monsoon original (white text, gold accents)
+- jay-monsoon-clothing-blue.png — Jay Monsoon blue variant
+- jay-monsoon-clothing-dark.png — Jay Monsoon dark/black text (used in ecosystem strip)
+- jay-monsoon-clothing-light.png — Jay Monsoon light variant
 - real-image-entertainment-black.png
 - stomp-ai-colour.png
 - stomp-ai-white.png
@@ -33,7 +39,7 @@ Do not include "public" in website paths.
 - supreme-teens.png
 - value-crown.png
 
-Total: 14 unique logos.
+Total: 20 unique logos.
 
 ## Logo Assets — Missing / TODO(upload)
 
@@ -83,6 +89,7 @@ The /reference-uploads/ folder is currently empty. Reserved for client mood-boar
 - 2026-05-03: deleted `ChatGPT Image May 3, 2026, 01_07_49 PM.png` from /logos/ — was an exact byte-identical duplicate of `baejo-jobae-white.png` (MD5 d2a049615a4aa1c0200a030e383d1192) with a generative-tool default name.
 - 2026-05-03: renamed all 20 theme previews in /theme-previews/ from `<slug>.png (<palette>).png` to locked-order `NN-<slug>.png`. Mapping was deterministic: each original filename embedded the canonical slug before the " (palette).png" suffix. No images deleted, no duplicates found.
 - 2026-05-03: renamed `family-bonanza-fb-logo.png.png` → `family-bonanza-fb-logo.png` in /logos/ (uploaded with a duplicated `.png` extension). Also confirmed `jay-monsoon-clothing.png` is now uploaded — removed from missing list.
+- 2026-05-04: added 6 new logo variants — 3 BaeJo Jobae (colour, dark, light) and 3 Jay Monsoon (light, blue, dark). Ecosystem strip now uses `baejo-jobae-dark.png` and `jay-monsoon-clothing-dark.png` for mist-background visibility. Total logos: 14 → 20.
 
 ## Rule
 
