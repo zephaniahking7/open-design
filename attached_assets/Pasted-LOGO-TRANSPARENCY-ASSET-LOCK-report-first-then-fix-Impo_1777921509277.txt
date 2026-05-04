@@ -1,0 +1,71 @@
+LOGO TRANSPARENCY ASSET LOCK — report first, then fix.
+
+Important:
+The “T” labels were only visual marks in a Mac screenshot. They are NOT part of the filenames.
+
+Do not look for files beginning with “T.”
+Do not rename files.
+Do not delete files.
+
+Use this as the confirmed human-reviewed transparent-safe logo list:
+
+- baejo-jobae-dark.png
+- baejo-jobae-light.png
+- baejo-jobae-colour.png
+- bonanza-b-splash-blue.png
+- family-bonanza-fb-logo.png
+- grow-flow-logo.png
+- jay-monsoon-clothing-blue.png
+- jay-monsoon-clothing-dark.png
+- jay-monsoon-clothing-light.png
+- jay-monsoon-clothing.png
+- real-image-entertainment-black.png
+- stomp-ai-colour.png
+- stompers-never-die.png
+- supreme-teens.png
+- value-crown.png
+
+Avoid using these in the live ecosystem section unless there is no better option:
+- baejo-jobae-white.png
+- bonanza-b-splash-purple.png
+- bonanza-cr8tives-chrome.png
+- bonanza-cr8tives-white.png
+- stomp-ai-white.png
+
+Rules:
+- For light/mist sections, use dark or colour variants.
+- For dark sections, use light variants.
+- Do not use files with visible checkerboard/export artefacts.
+- Do not use accidental white/black slabs unless intentionally framed.
+- Do not delete old files.
+- Do not rename files.
+- Do not touch backend.
+- Do not touch database.
+- Do not touch /studio.
+- Do not touch render flow.
+- Do not touch lead capture.
+- Do not touch packages.
+- Do not install anything.
+
+Tasks:
+1. Inspect current Ecosystem.tsx logo paths.
+2. Confirm whether each current logo path is in the transparent-safe list.
+3. For the ecosystem section on the current light/mist background, use these preferred files:
+   - Supreme Teens: supreme-teens.png
+   - Bonanza HQ: bonanza-b-splash-blue.png OR bonanza-cr8tives-chrome.png only if the blue B is not appropriate
+   - Real Image Entertainment: real-image-entertainment-black.png
+   - Stomp AI: stomp-ai-colour.png
+   - Jay Monsoon: jay-monsoon-clothing-dark.png or jay-monsoon-clothing-blue.png
+   - GrownFlow UK: grow-flow-logo.png
+   - BaeJo Jobae: baejo-jobae-dark.png or baejo-jobae-colour.png
+   - Family Bonanza: family-bonanza-fb-logo.png
+
+4. If Bonanza HQ currently uses bonanza-cr8tives-chrome.png and it still appears as a black slab/checkerboard, swap to bonanza-b-splash-blue.png for now.
+5. Update ASSET-MAP.md with a note:
+   “Transparent-safe variants were human-reviewed from local visual inspection. Use dark/colour variants on light backgrounds and light variants on dark backgrounds.”
+6. Report before and after:
+   - files used
+   - any rejected files
+   - any remaining risks
+   - files changed
+   - whether commit/checkpoint is needed

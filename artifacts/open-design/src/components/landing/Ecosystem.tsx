@@ -27,7 +27,7 @@ type Project = {
 //   Vision   — on the long-range roadmap, not yet in active build
 const PROJECTS: readonly Project[] = [
   { name: 'Supreme Teens',           logo: 'supreme-teens.png',                  status: 'Live' },
-  { name: 'Bonanza HQ',              logo: 'bonanza-cr8tives-chrome.png',        status: 'Building' },
+  { name: 'Bonanza HQ',              logo: 'bonanza-b-splash-blue.png',          status: 'Building' },
   { name: 'Real Image Entertainment',logo: 'real-image-entertainment-black.png', status: 'Live' },
   { name: 'Stomp AI',                logo: 'stomp-ai-colour.png',                status: 'Building' },
   { name: 'Jay Monsoon',             logo: 'jay-monsoon-clothing-dark.png',      status: 'Live' },

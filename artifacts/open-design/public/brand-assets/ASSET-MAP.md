@@ -97,6 +97,34 @@ Website logos should use transparent backgrounds wherever possible.
 Theme previews can be full image-board previews.
 File names must be kebab-case, lowercase, no spaces, no punctuation other than hyphens.
 
+Transparent-safe variants were human-reviewed from local visual inspection. Use dark/colour variants on light backgrounds and light variants on dark backgrounds.
+
+### Transparent-safe logo list (human-reviewed)
+
+- baejo-jobae-dark.png
+- baejo-jobae-light.png
+- baejo-jobae-colour.png
+- bonanza-b-splash-blue.png
+- family-bonanza-fb-logo.png
+- grow-flow-logo.png
+- jay-monsoon-clothing-blue.png
+- jay-monsoon-clothing-dark.png
+- jay-monsoon-clothing-light.png
+- jay-monsoon-clothing.png
+- real-image-entertainment-black.png
+- stomp-ai-colour.png
+- stompers-never-die.png
+- supreme-teens.png
+- value-crown.png
+
+### Avoid list (use only when no better option exists)
+
+- baejo-jobae-white.png
+- bonanza-b-splash-purple.png
+- bonanza-cr8tives-chrome.png
+- bonanza-cr8tives-white.png
+- stomp-ai-white.png
+
 ## Ecosystem Logo Strip — Wording Rule
 
 The uploaded logos are mostly Bonanza-owned or Bonanza-related brands that will have websites, apps, stores, or platforms built through Bonanza Cr8tives. They are not external clients and must never be labelled as such.
