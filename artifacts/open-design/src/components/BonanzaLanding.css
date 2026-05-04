@@ -2196,6 +2196,18 @@
 .bz-eco-item:hover .bz-eco-logo img {
   opacity: 1;
 }
+/* Dark tile for white/light logos that vanish on the mist card surface.
+   Applied only to entries with `darkTile: true` in the data. */
+.bz-eco-logo--dark {
+  background: var(--bz-ink);
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+.bz-eco-logo--dark img {
+  opacity: 1;
+  filter: none;
+}
+
 .bz-eco-logo-fallback {
   font-family: var(--bz-sans);
   font-weight: 700;
