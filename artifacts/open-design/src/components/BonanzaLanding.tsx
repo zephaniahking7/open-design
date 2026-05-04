@@ -5,8 +5,8 @@
 //     -> Vision builder (Start Your Vision)
 //       -> Ecosystem (Bonanza-built brands marquee w/ Live/Building/Next/Vision)
 //         -> What We Build
-//           -> [ThemePicker]    PENDING — slot reserved
-//           -> [FontPicker]     PENDING — slot reserved
+//           -> ThemePicker (Client Visual Direction Picker — 20 themes)
+//           -> FontPicker  (Font Personality Picker — 12 directions)
 //             -> Packages
 //               -> CreativeOrbit (process reinforcement)
 //                 -> BeforeAfter (proof reinforcement)
@@ -30,6 +30,8 @@ import { BeforeAfter } from './landing/BeforeAfter';
 import { FinalCTA } from './landing/FinalCTA';
 import { Connect } from './landing/Connect';
 import { Footer } from './landing/Footer';
+import { ThemePicker } from './landing/ThemePicker';
+import { FontPicker } from './landing/FontPicker';
 
 export function BonanzaLanding() {
   return (
@@ -40,8 +42,8 @@ export function BonanzaLanding() {
         <VisionInput />
         <Ecosystem />
         <WhatWeBuild />
-        {/* TODO(picker-pass): <ThemePicker /> slots here */}
-        {/* TODO(picker-pass): <FontPicker />  slots here */}
+        <ThemePicker />
+        <FontPicker />
         <Packages />
         <CreativeOrbit />
         <BeforeAfter />

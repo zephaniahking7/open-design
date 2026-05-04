@@ -7,6 +7,8 @@ import {
 } from 'react';
 import { pickSignatureWord } from '../../lib/signatureWord';
 import { Wordmark } from '../Wordmark';
+import { getThemeSelection } from './ThemePicker';
+import { getFontSelection } from './FontPicker';
 
 // Render + lead status types are unchanged from the legacy single-input
 // VisionInput. The guided builder is layered IN FRONT of the same
@@ -153,6 +155,7 @@ const TOTAL_STEPS = 15; // steps 0..14
 
 function compileVision(s: BuilderState): string {
   const pkg = PACKAGE_OPTIONS.find((p) => p.key === s.packageKey);
+  const theme = getThemeSelection();
   const lines: string[] = [];
   lines.push(
     `Build Request — ${pkg ? `${pkg.name} (${pkg.price})` : 'Package TBC'}`,
@@ -172,6 +175,15 @@ function compileVision(s: BuilderState): string {
     `Style direction: ${s.styles.length > 0 ? s.styles.join(', ') : '—'}`,
   );
   lines.push(`Colour direction: ${s.colour || '—'}`);
+  lines.push(`Visual direction: ${theme.selected ? theme.selected.label : '—'}`);
+  lines.push(`Visual shortlist: ${theme.favourites.length > 0 ? theme.favourites.map((t) => t.label).join(', ') : '—'}`);
+  const font = getFontSelection();
+  if (font.recommendForMe) {
+    lines.push('Font direction: Recommend for me');
+  } else {
+    lines.push(`Font primary: ${font.primary ? font.primary.name : '—'}`);
+    lines.push(`Font backup: ${font.backup ? font.backup.name : '—'}`);
+  }
   lines.push(`Pages needed: ${s.pages || '—'}`);
   lines.push(`Features needed: ${s.features || '—'}`);
   lines.push(`Content status: ${s.content || '—'}`);

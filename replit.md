@@ -43,6 +43,22 @@ pnpm workspace monorepo using TypeScript. This is the "Open Design" project — 
 
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
 
+## Bonanza Cr8tives Landing
+
+The public landing (`/`) is a custom-built marketing page for Bonanza Cr8tives. Key landing components live in `artifacts/open-design/src/components/landing/`. All styles are in `BonanzaLanding.css` using `bz-` prefixed selectors isolated from the main app.
+
+**IA spine** (locked Stage 4): Hero → VisionInput → Ecosystem → WhatWeBuild → ThemePicker → FontPicker → Packages → CreativeOrbit → BeforeAfter → FinalCTA → Connect → Footer.
+
+**ThemePicker** (`ThemePicker.tsx`): Client Visual Direction Picker — 20 theme previews from `/brand-assets/theme-previews/`, heart/favourite (max 3), "Help me choose" (theme #13), "View all directions" expand, large hero preview. Selection stored via module-level `getThemeSelection()` and integrated into VisionInput's `compileVision()` build brief.
+
+**FontPicker** (`FontPicker.tsx`): Font Personality Picker — 12 production-ready font direction cards (Plus Jakarta Sans, Gabarito, Saira, Apfel Grotezk, Coconat, Mazius Display, Ronzino, Halibut, Sinistre, Aujournuit, Sprat, Climate Crisis). Each card shows headline + paragraph sample rendered in that font, "Best for" tag, production-ready badge, choose primary/backup buttons. "Recommend for me" clears selections and delegates to Bonanza. @font-face rules loaded via component-scoped `<style>` tag only when section enters viewport (IntersectionObserver with 200px rootMargin). Selection stored via module-level `getFontSelection()` returning `{ primary, backup, recommendForMe }`, integrated into VisionInput's `compileVision()` build brief. All fonts from `/public/fonts/custom/` WOFF2 files with `font-display: swap`. No global font loading. No hold/preview-only fonts used (Frick excluded).
+
+**Brand assets**: 20 logos in `/public/brand-assets/logos/`, 20 theme previews in `/public/brand-assets/theme-previews/`. Asset inventory tracked in `ASSET-MAP.md`.
+
+**Design tokens**: Two-tone blue palette (`--bz-accent` #5680E9, `--bz-accent-strong` #8860D0, `--bz-aqua`, `--bz-sky`, `--bz-mist`). Plus Jakarta Sans variable WOFF2. All motion gated by `prefers-reduced-motion`.
+
+**Do-not-touch**: backend, DB, /studio, /api/render SSE, /api/leads, rate limiting, error tracking, workflows, package.json, legacy IDE files, routes, payment logic.
+
 ## Migration Notes
 
 Ported from Next.js (Vercel import) to Vite + React:

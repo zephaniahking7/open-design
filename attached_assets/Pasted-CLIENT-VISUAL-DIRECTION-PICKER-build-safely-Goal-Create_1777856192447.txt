@@ -1,0 +1,90 @@
+CLIENT VISUAL DIRECTION PICKER — build safely.
+
+Goal:
+Create the Bonanza Cr8tives Client Visual Direction Picker using the 20 uploaded theme preview assets.
+
+This picker should help a client choose the visual direction they naturally connect with, while keeping Bonanza Cr8tives as the final design authority.
+
+Use assets from:
+public/brand-assets/theme-previews/
+
+Locked file list:
+01-teal-clean-and-modern.png
+02-orange-pink-vibrant-but-calm.png
+03-blue-pink-orange-gradient-pop.png
+04-black-aqua-striking-and-simple.png
+05-purple-yellow-youthful-and-fun.png
+06-teal-rust-cool-and-collected.png
+07-ruby-pink-red-and-lively.png
+08-charcoal-rose-texturized-and-dynamic.png
+09-yellow-plum-effective-accent-colors.png
+10-lime-charcoal-gorgeous-contrast.png
+11-black-white-monochrome-editorial.png
+12-coral-blue-creative-pop.png
+13-multi-help-me-choose.png
+14-green-gold-nature-luxe.png
+15-sage-gold-fresh-growth.png
+16-black-gold-bold-culture.png
+17-blush-plum-feminine-modern.png
+18-clay-sand-earth-clay-sand.png
+19-ruby-ivory-deep-ruby-ivory.png
+20-blush-navy-elegant-yet-approachable.png
+
+Client-facing labels:
+01 Clean Tech
+02 Bright Warmth
+03 Gradient Pop
+04 Midnight Precision
+05 Playful Impact
+06 Executive Calm
+07 Red Energy
+08 Textured Edge
+09 Accent Intelligence
+10 Fresh Contrast
+11 Editorial Mono
+12 Creative Pop
+13 Help Me Choose
+14 Nature Luxe
+15 Fresh Growth
+16 Bold Culture
+17 Feminine Modern
+18 Earth & Clay
+19 Deep Ruby
+20 Elegant Approach
+
+Build behaviour:
+- Main selected preview appears large.
+- Related previews sit around/beside it.
+- Each theme card has a heart/favourite button.
+- Client can shortlist up to 3 favourites.
+- Client can choose “Help me choose”.
+- Final selected theme saves into the existing build brief/intake state.
+- Favourites/top 3 save into the existing build brief/intake state.
+- Palette notes should be visible in short form.
+- The full 20 should not overwhelm the user: show featured/related first, then “View all directions”.
+- Mobile layout must be clean.
+
+Important wording:
+“Choose the direction you naturally connect with. Bonanza Cr8tives will refine the final visual system for your brand, audience and offer.”
+
+Rules:
+- Do not touch backend.
+- Do not touch database.
+- Do not touch /studio.
+- Do not change render flow.
+- Do not change lead capture endpoint.
+- Do not change packages/payment logic.
+- Do not install packages.
+- Use existing components/patterns where possible.
+- Use current CSS/motion system.
+- Add reduced-motion-safe transitions only.
+
+After completion, report:
+1. files changed
+2. component created/updated
+3. how selected theme is stored
+4. how top 3 favourites are stored
+5. whether “Help me choose” works
+6. mobile handling
+7. confirmation backend/database/studio/render/lead/packages untouched
+8. whether commit/checkpoint is needed

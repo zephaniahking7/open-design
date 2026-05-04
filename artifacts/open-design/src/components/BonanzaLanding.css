@@ -2287,6 +2287,538 @@
   .bz-eco-item:hover { background: transparent; }
 }
 
+/* ============================================================
+   THEME PICKER — Client Visual Direction Picker
+   Dark surface section (between WhatWeBuild light and FontPicker).
+   20 theme previews, large hero preview, heart/favourite (max 3),
+   "Help me choose", "View all directions" paginated reveal.
+   ============================================================ */
+.bz-theme-picker {
+  padding: 96px 32px;
+  border-top: 1px solid var(--bz-rule);
+}
+.bz-theme-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.bz-theme-hero {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 0 40px;
+  border: 1px solid var(--bz-rule-strong);
+  background: var(--bz-bg-elev);
+}
+.bz-theme-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+}
+.bz-theme-hero-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 28px;
+  background: linear-gradient(
+    to top,
+    rgba(11, 11, 11, 0.82) 0%,
+    rgba(11, 11, 11, 0.4) 60%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.bz-theme-hero-label {
+  font-family: var(--bz-sans);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--bz-text);
+  letter-spacing: -0.005em;
+}
+.bz-theme-hero-palette {
+  font-size: 0.8125rem;
+  color: var(--bz-text-soft);
+}
+.bz-theme-hero--animated {
+  animation: bz-theme-hero-in 400ms var(--bz-ease) both;
+}
+@keyframes bz-theme-hero-in {
+  from { opacity: 0; transform: scale(0.98); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bz-theme-hero--animated { animation: none; }
+}
+
+.bz-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 0 0 32px;
+}
+
+.bz-theme-card {
+  position: relative;
+  border-radius: 14px;
+  border: 1px solid var(--bz-rule);
+  background: var(--bz-bg-elev);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 220ms ease, box-shadow 280ms ease, transform 220ms ease;
+}
+.bz-theme-card:hover {
+  border-color: rgba(86, 128, 233, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(86, 128, 233, 0.18),
+    0 8px 24px -8px rgba(86, 128, 233, 0.22);
+  transform: translateY(-2px);
+}
+.bz-theme-card.is-selected {
+  border-color: var(--bz-accent);
+  box-shadow:
+    0 0 0 2px rgba(86, 128, 233, 0.35),
+    0 8px 24px -8px rgba(86, 128, 233, 0.28);
+}
+.bz-theme-card:focus-visible {
+  outline: 2px solid var(--bz-accent);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .bz-theme-card:hover { transform: none; }
+}
+
+.bz-theme-card-img-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--bz-bg-soft);
+}
+.bz-theme-card-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 320ms var(--bz-ease);
+}
+.bz-theme-card:hover .bz-theme-card-img {
+  transform: scale(1.04);
+}
+@media (prefers-reduced-motion: reduce) {
+  .bz-theme-card:hover .bz-theme-card-img { transform: none; }
+}
+
+.bz-theme-heart {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: rgba(11, 11, 11, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+  padding: 0;
+}
+.bz-theme-heart:hover:not(:disabled) {
+  color: #FFFFFF;
+  background: rgba(86, 128, 233, 0.45);
+  transform: scale(1.1);
+}
+.bz-theme-heart.is-active {
+  color: var(--bz-accent);
+  background: rgba(86, 128, 233, 0.2);
+  border-color: rgba(86, 128, 233, 0.4);
+}
+.bz-theme-heart:disabled:not(.is-active) {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.bz-theme-heart:focus-visible {
+  outline: 2px solid var(--bz-accent);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .bz-theme-heart:hover:not(:disabled) { transform: none; }
+}
+
+.bz-theme-card-meta {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.bz-theme-card-label {
+  font-family: var(--bz-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--bz-text);
+  letter-spacing: -0.005em;
+}
+.bz-theme-card-palette {
+  font-size: 0.75rem;
+  color: var(--bz-text-mute);
+}
+
+.bz-theme-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 0 0 40px;
+}
+
+.bz-theme-shortlist {
+  margin: 0;
+  padding: 28px;
+  background: var(--bz-bg-elev);
+  border: 1px solid var(--bz-rule);
+  border-radius: 18px;
+}
+.bz-theme-shortlist-label {
+  margin: 0 0 16px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bz-text-mute);
+}
+.bz-theme-shortlist-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.bz-theme-shortlist-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--bz-bg-soft);
+  border: 1px solid var(--bz-rule);
+  border-radius: 12px;
+  cursor: pointer;
+  font: inherit;
+  color: var(--bz-text);
+  transition: border-color 180ms ease, background 180ms ease;
+}
+.bz-theme-shortlist-item:hover {
+  border-color: rgba(86, 128, 233, 0.45);
+}
+.bz-theme-shortlist-item.is-selected {
+  border-color: var(--bz-accent);
+  background: rgba(86, 128, 233, 0.08);
+}
+.bz-theme-shortlist-item:focus-visible {
+  outline: 2px solid var(--bz-accent);
+  outline-offset: 2px;
+}
+.bz-theme-shortlist-img {
+  width: 40px;
+  height: 28px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+}
+.bz-theme-shortlist-name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--bz-text);
+}
+.bz-theme-shortlist-remove {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0 0 0 4px;
+  font-size: 1rem;
+  color: var(--bz-text-mute);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 180ms ease;
+}
+.bz-theme-shortlist-remove:hover {
+  color: var(--bz-text);
+}
+
+@media (max-width: 768px) {
+  .bz-theme-picker {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .bz-theme-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .bz-theme-hero-img {
+    max-height: 280px;
+  }
+  .bz-theme-shortlist {
+    padding: 20px;
+  }
+  .bz-theme-shortlist-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .bz-theme-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .bz-theme-card-meta {
+    padding: 10px 10px;
+  }
+  .bz-theme-card-label {
+    font-size: 0.8125rem;
+  }
+  .bz-theme-hero-img {
+    max-height: 220px;
+  }
+  .bz-theme-inner {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .bz-theme-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .bz-theme-actions .bz-cta {
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   FONT PICKER — Font Personality Picker
+   12 font direction cards with live WOFF2 previews.
+   Fonts loaded via component-scoped @font-face (not global).
+   ============================================================ */
+.bz-font-picker {
+  padding: 96px 32px;
+  border-top: 1px solid var(--bz-rule);
+}
+.bz-font-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.bz-font-selection-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--bz-rule);
+  border-radius: 12px;
+}
+.bz-font-selection-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 0.875rem;
+  color: var(--bz-text-muted);
+}
+.bz-font-selection-tag--recommend {
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--bz-accent);
+}
+.bz-font-selection-role {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  color: var(--bz-accent);
+}
+.bz-font-selection-name {
+  color: var(--bz-text);
+}
+.bz-font-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.bz-font-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--bz-rule);
+  border-radius: 14px;
+  padding: 28px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .bz-font-card { transition: none; }
+}
+.bz-font-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.bz-font-card.is-selected {
+  border-color: var(--bz-accent);
+  box-shadow: 0 0 0 1px var(--bz-accent);
+}
+.bz-font-card.is-primary {
+  border-color: var(--bz-accent);
+  box-shadow: 0 0 0 2px var(--bz-accent), 0 0 24px rgba(59, 130, 246, 0.1);
+}
+.bz-font-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+}
+.bz-font-card-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--bz-text);
+  margin: 0;
+}
+.bz-font-card-family {
+  font-size: 0.8125rem;
+  color: var(--bz-text-muted);
+}
+.bz-font-card-status {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: auto;
+}
+.bz-font-card-status--production-ready {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+}
+.bz-font-card-status--preview-only {
+  background: rgba(250, 204, 21, 0.12);
+  color: #facc15;
+}
+.bz-font-card-preview {
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+  border-top: 1px solid var(--bz-rule);
+  border-bottom: 1px solid var(--bz-rule);
+}
+.bz-font-card-headline {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--bz-text);
+  margin: 0;
+}
+.bz-font-card-paragraph {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--bz-text-muted);
+  margin: 0;
+}
+.bz-font-card-bestfor {
+  font-size: 0.8125rem;
+  color: var(--bz-text-muted);
+  margin: 0;
+  font-style: italic;
+}
+.bz-font-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+.bz-font-btn {
+  flex: 1;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--bz-rule);
+  background: transparent;
+  color: var(--bz-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  font-family: var(--font-sans);
+}
+@media (prefers-reduced-motion: reduce) {
+  .bz-font-btn { transition: none; }
+}
+.bz-font-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--bz-text);
+}
+.bz-font-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.bz-font-btn.is-active {
+  background: var(--bz-accent);
+  border-color: var(--bz-accent);
+  color: #fff;
+}
+.bz-font-btn--secondary.is-active {
+  background: rgba(59, 130, 246, 0.18);
+  border-color: var(--bz-accent);
+  color: var(--bz-accent);
+}
+.bz-font-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ---- Font Picker responsive ---- */
+@media (max-width: 768px) {
+  .bz-font-picker {
+    padding: 64px 20px;
+  }
+  .bz-font-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .bz-font-card {
+    padding: 22px 18px 16px;
+  }
+  .bz-font-card-headline {
+    font-size: 1.25rem;
+  }
+  .bz-font-selection-bar {
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .bz-font-picker {
+    padding: 48px 16px;
+  }
+  .bz-font-card-actions {
+    flex-direction: column;
+  }
+  .bz-font-btn {
+    text-align: center;
+    justify-content: center;
+  }
+  .bz-font-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .bz-font-actions .bz-cta {
+    justify-content: center;
+  }
+}
+
 /* ---- Connect: note card ----
    Previously used `border-style: dashed` which read as a broken/dev
    focus rectangle. Replaced with a soft brand-blue tinted border on a
